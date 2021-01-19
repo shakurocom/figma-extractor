@@ -1,6 +1,12 @@
 {
   "name": "@shakuroinc/figma-extractor",
   "version": "1.0.0",
+  "author": "Shakuro team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shakurocom/figma-extractor"
+  },
   "bin": {
     "figma-extract": "./dist/bin.js"
   },
@@ -13,6 +19,7 @@
   "scripts": {
     "dev": "ts-node ./src/bin.ts",
     "build": "rm -rf dist && yarn tsc",
+    "prepublish": "yarn build",
     "lint": "eslint . --ext .ts,.tsx,.js --ignore-path .gitignore"
   },
   "dependencies": {
