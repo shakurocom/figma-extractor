@@ -19,7 +19,7 @@
   "scripts": {
     "dev": "ts-node ./src/bin.ts",
     "build": "rm -rf dist && yarn tsc",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "lint": "eslint . --ext .ts,.tsx,.js --ignore-path .gitignore"
   },
   "dependencies": {
