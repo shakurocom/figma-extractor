@@ -1,0 +1,17 @@
+.DS_Store
+.idea
+
+node_modules
+yarn-debug.log*
+yarn-error.log
+
+.docz
+.next
+dist
+.cache
+out
+.log
+storybook-static
+reports/
+
+.env
