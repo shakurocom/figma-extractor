@@ -1,6 +1,6 @@
 {
   "name": "@shakuroinc/figma-extractor",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "bin": {
     "figma-extract": "./dist/bin.js"
   },

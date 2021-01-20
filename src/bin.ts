@@ -24,13 +24,12 @@ const getOnlyArgs = (onlyArg: string) => {
 
 const disabledKeys = ['icons', 'colors', 'effects', 'textStyles'] as OnlyArgs[];
 
-function run(config: Config) {
+function run(config: Config, path: string) {
   console.log('Please wait...');
   const onlyArgs = getOnlyArgs(argv.only);
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
-      console.log('item', item);
       config = {
         ...config,
         [item]: {
@@ -41,10 +40,10 @@ function run(config: Config) {
     });
   }
 
-  generateStyles(config);
+  generateStyles(config, path);
 
   if (!config.icons?.disabled) {
-    generateIcons(config).catch(err => {
+    generateIcons(config, path).catch(err => {
       console.error(err);
       console.error(err.stack);
     });
@@ -89,7 +88,7 @@ const explorer = cosmiconfig(moduleName, {
 explorer
   .search()
   .then((result: { config: Config }) => {
-    run(result.config);
+    run(result.config, process.cwd());
   })
   .catch((error: any) => {
     console.log('error', error);

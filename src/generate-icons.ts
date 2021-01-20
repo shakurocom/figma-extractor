@@ -12,10 +12,10 @@ const naming = (originalName: string) => {
   return formattedName;
 };
 
-export const generateIcons = async (config: Config) => {
+export const generateIcons = async (config: Config, rootPath: string) => {
   const client = getClient(config.apiKey);
-  const pathIconsFolder = path.join(__dirname, `../../${config?.icons?.exportPath ?? ''}/svg`);
-  const pathSpriteFolder = path.join(__dirname, `../../${config?.icons?.exportPath ?? ''}`);
+  const pathIconsFolder = path.join(rootPath, config?.icons?.exportPath ?? '', 'svg');
+  const pathSpriteFolder = path.join(rootPath, config?.icons?.exportPath ?? '');
 
   if (!fs.existsSync(pathIconsFolder)) {
     fs.mkdirSync(pathIconsFolder, { recursive: true });
