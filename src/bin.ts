@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
+import path from 'path';
 
 import { generateIcons } from './generate-icons';
 import { generateStyles } from './generate-styles';
@@ -24,9 +25,16 @@ const getOnlyArgs = (onlyArg: string) => {
 
 const disabledKeys = ['icons', 'colors', 'effects', 'textStyles'] as OnlyArgs[];
 
-function run(config: Config, path: string) {
+function run(config: Config) {
+  const rootPath = process.cwd();
   console.log('Please wait...');
+  config = {
+    ...config,
+    exportStylesPath: path.join(rootPath, config.exportStylesPath || ''),
+    icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
+  };
   const onlyArgs = getOnlyArgs(argv.only);
+
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
@@ -40,10 +48,10 @@ function run(config: Config, path: string) {
     });
   }
 
-  generateStyles(config, path);
+  generateStyles(config);
 
   if (!config.icons?.disabled) {
-    generateIcons(config, path).catch(err => {
+    generateIcons(config).catch(err => {
       console.error(err);
       console.error(err.stack);
     });
@@ -88,7 +96,7 @@ const explorer = cosmiconfig(moduleName, {
 explorer
   .search()
   .then((result: { config: Config }) => {
-    run(result.config, process.cwd());
+    run(result.config);
   })
   .catch((error: any) => {
     console.log('error', error);
