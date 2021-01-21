@@ -14,8 +14,8 @@ const naming = (originalName: string) => {
 
 export const generateIcons = async (config: Config) => {
   const client = getClient(config.apiKey);
-  const pathIconsFolder = path.join(__dirname, `../../${config?.icons?.exportPath ?? ''}/svg`);
-  const pathSpriteFolder = path.join(__dirname, `../../${config?.icons?.exportPath ?? ''}`);
+  const pathIconsFolder = path.join(config?.icons?.exportPath ?? '', 'svg');
+  const pathSpriteFolder = path.join(config?.icons?.exportPath ?? '');
 
   if (!fs.existsSync(pathIconsFolder)) {
     fs.mkdirSync(pathIconsFolder, { recursive: true });

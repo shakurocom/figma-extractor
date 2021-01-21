@@ -2,6 +2,7 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
+import path from 'path';
 
 import { generateIcons } from './generate-icons';
 import { generateStyles } from './generate-styles';
@@ -25,12 +26,18 @@ const getOnlyArgs = (onlyArg: string) => {
 const disabledKeys = ['icons', 'colors', 'effects', 'textStyles'] as OnlyArgs[];
 
 function run(config: Config) {
+  const rootPath = process.cwd();
   console.log('Please wait...');
+  config = {
+    ...config,
+    exportStylesPath: path.join(rootPath, config.exportStylesPath || ''),
+    icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
+  };
   const onlyArgs = getOnlyArgs(argv.only);
+
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
-      console.log('item', item);
       config = {
         ...config,
         [item]: {

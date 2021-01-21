@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 import { getClient } from './lib/client';
 import { getColorStyles } from './lib/get-color-styles';
 import { getEffectStyles } from './lib/get-effect-styles';
@@ -11,6 +13,10 @@ export const generateStyles = async (config: Config) => {
   const nodeKeys = meta.styles.map(item => item.node_id);
 
   const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeKeys });
+
+  if (!fs.existsSync(config.exportStylesPath)) {
+    fs.mkdirSync(config.exportStylesPath, { recursive: true });
+  }
 
   if (!config?.colors?.disabled) {
     const metaColors = meta.styles.filter(item => item.style_type === 'FILL');
