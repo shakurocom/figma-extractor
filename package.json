@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shakurocom/eslint-config-react"
+    "url": "https://github.com/shakurocom/figma-extractor"
   },
   "bin": {
     "figma-extract": "./dist/bin.js"
