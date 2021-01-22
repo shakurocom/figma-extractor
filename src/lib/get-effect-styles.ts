@@ -25,7 +25,7 @@ export const getEffectStyles = (
   const effectStyles = effectStylesNodes.reduce(
     (acc, { name, effects }: any) => ({
       ...acc,
-      [(config as any)?.effects?.keyName?.(name) || getEffectName(name)]: `${
+      [config?.styles?.effects?.keyName?.(name) || getEffectName(name)]: `${
         effects[0].offset.x
       }px ${effects[0].offset.y}px ${effects[0].radius}px ${rgba(effects[0].color)}`,
     }),
