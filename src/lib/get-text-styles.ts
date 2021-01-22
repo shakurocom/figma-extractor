@@ -52,7 +52,7 @@ export const getTextStyles = (
 
     return [
       ...acc,
-      `'${(config as any)?.textStyles?.keyName?.(name) || getTextStyleName(name)}': {
+      `'${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}': {
     fontFamily: fontFamily.${fontVar?.[0]},
     fontSize: ${style.fontSize},
     fontWeight: ${style.fontWeight},

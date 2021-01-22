@@ -1,18 +1,24 @@
 type Config = {
   apiKey: string;
   fileId: string;
-  exportStylesPath: string;
-  colors?: {
-    disabled: boolean;
-    keyName?: (name: string) => string;
-  };
-  effects?: {
-    disabled: boolean;
-    keyName?: (name: string) => string;
-  };
-  textStyles?: {
-    disabled: boolean;
-    keyName?: (nameFromFigma: string) => string;
+  styles: {
+    exportPath: string;
+    colors?: {
+      disabled: boolean;
+      keyName?: (name: string) => string;
+    };
+    gradients?: {
+      disabled: boolean;
+      keyName?: (name: string) => string;
+    };
+    effects?: {
+      disabled: boolean;
+      keyName?: (name: string) => string;
+    };
+    textStyles?: {
+      disabled: boolean;
+      keyName?: (nameFromFigma: string) => string;
+    };
   };
   icons: {
     disabled: boolean;

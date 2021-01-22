@@ -25,10 +25,10 @@ const hex2RGB = (str: string) => {
   }
 };
 
-function formattedColor(color: Color, opacity: number) {
+function formattedColor(color: Color, opacity?: number) {
   const hex = RGBToHex(color);
 
-  if (opacity) {
+  if (opacity || opacity === 0) {
     const rgb = hex2RGB(hex);
 
     return `rgba(${rgb?.join(', ')}, ${opacity.toFixed(2)})`;
@@ -44,27 +44,28 @@ function getColorName(name?: string) {
   return splitName ? splitName[splitName.length - 1].toLowerCase() : '';
 }
 
-export const getColorStyles = (
+export const getGradientStyles = (
   metaColors: FullStyleMetadata[],
   fileNodes: FileNodesResponse,
   config: Config,
 ) => {
   const getColorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
 
-  const colors = getColorNodes.reduce(
+  const gradients = getColorNodes.reduce(
     (acc, item) =>
       (item as any).fills?.[0]?.type === 'GRADIENT_LINEAR'
-        ? acc
-        : {
+        ? {
             ...acc,
             [config?.styles?.colors?.keyName?.(item?.name as string) ??
-            getColorName(item?.name)]: formattedColor(
-              (item as any).fills?.[0]?.color,
-              (item as any).fills[0]?.opacity,
-            ),
-          },
+            getColorName(
+              item?.name,
+            )]: `linear-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
+              formattedColor(gradient?.color, gradient?.color?.a),
+            )})`,
+          }
+        : acc,
     {},
   );
 
-  return colors;
+  return gradients;
 };

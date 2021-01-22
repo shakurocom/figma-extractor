@@ -18,15 +18,20 @@ const iconNaming = originalName => {
 module.exports = {
   apiKey: 'xxxxxx',
   fileId: 'xxxxxx',
-  exportStylesPath: './ui/theme',
-  colors: {
-    // keyName: nameFromFigma => nameFromFigma`, // custom key name
-  },
-  effects: {
-    // keyName: nameFromFigma => nameFromFigma`, // custom key name
-  },
-  textStyles: {
-    keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+  styles: {
+    exportPath: './ui/theme',
+    colors: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    effects: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    gradients: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    textStyles: {
+      keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+    },
   },
   icons: {
     nodeIds: ['2310:0', '2090:11', '276:18'],

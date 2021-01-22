@@ -38,18 +38,20 @@ Example `figma-extractor.config.js`
     module.exports = {
       apiKey: 'xxxxxx', // your figma api access key
       fileId: 'xxxxxx', // figma file id
-      exportStylesPath: './ui/theme',
-      colors: {
-        // disabled: true,
-         keyName: nameFromFigma => nameFromFigma`, // custom key name
-      },
-      effects: {
-        // disabled: true,
-         keyName: nameFromFigma => nameFromFigma`, // custom key name
-      },
-      textStyles: {
-        // disabled: true,
-        keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+      styles: {
+        exportPath: './ui/theme',
+        colors: {
+          // keyName: nameFromFigma => nameFromFigma`, // custom key name
+        },
+        effects: {
+          // keyName: nameFromFigma => nameFromFigma`, // custom key name
+        },
+        gradients: {
+          // keyName: nameFromFigma => nameFromFigma`, // custom key name
+        },
+        textStyles: {
+          keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+        },
       },
       icons: {
         // disabled: true,
