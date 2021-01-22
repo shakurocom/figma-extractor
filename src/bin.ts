@@ -23,14 +23,17 @@ const getOnlyArgs = (onlyArg: string) => {
   return onlyArgs;
 };
 
-const disabledKeys = ['icons', 'colors', 'effects', 'textStyles'] as OnlyArgs[];
+const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] as OnlyArgs[];
 
 function run(config: Config) {
   const rootPath = process.cwd();
   console.log('Please wait...');
   config = {
     ...config,
-    exportStylesPath: path.join(rootPath, config.exportStylesPath || ''),
+    styles: {
+      ...config.styles,
+      exportPath: path.join(rootPath, config?.styles?.exportPath || ''),
+    },
     icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
   };
   const onlyArgs = getOnlyArgs(argv.only);
@@ -38,12 +41,26 @@ function run(config: Config) {
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
+      const prop =
+        item === 'icons'
+          ? {
+              icons: {
+                ...config.icons,
+                disabled: includedKey ? false : true,
+              },
+            }
+          : {
+              styles: {
+                ...config.styles,
+                [item]: {
+                  ...config.styles[item],
+                  disabled: includedKey ? false : true,
+                },
+              },
+            };
       config = {
         ...config,
-        [item]: {
-          ...config[item],
-          disabled: includedKey ? false : true,
-        },
+        ...prop,
       };
     });
   }
