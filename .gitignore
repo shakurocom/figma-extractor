@@ -15,3 +15,4 @@ storybook-static
 reports/
 
 .env
+figma-extractor.config.js

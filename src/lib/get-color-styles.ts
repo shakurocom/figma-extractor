@@ -52,13 +52,17 @@ export const getColorStyles = (
   const getColorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
 
   const colors = getColorNodes.reduce(
-    (acc, item) => ({
-      ...acc,
-      [(config as any)?.colors?.keyName?.(item?.name) ?? getColorName(item?.name)]: formattedColor(
-        (item as any).fills?.[0]?.color,
-        (item as any).fills[0]?.opacity,
-      ),
-    }),
+    (acc, item) =>
+      (item as any).fills?.[0]?.type === 'GRADIENT_LINEAR'
+        ? acc
+        : {
+            ...acc,
+            [(config as any)?.colors?.keyName?.(item?.name) ??
+            getColorName(item?.name)]: formattedColor(
+              (item as any).fills?.[0]?.color,
+              (item as any).fills[0]?.opacity,
+            ),
+          },
     {},
   );
 
