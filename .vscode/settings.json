@@ -18,5 +18,5 @@
     "eslint.autoFixOnSave": true,
     "source.fixAll.eslint": true
   },
-  "window.title": "FIXME: {projectName} | ${activeEditorShort}${separator}${rootName}"
+  "window.title": "Figma-extractor | ${activeEditorShort}${separator}${rootName}"
 }
