@@ -30,4 +30,4 @@ type Config = {
   };
 };
 
-type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'icons';
+type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'gradients' | 'icons';

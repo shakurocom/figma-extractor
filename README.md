@@ -13,7 +13,7 @@ Package for extract style system and svg icons from figma.
 ## Cli API
 
 - `figma-extract` - extract all from figma.
-- `figma-extract --only=colors, icons` - extract only colors and icons. The available options `colors, icons, textStyles, effects`.
+- `figma-extract --only=colors, icons` - extract only colors and icons. The available options `colors, icons, textStyles, effects, gradients`.
 
 ## Config
 
