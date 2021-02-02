@@ -56,7 +56,7 @@ export const getTextStyles = (
     fontFamily: fontFamily.${fontVar?.[0]},
     fontSize: ${style.fontSize},
     fontWeight: ${style.fontWeight},
-    textTransform: ${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'},
+    textTransform: "${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}",
     lineHeight: ${(style.lineHeightPx / style.fontSize).toFixed(2)},
   }`,
     ];
