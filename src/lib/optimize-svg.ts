@@ -1,113 +1,50 @@
 import fs from 'fs';
-import SVGO from 'svgo';
+import { optimize, OptimizeOptions } from 'svgo';
 
-const svgo = new SVGO({
+const config: OptimizeOptions = {
   js2svg: { pretty: true },
   plugins: [
+    'cleanupAttrs',
+    'removeDoctype',
+    'removeXMLProcInst',
+    'removeComments',
+    'removeMetadata',
+    'removeTitle',
+    'removeDesc',
+    'removeUselessDefs',
+    'removeEditorsNSData',
+    'removeEmptyAttrs',
+    'removeHiddenElems',
+    'removeEmptyText',
+    'removeEmptyContainers',
+    { name: 'removeViewBox', active: false },
+    'cleanupEnableBackground',
+    'convertStyleToAttrs',
+    'convertColors',
+    'convertPathData',
+    'convertTransform',
+    'removeUnknownsAndDefaults',
+    'removeNonInheritableGroupAttrs',
+    'removeUselessStrokeAndFill',
+    'removeUnusedNS',
+    'cleanupIDs',
+    'cleanupNumericValues',
+    'moveElemsAttrsToGroup',
+    'moveGroupAttrsToElems',
+    'collapseGroups',
+    { name: 'removeRasterImages', active: false },
+    'mergePaths',
+    'convertShapeToPath',
+    'sortAttrs',
+    'removeDimensions',
     {
-      cleanupAttrs: true,
-    },
-    {
-      removeDoctype: true,
-    },
-    {
-      removeXMLProcInst: true,
-    },
-    {
-      removeComments: true,
-    },
-    {
-      removeMetadata: true,
-    },
-    {
-      removeTitle: true,
-    },
-    {
-      removeDesc: true,
-    },
-    {
-      removeUselessDefs: true,
-    },
-    {
-      removeEditorsNSData: true,
-    },
-    {
-      removeEmptyAttrs: true,
-    },
-    {
-      removeHiddenElems: true,
-    },
-    {
-      removeEmptyText: true,
-    },
-    {
-      removeEmptyContainers: true,
-    },
-    {
-      removeViewBox: false,
-    },
-    {
-      cleanupEnableBackground: true,
-    },
-    {
-      convertStyleToAttrs: true,
-    },
-    {
-      convertColors: true,
-    },
-    {
-      convertPathData: true,
-    },
-    {
-      convertTransform: true,
-    },
-    {
-      removeUnknownsAndDefaults: true,
-    },
-    {
-      removeNonInheritableGroupAttrs: true,
-    },
-    {
-      removeUselessStrokeAndFill: true,
-    },
-    {
-      removeUnusedNS: true,
-    },
-    {
-      cleanupIDs: true,
-    },
-    {
-      cleanupNumericValues: true,
-    },
-    {
-      moveElemsAttrsToGroup: true,
-    },
-    {
-      moveGroupAttrsToElems: true,
-    },
-    {
-      collapseGroups: true,
-    },
-    {
-      removeRasterImages: false,
-    },
-    {
-      mergePaths: true,
-    },
-    {
-      convertShapeToPath: true,
-    },
-    {
-      sortAttrs: true,
-    },
-    {
-      removeDimensions: true,
-    },
-    {
-      removeAttrs: { attrs: '(stroke|fill)' },
+      name: 'removeAttrs',
+      params: {
+        attrs: ['(stroke|fill)'],
+      },
     },
   ],
-});
+};
 
 export const optimizeSvg = async (file: string) => {
   return new Promise((resolve, reject) => {
@@ -115,9 +52,14 @@ export const optimizeSvg = async (file: string) => {
       if (err) {
         throw err;
       }
-      svgo.optimize(data, { path: file }).then(result => {
-        resolve(fs.writeFile(file, result.data, err => err && console.log('error', reject)));
-      });
+
+      resolve(
+        fs.writeFile(
+          file,
+          optimize(data, { path: file, ...config }).data,
+          err => err && console.log('error', reject),
+        ),
+      );
     });
   });
 };
