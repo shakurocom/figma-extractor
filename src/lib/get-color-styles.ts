@@ -63,7 +63,7 @@ export const getColorStyles = (
               (item as any).fills[0]?.opacity,
             ),
           },
-    {},
+    {} as Record<string, string>,
   );
 
   return colors;
