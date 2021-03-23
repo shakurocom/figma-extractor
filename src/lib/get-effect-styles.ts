@@ -29,7 +29,7 @@ export const getEffectStyles = (
         effects[0].offset.x
       }px ${effects[0].offset.y}px ${effects[0].radius}px ${rgba(effects[0].color)}`,
     }),
-    {},
+    {} as Record<string, string>,
   );
 
   return effectStyles;

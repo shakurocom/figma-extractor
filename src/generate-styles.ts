@@ -5,6 +5,7 @@ import { getColorStyles } from './lib/get-color-styles';
 import { getEffectStyles } from './lib/get-effect-styles';
 import { getGradientStyles } from './lib/get-gradient-styles';
 import { getTextStyles } from './lib/get-text-styles';
+import { stringifyRecordsWithSort } from './lib/stringify';
 import { writeStyleFile } from './lib/write-style-file';
 
 export const generateStyles = async (config: Config) => {
@@ -23,20 +24,20 @@ export const generateStyles = async (config: Config) => {
 
   if (!config?.styles?.colors?.disabled) {
     const colors = await getColorStyles(metaColors, fileNodes, config);
-    const colorTemplate = `module.exports = ${JSON.stringify(colors)} ;`;
+    const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)} ;`;
     writeStyleFile(colorTemplate, 'colors.js', config);
   }
 
   if (!config?.styles?.gradients?.disabled) {
-    const colors = await getGradientStyles(metaColors, fileNodes, config);
-    const colorTemplate = `module.exports = ${JSON.stringify(colors)} ;`;
-    writeStyleFile(colorTemplate, 'gradients.js', config);
+    const gradients = await getGradientStyles(metaColors, fileNodes, config);
+    const gradientsTemplate = `module.exports = ${stringifyRecordsWithSort(gradients)} ;`;
+    writeStyleFile(gradientsTemplate, 'gradients.js', config);
   }
 
   if (!config?.styles?.effects?.disabled) {
     const metaEffects = meta.styles.filter(item => item.style_type === 'EFFECT');
     const effects = await getEffectStyles(metaEffects, fileNodes, config);
-    const effectTemplate = `module.exports = {boxShadow: ${JSON.stringify(effects)}} ;`;
+    const effectTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}} ;`;
     writeStyleFile(effectTemplate, 'effects.js', config);
   }
 

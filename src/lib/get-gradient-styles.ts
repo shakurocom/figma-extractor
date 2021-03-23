@@ -64,7 +64,7 @@ export const getGradientStyles = (
             )})`,
           }
         : acc,
-    {},
+    {} as Record<string, string>,
   );
 
   return gradients;
