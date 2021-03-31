@@ -17,6 +17,50 @@ function getTextStyleName(name?: string) {
   return splitRightPart || '';
 }
 
+const sortStyles = (
+  textStyles: {
+    [x: string]: {
+      fontFamily: string;
+      fontSize: string;
+      fontWeight: string;
+      textTransform: string;
+      lineHeight: string;
+    };
+  }[],
+) => {
+  textStyles.sort(function (a, b) {
+    const aName = Object.keys(a)[0];
+    const bName = Object.keys(b)[0];
+    if (aName < bName) {
+      return -1;
+    }
+    if (aName > bName) {
+      return 1;
+    }
+    return 0;
+  });
+  return textStyles.map(
+    (currentStyle: {
+      [x: string]: {
+        fontFamily: string;
+        fontSize: string;
+        fontWeight: string;
+        textTransform: string;
+        lineHeight: string;
+      };
+    }) => {
+      const style = currentStyle[Object.keys(currentStyle)[0]];
+      return `'${Object.keys(currentStyle)[0]}': {
+      fontFamily: ${style.fontFamily},
+      fontSize: ${style.fontSize},
+      fontWeight: ${style.fontWeight},
+      textTransform: "${style.textTransform}",
+      lineHeight: ${style.lineHeight},
+    }`;
+    },
+  );
+};
+
 const getFontFamily = (textStyles: any) => {
   const uniqFamily: any[] = uniqueElementsBy(
     textStyles,
@@ -47,20 +91,18 @@ export const getTextStyles = (
 ) => {
   const textStylesNodes = metaTextStyles.map(item => fileNodes.nodes[item.node_id]?.document);
   const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(textStylesNodes);
-  const textStyles = textStylesNodes.reduce<string[]>((acc, { name, style }: any) => {
+  const textStyles = textStylesNodes.map(({ name, style }: any) => {
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
-
-    return [
-      ...acc,
-      `'${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}': {
-    fontFamily: fontFamily.${fontVar?.[0]},
-    fontSize: ${style.fontSize},
-    fontWeight: ${style.fontWeight},
-    textTransform: "${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}",
-    lineHeight: ${(style.lineHeightPx / style.fontSize).toFixed(2)},
-  }`,
-    ];
-  }, []);
-
-  return { fontFamily: formattedFontFamilyWithAdditionalFonts, textStyles };
+    return {
+      [`${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}`]: {
+        fontFamily: `fontFamily.${fontVar?.[0]}`,
+        fontSize: `${style.fontSize}`,
+        fontWeight: `${style.fontWeight}`,
+        textTransform: `${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}`,
+        lineHeight: `${(style.lineHeightPx / style.fontSize).toFixed(2)}`,
+      },
+    };
+  });
+  const sortedTextStyles = sortStyles(textStyles);
+  return { fontFamily: formattedFontFamilyWithAdditionalFonts, textStyles: sortedTextStyles };
 };
