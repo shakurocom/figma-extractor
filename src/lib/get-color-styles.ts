@@ -1,11 +1,10 @@
 import { Color, FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
+import { RGB_HEX_REGEX } from './color/constants';
 import { RGBToHex } from './color/rgb-to-hex/rgb-to-hex';
 
-const RGB_HEX = /^#?(?:([\da-f]{3})[\da-f]?|([\da-f]{6})(?:[\da-f]{2})?)$/i;
-
 const hex2RGB = (str: string) => {
-  const [, short, long] = String(str).match(RGB_HEX) || [];
+  const [, short, long] = String(str).match(RGB_HEX_REGEX) || [];
 
   if (long) {
     const value = Number.parseInt(long, 16);
