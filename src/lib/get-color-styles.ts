@@ -1,14 +1,7 @@
 import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
 import { formattedColor } from './color/formatted-color/formatted-color';
-
-function getColorName(name?: string) {
-  // format name from like "primary / blue900" to "blue900"
-
-  const splitName = name?.split(' / ');
-
-  return splitName ? splitName[splitName.length - 1].toLowerCase() : '';
-}
+import { getColorName } from './color/get-color-name/get-color-name';
 
 export const getColorStyles = (
   metaColors: FullStyleMetadata[],
