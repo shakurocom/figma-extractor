@@ -1,18 +1,6 @@
-import { Color, FileNodesResponse, FullStyleMetadata } from 'figma-js';
+import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
-import { hex2RGB } from './color/hex-2-rgb/hex-2-rgb';
-import { RGBToHex } from './color/rgb-to-hex/rgb-to-hex';
-
-function formattedColor(color: Color, opacity: number) {
-  const hex = RGBToHex(color);
-
-  if (opacity) {
-    const rgb = hex2RGB(hex);
-
-    return `rgba(${rgb?.join(', ')}, ${opacity.toFixed(2)})`;
-  }
-  return `#${hex}`;
-}
+import { formattedColor } from './color/formatted-color/formatted-color';
 
 function getColorName(name?: string) {
   // format name from like "primary / blue900" to "blue900"
