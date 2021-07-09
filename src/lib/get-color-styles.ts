@@ -1,16 +1,6 @@
 import { Color, FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
-function RGBToHex(color: Color) {
-  let r = Math.floor(color.r * 255).toString(16);
-  let g = Math.floor(color.g * 255).toString(16);
-  let b = Math.floor(color.b * 255).toString(16);
-
-  if (r.length === 1) r = '0' + r;
-  if (g.length === 1) g = '0' + g;
-  if (b.length === 1) b = '0' + b;
-
-  return r + g + b;
-}
+import { RGBToHex } from './color/rgb-to-hex/rgb-to-hex';
 
 const RGB_HEX = /^#?(?:([\da-f]{3})[\da-f]?|([\da-f]{6})(?:[\da-f]{2})?)$/i;
 
