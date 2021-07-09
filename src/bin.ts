@@ -4,8 +4,9 @@
 const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
+import { getClient } from './lib/client';
+import { generateStyles } from './utils/generate-styles/generate-styles';
 import { generateIcons } from './generate-icons';
-import { generateStyles } from './generate-styles';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -25,7 +26,7 @@ const getOnlyArgs = (onlyArg: string) => {
 
 const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] as OnlyArgs[];
 
-function run(config: Config) {
+async function run(config: Config) {
   const rootPath = process.cwd();
   console.log('Please wait...');
   config = {
@@ -65,7 +66,12 @@ function run(config: Config) {
     });
   }
 
-  generateStyles(config);
+  const client = getClient(config.apiKey);
+  const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+  const nodeIds = meta.styles.map(item => item.node_id);
+  const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
+
+  generateStyles(config, meta.styles, fileNodes);
 
   if (!config.icons?.disabled) {
     generateIcons(config).catch(err => {
