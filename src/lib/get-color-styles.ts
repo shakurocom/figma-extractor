@@ -1,18 +1,7 @@
 import { Color, FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
-import { RGB_HEX_REGEX } from './color/constants';
+import { hex2RGB } from './color/hex-2-rgb/hex-2-rgb';
 import { RGBToHex } from './color/rgb-to-hex/rgb-to-hex';
-
-const hex2RGB = (str: string) => {
-  const [, short, long] = String(str).match(RGB_HEX_REGEX) || [];
-
-  if (long) {
-    const value = Number.parseInt(long, 16);
-    return [value >> 16, (value >> 8) & 0xff, value & 0xff];
-  } else if (short) {
-    return Array.from(short, s => Number.parseInt(s, 16)).map(n => (n << 4) | n);
-  }
-};
 
 function formattedColor(color: Color, opacity: number) {
   const hex = RGBToHex(color);
