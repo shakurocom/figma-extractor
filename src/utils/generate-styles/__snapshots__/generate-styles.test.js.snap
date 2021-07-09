@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generateStyles creates file with colors according to provided config 1`] = `
+Object {
+  "/ui/theme/colors.js": "module.exports = {\\"text/txt900\\":\\"#2a3fff\\"} ;",
+}
+`;
+
+exports[`generateStyles creates file with effects according to provided config 1`] = `
+Object {
+  "/ui/theme/effects.js": "module.exports = {boxShadow: {\\"shadow200\\":\\"0px 18px 88px rgba(24, 39, 75, 0.14)\\"}} ;",
+}
+`;
+
+exports[`generateStyles creates file with text styles according to provided config 1`] = `
+Object {
+  "/ui/theme/text-styles.js": "
+      const fontFamily = {\\"font1\\":\\"'Hind Vadodara', Arial, sans-serif\\"};
+      const textVariants = {'heading/bs-h500': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: \\"initial\\",
+      lineHeight: 1.12,
+    }};;
+      module.exports = {fontFamily, textVariants}",
+}
+`;
