@@ -2,13 +2,21 @@ import fs from 'fs';
 import path from 'path';
 import shell from 'shelljs';
 
+// NOTE: temporarily changed writeFile to writeFileSync to make testing easier:
+// it is unclear how to test callback version without introducing promises.
+// But even with promises, the logic seems to "just write" contents without returning the promise itself,
+// which is confusing a bit, because it is impossible to handle promise fulfillment.
 export const writeStyleFile = (template: string, fileName: string, config: Config) => {
-  fs.writeFile(path.join(config?.styles?.exportPath || '', fileName), template, err => {
-    if (err) console.log(err);
+  try {
+    fs.writeFileSync(path.join(config?.styles?.exportPath || '', fileName), template);
+  } catch {
     console.log(`Formatting ${fileName} file...`);
-    shell.exec(
-      `yarn eslint ${path.join(path.join(config?.styles?.exportPath || '', fileName))} --fix`,
-    );
-    console.log(`Generate ${fileName} is completed`);
-  });
+  }
+
+  // NOTE: this code should still be invoked according to the original implementation.
+  shell.exec(
+    `yarn eslint ${path.join(path.join(config?.styles?.exportPath || '', fileName))} --fix`,
+  );
+
+  console.log(`Generate ${fileName} is completed`);
 };
