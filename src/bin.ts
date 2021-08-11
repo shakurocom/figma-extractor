@@ -5,6 +5,7 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
+import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
 import { generateStyles } from './utils/generate-styles/generate-styles';
 import { generateIcons } from './generate-icons';
 
@@ -13,6 +14,10 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
   .example('$0 --only=icons,colors', 'Extract only icons and colors')
   .alias('o', 'only')
   .describe('o', 'Extract only')
+  .describe(
+    'local-icons',
+    'Bypass downloading icons from Figma, generate sprite from local svg files instead',
+  )
   .help('h')
   .alias('h', 'help').argv;
 
@@ -38,6 +43,7 @@ async function run(config: Config) {
     icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
   };
   const onlyArgs = getOnlyArgs(argv.only);
+  const localIcons = argv.localIcons;
 
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
@@ -74,10 +80,18 @@ async function run(config: Config) {
   generateStyles(config, meta.styles, fileNodes);
 
   if (!config.icons?.disabled) {
-    generateIcons(config).catch(err => {
-      console.error(err);
-      console.error(err.stack);
-    });
+    if (localIcons) {
+      try {
+        generateIconSpriteFromLocalFiles(config);
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      generateIcons(config).catch(err => {
+        console.error(err);
+        console.error(err.stack);
+      });
+    }
   }
 }
 
