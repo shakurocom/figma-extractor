@@ -12,7 +12,7 @@ Package for extract style system and svg icons from figma.
 
 ## Cli API
 
-- `figma-extract` - extract all from figma.
+- `figma-extract` - extract all from Figma. Each file type is downloaded to a local dir specified in config. **Note:** If there are files in the *icons* dir already they won't be removed (files with the same name will be overwritten though). Hence, the contents of the dir need to be removed manually in case there are outdated icons that are not present in Figma.
 - `figma-extract --only=colors, icons` - extract only colors and icons. The available options `colors, icons, textStyles, effects, gradients`.
 - `figma-extract --local-icons` - bypass downloading icons from Figma, generate sprite from local svg files instead. Simply add files to the directory where icons from Figma are usually downloaded, the sprite would be generated from them.
 
@@ -37,8 +37,8 @@ Example `figma-extractor.config.js`
     };
 
     module.exports = {
-      apiKey: 'xxxxxx', // your figma api access key
-      fileId: 'xxxxxx', // figma file id
+      apiKey: 'xxxxxx', // your Figma api access key
+      fileId: 'xxxxxx', // Figma file id
       styles: {
         exportPath: './ui/theme',
         colors: {
