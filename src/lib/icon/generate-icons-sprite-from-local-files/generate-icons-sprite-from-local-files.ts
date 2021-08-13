@@ -1,7 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
+import { generateIconTypes } from '../../generate-icon-types';
 import { generateIconsSprite } from '../../generate-icons-sprite';
+
+const getIconNameByFilename = (filename: string): string => filename.split('.')[0];
 
 export const generateIconSpriteFromLocalFiles = (config: Config): void => {
   const pathIconsFolder = path.join(config?.icons?.exportPath ?? '', 'svg');
@@ -11,6 +14,17 @@ export const generateIconSpriteFromLocalFiles = (config: Config): void => {
   }
 
   const pathSpriteFolder = path.join(config?.icons?.exportPath ?? '');
+
+  if (config?.icons?.generateTypes) {
+    const dirEntries = fs.readdirSync(pathIconsFolder, { withFileTypes: true });
+
+    const iconNames = dirEntries
+      .filter(dirEntry => dirEntry.isFile())
+      .map(file => file.name)
+      .map(getIconNameByFilename);
+
+    generateIconTypes(iconNames, pathSpriteFolder);
+  }
 
   generateIconsSprite(pathSpriteFolder);
 };
