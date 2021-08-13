@@ -61,6 +61,7 @@ Example `figma-extractor.config.js`
         exportPath: './ui/atoms/icon',
         generateSprite: true,
         generateTypes: true,
+        localIcons: false,
       },
     };
 
