@@ -14,10 +14,11 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
   .example('$0 --only=icons,colors', 'Extract only icons and colors')
   .alias('o', 'only')
   .describe('o', 'Extract only')
-  .describe(
-    'local-icons',
-    'Bypass downloading icons from Figma, generate sprite from local svg files instead',
-  )
+  .option('local-icons', {
+    description:
+      'Bypass downloading icons from Figma, generate sprite from local svg files instead',
+    type: 'boolean',
+  })
   .help('h')
   .alias('h', 'help').argv;
 
@@ -33,17 +34,23 @@ const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] a
 
 async function run(config: Config) {
   const rootPath = process.cwd();
+
   console.log('Please wait...');
+
   config = {
     ...config,
     styles: {
       ...config.styles,
       exportPath: path.join(rootPath, config?.styles?.exportPath || ''),
     },
-    icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
+    icons: {
+      ...config?.icons,
+      exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
+      localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
+    },
   };
+
   const onlyArgs = getOnlyArgs(argv.only);
-  const localIcons = argv.localIcons;
 
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
@@ -80,7 +87,7 @@ async function run(config: Config) {
   generateStyles(config, meta.styles, fileNodes);
 
   if (!config.icons?.disabled) {
-    if (localIcons) {
+    if (config.icons.localIcons) {
       try {
         generateIconSpriteFromLocalFiles(config);
       } catch (err) {
