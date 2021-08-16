@@ -27,6 +27,7 @@ type Config = {
     exportPath: string;
     generateSprite: boolean;
     generateTypes: boolean;
+    localIcons?: boolean;
   };
 };
 

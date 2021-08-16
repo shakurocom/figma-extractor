@@ -5,6 +5,7 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
+import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
 import { generateStyles } from './utils/generate-styles/generate-styles';
 import { generateIcons } from './generate-icons';
 
@@ -13,6 +14,11 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
   .example('$0 --only=icons,colors', 'Extract only icons and colors')
   .alias('o', 'only')
   .describe('o', 'Extract only')
+  .option('local-icons', {
+    description:
+      'Bypass downloading icons from Figma, generate sprite from local svg files instead',
+    type: 'boolean',
+  })
   .help('h')
   .alias('h', 'help').argv;
 
@@ -28,15 +34,22 @@ const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] a
 
 async function run(config: Config) {
   const rootPath = process.cwd();
+
   console.log('Please wait...');
+
   config = {
     ...config,
     styles: {
       ...config.styles,
       exportPath: path.join(rootPath, config?.styles?.exportPath || ''),
     },
-    icons: { ...config?.icons, exportPath: path.join(rootPath, config?.icons?.exportPath || '') },
+    icons: {
+      ...config?.icons,
+      exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
+      localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
+    },
   };
+
   const onlyArgs = getOnlyArgs(argv.only);
 
   if (onlyArgs) {
@@ -74,10 +87,18 @@ async function run(config: Config) {
   generateStyles(config, meta.styles, fileNodes);
 
   if (!config.icons?.disabled) {
-    generateIcons(config).catch(err => {
-      console.error(err);
-      console.error(err.stack);
-    });
+    if (config.icons.localIcons) {
+      try {
+        generateIconSpriteFromLocalFiles(config);
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      generateIcons(config).catch(err => {
+        console.error(err);
+        console.error(err.stack);
+      });
+    }
   }
 }
 

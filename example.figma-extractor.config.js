@@ -39,5 +39,6 @@ module.exports = {
     exportPath: './ui/atoms/icon',
     generateSprite: true,
     generateTypes: true,
+    localIcons: false,
   },
 };
