@@ -2,13 +2,17 @@
 
 exports[`generateStyles creates file with colors according to provided config 1`] = `
 Object {
-  "/ui/theme/colors.js": "/* eslint-disable @typescript-eslint/naming-convention */ module.exports = {\\"text/txt900\\":\\"#2a3fff\\"} ;",
+  "/ui/theme/colors.js": "
+      /* eslint-disable @typescript-eslint/naming-convention */
+      module.exports = {\\"text/txt900\\":\\"#2a3fff\\"};",
 }
 `;
 
 exports[`generateStyles creates file with effects according to provided config 1`] = `
 Object {
-  "/ui/theme/effects.js": "/* eslint-disable @typescript-eslint/naming-convention */ module.exports = {boxShadow: {\\"shadow200\\":\\"0px 18px 88px rgba(24, 39, 75, 0.14)\\"}} ;",
+  "/ui/theme/effects.js": "
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {\\"shadow200\\":\\"0px 18px 88px rgba(24, 39, 75, 0.14)\\"}};",
 }
 `;
 
