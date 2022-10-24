@@ -8,11 +8,11 @@ export const getColorStyles = (
   fileNodes: FileNodesResponse,
   config: Config,
 ) => {
-  const getColorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
+  const colorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
 
-  const colors = getColorNodes.reduce(
+  return colorNodes.reduce(
     (acc, item) =>
-      (item as any).fills?.[0]?.type === 'GRADIENT_LINEAR'
+      (item as any).fills?.[0]?.type?.includes('GRADIENT')
         ? acc
         : {
             ...acc,
@@ -24,6 +24,4 @@ export const getColorStyles = (
           },
     {} as Record<string, string>,
   );
-
-  return colors;
 };

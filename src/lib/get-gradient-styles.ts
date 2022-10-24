@@ -8,23 +8,37 @@ export const getGradientStyles = (
   fileNodes: FileNodesResponse,
   config: Config,
 ) => {
-  const getColorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
+  const colorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
 
-  const gradients = getColorNodes.reduce(
-    (acc, item) =>
-      (item as any).fills?.[0]?.type === 'GRADIENT_LINEAR'
-        ? {
-            ...acc,
-            [config?.styles?.colors?.keyName?.(item?.name as string) ??
-            getColorName(
-              item?.name,
-            )]: `linear-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
-              formattedColor(gradient?.color, gradient?.color?.a),
-            )})`,
-          }
-        : acc,
-    {} as Record<string, string>,
-  );
+  return colorNodes.reduce((acc, item) => {
+    const type = (item as any).fills?.[0]?.type;
 
-  return gradients;
+    if (!type?.includes('GRADIENT')) {
+      return acc;
+    }
+
+    const key: string =
+      config?.styles?.colors?.keyName?.(item?.name as string) ?? getColorName(item?.name);
+
+    if (type === 'GRADIENT_LINEAR') {
+      return {
+        ...acc,
+        [key]: `linear-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
+          formattedColor(gradient?.color, gradient?.color?.a),
+        )})`,
+      };
+    }
+
+    if (type === 'GRADIENT_RADIAL') {
+      return {
+        ...acc,
+        [key]: `radial-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
+          formattedColor(gradient?.color, gradient?.color?.a),
+        )})`,
+      };
+    }
+
+    // TODO: handle other gradient types
+    return acc;
+  }, {} as Record<string, string>);
 };

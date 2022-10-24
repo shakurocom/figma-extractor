@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export const styleMetadata = {
   styles: [
+    // Color
     {
       key: 'dab9873f64be7dc571a084552a75d80e633fc5a3',
       file_key: '7NnFCu4jFGBM1EIXSWNAVX',
@@ -18,6 +19,25 @@ export const styleMetadata = {
         img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
       },
       sort_position: '!`S',
+    },
+    // Gradient
+    {
+      key: '7a36308c0837fe55d88a0181a47af2b60f1db4c3',
+      file_key: '7NnFCu4jFGBM1EIXSWNAVX',
+      node_id: '4746:41007',
+      style_type: 'FILL',
+      thumbnail_url:
+        'https://s3-alpha-sig.figma.com/checkpoints/LDl/TqN/kGWIB6N885hBdCQ0/style_thumbnail_8.png?Expires=1667779200&Signature=T-~BBgz4PjODMOwO31tTlUwVZyXa4F3eGwlCpdwAcjYacwfL0ib~FRqoobO5uNupcRz~UTkaPldJ9sSIo91qf8Q-YuO8riUD8c-T9MNlngz~i7pt7-XAPcf-gPnJKm2NorNUUVtTkFQSi0ngiEth2ClLkrREkEtJnRG28xBBlC3ossaYiQZASnkBMzL9KOiOkt16xtA9hQp8BTRBVbUhXTjEO8oiuRsn3bkRj2uU3GAQjnDqCA1HcgiGOg19d1s-~Ty4nG-g54-4sBa1pU~TaRq-6E657WeVXMIMuHeFQg979VuEpSfOKF5sl6hYUOkc1KR7rrTV0WONIMHnh5eYeA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+      name: 'gradients/label',
+      description: '',
+      created_at: '2022-09-20T13:20:28.832Z',
+      updated_at: '2022-10-21T13:02:17.733Z',
+      user: {
+        id: '632504623203517970',
+        handle: 'Rodion',
+        img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
+      },
+      sort_position: '!`r',
     },
     {
       key: 'f9dacac35586a2bdcc61e371e8ccdd680dcf2f38',

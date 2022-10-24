@@ -33,26 +33,20 @@ export const generateStyles = (
 
   if (!config?.styles?.colors?.disabled) {
     const colors = getColorStyles(metaColors, fileNodes, config);
-    const colorTemplate = `
-      /* eslint-disable @typescript-eslint/naming-convention */
-      module.exports = ${stringifyRecordsWithSort(colors)};`;
+    const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
     writeStyleFile(colorTemplate, 'colors.js', config);
   }
 
   if (!config?.styles?.gradients?.disabled) {
     const gradients = getGradientStyles(metaColors, fileNodes, config);
-    const gradientsTemplate = `
-    /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = ${stringifyRecordsWithSort(gradients)};`;
+    const gradientsTemplate = `module.exports = ${stringifyRecordsWithSort(gradients)};`;
     writeStyleFile(gradientsTemplate, 'gradients.js', config);
   }
 
   if (!config?.styles?.effects?.disabled) {
     const metaEffects = styleMetadata.filter(isStyleTypeEffect);
     const effects = getEffectStyles(metaEffects, fileNodes, config);
-    const effectTemplate = `
-    /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}};`;
+    const effectTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}};`;
     writeStyleFile(effectTemplate, 'effects.js', config);
   }
 
@@ -63,9 +57,8 @@ export const generateStyles = (
     const textStylesTemplate = `{${textStyles.join()}};`;
     writeStyleFile(
       `
-      /* eslint-disable @typescript-eslint/naming-convention */
       const fontFamily = ${fontFamilyTemplate};
-      
+
       const textVariants = ${textStylesTemplate};
 
       module.exports = {fontFamily, textVariants}`,
