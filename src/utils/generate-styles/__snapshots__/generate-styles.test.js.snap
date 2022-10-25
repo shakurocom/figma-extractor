@@ -3,25 +3,41 @@
 exports[`generateStyles creates file with colors according to provided config 1`] = `
 Object {
   "/ui/theme/colors.js": "
+      /* eslint-disable max-lines */
       /* eslint-disable @typescript-eslint/naming-convention */
-      module.exports = {\\"text/txt900\\":\\"#2a3fff\\"};",
+      module.exports = {\\"text/txt900\\":\\"#2a3fff\\"};
+      ",
 }
 `;
 
 exports[`generateStyles creates file with effects according to provided config 1`] = `
 Object {
   "/ui/theme/effects.js": "
-    /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {\\"shadow200\\":\\"0px 18px 88px rgba(24, 39, 75, 0.14)\\"}};",
+      /* eslint-disable max-lines */
+      /* eslint-disable @typescript-eslint/naming-convention */
+      module.exports = {boxShadow: {\\"shadow200\\":\\"0px 18px 88px rgba(24, 39, 75, 0.14)\\"}};
+      ",
+}
+`;
+
+exports[`generateStyles creates file with gradient styles according to provided config 1`] = `
+Object {
+  "/ui/theme/gradients.js": "
+      /* eslint-disable max-lines */
+      /* eslint-disable @typescript-eslint/naming-convention */
+      module.exports = {\\"gradients/label\\":\\"radial-gradient(rgba(4, 206, 215, 1.00),rgba(100, 106, 230, 1.00),rgba(233, 72, 130, 1.00),rgba(255, 239, 101, 1.00))\\"};
+      ",
 }
 `;
 
 exports[`generateStyles creates file with text styles according to provided config 1`] = `
 Object {
   "/ui/theme/text-styles.js": "
+      /* eslint-disable max-lines */
       /* eslint-disable @typescript-eslint/naming-convention */
-      const fontFamily = {\\"font1\\":\\"'Hind Vadodara', Arial, sans-serif\\"};
       
+      const fontFamily = {\\"font1\\":\\"'Hind Vadodara', Arial, sans-serif\\"};
+
       const textVariants = {'heading/bs-h500': {
       fontFamily: fontFamily.font1,
       fontSize: 32,
@@ -30,6 +46,7 @@ Object {
       lineHeight: 1.12,
     }};;
 
-      module.exports = {fontFamily, textVariants}",
+      module.exports = {fontFamily, textVariants}
+      ",
 }
 `;

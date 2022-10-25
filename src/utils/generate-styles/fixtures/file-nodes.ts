@@ -115,5 +115,95 @@ export const fileNodes = {
       schemaVersion: 0,
       styles: {},
     },
+    '4746:41007': {
+      document: {
+        id: '4746:41007',
+        name: 'gradients/label',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: {
+          x: 0,
+          y: 0,
+          width: 100,
+          height: 100,
+        },
+        absoluteRenderBounds: {
+          x: 0,
+          y: 0,
+          width: 100,
+          height: 100,
+        },
+        constraints: {
+          vertical: 'TOP',
+          horizontal: 'LEFT',
+        },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'GRADIENT_RADIAL',
+            gradientHandlePositions: [
+              {
+                x: 5.551115123125783e-17,
+                y: 0,
+              },
+              {
+                x: 1.0000000745058115,
+                y: 1.0000000745058113,
+              },
+              {
+                x: -0.5315058669190613,
+                y: 2.6890689974291426,
+              },
+            ],
+            gradientStops: [
+              {
+                color: {
+                  r: 0.01568627543747425,
+                  g: 0.8078431487083435,
+                  b: 0.843137264251709,
+                  a: 1,
+                },
+                position: 0.0729166641831398,
+              },
+              {
+                color: {
+                  r: 0.3955729007720947,
+                  g: 0.4194132387638092,
+                  b: 0.9041666388511658,
+                  a: 1,
+                },
+                position: 0.375,
+              },
+              {
+                color: {
+                  r: 0.9166666865348816,
+                  g: 0.28263890743255615,
+                  b: 0.513576090335846,
+                  a: 1,
+                },
+                position: 0.6510416865348816,
+              },
+              {
+                color: {
+                  r: 1,
+                  g: 0.940000057220459,
+                  b: 0.3999999761581421,
+                  a: 1,
+                },
+                position: 1,
+              },
+            ],
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      componentSets: {},
+      schemaVersion: 0,
+      styles: {},
+    },
   },
 };
