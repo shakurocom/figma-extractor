@@ -37,7 +37,23 @@ export const sortTextStyles = (
       fontWeight: ${style.fontWeight},
       textTransform: "${style.textTransform}",
       lineHeight: ${style.lineHeight},
+      ${renderMedia(style)}
     }`;
     },
   );
 };
+
+function renderMedia(style: Record<string, any>) {
+  return Object.keys(style)
+    .filter(key => key.startsWith('@media'))
+    .map(key => {
+      return `'${key}': {
+      fontFamily: ${style[key].fontFamily},
+      fontSize: ${style[key].fontSize},
+      fontWeight: ${style[key].fontWeight},
+      textTransform: "${style[key].textTransform}",
+      lineHeight: ${style[key].lineHeight},
+    }`;
+    })
+    .join(',');
+}
