@@ -71,6 +71,49 @@ const findMediaTypeFromClassName = (className: string, screens: Screens[]) => {
   return null;
 };
 
+/**
+ * The function merges text styles with different screen sizes to a single style
+ *
+ * Detail:
+ * If your design system has styles like that:
+ * - heading/h500 - bs
+ * - heading/h500 - sm
+ * - heading/h500 - md
+ * - heading/h500 - lg
+ * Where the suffixes bd,sm,md and lg are screen sizes
+ * This function helps merge such styles to a single style
+ * As result, after transformation:
+ *    heading/h500 - bs, heading/h500 - sm, heading/h500 - md, heading/h500 - lg
+ * we would get such a format:
+ *  heading/h500: {
+ *    fontSize: ...,
+ *    fontWeight: ...,
+ *    ...,
+ *    '@media (min-width: 600): {
+ *      fontSize: ...,
+ *      ...,
+ *    },
+ *    '@media (min-width: 900): {
+ *      ...,
+ *    },
+ *    '@media (min-width: 1200): {
+ *      ...,
+ *    },
+ *  }
+ *
+ *  Before launching, you need to have correctly a list of screen sizes, like that:
+ *  screen: {
+ *   bs: 0,
+ *   sm: 600,
+ *   md: 900,
+ *   lg: 1200
+ *  }
+ *
+ *  where `bs` is the base style
+ *
+ * @param screens - list of available screens
+ * @param textStyles
+ */
 export const mergeTextStyle = ({
   screens,
   textStyles,

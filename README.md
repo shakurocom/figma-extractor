@@ -52,6 +52,7 @@ Example `figma-extractor.config.js`
         },
         textStyles: {
           keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+          merge: true // or false - it allows to merge text styles for different screen sizes to a signle style
         },
       },
       icons: {
