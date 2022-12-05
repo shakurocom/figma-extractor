@@ -11,5 +11,6 @@ export function formattedColor(color: Color, opacity?: number) {
 
     return `rgba(${rgb?.join(', ')}, ${opacity.toFixed(2)})`;
   }
+
   return `#${hex}`;
 }

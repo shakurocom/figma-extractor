@@ -16,11 +16,8 @@ export const getColorStyles = (
         ? acc
         : {
             ...acc,
-            [config?.styles?.colors?.keyName?.(item?.name as string) ??
-            getColorName(item?.name)]: formattedColor(
-              (item as any).fills?.[0]?.color,
-              (item as any).fills[0]?.opacity,
-            ),
+            [config?.styles?.colors?.keyName?.(item?.name as string) ?? getColorName(item?.name)]:
+              formattedColor((item as any).fills?.[0]?.color, (item as any).fills[0]?.opacity),
           },
     {} as Record<string, string>,
   );

@@ -27,6 +27,7 @@ const getOnlyArgs = (onlyArg: string) => {
 
   const arrayArgs = onlyArg?.split(',');
   const onlyArgs: OnlyArgs[] = arrayArgs.map((item: any) => item.trim() as OnlyArgs);
+
   return onlyArgs;
 };
 
@@ -72,6 +73,7 @@ async function run(config: Config) {
                 },
               },
             };
+
       config = {
         ...config,
         ...prop,
@@ -132,7 +134,9 @@ const explorer = cosmiconfig(moduleName, {
   packageProp: moduleName,
   searchPlaces: generateSearchPlaces(moduleName),
   loaders: {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     '.json': customLoader('json'),
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     '.js': customLoader('js'),
   },
 });

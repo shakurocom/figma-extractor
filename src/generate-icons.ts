@@ -9,6 +9,7 @@ import { optimizeSvg } from './lib/optimize-svg';
 
 const naming = (originalName: string) => {
   const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+
   return formattedName;
 };
 
@@ -29,9 +30,11 @@ export const generateIcons = async (config: Config) => {
         method: 'GET',
         responseType: 'stream',
         headers: {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           'X-Figma-Token': config.apiKey,
         },
       });
+
       await response.data.pipe(writer);
       await writer.on('finish', async () => {
         await optimizeSvg(filename);
@@ -56,14 +59,18 @@ export const generateIcons = async (config: Config) => {
         };
       },
     );
+
     const imageIds = imagesData.map((item: any) => item.id);
     const {
       data: { images },
     } = await client.fileImages(config.fileId, { ids: imageIds, format: 'svg' });
+
     const result = await imagesData.map(async item => {
       return await download(`${images[item.id]}`, `${pathIconsFolder}/${item.name}.svg`);
     });
+
     await Promise.all(result);
+
     return new Promise(res => res(result));
   });
 

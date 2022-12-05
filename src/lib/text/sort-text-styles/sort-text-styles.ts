@@ -18,8 +18,10 @@ export const sortTextStyles = (
     if (aName > bName) {
       return 1;
     }
+
     return 0;
   });
+
   return textStyles.map(
     (currentStyle: {
       [x: string]: {
@@ -31,6 +33,7 @@ export const sortTextStyles = (
       };
     }) => {
       const style = currentStyle[Object.keys(currentStyle)[0]];
+
       return `'${Object.keys(currentStyle)[0]}': {
       fontFamily: ${style.fontFamily},
       fontSize: ${style.fontSize},

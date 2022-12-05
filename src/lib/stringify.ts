@@ -3,6 +3,7 @@ export const stringifyRecordsWithSort = (obj: Record<string, any>) => {
     .sort()
     .reduce((acc, key) => {
       acc[key] = obj[key];
+
       return acc;
     }, {} as Record<string, any>);
 

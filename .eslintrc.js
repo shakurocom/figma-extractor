@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@shakuroinc/eslint-config-react'],
+  extends: ['@shakuroinc/eslint-config-base'],
 };

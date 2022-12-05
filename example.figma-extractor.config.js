@@ -12,6 +12,7 @@ function getTextStyleName(name) {
 
 const iconNaming = originalName => {
   const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+
   return formattedName;
 };
 

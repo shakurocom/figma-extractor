@@ -5,6 +5,7 @@ export const getFontFamily = (textStyles: any) => {
     textStyles,
     (a, b) => a.style.fontFamily == b.style.fontFamily,
   );
+
   const formattedFontFamilyWithAdditionalFonts = uniqFamily.reduce(
     (acc, item, i) => ({
       ...acc,
@@ -20,5 +21,6 @@ export const getFontFamily = (textStyles: any) => {
     }),
     {},
   );
+
   return { formattedFontFamilyWithAdditionalFonts, fontFamily: formattedFontFamily };
 };

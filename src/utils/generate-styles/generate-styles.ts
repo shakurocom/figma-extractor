@@ -68,6 +68,7 @@ export const generateStyles = (
         return textStyles;
       },
     });
+
     const fontFamilyTemplate = JSON.stringify(fontFamily);
     const textStylesTemplate = `{${textStyles.join()}};`;
     writeStyleFile(

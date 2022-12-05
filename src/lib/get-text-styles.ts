@@ -27,6 +27,7 @@ export const getTextStyles = (
 
   let textStyles = textStylesNodes.map(({ name, style }: any) => {
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
+
     return {
       [`${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}`]: {
         fontFamily: `fontFamily.${fontVar?.[0]}`,

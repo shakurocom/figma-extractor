@@ -32,6 +32,7 @@ class MediaCollection {
             };
           }
           const mediaKey = '@media (min-width: ' + this.screens[current.media] + ')';
+
           return {
             ...collection,
             [mediaKey]: current.data,
@@ -52,6 +53,7 @@ class MediaCollection {
     if (sizeA === sizeB) {
       return 0;
     }
+
     return sizeA > sizeB ? 1 : -1;
   }
 }
