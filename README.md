@@ -12,59 +12,61 @@ Package for extract style system and svg icons from figma.
 
 ## Cli API
 
-- `figma-extract` - extract all from Figma. Each file type is downloaded to a local dir specified in config. **Note:** If there are files in the *icons* dir already they won't be removed (files with the same name will be overwritten though). Hence, the contents of the dir need to be removed manually in case there are outdated icons that are not present in Figma.
+- `figma-extract` - extract all from Figma. Each file type is downloaded to a local dir specified in config. **Note:** If there are files in the _icons_ dir already they won't be removed (files with the same name will be overwritten though). Hence, the contents of the dir need to be removed manually in case there are outdated icons that are not present in Figma.
 - `figma-extract --only=colors, icons` - extract only colors and icons. The available options `colors, icons, textStyles, effects, gradients`.
 - `figma-extract --local-icons` - bypass downloading icons from Figma, generate sprite from local svg files instead. Simply add files to the directory where icons from Figma are usually downloaded, the sprite would be generated from them.
 
 ## Config
 
-Example `figma-extractor.config.js`
+```js
+// figma-extractor.config.js
 
-    function getTextStyleName(name) {
-      // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
+function getTextStyleName(name) {
+  // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
 
-      const splitLeftPart = name?.split(' / ');
-      const splitRightPart = splitLeftPart?.[splitLeftPart?.length - 1]
-        .split(' ')[0]
-        ?.replace('.', '-');
+  const splitLeftPart = name?.split(' / ');
+  const splitRightPart = splitLeftPart?.[splitLeftPart?.length - 1]
+    .split(' ')[0]
+    ?.replace('.', '-');
 
-      return splitRightPart || '';
-    }
+  return splitRightPart || '';
+}
 
-    const iconNaming = originalName => {
-      const formattedName = originalName.replace(/ /g, '').replace('/', '-');
-      return formattedName;
-    };
+const iconNaming = originalName => {
+  const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+  return formattedName;
+};
 
-    module.exports = {
-      apiKey: 'xxxxxx', // your Figma api access key
-      fileId: 'xxxxxx', // Figma file id
-      styles: {
-        exportPath: './ui/theme',
-        colors: {
-          // keyName: nameFromFigma => nameFromFigma`, // custom key name
-        },
-        effects: {
-          // keyName: nameFromFigma => nameFromFigma`, // custom key name
-        },
-        gradients: {
-          // keyName: nameFromFigma => nameFromFigma`, // custom key name
-        },
-        textStyles: {
-          keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
-          merge: true // or false - it allows to merge text styles for different screen sizes to a signle style
-        },
-      },
-      icons: {
-        // disabled: true,
-        nodeIds: ['2310:0', '2090:11', '276:18'],
-        iconName: name => iconNaming(name), // custom format icon name
-        exportPath: './ui/atoms/icon',
-        generateSprite: true,
-        generateTypes: true,
-        localIcons: false,
-      },
-    };
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  styles: {
+    exportPath: './ui/theme',
+    colors: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    effects: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    gradients: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    textStyles: {
+      keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+      merge: true, // or false - it allows to merge text styles for different screen sizes to a signle style
+    },
+  },
+  icons: {
+    // disabled: true,
+    nodeIds: ['2310:0', '2090:11', '276:18'],
+    iconName: name => iconNaming(name), // custom format icon name
+    exportPath: './ui/atoms/icon',
+    generateSprite: true,
+    generateTypes: true,
+    localIcons: false,
+  },
+};
+```
 
 ## How to find node id
 

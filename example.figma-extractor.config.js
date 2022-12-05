@@ -32,6 +32,7 @@ module.exports = {
     },
     textStyles: {
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+      merge: true,
     },
   },
   icons: {
