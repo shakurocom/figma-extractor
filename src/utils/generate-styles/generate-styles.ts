@@ -5,6 +5,7 @@ import { getColorStyles } from '../../lib/get-color-styles';
 import { getEffectStyles } from '../../lib/get-effect-styles';
 import { getGradientStyles } from '../../lib/get-gradient-styles';
 import { getTextStyles } from '../../lib/get-text-styles';
+import { mergeTextStyle } from '../../lib/merge-text-styles';
 import { stringifyRecordsWithSort } from '../../lib/stringify';
 import { writeStyleFile } from '../../lib/write-style-file';
 
@@ -52,7 +53,21 @@ export const generateStyles = (
 
   if (!config?.styles?.textStyles?.disabled) {
     const metaTextStyles = styleMetadata.filter(isStyleTypeText);
-    const { fontFamily, textStyles } = getTextStyles(metaTextStyles, fileNodes, config);
+    const { fontFamily, textStyles } = getTextStyles(metaTextStyles, fileNodes, config, {
+      textStylesBeforeSorting: textStyles => {
+        if (!!config?.styles?.textStyles?.merge) {
+          if (config?.screens) {
+            return mergeTextStyle({ textStyles, screens: config?.screens });
+          } else {
+            console.warn(
+              "Attention! You have merging of text styles is enabled and don't have any screens. Add some screens for correctly working it.",
+            );
+          }
+        }
+
+        return textStyles;
+      },
+    });
     const fontFamilyTemplate = JSON.stringify(fontFamily);
     const textStylesTemplate = `{${textStyles.join()}};`;
     writeStyleFile(

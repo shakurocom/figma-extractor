@@ -95,4 +95,36 @@ describe('generateStyles', () => {
 
     expect(vol.toJSON()).toMatchSnapshot();
   });
+
+  describe('merge text styles', () => {
+    it('creates file with merged text styles according to provided screen sizes from config', () => {
+      const config = getConfig({
+        disableTextStyles: false,
+      });
+
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      generateStyles(
+        {
+          ...config,
+          styles: {
+            ...config.styles,
+            textStyles: {
+              ...config.styles.textStyles,
+              merge: true,
+            },
+          },
+          screens: {
+            bs: 0,
+            sm: 600,
+            md: 900,
+            lg: 1200,
+          },
+        },
+        styleMetadata.styles,
+        fileNodes,
+      );
+
+      expect(vol.toJSON()).toMatchSnapshot();
+    });
+  });
 });

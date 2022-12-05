@@ -18,6 +18,7 @@ type Config = {
     textStyles?: {
       disabled: boolean;
       keyName?: (nameFromFigma: string) => string;
+      merge?: boolean;
     };
   };
   icons: {
@@ -28,6 +29,9 @@ type Config = {
     generateSprite: boolean;
     generateTypes: boolean;
     localIcons?: boolean;
+  };
+  screens?: {
+    [title: string]: number;
   };
 };
 
