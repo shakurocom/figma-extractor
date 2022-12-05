@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { optimize, OptimizeOptions } from 'svgo';
+import { Config, optimize } from 'svgo';
 
-const config: OptimizeOptions = {
+const config: Config = {
   js2svg: { pretty: true },
   plugins: [
     'cleanupAttrs',
@@ -17,7 +17,6 @@ const config: OptimizeOptions = {
     'removeHiddenElems',
     'removeEmptyText',
     'removeEmptyContainers',
-    { name: 'removeViewBox', active: false },
     'cleanupEnableBackground',
     'convertStyleToAttrs',
     'convertColors',
@@ -27,12 +26,12 @@ const config: OptimizeOptions = {
     'removeNonInheritableGroupAttrs',
     'removeUselessStrokeAndFill',
     'removeUnusedNS',
-    'cleanupIDs',
+    'cleanupIds',
     'cleanupNumericValues',
     'moveElemsAttrsToGroup',
     'moveGroupAttrsToElems',
     'collapseGroups',
-    { name: 'removeRasterImages', active: false },
+    'removeRasterImages',
     'mergePaths',
     'convertShapeToPath',
     'sortAttrs',
@@ -41,6 +40,15 @@ const config: OptimizeOptions = {
       name: 'removeAttrs',
       params: {
         attrs: ['(stroke|fill)'],
+      },
+    },
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          removeViewBox: false,
+          removeRasterImages: false,
+        },
       },
     },
   ],
