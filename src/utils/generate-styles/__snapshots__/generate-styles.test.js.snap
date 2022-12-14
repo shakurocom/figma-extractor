@@ -115,19 +115,19 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 1.12,
-      '@media (min-width: 600)': {
+      '@media (min-width: 600px)': {
       fontFamily: fontFamily.font1,
       fontSize: 38,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-    },'@media (min-width: 900)': {
+    },'@media (min-width: 900px)': {
       fontFamily: fontFamily.font1,
       fontSize: 42,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.85,
-    },'@media (min-width: 1200)': {
+    },'@media (min-width: 1200px)': {
       fontFamily: fontFamily.font1,
       fontSize: 46,
       fontWeight: 600,
