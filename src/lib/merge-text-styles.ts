@@ -31,7 +31,7 @@ class MediaCollection {
               ...current.data,
             };
           }
-          const mediaKey = '@media (min-width: ' + this.screens[current.media] + ')';
+          const mediaKey = '@media (min-width: ' + this.screens[current.media] + 'px)';
 
           return {
             ...collection,
@@ -91,14 +91,14 @@ const findMediaTypeFromClassName = (className: string, screens: Screens[]) => {
  *    fontSize: ...,
  *    fontWeight: ...,
  *    ...,
- *    '@media (min-width: 600): {
+ *    '@media (min-width: 600px): {
  *      fontSize: ...,
  *      ...,
  *    },
- *    '@media (min-width: 900): {
+ *    '@media (min-width: 900px): {
  *      ...,
  *    },
- *    '@media (min-width: 1200): {
+ *    '@media (min-width: 1200px): {
  *      ...,
  *    },
  *  }
