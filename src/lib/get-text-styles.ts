@@ -1,5 +1,6 @@
 import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
+import { convertLetterSpacing } from './text/convert-letter-spacing/convert-letter-spacing';
 import { getFontFamily } from './text/get-font-family/get-font-family';
 import { getTextStyleName } from './text/get-text-style-name/get-text-style-name';
 import { sortTextStyles } from './text/sort-text-styles/sort-text-styles';
@@ -25,8 +26,19 @@ export const getTextStyles = (
   const textStylesNodes = metaTextStyles.map(item => fileNodes.nodes[item.node_id]?.document);
   const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(textStylesNodes);
 
+  const convertLetterSpacingType = config?.styles?.textStyles?.convertLetterSpacing;
+
   let textStyles = textStylesNodes.map(({ name, style }: any) => {
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
+
+    const extraStyles: any = {};
+    if ('letterSpacing' in style && style.letterSpacing > 0 && !!convertLetterSpacingType) {
+      extraStyles.letterSpacing = convertLetterSpacing(
+        Number(style.fontSize),
+        Number(style.letterSpacing),
+        convertLetterSpacingType,
+      );
+    }
 
     return {
       [`${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}`]: {
@@ -35,6 +47,7 @@ export const getTextStyles = (
         fontWeight: `${style.fontWeight}`,
         textTransform: `${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}`,
         lineHeight: `${(style.lineHeightPx / style.fontSize).toFixed(2)}`,
+        ...extraStyles,
       },
     };
   });

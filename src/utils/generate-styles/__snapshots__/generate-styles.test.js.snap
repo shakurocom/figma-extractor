@@ -45,12 +45,14 @@ exports[`generateStyles creates file with text styles according to provided conf
       textTransform: "initial",
       lineHeight: 1.12,
       
+      
     },'heading/h400': {
       fontFamily: fontFamily.font1,
       fontSize: 32,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 1.12,
+      
       
     },'heading/h500-bs': {
       fontFamily: fontFamily.font1,
@@ -59,12 +61,14 @@ exports[`generateStyles creates file with text styles according to provided conf
       textTransform: "initial",
       lineHeight: 1.12,
       
+      
     },'heading/h500-lg': {
       fontFamily: fontFamily.font1,
       fontSize: 46,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
+      
       
     },'heading/h500-md': {
       fontFamily: fontFamily.font1,
@@ -73,12 +77,140 @@ exports[`generateStyles creates file with text styles according to provided conf
       textTransform: "initial",
       lineHeight: 0.85,
       
+      
     },'heading/h500-sm': {
       fontFamily: fontFamily.font1,
       fontSize: 38,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
+      
+      
+    }};;
+
+      module.exports = {fontFamily, textVariants}
+      ",
+}
+`;
+
+exports[`generateStyles letter-spacing inside text-styles text styles and letter-spacing as em measure 1`] = `
+{
+  "/ui/theme/text-styles.js": "
+      /* eslint-disable max-lines */
+      /* eslint-disable @typescript-eslint/naming-convention */
+      
+      const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
+
+      const textVariants = {'heading/bs-h500': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h400': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500-bs': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500-lg': {
+      fontFamily: fontFamily.font1,
+      fontSize: 46,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.78,
+      letterSpacing: 0.05em,
+      
+    },'heading/h500-md': {
+      fontFamily: fontFamily.font1,
+      fontSize: 42,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.85,
+      
+      
+    },'heading/h500-sm': {
+      fontFamily: fontFamily.font1,
+      fontSize: 38,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.94,
+      
+      
+    }};;
+
+      module.exports = {fontFamily, textVariants}
+      ",
+}
+`;
+
+exports[`generateStyles letter-spacing inside text-styles text styles and letter-spacing as px measure 1`] = `
+{
+  "/ui/theme/text-styles.js": "
+      /* eslint-disable max-lines */
+      /* eslint-disable @typescript-eslint/naming-convention */
+      
+      const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
+
+      const textVariants = {'heading/bs-h500': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h400': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500-bs': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500-lg': {
+      fontFamily: fontFamily.font1,
+      fontSize: 46,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.78,
+      letterSpacing: 2.3px,
+      
+    },'heading/h500-md': {
+      fontFamily: fontFamily.font1,
+      fontSize: 42,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.85,
+      
+      
+    },'heading/h500-sm': {
+      fontFamily: fontFamily.font1,
+      fontSize: 38,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.94,
+      
       
     }};;
 
@@ -102,6 +234,7 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       textTransform: "initial",
       lineHeight: 1.12,
       
+      
     },'heading/h400': {
       fontFamily: fontFamily.font1,
       fontSize: 32,
@@ -109,30 +242,35 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       textTransform: "initial",
       lineHeight: 1.12,
       
+      
     },'heading/h500': {
       fontFamily: fontFamily.font1,
       fontSize: 32,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 1.12,
+      
       '@media (min-width: 600px)': {
       fontFamily: fontFamily.font1,
       fontSize: 38,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
+      
     },'@media (min-width: 900px)': {
       fontFamily: fontFamily.font1,
       fontSize: 42,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.85,
+      
     },'@media (min-width: 1200px)': {
       fontFamily: fontFamily.font1,
       fontSize: 46,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
+      
     }
     },'heading/h500-bs': {
       fontFamily: fontFamily.font1,
@@ -141,12 +279,14 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       textTransform: "initial",
       lineHeight: 1.12,
       
+      
     },'heading/h500-lg': {
       fontFamily: fontFamily.font1,
       fontSize: 46,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
+      
       
     },'heading/h500-md': {
       fontFamily: fontFamily.font1,
@@ -155,12 +295,106 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       textTransform: "initial",
       lineHeight: 0.85,
       
+      
     },'heading/h500-sm': {
       fontFamily: fontFamily.font1,
       fontSize: 38,
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
+      
+      
+    }};;
+
+      module.exports = {fontFamily, textVariants}
+      ",
+}
+`;
+
+exports[`generateStyles merge text styles text styles with different screen sizes and letter-spacing 1`] = `
+{
+  "/ui/theme/text-styles.js": "
+      /* eslint-disable max-lines */
+      /* eslint-disable @typescript-eslint/naming-convention */
+      
+      const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
+
+      const textVariants = {'heading/bs-h500': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h400': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      '@media (min-width: 600px)': {
+      fontFamily: fontFamily.font1,
+      fontSize: 38,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.94,
+      
+    },'@media (min-width: 900px)': {
+      fontFamily: fontFamily.font1,
+      fontSize: 42,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.85,
+      
+    },'@media (min-width: 1200px)': {
+      fontFamily: fontFamily.font1,
+      fontSize: 46,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.78,
+      letterSpacing: 0.05em,
+    }
+    },'heading/h500-bs': {
+      fontFamily: fontFamily.font1,
+      fontSize: 32,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 1.12,
+      
+      
+    },'heading/h500-lg': {
+      fontFamily: fontFamily.font1,
+      fontSize: 46,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.78,
+      letterSpacing: 0.05em,
+      
+    },'heading/h500-md': {
+      fontFamily: fontFamily.font1,
+      fontSize: 42,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.85,
+      
+      
+    },'heading/h500-sm': {
+      fontFamily: fontFamily.font1,
+      fontSize: 38,
+      fontWeight: 600,
+      textTransform: "initial",
+      lineHeight: 0.94,
+      
       
     }};;
 

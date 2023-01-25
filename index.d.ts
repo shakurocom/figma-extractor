@@ -19,6 +19,7 @@ type Config = {
       disabled: boolean;
       keyName?: (nameFromFigma: string) => string;
       merge?: boolean;
+      convertLetterSpacing: 'em' | 'px';
     };
   };
   icons: {
