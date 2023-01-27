@@ -68,7 +68,7 @@ exports[`generateStyles creates file with text styles according to provided conf
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
-      letterSpacing: 2.3px,
+      letterSpacing: '2.3px',
       
     },'heading/h500-md': {
       fontFamily: fontFamily.font1,
@@ -144,7 +144,7 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
-      letterSpacing: 2.3px,
+      letterSpacing: '2.3px',
     }
     },'heading/h500-bs': {
       fontFamily: fontFamily.font1,
@@ -160,7 +160,7 @@ exports[`generateStyles merge text styles creates file with merged text styles a
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.78,
-      letterSpacing: 2.3px,
+      letterSpacing: '2.3px',
       
     },'heading/h500-md': {
       fontFamily: fontFamily.font1,

@@ -30,7 +30,7 @@ export const getTextStyles = (
 
     const extraStyles: any = {};
     if ('letterSpacing' in style && style.letterSpacing > 0) {
-      extraStyles.letterSpacing = style.letterSpacing + 'px';
+      extraStyles.letterSpacing = style.letterSpacing;
     }
 
     return {

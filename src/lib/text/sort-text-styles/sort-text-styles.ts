@@ -42,7 +42,7 @@ export const sortTextStyles = (
       fontWeight: ${style.fontWeight},
       textTransform: "${style.textTransform}",
       lineHeight: ${style.lineHeight},
-      ${style.letterSpacing ? 'letterSpacing: ' + style.letterSpacing + ',' : ''}
+      ${renderLetterSpacing(style.letterSpacing)}
       ${renderMedia(style)}
     }`;
     },
@@ -59,8 +59,16 @@ function renderMedia(style: Record<string, any>) {
       fontWeight: ${style[key].fontWeight},
       textTransform: "${style[key].textTransform}",
       lineHeight: ${style[key].lineHeight},
-      ${style[key].letterSpacing ? 'letterSpacing: ' + style[key].letterSpacing + ',' : ''}
+      ${renderLetterSpacing(style[key].letterSpacing)}
     }`;
     })
     .join(',');
+}
+
+function renderLetterSpacing(letterSpacing?: string) {
+  if (letterSpacing) {
+    return `letterSpacing: '${letterSpacing}px',`;
+  }
+
+  return '';
 }
