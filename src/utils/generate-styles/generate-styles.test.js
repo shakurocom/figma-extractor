@@ -96,56 +96,6 @@ describe('generateStyles', () => {
     expect(vol.toJSON()).toMatchSnapshot();
   });
 
-  describe('letter-spacing inside text-styles', () => {
-    it('text styles and letter-spacing as em measure', () => {
-      const config = getConfig({
-        disableTextStyles: false,
-      });
-
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      generateStyles(
-        {
-          ...config,
-          styles: {
-            ...config.styles,
-            textStyles: {
-              ...config.styles.textStyles,
-              convertLetterSpacing: 'em',
-            },
-          },
-        },
-        styleMetadata.styles,
-        fileNodes,
-      );
-
-      expect(vol.toJSON()).toMatchSnapshot();
-    });
-
-    it('text styles and letter-spacing as px measure', () => {
-      const config = getConfig({
-        disableTextStyles: false,
-      });
-
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      generateStyles(
-        {
-          ...config,
-          styles: {
-            ...config.styles,
-            textStyles: {
-              ...config.styles.textStyles,
-              convertLetterSpacing: 'px',
-            },
-          },
-        },
-        styleMetadata.styles,
-        fileNodes,
-      );
-
-      expect(vol.toJSON()).toMatchSnapshot();
-    });
-  });
-
   describe('merge text styles', () => {
     it('creates file with merged text styles according to provided screen sizes from config', () => {
       const config = getConfig({
@@ -161,37 +111,6 @@ describe('generateStyles', () => {
             textStyles: {
               ...config.styles.textStyles,
               merge: true,
-            },
-          },
-          screens: {
-            bs: 0,
-            sm: 600,
-            md: 900,
-            lg: 1200,
-          },
-        },
-        styleMetadata.styles,
-        fileNodes,
-      );
-
-      expect(vol.toJSON()).toMatchSnapshot();
-    });
-
-    it('text styles with different screen sizes and letter-spacing', () => {
-      const config = getConfig({
-        disableTextStyles: false,
-      });
-
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      generateStyles(
-        {
-          ...config,
-          styles: {
-            ...config.styles,
-            textStyles: {
-              ...config.styles.textStyles,
-              merge: true,
-              convertLetterSpacing: 'em',
             },
           },
           screens: {

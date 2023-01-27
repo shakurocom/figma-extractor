@@ -54,7 +54,6 @@ module.exports = {
     textStyles: {
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
       merge: true, // or false - it allows to merge text styles for different screen sizes to a signle style
-      convertLetterSpacing: 'em', // it can be two variants: `em` and `px`. This field allows you to add letter-spacing inside your text styles and converts to stric or dynamic (like percent of font size) measure
     },
   },
   icons: {
