@@ -266,7 +266,7 @@ export const fileNodes = {
           fontSize: 46,
           textAlignHorizontal: 'LEFT',
           textAlignVertical: 'TOP',
-          letterSpacing: 0,
+          letterSpacing: 2.3, // 5%
           lineHeightPx: 35.84000015258789,
           lineHeightPercent: 95.57333374023438,
           lineHeightPercentFontSize: 124,

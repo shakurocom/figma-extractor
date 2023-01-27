@@ -28,6 +28,11 @@ export const getTextStyles = (
   let textStyles = textStylesNodes.map(({ name, style }: any) => {
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
 
+    const extraStyles: any = {};
+    if ('letterSpacing' in style && style.letterSpacing > 0) {
+      extraStyles.letterSpacing = style.letterSpacing;
+    }
+
     return {
       [`${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}`]: {
         fontFamily: `fontFamily.${fontVar?.[0]}`,
@@ -35,6 +40,7 @@ export const getTextStyles = (
         fontWeight: `${style.fontWeight}`,
         textTransform: `${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}`,
         lineHeight: `${(style.lineHeightPx / style.fontSize).toFixed(2)}`,
+        ...extraStyles,
       },
     };
   });

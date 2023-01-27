@@ -6,6 +6,7 @@ export const sortTextStyles = (
       fontWeight: string;
       textTransform: string;
       lineHeight: string;
+      letterSpacing?: string;
     };
   }[],
 ) => {
@@ -30,6 +31,7 @@ export const sortTextStyles = (
         fontWeight: string;
         textTransform: string;
         lineHeight: string;
+        letterSpacing?: string;
       };
     }) => {
       const style = currentStyle[Object.keys(currentStyle)[0]];
@@ -40,6 +42,7 @@ export const sortTextStyles = (
       fontWeight: ${style.fontWeight},
       textTransform: "${style.textTransform}",
       lineHeight: ${style.lineHeight},
+      ${renderLetterSpacing(style.letterSpacing)}
       ${renderMedia(style)}
     }`;
     },
@@ -56,7 +59,16 @@ function renderMedia(style: Record<string, any>) {
       fontWeight: ${style[key].fontWeight},
       textTransform: "${style[key].textTransform}",
       lineHeight: ${style[key].lineHeight},
+      ${renderLetterSpacing(style[key].letterSpacing)}
     }`;
     })
     .join(',');
+}
+
+function renderLetterSpacing(letterSpacing?: string) {
+  if (letterSpacing) {
+    return `letterSpacing: '${letterSpacing}px',`;
+  }
+
+  return '';
 }
