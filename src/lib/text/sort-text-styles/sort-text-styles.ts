@@ -37,12 +37,7 @@ export const sortTextStyles = (
       const style = currentStyle[Object.keys(currentStyle)[0]];
 
       return `'${Object.keys(currentStyle)[0]}': {
-      fontFamily: ${style.fontFamily},
-      fontSize: ${style.fontSize},
-      fontWeight: ${style.fontWeight},
-      textTransform: "${style.textTransform}",
-      lineHeight: ${style.lineHeight},
-      ${renderLetterSpacing(style.letterSpacing)}
+      ${renderGeneralStyles(style)}
       ${renderMedia(style)}
     }`;
     },
@@ -54,20 +49,33 @@ function renderMedia(style: Record<string, any>) {
     .filter(key => key.startsWith('@media'))
     .map(key => {
       return `'${key}': {
-      fontFamily: ${style[key].fontFamily},
-      fontSize: ${style[key].fontSize},
-      fontWeight: ${style[key].fontWeight},
-      textTransform: "${style[key].textTransform}",
-      lineHeight: ${style[key].lineHeight},
-      ${renderLetterSpacing(style[key].letterSpacing)}
+        ${renderGeneralStyles(style[key])}
     }`;
     })
     .join(',');
 }
 
-function renderLetterSpacing(letterSpacing?: string) {
-  if (letterSpacing) {
-    return `letterSpacing: '${letterSpacing}px',`;
+function renderGeneralStyles(styles: {
+  fontFamily: string;
+  fontSize: string;
+  fontWeight: string;
+  textTransform: string;
+  lineHeight: string;
+  letterSpacing?: string;
+}) {
+  return `
+      ${renderStyle('fontFamily: [value],', styles.fontFamily)}
+      ${renderStyle('fontSize: [value],', styles.fontSize)}
+      ${renderStyle('fontWeight: [value],', styles.fontWeight)}
+      ${renderStyle('textTransform: "[value]",', styles.textTransform)}
+      ${renderStyle('lineHeight: [value],', styles.lineHeight)}
+      ${renderStyle(`letterSpacing: '[value]px',`, styles.letterSpacing)}
+  `;
+}
+
+function renderStyle(styleTemplate: string, value?: string) {
+  if (value) {
+    return styleTemplate.replace('[value]', value);
   }
 
   return '';

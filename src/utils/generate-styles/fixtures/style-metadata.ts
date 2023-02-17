@@ -148,6 +148,24 @@ export const styleMetadata = {
       sort_position: '/My',
     },
     {
+      key: 'f9dacac35586a2bdcc61e371e8ccdd680dcf2f38',
+      file_key: '7NnFCu4jFGBM1EIXSWNAVX',
+      node_id: '1373:458',
+      style_type: 'TEXT',
+      thumbnail_url:
+        'https://s3-alpha-sig.figma.com/checkpoints/wKM/37c/LhBvSNNI4fGbbzD4/style_thumbnail_0.png?Expires=1622419200&Signature=YCAonHi9XwvAmUeOmysU4JDP-3ZGQ6Ql03RIDkv4d~p0uHPFfoTNlj8F6hkV3-YAjDgKEjDMRjnSLef1C8hC3p2pZduAYzXHKfSn5LUrRvSbL7BEoEpBiYgtAmm4JF7z2M2P1CqYLfwk9P-WfzzjPH6Fi8f8ONM2UDoDSGZpNOOPMVyG9MlKmB-Ofvz9Fgd4SbDHq-faMaHnsVTnrLmQtKxm~7y1V2tFu8~97ESZdVdkUq8qtvSxNl545UBpks3dbU16lr3JJSWARF3LPj5Q24o9trKHcYaAhhxcboL7ir0PzE9rLYK4a-PXAbEfZ3VyiEjktAoin8DBn6CaigIM8w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+      name: 'heading/h700 - lg',
+      description: '',
+      created_at: '2021-05-04T19:18:54.565Z',
+      updated_at: '2021-05-04T19:18:54.565Z',
+      user: {
+        id: '632504623203517970',
+        handle: 'Rodion',
+        img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
+      },
+      sort_position: '/My',
+    },
+    {
       key: '8987b08aa55d7e7f84eed0d9926b497e92129ed2',
       file_key: '7NnFCu4jFGBM1EIXSWNAVX',
       node_id: '1338:2',
