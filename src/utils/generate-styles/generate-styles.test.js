@@ -115,9 +115,9 @@ describe('generateStyles', () => {
           },
           screens: {
             bs: 0,
-            sm: 600,
-            md: 900,
-            lg: 1200,
+            sm: '600px',
+            md: '900px',
+            lg: '1200px',
           },
         },
         styleMetadata.styles,
