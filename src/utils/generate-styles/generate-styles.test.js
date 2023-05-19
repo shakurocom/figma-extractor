@@ -52,17 +52,6 @@ describe('generateStyles', () => {
     expect(fs.existsSync('/ui/theme')).toBe(true);
   });
 
-  it('creates file with colors according to provided config', () => {
-    const config = getConfig({
-      disableColors: false,
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    generateStyles(config, styleMetadata.styles, fileNodes);
-
-    expect(vol.toJSON()).toMatchSnapshot();
-  });
-
   it('creates file with gradient styles according to provided config', () => {
     const config = getConfig({
       disableGradients: false,

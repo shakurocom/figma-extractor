@@ -6,11 +6,10 @@ import path from 'path';
 
 import { getClient } from './lib/client';
 import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
-import { launchPlugins } from './plugins/launcher';
-import { textStylesPlugin } from './plugins/text-styles-plugin';
 import { generateStyles } from './utils/generate-styles/generate-styles';
 import { createCore } from './core';
 import { generateIcons } from './generate-icons';
+import { colorsPlugin, launchPlugins, textStylesPlugin } from './plugins';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -54,7 +53,7 @@ async function run(config: Config) {
     },
   };
 
-  const core = createCore({ rootPath, config, plugins: [textStylesPlugin] });
+  const core = createCore({ rootPath, config, plugins: [colorsPlugin, textStylesPlugin] });
 
   const onlyArgs = getOnlyArgs(argv.only);
 

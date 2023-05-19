@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`colorsPlugin should create data with custom keyName function 1`] = `"module.exports = {"text/txt900__extra":"#2a3fff"};"`;
+
+exports[`colorsPlugin should write generated date for default config 1`] = `"module.exports = {"text/txt900":"#2a3fff"};"`;

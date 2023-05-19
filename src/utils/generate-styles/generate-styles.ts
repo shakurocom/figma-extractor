@@ -1,7 +1,6 @@
 import { FileNodesResponse, FullStyleMetadata, StyleType } from 'figma-js';
 import fs from 'fs';
 
-import { getColorStyles } from '../../lib/get-color-styles';
 import { getEffectStyles } from '../../lib/get-effect-styles';
 import { getGradientStyles } from '../../lib/get-gradient-styles';
 import { stringifyRecordsWithSort } from '../../lib/stringify';
@@ -28,12 +27,6 @@ export const generateStyles = (
   }
 
   const metaColors = styleMetadata.filter(isStyleTypeFill);
-
-  if (!config?.styles?.colors?.disabled) {
-    const colors = getColorStyles(metaColors, fileNodes, config);
-    const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
-    writeStyleFile(colorTemplate, 'colors.js', config);
-  }
 
   if (!config?.styles?.gradients?.disabled) {
     const gradients = getGradientStyles(metaColors, fileNodes, config);

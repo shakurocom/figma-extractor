@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generateStyles creates file with colors according to provided config 1`] = `
-{
-  "/ui/theme/colors.js": "
-      /* eslint-disable max-lines */
-      /* eslint-disable @typescript-eslint/naming-convention */
-      module.exports = {"text/txt900":"#2a3fff"};
-      ",
-}
-`;
-
 exports[`generateStyles creates file with effects according to provided config 1`] = `
 {
   "/ui/theme/effects.js": "

@@ -25,6 +25,6 @@ export const createCore = (args: { config: Config; rootPath: string; plugins: Pl
     ...args,
     styleTypeUtils,
     writeJsFile,
-    runFormattingFile: runFormattingFile,
+    runFormattingFile,
   };
 };
