@@ -1,0 +1,41 @@
+import { launchPlugins } from './launcher';
+
+describe('launchPlugins', () => {
+  it('launches all existed plugins step-by-step', () => {
+    const core = {
+      plugins: [jest.fn(), jest.fn(), jest.fn()],
+    };
+
+    const data = {};
+
+    launchPlugins(core, data).then(() => {
+      expect(core.plugins[0]).toHaveBeenCalled();
+      expect(core.plugins[0]).toHaveBeenCalledWith(core, data);
+      expect(core.plugins[1]).toHaveBeenCalled();
+      expect(core.plugins[1]).toHaveBeenCalledWith(core, data);
+      expect(core.plugins[2]).toHaveBeenCalled();
+      expect(core.plugins[2]).toHaveBeenCalledWith(core, data);
+    });
+  });
+
+  it('launches all existed plugins step-by-step with waiting for their promises', () => {
+    const core = {
+      plugins: [
+        jest.fn(() => Promise.resolve()),
+        jest.fn(() => Promise.resolve()),
+        jest.fn(() => Promise.resolve()),
+      ],
+    };
+
+    const data = {};
+
+    launchPlugins(core, data).then(() => {
+      expect(core.plugins[0]).toHaveBeenCalled();
+      expect(core.plugins[0]).toHaveBeenCalledWith(core, data);
+      expect(core.plugins[1]).toHaveBeenCalled();
+      expect(core.plugins[1]).toHaveBeenCalledWith(core, data);
+      expect(core.plugins[2]).toHaveBeenCalled();
+      expect(core.plugins[2]).toHaveBeenCalledWith(core, data);
+    });
+  });
+});

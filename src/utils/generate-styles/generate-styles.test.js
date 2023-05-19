@@ -84,47 +84,4 @@ describe('generateStyles', () => {
 
     expect(vol.toJSON()).toMatchSnapshot();
   });
-
-  it('creates file with text styles according to provided config', () => {
-    const config = getConfig({
-      disableTextStyles: false,
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    generateStyles(config, styleMetadata.styles, fileNodes);
-
-    expect(vol.toJSON()).toMatchSnapshot();
-  });
-
-  describe('merge text styles', () => {
-    it('creates file with merged text styles according to provided screen sizes from config', () => {
-      const config = getConfig({
-        disableTextStyles: false,
-      });
-
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      generateStyles(
-        {
-          ...config,
-          styles: {
-            ...config.styles,
-            textStyles: {
-              ...config.styles.textStyles,
-              merge: true,
-            },
-          },
-          screens: {
-            bs: 0,
-            sm: '600px',
-            md: '900px',
-            lg: '1200px',
-          },
-        },
-        styleMetadata.styles,
-        fileNodes,
-      );
-
-      expect(vol.toJSON()).toMatchSnapshot();
-    });
-  });
 });

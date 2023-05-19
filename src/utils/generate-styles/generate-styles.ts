@@ -4,8 +4,6 @@ import fs from 'fs';
 import { getColorStyles } from '../../lib/get-color-styles';
 import { getEffectStyles } from '../../lib/get-effect-styles';
 import { getGradientStyles } from '../../lib/get-gradient-styles';
-import { getTextStyles } from '../../lib/get-text-styles';
-import { mergeTextStyle } from '../../lib/merge-text-styles';
 import { stringifyRecordsWithSort } from '../../lib/stringify';
 import { writeStyleFile } from '../../lib/write-style-file';
 
@@ -19,7 +17,6 @@ const getStyleTypePredicate = (styleType: StyleType): StyleTypePredicate => {
 
 const isStyleTypeFill = getStyleTypePredicate('FILL');
 const isStyleTypeEffect = getStyleTypePredicate('EFFECT');
-const isStyleTypeText = getStyleTypePredicate('TEXT');
 
 export const generateStyles = (
   config: Config,
@@ -49,38 +46,6 @@ export const generateStyles = (
     const effects = getEffectStyles(metaEffects, fileNodes, config);
     const effectTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}};`;
     writeStyleFile(effectTemplate, 'effects.js', config);
-  }
-
-  if (!config?.styles?.textStyles?.disabled) {
-    const metaTextStyles = styleMetadata.filter(isStyleTypeText);
-    const { fontFamily, textStyles } = getTextStyles(metaTextStyles, fileNodes, config, {
-      textStylesBeforeSorting: textStyles => {
-        if (!!config?.styles?.textStyles?.merge) {
-          if (config?.screens) {
-            return mergeTextStyle({ textStyles, screens: config?.screens });
-          } else {
-            console.warn(
-              "Attention! You have merging of text styles is enabled and don't have any screens. Add some screens for correctly working it.",
-            );
-          }
-        }
-
-        return textStyles;
-      },
-    });
-
-    const fontFamilyTemplate = JSON.stringify(fontFamily);
-    const textStylesTemplate = `{${textStyles.join()}};`;
-    writeStyleFile(
-      `
-      const fontFamily = ${fontFamilyTemplate};
-
-      const textVariants = ${textStylesTemplate};
-
-      module.exports = {fontFamily, textVariants}`,
-      'text-styles.js',
-      config,
-    );
   }
 
   return false;
