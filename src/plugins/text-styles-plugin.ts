@@ -41,3 +41,5 @@ export const textStylesPlugin: Plugin = (
     runFormattingFile(path.join(config?.styles?.exportPath || '', 'text-styles.js'));
   }
 };
+
+textStylesPlugin.pluginName = 'text-styles';

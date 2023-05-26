@@ -33,7 +33,7 @@ const getOnlyArgs = (onlyArg: string) => {
   return onlyArgs;
 };
 
-const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] as OnlyArgs[];
+const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'gradients'];
 
 async function run(config: Config) {
   const rootPath = process.cwd();

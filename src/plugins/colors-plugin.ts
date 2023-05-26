@@ -18,3 +18,5 @@ export const colorsPlugin: Plugin = (
     runFormattingFile(path.join(config?.styles?.exportPath || '', 'colors.js'));
   }
 };
+
+colorsPlugin.pluginName = 'colors';
