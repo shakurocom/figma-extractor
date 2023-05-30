@@ -5,7 +5,7 @@ import { stringifyRecordsWithSort } from '../lib/stringify';
 import { Plugin } from './types';
 
 export const colorsPlugin: Plugin = (
-  { config, styleTypeUtils, writeJsFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, runFormattingFile },
   { styleMetadata, fileNodes },
 ) => {
   const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
@@ -14,7 +14,7 @@ export const colorsPlugin: Plugin = (
     const colors = getColorStyles(metaColors, fileNodes, config);
     const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
 
-    writeJsFile(colorTemplate, path.join(config?.styles?.exportPath || '', 'colors.js'));
+    writeFile(colorTemplate, path.join(config?.styles?.exportPath || '', 'colors.js'));
     runFormattingFile(path.join(config?.styles?.exportPath || '', 'colors.js'));
   }
 };

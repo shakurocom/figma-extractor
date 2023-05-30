@@ -3,7 +3,7 @@ import { ClientInterface, FileNodesResponse, FullStyleMetadata } from 'figma-js'
 import { Plugin } from '../plugins';
 import { runFormattingFile } from './run-formatting-file';
 import { styleTypeUtils } from './style-type-utils';
-import { writeJsFile } from './write-js-file';
+import { writeFile } from './write-file';
 
 export interface FigmaData {
   figmaClient: ClientInterface;
@@ -16,7 +16,7 @@ export interface Core {
   rootPath: string;
   plugins: Plugin[];
   styleTypeUtils: typeof styleTypeUtils;
-  writeJsFile: typeof writeJsFile;
+  writeFile: typeof writeFile;
   runFormattingFile: typeof runFormattingFile;
 }
 
@@ -24,7 +24,7 @@ export const createCore = (args: { config: Config; rootPath: string; plugins: Pl
   return {
     ...args,
     styleTypeUtils,
-    writeJsFile,
+    writeFile,
     runFormattingFile,
   };
 };

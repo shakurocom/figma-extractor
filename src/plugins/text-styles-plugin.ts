@@ -6,7 +6,7 @@ import { sortTextStyles } from '../lib/text/sort-text-styles/sort-text-styles';
 import { Plugin } from './types';
 
 export const textStylesPlugin: Plugin = (
-  { config, styleTypeUtils, writeJsFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, runFormattingFile },
   { styleMetadata, fileNodes },
 ) => {
   if (!config?.styles?.textStyles?.disabled) {
@@ -29,7 +29,7 @@ export const textStylesPlugin: Plugin = (
 
     const fontFamilyTemplate = JSON.stringify(result.fontFamily);
     const textStylesTemplate = `{${textStyles.join()}};`;
-    writeJsFile(
+    writeFile(
       `
       const fontFamily = ${fontFamilyTemplate};
 

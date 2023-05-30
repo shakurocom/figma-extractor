@@ -16,13 +16,13 @@ describe('textStylesPlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
-    expect(core.writeJsFile).toHaveBeenCalled();
-    expect(core.writeJsFile.mock.calls[0][1]).toBe('/export-path/text-styles.js');
+    expect(core.writeFile).toHaveBeenCalled();
+    expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/text-styles.js');
 
     expect(core.runFormattingFile).toHaveBeenCalled();
     expect(core.runFormattingFile).toHaveBeenCalledWith('/export-path/text-styles.js');
@@ -40,13 +40,13 @@ describe('textStylesPlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
-    expect(core.writeJsFile).toHaveBeenCalled();
-    expect(core.writeJsFile.mock.calls[0][0]).toMatchSnapshot();
+    expect(core.writeFile).toHaveBeenCalled();
+    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('should be skipped due to disabled field', () => {
@@ -63,12 +63,12 @@ describe('textStylesPlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
-    expect(core.writeJsFile).not.toHaveBeenCalled();
+    expect(core.writeFile).not.toHaveBeenCalled();
     expect(core.runFormattingFile).not.toHaveBeenCalled();
   });
 
@@ -92,13 +92,13 @@ describe('textStylesPlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
-    expect(core.writeJsFile).toHaveBeenCalled();
-    expect(core.writeJsFile.mock.calls[0][0]).toMatchSnapshot();
+    expect(core.writeFile).toHaveBeenCalled();
+    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('should create data with custom keyName function', () => {
@@ -115,12 +115,12 @@ describe('textStylesPlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
-    expect(core.writeJsFile).toHaveBeenCalled();
-    expect(core.writeJsFile.mock.calls[0][0]).toMatchSnapshot();
+    expect(core.writeFile).toHaveBeenCalled();
+    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
   });
 });

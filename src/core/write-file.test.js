@@ -2,11 +2,11 @@ import fs from 'fs';
 import { vol } from 'memfs';
 import path from 'path';
 
-import { writeJsFile } from './write-js-file';
+import { writeFile } from './write-file';
 
 jest.mock('fs');
 
-describe('writeJsFile', () => {
+describe('writeFile', () => {
   afterEach(() => {
     vol.reset();
   });
@@ -14,7 +14,7 @@ describe('writeJsFile', () => {
   it('checks existing of a new file', () => {
     expect(fs.existsSync('/ui/theme')).toBe(false);
 
-    writeJsFile(
+    writeFile(
       `
     module.exports = {
       a: 1,
@@ -29,7 +29,7 @@ describe('writeJsFile', () => {
   });
 
   it('writes test data into a new file', () => {
-    writeJsFile(
+    writeFile(
       `
     module.exports = {
       a: 1,
@@ -38,6 +38,22 @@ describe('writeJsFile', () => {
     };
     `,
       path.join('/ui/theme/', 'file-name.js'),
+    );
+
+    expect(vol.toJSON()).toMatchSnapshot();
+  });
+
+  it('writes test data without eslint rules on the begin of the file', () => {
+    writeFile(
+      `
+    module.exports = {
+      a: 1,
+      b: 2,
+      c: 3,
+    };
+    `,
+      path.join('/ui/theme/', 'file-name.js'),
+      { useEslintDisabledRules: false },
     );
 
     expect(vol.toJSON()).toMatchSnapshot();
