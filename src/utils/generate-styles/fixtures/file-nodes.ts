@@ -33,6 +33,78 @@ export const fileNodes = {
       schemaVersion: 0,
       styles: {},
     },
+    '1441:1096': {
+      document: {
+        id: '1441:1096',
+        name: 'light/text/txt900',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 2, a: 1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
+    '1442:1097': {
+      document: {
+        id: '1442:1097',
+        name: 'dark/text/txt900',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 3, a: 1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
+    '1444:1099': {
+      document: {
+        id: '1444:1099',
+        name: 'colorful/text/txt900',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 4, a: 1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
     '1373:452': {
       document: {
         id: '1373:452',

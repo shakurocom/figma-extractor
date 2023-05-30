@@ -6,6 +6,9 @@ type Config = {
     colors?: {
       disabled: boolean;
       keyName?: (name: string) => string;
+      useTheme?: boolean;
+      allowedThemes?: string[];
+      defaultTheme?: string;
     };
     gradients?: {
       disabled: boolean;

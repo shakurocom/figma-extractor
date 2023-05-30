@@ -20,6 +20,60 @@ export const styleMetadata = {
       },
       sort_position: '!`S',
     },
+    {
+      key: 'dab9873f64be7dc571a084552a75d80e633fc5a4',
+      file_key: '7NnFCu4jFGBM1EIXSWNAVX',
+      node_id: '1441:1096',
+      style_type: 'FILL',
+      thumbnail_url:
+        'https://s3-alpha-sig.figma.com/checkpoints/rNc/tNM/UVYgfZXkPjzHkjk1/style_thumbnail_0.png?Expires=1622419200&Signature=hH6aCEAbRf4Zhjcv4mHpUhI5UfmG3yRdZz4UZouwcDGYpW1p~uyyYQaqLC~Viv7d5wEqMEE2rKxL4wMpEGRGFuWvOjjOxvIs0zEBj69LlFZJJGo2Dg9QO-H~FE1wjwwT4lWo4E-oIhIvhS6HOAKvu62qkZ~tWiT1YQqWVutxpVg6G5xmMekSWw1ZzrCckvjYjNU6yeclZNWo-bN7TuPEXMBj70YUU2X3OZqCr2SNbR40~Qa~4XzAiPWjqfUurOlE~vNwySVKkWNLxZB1sRQEKa-GudjGIz~tqKqd4L0~i6ZChVriBsx8BbjmO4jMdJVifRJkEx-OFgaI~2CoLJzKUg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+      name: 'light/text/txt900',
+      description: '',
+      created_at: '2021-05-13T13:16:02.757Z',
+      updated_at: '2021-05-13T13:16:02.757Z',
+      user: {
+        id: '632504623203517970',
+        handle: 'Rodion',
+        img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
+      },
+      sort_position: '!`S',
+    },
+    {
+      key: 'dab9873f64be7dc571a084552a75d80e633fc5a5',
+      file_key: '7NnFCu4jFGBM1EIXSWNAVX',
+      node_id: '1442:1097',
+      style_type: 'FILL',
+      thumbnail_url:
+        'https://s3-alpha-sig.figma.com/checkpoints/rNc/tNM/UVYgfZXkPjzHkjk1/style_thumbnail_0.png?Expires=1622419200&Signature=hH6aCEAbRf4Zhjcv4mHpUhI5UfmG3yRdZz4UZouwcDGYpW1p~uyyYQaqLC~Viv7d5wEqMEE2rKxL4wMpEGRGFuWvOjjOxvIs0zEBj69LlFZJJGo2Dg9QO-H~FE1wjwwT4lWo4E-oIhIvhS6HOAKvu62qkZ~tWiT1YQqWVutxpVg6G5xmMekSWw1ZzrCckvjYjNU6yeclZNWo-bN7TuPEXMBj70YUU2X3OZqCr2SNbR40~Qa~4XzAiPWjqfUurOlE~vNwySVKkWNLxZB1sRQEKa-GudjGIz~tqKqd4L0~i6ZChVriBsx8BbjmO4jMdJVifRJkEx-OFgaI~2CoLJzKUg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+      name: 'dark/text/txt900',
+      description: '',
+      created_at: '2021-05-13T13:16:02.757Z',
+      updated_at: '2021-05-13T13:16:02.757Z',
+      user: {
+        id: '632504623203517970',
+        handle: 'Rodion',
+        img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
+      },
+      sort_position: '!`S',
+    },
+    {
+      key: 'dab9873f64be7dc571a084552a75d80e633fc5a6',
+      file_key: '7NnFCu4jFGBM1EIXSWNAVX',
+      node_id: '1444:1099',
+      style_type: 'FILL',
+      thumbnail_url:
+        'https://s3-alpha-sig.figma.com/checkpoints/rNc/tNM/UVYgfZXkPjzHkjk1/style_thumbnail_0.png?Expires=1622419200&Signature=hH6aCEAbRf4Zhjcv4mHpUhI5UfmG3yRdZz4UZouwcDGYpW1p~uyyYQaqLC~Viv7d5wEqMEE2rKxL4wMpEGRGFuWvOjjOxvIs0zEBj69LlFZJJGo2Dg9QO-H~FE1wjwwT4lWo4E-oIhIvhS6HOAKvu62qkZ~tWiT1YQqWVutxpVg6G5xmMekSWw1ZzrCckvjYjNU6yeclZNWo-bN7TuPEXMBj70YUU2X3OZqCr2SNbR40~Qa~4XzAiPWjqfUurOlE~vNwySVKkWNLxZB1sRQEKa-GudjGIz~tqKqd4L0~i6ZChVriBsx8BbjmO4jMdJVifRJkEx-OFgaI~2CoLJzKUg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+      name: 'colorful/text/txt900',
+      description: '',
+      created_at: '2021-05-13T13:16:02.757Z',
+      updated_at: '2021-05-13T13:16:02.757Z',
+      user: {
+        id: '632504623203517970',
+        handle: 'Rodion',
+        img_url: 'https://s3-alpha.figma.com/profile/41bc8a58-81c2-4c47-9c0b-a35e01414d88',
+      },
+      sort_position: '!`S',
+    },
     // Gradient
     {
       key: '7a36308c0837fe55d88a0181a47af2b60f1db4c3',

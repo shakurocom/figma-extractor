@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should js files with css variables 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should js files with css variables 2`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should js files with css variables 3`] = `"module.exports = {"colorful-text/txt900":"var(--sh-colorful-text/txt900,'#2a3f3fc')","text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
