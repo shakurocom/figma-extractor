@@ -60,7 +60,7 @@ describe('colorsThemePlugin', () => {
           exportPath: '/export-path/',
           colors: {
             useTheme: true,
-            allowedThemes: ['light', 'dark'],
+            allowedThemes: ['light', 'dark', 'monochrome'],
             defaultTheme: 'another',
           },
         },
@@ -87,7 +87,7 @@ describe('colorsThemePlugin', () => {
             exportPath: '/export-path/',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark'],
+              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -105,13 +105,20 @@ describe('colorsThemePlugin', () => {
       expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
       expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/dark/index.js');
       expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot('/export-path/colors/index.js');
+      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/monochrome/index.js');
+      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot(
+        '/export-path/colors/monochrome/index.js',
+      );
+      expect(core.writeFile.mock.calls[6][1]).toBe('/export-path/colors/index.js');
+      expect(core.writeFile.mock.calls[6][0]).toMatchSnapshot('/export-path/colors/index.js');
 
       expect(core.runFormattingFile).toHaveBeenCalled();
       expect(core.runFormattingFile.mock.calls[0][0]).toBe('/export-path/colors/light/index.js');
       expect(core.runFormattingFile.mock.calls[2][0]).toBe('/export-path/colors/dark/index.js');
-      expect(core.runFormattingFile.mock.calls[4][0]).toBe('/export-path/colors/index.js');
+      expect(core.runFormattingFile.mock.calls[4][0]).toBe(
+        '/export-path/colors/monochrome/index.js',
+      );
+      expect(core.runFormattingFile.mock.calls[6][0]).toBe('/export-path/colors/index.js');
     });
 
     it('should create css files with css variables', () => {
@@ -121,7 +128,7 @@ describe('colorsThemePlugin', () => {
             exportPath: '/export-path/',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark'],
+              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -139,13 +146,20 @@ describe('colorsThemePlugin', () => {
       expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/light/vars.css');
       expect(core.writeFile.mock.calls[3][1]).toBe('/export-path/colors/dark/vars.css');
       expect(core.writeFile.mock.calls[3][0]).toMatchSnapshot('/export-path/colors/dark/vars.css');
-      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/vars.css');
-      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot('/export-path/colors/vars.css');
+      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/monochrome/vars.css');
+      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot(
+        '/export-path/colors/monochrome/vars.css',
+      );
+      expect(core.writeFile.mock.calls[7][1]).toBe('/export-path/colors/vars.css');
+      expect(core.writeFile.mock.calls[7][0]).toMatchSnapshot('/export-path/colors/vars.css');
 
       expect(core.runFormattingFile).toHaveBeenCalled();
       expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/light/vars.css');
       expect(core.runFormattingFile.mock.calls[3][0]).toBe('/export-path/colors/dark/vars.css');
-      expect(core.runFormattingFile.mock.calls[5][0]).toBe('/export-path/colors/vars.css');
+      expect(core.runFormattingFile.mock.calls[5][0]).toBe(
+        '/export-path/colors/monochrome/vars.css',
+      );
+      expect(core.runFormattingFile.mock.calls[7][0]).toBe('/export-path/colors/vars.css');
     });
 
     it("should create theme-list.ts files with themes' types", () => {
@@ -155,7 +169,7 @@ describe('colorsThemePlugin', () => {
             exportPath: '/export-path/',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark'],
+              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -169,11 +183,11 @@ describe('colorsThemePlugin', () => {
       colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[6][1]).toBe('/export-path/themes-list.ts');
-      expect(core.writeFile.mock.calls[6][0]).toMatchSnapshot('/export-path/themes-list.ts');
+      expect(core.writeFile.mock.calls[8][1]).toBe('/export-path/themes-list.ts');
+      expect(core.writeFile.mock.calls[8][0]).toMatchSnapshot('/export-path/themes-list.ts');
 
       expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[6][0]).toBe('/export-path/themes-list.ts');
+      expect(core.runFormattingFile.mock.calls[8][0]).toBe('/export-path/themes-list.ts');
     });
   });
 });

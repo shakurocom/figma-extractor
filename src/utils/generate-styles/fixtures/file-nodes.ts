@@ -81,6 +81,30 @@ export const fileNodes = {
       schemaVersion: 0,
       styles: {},
     },
+    '1443:1098': {
+      document: {
+        id: '1443:1098',
+        name: 'monochrome/text/txt900',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 0.16470588743686676, g: 16, b: 16, a: 1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
     '1444:1099': {
       document: {
         id: '1444:1099',
