@@ -27,7 +27,31 @@ const generateJsVariables = (
   return data;
 };
 
-const generateCSSVariables = (themeCollection: ThemeCollection, defaultTheme?: ThemeName) => {};
+const generateCSSVariables = (variablesCollection: VariablesCollection, themeName?: ThemeName) => {
+  const data: string[] = [];
+  for (const [colorName, value] of Object.entries(variablesCollection)) {
+    data.push(`--sh-${colorName}: '${value}';`);
+  }
+  data.sort((a, b) => {
+    if (a === b) {
+      return 0;
+    }
+
+    return a > b ? 1 : -1;
+  });
+
+  if (themeName && themeName !== '_') {
+    return `
+[data-theme='${themeName}'] {
+  ${data.join('\n')}
+}`;
+  } else {
+    return `
+:root {
+  ${data.join('\n')}
+}`;
+  }
+};
 
 export const colorsThemePlugin: Plugin = (
   { config, styleTypeUtils, writeFile, runFormattingFile },
@@ -106,25 +130,25 @@ export const colorsThemePlugin: Plugin = (
         : themesCollection['_'],
     );
 
-    let fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}/index.js`);
+    const cssData = generateCSSVariables(variables, themeName);
+
+    let fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
     if (defaultTheme && themesCollection[defaultTheme]) {
       if (themeName === '_') {
         continue;
       }
-      fullPath = path.join(config?.styles?.exportPath || '', `colors/index.js`);
+      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
     } else if (themeName === '_') {
-      fullPath = path.join(config?.styles?.exportPath || '', `colors/index.js`);
+      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
     }
 
     const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
-    writeFile(jsTemplate, fullPath);
-    runFormattingFile(fullPath);
+    writeFile(jsTemplate, path.join(fullPath, 'index.js'));
+    runFormattingFile(path.join(fullPath, 'index.js'));
+
+    writeFile(cssData, path.join(fullPath, 'vars.css'));
+    runFormattingFile(path.join(fullPath, 'vars.css'));
   }
-
-  /*const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
-
-  writeFile(colorTemplate, path.join(config?.styles?.exportPath || '', 'colors.js'));
-  runFormattingFile(path.join(config?.styles?.exportPath || '', 'colors.js'));*/
 };
 
 colorsThemePlugin.pluginName = 'colors-theme';

@@ -101,19 +101,55 @@ describe('colorsThemePlugin', () => {
       colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile).toHaveBeenCalledTimes(3);
+      expect(core.writeFile).toHaveBeenCalledTimes(6);
       expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/colors/light/index.js');
       expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/index.js');
+      expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/dark/index.js');
+      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
+      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/index.js');
+      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot('/export-path/colors/index.js');
 
       expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile).toHaveBeenCalledTimes(3);
+      expect(core.runFormattingFile).toHaveBeenCalledTimes(6);
       expect(core.runFormattingFile.mock.calls[0][0]).toBe('/export-path/colors/light/index.js');
-      expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/dark/index.js');
-      expect(core.runFormattingFile.mock.calls[2][0]).toBe('/export-path/colors/index.js');
+      expect(core.runFormattingFile.mock.calls[2][0]).toBe('/export-path/colors/dark/index.js');
+      expect(core.runFormattingFile.mock.calls[4][0]).toBe('/export-path/colors/index.js');
+    });
+
+    it('should create css files with css variables', () => {
+      const core = createCore({
+        config: {
+          styles: {
+            exportPath: '/export-path/',
+            colors: {
+              useTheme: true,
+              allowedThemes: ['light', 'dark'],
+            },
+          },
+        },
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      core.writeFile = jest.fn();
+      core.runFormattingFile = jest.fn();
+
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+
+      expect(core.writeFile).toHaveBeenCalled();
+      expect(core.writeFile).toHaveBeenCalledTimes(6);
+      expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/light/vars.css');
+      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/light/vars.css');
+      expect(core.writeFile.mock.calls[3][1]).toBe('/export-path/colors/dark/vars.css');
+      expect(core.writeFile.mock.calls[3][0]).toMatchSnapshot('/export-path/colors/dark/vars.css');
+      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/vars.css');
+      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot('/export-path/colors/vars.css');
+
+      expect(core.runFormattingFile).toHaveBeenCalled();
+      expect(core.runFormattingFile).toHaveBeenCalledTimes(6);
+      expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/light/vars.css');
+      expect(core.runFormattingFile.mock.calls[3][0]).toBe('/export-path/colors/dark/vars.css');
+      expect(core.runFormattingFile.mock.calls[5][0]).toBe('/export-path/colors/vars.css');
     });
   });
 });
