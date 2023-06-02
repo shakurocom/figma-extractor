@@ -53,6 +53,26 @@ const generateCSSVariables = (variablesCollection: VariablesCollection, themeNam
   }
 };
 
+const generateThemeListTS = (themeCollection: ThemeCollection, defaultTheme?: string) => {
+  const themes: string[] = Object.keys(themeCollection)
+    .filter(theme => {
+      if (defaultTheme) {
+        return theme !== defaultTheme && theme !== '_';
+      }
+
+      return theme !== '_';
+    })
+    .map(theme => `'${theme}'`);
+
+  return `
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export type DefaultTheme = '${defaultTheme ?? ''}';
+
+export type Theme = ${themes.join(' | ')};  
+  `;
+};
+
 export const colorsThemePlugin: Plugin = (
   { config, styleTypeUtils, writeFile, runFormattingFile },
   { styleMetadata, fileNodes },
@@ -149,6 +169,11 @@ export const colorsThemePlugin: Plugin = (
     writeFile(cssData, path.join(fullPath, 'vars.css'));
     runFormattingFile(path.join(fullPath, 'vars.css'));
   }
+
+  const themeListTSData = generateThemeListTS(themesCollection, defaultTheme);
+
+  writeFile(themeListTSData, path.join(config?.styles?.exportPath || '', 'themes-list.ts'));
+  runFormattingFile(path.join(config?.styles?.exportPath || '', `themes-list.ts`));
 };
 
 colorsThemePlugin.pluginName = 'colors-theme';
