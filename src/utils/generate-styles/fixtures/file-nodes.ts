@@ -129,6 +129,30 @@ export const fileNodes = {
       schemaVersion: 0,
       styles: {},
     },
+    '1445:1100': {
+      document: {
+        id: '1445:1100',
+        name: 'text/txt800',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 4, g: 4, b: 4, a: 0.1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
     '1373:452': {
       document: {
         id: '1373:452',

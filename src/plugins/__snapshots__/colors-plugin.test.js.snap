@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`colorsPlugin should create data with custom keyName function 1`] = `"module.exports = {"colorful/text/txt900__extra":"#2a3f3fc","dark/text/txt900__extra":"#2a3f2fd","light/text/txt900__extra":"#2a3f1fe","monochrome/text/txt900__extra":"#2aff0ff0","text/txt900__extra":"#2a3fff"};"`;
+exports[`colorsPlugin should create data with custom keyName function 1`] = `"module.exports = {"colorful/text/txt900__extra":"#2a3f3fc","dark/text/txt900__extra":"#2a3f2fd","light/text/txt900__extra":"#2a3f1fe","monochrome/text/txt900__extra":"#2aff0ff0","text/txt800__extra":"#3fc3fc3fc","text/txt900__extra":"#2a3fff"};"`;
 
-exports[`colorsPlugin should write generated date for default config 1`] = `"module.exports = {"colorful/text/txt900":"#2a3f3fc","dark/text/txt900":"#2a3f2fd","light/text/txt900":"#2a3f1fe","monochrome/text/txt900":"#2aff0ff0","text/txt900":"#2a3fff"};"`;
+exports[`colorsPlugin should write generated date for default config 1`] = `"module.exports = {"colorful/text/txt900":"#2a3f3fc","dark/text/txt900":"#2a3f2fd","light/text/txt900":"#2a3f1fe","monochrome/text/txt900":"#2aff0ff0","text/txt800":"#3fc3fc3fc","text/txt900":"#2a3fff"};"`;
