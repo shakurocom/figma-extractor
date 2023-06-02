@@ -80,7 +80,7 @@ describe('colorsThemePlugin', () => {
   });
 
   describe('create theme data without defined defaultTheme field', () => {
-    it('should js files with css variables', () => {
+    it('should create js files with css variables', () => {
       const core = createCore({
         config: {
           styles: {
@@ -103,11 +103,11 @@ describe('colorsThemePlugin', () => {
       expect(core.writeFile).toHaveBeenCalled();
       expect(core.writeFile).toHaveBeenCalledTimes(3);
       expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
+      expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
       expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot();
+      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
       expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot();
+      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/index.js');
 
       expect(core.runFormattingFile).toHaveBeenCalled();
       expect(core.runFormattingFile).toHaveBeenCalledTimes(3);
