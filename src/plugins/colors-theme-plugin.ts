@@ -161,14 +161,18 @@ export const colorsThemePlugin: Plugin = (
         : themesCollection['_'],
     );
 
-    const cssData = generateCSSVariables(variables, themeName);
+    const cssData = generateCSSVariables(
+      variables,
+      defaultTheme === themeName ? undefined : themeName,
+    );
 
     let fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
     if (defaultTheme && themesCollection[defaultTheme]) {
       if (themeName === '_') {
         continue;
+      } else if (defaultTheme === themeName) {
+        fullPath = path.join(config?.styles?.exportPath || '', `colors`);
       }
-      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
     } else if (themeName === '_') {
       fullPath = path.join(config?.styles?.exportPath || '', `colors`);
     }

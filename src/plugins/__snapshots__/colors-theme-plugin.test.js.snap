@@ -1,5 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
+"
+[data-theme='dark'] {
+  --sh-text-txt900: '#2a3f2fd';
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
+"
+[data-theme='light'] {
+  --sh-text-txt900: '#2a3f1fe';
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create css files with css variables: /export-path/colors/vars.css 1`] = `
+"
+:root {
+  --sh-text-txt900: '#2aff0ff0';
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/dark/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2aff0ff0')"};"`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2aff0ff0')"};"`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/light/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2aff0ff0')"};"`;
+
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
+"
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export type DefaultTheme = 'monochrome';
+
+export type Theme = 'light' | 'dark';  
+  "
+`;
+
 exports[`colorsThemePlugin create theme data without defined defaultTheme field should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
