@@ -18,7 +18,7 @@ describe('colorsThemePlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     expect(() =>
@@ -43,7 +43,7 @@ describe('colorsThemePlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     expect(() =>
@@ -69,7 +69,7 @@ describe('colorsThemePlugin', () => {
       rootPath: '/root-path',
     });
 
-    core.writeJsFile = jest.fn();
+    core.writeFile = jest.fn();
     core.runFormattingFile = jest.fn();
 
     expect(() =>
@@ -77,6 +77,77 @@ describe('colorsThemePlugin', () => {
     ).toThrow(
       "`config -> styles -> colors -> defaultTheme` field must be one of allowedThemes' values",
     );
+  });
+
+  it("should throw the error because any theme wasn't found inside figma data", () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          colors: {
+            useTheme: true,
+            allowedThemes: ['theme1', 'theme2'],
+          },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+    core.runFormattingFile = jest.fn();
+
+    expect(() =>
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+    ).toThrow("None of themes was found inside figma data. Check your themes and figma's themes");
+  });
+
+  it('should throw the error because some colors from themes contain not-valid chars', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          colors: {
+            useTheme: true,
+            allowedThemes: ['light', 'dark', 'monochrome'],
+            keyName: name => (name === 'light/text/txt900' ? name + '+prefix' : name),
+          },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+    core.runFormattingFile = jest.fn();
+
+    expect(() =>
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+    ).toThrow('Color name: "text-txt900+prefix" from "light" theme contains not-valid chars.');
+  });
+
+  it('should throw the error because some colors from no themes contain not-valid chars', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          colors: {
+            useTheme: true,
+            allowedThemes: ['light', 'dark', 'monochrome'],
+            keyName: name => (name === 'text/txt900' ? name + '+prefix' : name),
+          },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+    core.runFormattingFile = jest.fn();
+
+    expect(() =>
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+    ).toThrow('Color name: "text-txt900+prefix" without theme contains not-valid chars.');
   });
 
   describe('create theme data without defined defaultTheme field', () => {

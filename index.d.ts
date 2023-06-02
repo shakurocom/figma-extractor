@@ -5,7 +5,7 @@ type Config = {
     exportPath: string;
     colors?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string) => string;
       useTheme?: boolean;
       allowedThemes?: string[];
       defaultTheme?: string;

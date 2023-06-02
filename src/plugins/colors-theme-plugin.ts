@@ -15,6 +15,8 @@ type VariablesCollection = Record<ColorName, ColorValue>;
 
 type ThemeCollection = Record<ThemeName, VariablesCollection>;
 
+const variableNameIsValid = (name: string) => !!name.match(/^[\w\-]+$/);
+
 const generateJsVariables = (
   variablesCollection: VariablesCollection,
   defaultVariablesCollection: VariablesCollection,
@@ -110,36 +112,45 @@ export const colorsThemePlugin: Plugin = (
     return col;
   }, {});
 
-  const colors = getColorStyles(metaColors, fileNodes, {
-    ...config,
-    styles: {
-      ...config.styles,
-      colors: {
-        ...config.styles.colors,
-        disabled: false,
-        keyName: getColorName,
-      },
-    },
-  });
+  const colors = getColorStyles(
+    metaColors,
+    fileNodes,
+    config?.styles?.colors?.keyName ?? getColorName,
+  );
 
+  let anyThemeIsUsed = false;
   for (const [colorName, value] of Object.entries(colors)) {
     const separatedData = colorName.split('/');
     if (separatedData.length > 1) {
       const [separatedTheme, ...others] = separatedData;
-      if (separatedTheme && allowedThemes.includes(separatedTheme)) {
-        const newColorName =
-          config?.styles?.colors?.keyName?.(others.join('/')) ??
-          replaceSlashToDash(others.join('/'));
+      if (separatedTheme && allowedThemes.includes(separatedTheme.trim())) {
+        const newColorName = replaceSlashToDash(others.join('/'));
 
-        themesCollection[separatedTheme][newColorName] = value;
+        if (!variableNameIsValid(newColorName)) {
+          throw new Error(
+            `Color name: "${newColorName}" from "${separatedTheme.trim()}" theme contains not-valid chars.`,
+          );
+        }
+
+        anyThemeIsUsed = true;
+        themesCollection[separatedTheme.trim()][newColorName] = value;
         continue;
       }
     }
 
-    const newColorName =
-      config?.styles?.colors?.keyName?.(colorName) ?? replaceSlashToDash(colorName);
+    const newColorName = replaceSlashToDash(colorName);
+
+    if (!variableNameIsValid(newColorName)) {
+      throw new Error(`Color name: "${newColorName}" without theme contains not-valid chars.`);
+    }
 
     themesCollection['_'][newColorName] = value;
+  }
+
+  if (!anyThemeIsUsed) {
+    throw new Error(
+      "None of themes was found inside figma data. Check your themes and figma's themes",
+    );
   }
 
   for (const [themeName, variables] of Object.entries(themesCollection)) {
