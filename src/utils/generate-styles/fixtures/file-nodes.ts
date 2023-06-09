@@ -45,7 +45,7 @@ export const fileNodes = {
           {
             blendMode: 'NORMAL',
             type: 'SOLID',
-            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 2, a: 1 },
+            color: { r: 1, g: 1, b: 1, a: 1 },
           },
         ],
         strokes: [],
@@ -69,7 +69,7 @@ export const fileNodes = {
           {
             blendMode: 'NORMAL',
             type: 'SOLID',
-            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 3, a: 1 },
+            color: { r: 0, g: 0, b: 0, a: 1 },
           },
         ],
         strokes: [],
@@ -93,7 +93,7 @@ export const fileNodes = {
           {
             blendMode: 'NORMAL',
             type: 'SOLID',
-            color: { r: 0.16470588743686676, g: 16, b: 16, a: 1 },
+            color: { r: 1, g: 0, b: 1, a: 1 },
           },
         ],
         strokes: [],
@@ -117,7 +117,7 @@ export const fileNodes = {
           {
             blendMode: 'NORMAL',
             type: 'SOLID',
-            color: { r: 0.16470588743686676, g: 0.24705882370471954, b: 4, a: 1 },
+            color: { r: 0, g: 1, b: 1, a: 1 },
           },
         ],
         strokes: [],
@@ -142,6 +142,30 @@ export const fileNodes = {
             blendMode: 'NORMAL',
             type: 'SOLID',
             color: { r: 4, g: 4, b: 4, a: 0.1 },
+          },
+        ],
+        strokes: [],
+        strokeWeight: 1,
+        strokeAlign: 'INSIDE',
+        effects: [],
+      },
+      components: {},
+      schemaVersion: 0,
+      styles: {},
+    },
+    '1446:1101': {
+      document: {
+        id: '1446:1101',
+        name: 'dark/text/txt700',
+        type: 'RECTANGLE',
+        blendMode: 'PASS_THROUGH',
+        absoluteBoundingBox: { x: 0, y: 0, width: 100, height: 100 },
+        constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+        fills: [
+          {
+            blendMode: 'NORMAL',
+            type: 'SOLID',
+            color: { r: 0, g: 1, b: 0, a: 1 },
           },
         ],
         strokes: [],
