@@ -11,22 +11,24 @@ exports[`colorsThemePlugin create theme data with defined defaultTheme field sho
 exports[`colorsThemePlugin create theme data with defined defaultTheme field should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-text-txt900: '#ffffff';
+  --sh-text-txt700: '';
+--sh-text-txt900: '#ffffff';
 }"
 `;
 
 exports[`colorsThemePlugin create theme data with defined defaultTheme field should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
-  --sh-text-txt900: '#ff00ff';
+  --sh-text-txt700: '';
+--sh-text-txt900: '#ff00ff';
 }"
 `;
 
-exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/dark/index.js 1`] = `"module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#ff00ff')"};"`;
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/dark/index.js 1`] = `"module.exports = {"text-txt700":"#00ff00","text-txt900":"#000000"};"`;
 
-exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#ff00ff')"};"`;
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/index.js 1`] = `"module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#ff00ff')"};"`;
 
-exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/light/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#ff00ff')"};"`;
+exports[`colorsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/colors/light/index.js 1`] = `"module.exports = {"text-txt900":"#ffffff"};"`;
 
 exports[`colorsThemePlugin create theme data with defined defaultTheme field should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
 "
@@ -49,33 +51,32 @@ exports[`colorsThemePlugin create theme data without defined defaultTheme field 
 exports[`colorsThemePlugin create theme data without defined defaultTheme field should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-text-txt900: '#ffffff';
+  --sh-text-txt700: '';
+--sh-text-txt900: '#ffffff';
 }"
 `;
 
 exports[`colorsThemePlugin create theme data without defined defaultTheme field should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-text-txt900: '#ff00ff';
+  --sh-text-txt700: '';
+--sh-text-txt900: '#ff00ff';
 }"
 `;
 
 exports[`colorsThemePlugin create theme data without defined defaultTheme field should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
-  --sh-colorful-text-txt900: '#00ffff';
---sh-text-txt800: '#3fc3fc3fc';
---sh-text-txt900: '#2a3fff';
 }"
 `;
 
-exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/dark/index.js 1`] = `"module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/dark/index.js 1`] = `"module.exports = {"text-txt700":"#00ff00","text-txt900":"#000000"};"`;
 
-exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/index.js 1`] = `"module.exports = {"colorful-text-txt900":"var(--sh-colorful-text-txt900,'#00ffff')","text-txt800":"var(--sh-text-txt800,'#3fc3fc3fc')","text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/index.js 1`] = `"module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'')"};"`;
 
-exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/light/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/light/index.js 1`] = `"module.exports = {"text-txt900":"#ffffff"};"`;
 
-exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `"module.exports = {"text-txt900":"var(--sh-text-txt900,'#2a3fff')"};"`;
+exports[`colorsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `"module.exports = {"text-txt900":"#ff00ff"};"`;
 
 exports[`colorsThemePlugin create theme data without defined defaultTheme field should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
 "
