@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`generateStyles creates file with effects according to provided config 1`] = `
-{
-  "/ui/theme/effects.js": "
-      /* eslint-disable max-lines */
-      /* eslint-disable @typescript-eslint/naming-convention */
-      module.exports = {boxShadow: {"shadow200":"0px 18px 88px rgba(24, 39, 75, 0.14)"}};
-      ",
-}
-`;
-
 exports[`generateStyles creates file with gradient styles according to provided config 1`] = `
 {
   "/ui/theme/gradients.js": "

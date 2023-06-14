@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`effectsPlugin should create data with custom keyName function 1`] = `"module.exports = {boxShadow: {"shadow200__extra":"0px 18px 88px rgba(24, 39, 75, 0.14)"}};"`;
+
+exports[`effectsPlugin should write generated date for default config 1`] = `"module.exports = {boxShadow: {"shadow200":"0px 18px 88px rgba(24, 39, 75, 0.14)"}};"`;

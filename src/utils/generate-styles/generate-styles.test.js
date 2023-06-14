@@ -62,15 +62,4 @@ describe('generateStyles', () => {
 
     expect(vol.toJSON()).toMatchSnapshot();
   });
-
-  it('creates file with effects according to provided config', () => {
-    const config = getConfig({
-      disableEffects: false,
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    generateStyles(config, styleMetadata.styles, fileNodes);
-
-    expect(vol.toJSON()).toMatchSnapshot();
-  });
 });
