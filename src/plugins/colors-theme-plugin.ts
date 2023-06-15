@@ -1,32 +1,22 @@
 import path from 'path';
 
-import { getColorName, replaceSlashToDash } from '../lib/color/get-color-name/get-color-name';
+import { getColorName } from '../lib/color/get-color-name/get-color-name';
 import { getColorStyles } from '../lib/get-color-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
+import {
+  addNewNameToEachTheme,
+  checkConfigAndThrowCommonError,
+  createThemeCollection,
+  DEFAULT_THEME_NAME,
+  NOT_FOUND_THEME_NAME,
+  separateThemes,
+  ThemeCollection,
+  variableNameIsValid,
+  VariablesCollection,
+} from '../lib/themes';
 import { Plugin } from './types';
 
-type ThemeName = string;
-
 type ColorName = string;
-
-type ColorValue = string;
-
-type VariablesCollection = Record<ColorName, ColorValue>;
-
-type ThemeCollection = Record<ThemeName, VariablesCollection>;
-
-const NOT_FOUND_THEME_NAME = '_';
-const DEFAULT_THEME_NAME = '__DEFAULT__';
-
-const variableNameIsValid = (name: string) => !!name.match(/^[\w\-]+$/);
-
-const addNewColorNameToEachTheme = (collection: ThemeCollection, colorName: string) => {
-  for (const themeName of Object.keys(collection)) {
-    if (themeName !== NOT_FOUND_THEME_NAME && !(colorName in collection[themeName])) {
-      collection[themeName][colorName] = '';
-    }
-  }
-};
 
 const generateJsVariables = (
   variablesCollection: VariablesCollection,
@@ -113,39 +103,12 @@ export const colorsThemePlugin: Plugin = (
     return;
   }
 
-  const allowedThemes = config?.styles?.colors?.allowedThemes;
-  const defaultTheme = config?.styles?.colors?.defaultTheme;
+  const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
+    allowedThemes: config?.styles?.allowedThemes,
+    defaultTheme: config?.styles?.defaultTheme,
+  });
 
-  if (!Array.isArray(allowedThemes)) {
-    throw new Error(
-      '`config -> styles -> colors -> allowedThemes` field is required when the useTheme is equal true',
-    );
-  }
-
-  if (allowedThemes.length === 0) {
-    throw new Error(
-      '`config -> styles -> colors -> allowedThemes` field must have one or more theme name',
-    );
-  }
-
-  if (defaultTheme && !allowedThemes.includes(defaultTheme)) {
-    throw new Error(
-      "`config -> styles -> colors -> defaultTheme` field must be one of allowedThemes' values",
-    );
-  }
-
-  const themesCollection = [...allowedThemes, NOT_FOUND_THEME_NAME].reduce<ThemeCollection>(
-    (col, current) => {
-      col[current] = {};
-
-      return col;
-    },
-    {},
-  );
-
-  if (!defaultTheme) {
-    themesCollection[DEFAULT_THEME_NAME] = {};
-  }
+  const themesCollection = createThemeCollection({ allowedThemes, defaultTheme });
 
   const colors = getColorStyles(
     metaColors,
@@ -154,33 +117,21 @@ export const colorsThemePlugin: Plugin = (
   );
 
   let anyThemeIsUsed = false;
-  for (const [colorName, value] of Object.entries(colors)) {
-    const separatedData = colorName.split('/');
-    if (separatedData.length > 1) {
-      const [separatedTheme, ...others] = separatedData;
-      if (separatedTheme && allowedThemes.includes(separatedTheme.trim())) {
-        const newColorName = replaceSlashToDash(others.join('/'));
-
-        if (!variableNameIsValid(newColorName)) {
-          throw new Error(
-            `Color name: "${newColorName}" from "${separatedTheme.trim()}" theme contains not-valid chars.`,
-          );
-        }
-
-        anyThemeIsUsed = true;
-        addNewColorNameToEachTheme(themesCollection, newColorName);
-        themesCollection[separatedTheme.trim()][newColorName] = value;
-        continue;
+  for (const { newName, value, theme } of separateThemes({ allowedThemes, data: colors })) {
+    if (theme === NOT_FOUND_THEME_NAME) {
+      if (!variableNameIsValid(newName)) {
+        throw new Error(`Color name: "${newName}" without theme contains not-valid chars.`);
       }
+      themesCollection[NOT_FOUND_THEME_NAME][newName] = value;
+    } else {
+      if (!variableNameIsValid(newName)) {
+        throw new Error(`Color name: "${newName}" from "${theme}" theme contains not-valid chars.`);
+      }
+
+      anyThemeIsUsed = true;
+      addNewNameToEachTheme(themesCollection, newName);
+      themesCollection[theme][newName] = value;
     }
-
-    const newColorName = replaceSlashToDash(colorName);
-
-    if (!variableNameIsValid(newColorName)) {
-      throw new Error(`Color name: "${newColorName}" without theme contains not-valid chars.`);
-    }
-
-    themesCollection[NOT_FOUND_THEME_NAME][newColorName] = value;
   }
 
   if (!anyThemeIsUsed) {

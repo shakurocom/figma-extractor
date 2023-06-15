@@ -24,7 +24,7 @@ describe('colorsThemePlugin', () => {
     expect(() =>
       colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
     ).toThrow(
-      '`config -> styles -> colors -> allowedThemes` field is required when the useTheme is equal true',
+      '`config -> styles -> allowedThemes` field is required when the useTheme is equal true',
     );
   });
 
@@ -33,9 +33,9 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
+          allowedThemes: [],
           colors: {
             useTheme: true,
-            allowedThemes: [],
           },
         },
       },
@@ -48,9 +48,7 @@ describe('colorsThemePlugin', () => {
 
     expect(() =>
       colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
-    ).toThrow(
-      '`config -> styles -> colors -> allowedThemes` field must have one or more theme name',
-    );
+    ).toThrow('`config -> styles -> allowedThemes` field must have one or more theme name');
   });
 
   it('should throw the error because the defined defaultTheme is not included in allowedThemes list', () => {
@@ -58,10 +56,10 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'another',
           colors: {
             useTheme: true,
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            defaultTheme: 'another',
           },
         },
       },
@@ -74,9 +72,7 @@ describe('colorsThemePlugin', () => {
 
     expect(() =>
       colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
-    ).toThrow(
-      "`config -> styles -> colors -> defaultTheme` field must be one of allowedThemes' values",
-    );
+    ).toThrow("`config -> styles -> defaultTheme` field must be one of allowedThemes' values");
   });
 
   it("should throw the error because any theme wasn't found inside figma data", () => {
@@ -84,9 +80,9 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
+          allowedThemes: ['theme1', 'theme2'],
           colors: {
             useTheme: true,
-            allowedThemes: ['theme1', 'theme2'],
           },
         },
       },
@@ -107,9 +103,9 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
           colors: {
             useTheme: true,
-            allowedThemes: ['light', 'dark', 'monochrome'],
             keyName: name => (name === 'light/text/txt900' ? name + '+prefix' : name),
           },
         },
@@ -131,9 +127,9 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
           colors: {
             useTheme: true,
-            allowedThemes: ['light', 'dark', 'monochrome'],
             keyName: name => (name === 'text/txt900' ? name + '+prefix' : name),
           },
         },
@@ -156,9 +152,9 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -197,9 +193,9 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -238,9 +234,9 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
             },
           },
         },
@@ -268,10 +264,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
@@ -303,10 +299,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
@@ -338,10 +334,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
@@ -369,10 +365,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark-blue', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark-blue', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
@@ -408,10 +404,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark-blue', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark-blue', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
@@ -447,10 +443,10 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
+            allowedThemes: ['light', 'dark-blue', 'monochrome'],
+            defaultTheme: 'monochrome',
             colors: {
               useTheme: true,
-              allowedThemes: ['light', 'dark-blue', 'monochrome'],
-              defaultTheme: 'monochrome',
             },
           },
         },
