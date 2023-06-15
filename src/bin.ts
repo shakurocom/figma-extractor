@@ -6,7 +6,6 @@ import path from 'path';
 
 import { getClient } from './lib/client';
 import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
-import { generateStyles } from './utils/generate-styles/generate-styles';
 import { createCore } from './core';
 import { generateIcons } from './generate-icons';
 import {
@@ -106,8 +105,6 @@ async function run(config: Config) {
   const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
   const nodeIds = meta.styles.map(item => item.node_id);
   const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
-
-  generateStyles(config, meta.styles, fileNodes);
 
   launchPlugins(core, {
     figmaClient: client,
