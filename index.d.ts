@@ -12,7 +12,7 @@ type Config = {
     };
     gradients?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string) => string;
     };
     effects?: {
       disabled: boolean;

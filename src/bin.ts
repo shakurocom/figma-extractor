@@ -14,6 +14,7 @@ import {
   colorsThemePlugin,
   effectsPlugin,
   effectsThemePlugin,
+  gradientsPlugin,
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
@@ -67,6 +68,7 @@ async function run(config: Config) {
       config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
       textStylesPlugin,
       config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
+      gradientsPlugin,
     ],
   });
 
