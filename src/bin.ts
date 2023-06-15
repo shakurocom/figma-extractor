@@ -60,17 +60,6 @@ async function run(config: Config) {
     },
   };
 
-  const core = createCore({
-    rootPath,
-    config,
-    plugins: [
-      config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
-      textStylesPlugin,
-      config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
-      gradientsPlugin,
-    ],
-  });
-
   const onlyArgs = getOnlyArgs(argv.only);
 
   if (onlyArgs) {
@@ -100,6 +89,17 @@ async function run(config: Config) {
       };
     });
   }
+
+  const core = createCore({
+    rootPath,
+    config,
+    plugins: [
+      config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
+      textStylesPlugin,
+      config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
+      gradientsPlugin,
+    ],
+  });
 
   const client = getClient(config.apiKey);
   const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
@@ -168,7 +168,7 @@ const explorer = cosmiconfig(moduleName, {
 explorer
   .search()
   .then((result: { config: Config }) => {
-    run(result.config);
+    return run(result.config);
   })
   .catch((error: any) => {
     console.log('error', error);
