@@ -3,12 +3,12 @@ type Config = {
   fileId: string;
   styles: {
     exportPath: string;
+    allowedThemes?: string[];
+    defaultTheme?: string;
     colors?: {
       disabled: boolean;
       keyName?: (name?: string) => string;
       useTheme?: boolean;
-      allowedThemes?: string[];
-      defaultTheme?: string;
     };
     gradients?: {
       disabled: boolean;
@@ -17,6 +17,7 @@ type Config = {
     effects?: {
       disabled: boolean;
       keyName?: (name: string) => string;
+      useTheme?: boolean;
     };
     textStyles?: {
       disabled: boolean;
