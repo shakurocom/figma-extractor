@@ -16,7 +16,7 @@ type Config = {
     };
     effects?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string) => string;
       useTheme?: boolean;
     };
     textStyles?: {

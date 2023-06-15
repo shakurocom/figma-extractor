@@ -99,3 +99,100 @@ export function* separateThemes({
     yield { newName, theme: NOT_FOUND_THEME_NAME, value };
   }
 }
+
+export const generateJsVariables = (
+  variablesCollection: VariablesCollection,
+  defaultVariablesCollection: VariablesCollection,
+) => {
+  const data: Record<string, string> = {};
+  for (const name of Object.keys(variablesCollection)) {
+    data[name] = `var(--sh-${name},'${defaultVariablesCollection[name] ?? ''}')`;
+  }
+
+  return data;
+};
+
+export const generateJsColors = (variablesCollection: VariablesCollection) => {
+  const data: Record<string, string> = {};
+  for (const [name, value] of Object.entries(variablesCollection)) {
+    if (value) {
+      data[name] = value;
+    }
+  }
+
+  return data;
+};
+
+export const generateCSSVariables = (
+  variablesCollection: VariablesCollection,
+  themeName?: ThemeName,
+) => {
+  const data: string[] = [];
+  for (const [name, value] of Object.entries(variablesCollection)) {
+    data.push(`--sh-${name}: '${value}';`);
+  }
+  data.sort((a, b) => {
+    if (a === b) {
+      return 0;
+    }
+
+    return a > b ? 1 : -1;
+  });
+
+  if (themeName === DEFAULT_THEME_NAME) {
+    return `
+:root {
+}`;
+  } else if (themeName && themeName !== NOT_FOUND_THEME_NAME) {
+    return `
+[data-theme='${themeName}'] {
+  ${data.join('\n')}
+}`;
+  } else {
+    return `
+:root {
+  ${data.join('\n')}
+}`;
+  }
+};
+
+export const generateThemeListTS = (themeCollection: ThemeCollection, defaultTheme?: string) => {
+  const themes: string[] = Object.keys(themeCollection)
+    .filter(theme => {
+      if (defaultTheme) {
+        return (
+          theme !== defaultTheme && theme !== NOT_FOUND_THEME_NAME && theme !== DEFAULT_THEME_NAME
+        );
+      }
+
+      return theme !== NOT_FOUND_THEME_NAME && theme !== DEFAULT_THEME_NAME;
+    })
+    .map(theme => `'${theme}'`);
+
+  return `
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export type DefaultTheme = '${defaultTheme ?? ''}';
+
+export type Theme = ${themes.join(' | ')};  
+  `;
+};
+
+export function* getRealThemesFromCollection({
+  themesCollection,
+  defaultTheme,
+}: {
+  themesCollection: ThemeCollection;
+  defaultTheme?: string;
+}) {
+  for (const [themeName, variables] of Object.entries(themesCollection)) {
+    if (themeName === NOT_FOUND_THEME_NAME) {
+      continue;
+    }
+
+    const currentThemeIsDefault =
+      defaultTheme && themesCollection[defaultTheme] && defaultTheme === themeName;
+
+    yield { themeName, variables, currentThemeIsDefault };
+  }
+}

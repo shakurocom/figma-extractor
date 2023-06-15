@@ -1,7 +1,7 @@
 import path from 'path';
 
-import { getColorName } from '../lib/color/get-color-name/get-color-name';
-import { getColorStyles } from '../lib/get-color-styles';
+import { getEffectName } from '../lib/color/get-effect-name/get-effect-name';
+import { getEffectStyles } from '../lib/get-effect-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
 import {
   addNewNameToEachTheme,
@@ -19,15 +19,15 @@ import {
 } from '../lib/themes';
 import { Plugin } from './types';
 
-type ColorName = string;
+type EffectName = string;
 
-export const colorsThemePlugin: Plugin = (
+export const effectsThemePlugin: Plugin = (
   { config, styleTypeUtils, writeFile, runFormattingFile },
   { styleMetadata, fileNodes },
 ) => {
-  const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
+  const metaEffects = styleMetadata.filter(styleTypeUtils.isEffect);
 
-  if (config?.styles?.colors?.disabled) {
+  if (config?.styles?.effects?.disabled) {
     return;
   }
 
@@ -38,22 +38,24 @@ export const colorsThemePlugin: Plugin = (
 
   const themesCollection = createThemeCollection({ allowedThemes, defaultTheme });
 
-  const colors = getColorStyles(
-    metaColors,
+  const effects = getEffectStyles(
+    metaEffects,
     fileNodes,
-    config?.styles?.colors?.keyName ?? getColorName,
+    config?.styles?.effects?.keyName ?? getEffectName,
   );
 
   let anyThemeIsUsed = false;
-  for (const { newName, value, theme } of separateThemes({ allowedThemes, data: colors })) {
+  for (const { newName, value, theme } of separateThemes({ allowedThemes, data: effects })) {
     if (theme === NOT_FOUND_THEME_NAME) {
       if (!variableNameIsValid(newName)) {
-        throw new Error(`Color name: "${newName}" without theme contains not-valid chars.`);
+        throw new Error(`Effect name: "${newName}" without theme contains not-valid chars.`);
       }
       themesCollection[NOT_FOUND_THEME_NAME][newName] = value;
     } else {
       if (!variableNameIsValid(newName)) {
-        throw new Error(`Color name: "${newName}" from "${theme}" theme contains not-valid chars.`);
+        throw new Error(
+          `Effect name: "${newName}" from "${theme}" theme contains not-valid chars.`,
+        );
       }
 
       anyThemeIsUsed = true;
@@ -72,7 +74,7 @@ export const colorsThemePlugin: Plugin = (
     themesCollection,
     defaultTheme,
   })) {
-    let jsData: Record<ColorName, string> = {};
+    let jsData: Record<EffectName, string> = {};
     if (currentThemeIsDefault || themeName === DEFAULT_THEME_NAME) {
       jsData = generateJsVariables(
         variables,
@@ -87,11 +89,11 @@ export const colorsThemePlugin: Plugin = (
       defaultTheme === themeName ? undefined : themeName,
     );
 
-    let fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
+    let fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
     if (currentThemeIsDefault) {
-      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
+      fullPath = path.join(config?.styles?.exportPath || '', `effects`);
     } else if (themeName === DEFAULT_THEME_NAME) {
-      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
+      fullPath = path.join(config?.styles?.exportPath || '', `effects`);
     }
 
     const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
@@ -108,4 +110,4 @@ export const colorsThemePlugin: Plugin = (
   runFormattingFile(path.join(config?.styles?.exportPath || '', `themes-list.ts`));
 };
 
-colorsThemePlugin.pluginName = 'colors-theme';
+effectsThemePlugin.pluginName = 'effects-theme';
