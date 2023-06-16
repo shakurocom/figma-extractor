@@ -1,17 +1,21 @@
 export default {
-  repository: 'https://github.com/shakurocom/figma-extractor',
-  docsRepository: 'https://github.com/shakurocom/figma-extractor/documentation',
-  branch: 'master', // branch of docs
-  path: '/', // path of docs
-  titleSuffix: ' – Figma extractor',
-  nextLinks: true,
-  prevLinks: true,
-  search: true,
-  customSearch: null,
+  project: {
+    link: 'https://github.com/shakurocom/figma-extractor',
+  },
+  docsRepositoryBase: 'https://github.com/shakurocom/figma-extractor/blob/master/docs',
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – Figma extractor',
+    };
+  },
+  navigation: {
+    next: true,
+    prev: true,
+  },
   darkMode: true,
-  footer: true,
-  footerText: <>MIT {new Date().getFullYear()} © Shakuro.</>,
-  footerEditOnGitHubLink: true, // will link to the docs repo
+  footer: {
+    text: <>MIT {new Date().getFullYear()} © Shakuro.</>,
+  },
   logo: (
     <>
       <span className="hidden mr-2 font-extrabold md:inline">Figma exctractor</span>

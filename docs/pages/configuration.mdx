@@ -1,6 +1,81 @@
 # Config
 
-```jsx highlight=4,8
+```ts showLineNumbers
+type Config = {
+  // your Figma api access key
+  apiKey: string;
+  // Figma file id
+  fileId: string;
+  styles: {
+    // The main path for exporting all requested data
+    exportPath: string;
+
+    /*
+      Allowed themes if there is at least one styles field with flag `useTheme`
+      It will parse returned name of colors or etc. and look for allowed themes at the start of names
+      example: for allowedThemes: ['light','dark'] all returned names will be parsed by looking for 'light' or 'dark' at the start of name
+               And if color name is 'light/text/text-900' then it will be transformed to 'text/text-900' and relate to the 'light' theme
+               All others name which are not found by allowed themes will be overlooked.
+      Note: If there is at least one styles field with flag `useTheme` then this field is required
+     */
+    allowedThemes?: string[];
+
+    /**
+       Default theme for styles fields with flag `useTheme`
+       It's used like default variables inside generated CSS variables
+     */
+    defaultTheme?: string;
+    colors?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (name?: string) => string;
+      // Enable using of theme
+      useTheme?: boolean;
+    };
+    gradients?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (name?: string) => string;
+    };
+    effects?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (name?: string) => string;
+      // Enable using of theme
+      useTheme?: boolean;
+    };
+    textStyles?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (nameFromFigma: string) => string;
+      // It allows merging text styles for different screen sizes to a single style
+      merge?: boolean;
+    };
+  };
+  icons: {
+    disabled?: boolean;
+    nodeIds: string[];
+    // custom format icon name
+    iconName: (nameFromFigma: string) => string;
+    exportPath: string;
+    generateSprite: boolean;
+    generateTypes: boolean;
+    localIcons?: boolean;
+  };
+  /*
+     It's used when textStyles -> merge == true,
+     It contains title for each allowed screen size for generation accurate media queries
+   */
+  screens?: {
+    [title: string]: number;
+  };
+};
+```
+
+## Config example:
+
+```jsx filename="figma-extractor.config.js" copy
+const { bool } = require('prop-types');
 function getTextStyleName(name) {
   // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
 
@@ -18,8 +93,8 @@ const iconNaming = originalName => {
 };
 
 module.exports = {
-  apiKey: 'xxxxxx', // your figma api access key
-  fileId: 'xxxxxx', // figma file id
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
   styles: {
     exportPath: './ui/theme',
     colors: {
@@ -33,6 +108,7 @@ module.exports = {
     },
     textStyles: {
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
     },
   },
   icons: {
@@ -42,6 +118,151 @@ module.exports = {
     exportPath: './ui/atoms/icon',
     generateSprite: true,
     generateTypes: true,
+    localIcons: false,
   },
 };
 ```
+
+## Merging of text styles
+
+The ability to merge text styles by the name's suffix.
+
+Each suffix is one of the defined screen sizes.
+
+### Example:
+for config:
+```jsx filename="figma-extractor.config.js" {7,11-16}
+module.exports = {
+  ...
+  styles: {
+    exportPath: './ui/theme',
+    textStyles: {
+      ...,
+      merge: true,
+    },
+    ...
+  },
+  screen: {
+    bs: 0, // This is the base screen (default)
+    sm: 600,
+    md: 900,
+    lg: 1200,
+  },
+  ...
+};
+```
+
+Styles like:
+```
+- heading/h500 - bs => {fontSize: 12px}
+- heading/h500 - sm => {fontSize: 14px}
+- heading/h500 - md => {fontSize: 16px}
+- heading/h500 - lg => {fontSize: 20px}
+```
+
+will be transformed:
+```js filename="text-styles.js"
+"heading/h500": {
+  fontSize: '12px',
+  '@media (min-width: 600): {
+    fontSize: '14px',
+  },
+  '@media (min-width: 900): {
+    fontSize: '16px',
+  },
+  '@media (min-width: 1200): {
+    fontSize: '20px',
+  },
+}
+```
+
+
+## Themes for colors and effects
+
+If the `colors` or `effects` field has `useTheme: true` then CLI will look for allowed themes and creates colors or effects according to such themes.
+
+* `allowedThemes` - list of allowed themes. By only these themes, it will be generated particular files.
+* `defaultTheme` - one of allowed themes. Default variables for CSS variables will be taken from this theme.
+
+### Example:
+for config:
+```jsx filename="figma-extractor.config.js" {3-4,9}
+module.exports = {
+  ...
+  allowedThemes: ['light','dark','blue'],
+  defaultTheme: 'blue',
+  styles: {
+    exportPath: './ui/theme',
+    colors: {
+      ...,
+      useTheme: true,
+    },
+    ...
+  },
+  ...
+};
+```
+The CLI will generate such files:
+
+```tsx filename="/ui/theme/themes-list.ts"
+export type DefaultTheme = 'blue';
+
+export type Theme = 'light' | 'dark' | 'blue';
+```
+
+```jsx filename="/ui/theme/colors/dark/index.js"
+module.exports = {
+    "text-txt600":"#000000",
+    "text-txt700":"#000000",
+    "text-txt800":"#000000",
+    "text-txt900":"#000000",
+};
+```
+
+```jsx filename="/ui/theme/colors/light/index.js"
+module.exports = {
+    "text-txt600":"#ffffff",
+    "text-txt700":"#ffffff",
+    "text-txt800":"#ffffff",
+    "text-txt900":"#ffffff",
+};
+```
+
+```jsx filename="/ui/theme/colors/index.js"
+module.exports = {
+    "text-txt600":"var(--sh-text-txt600,'#ff0000')", // '#ff0000' - will be taken from a default theme if it is defined for a specific color
+    "text-txt700":"var(--sh-text-txt700,'')",
+    "text-txt800":"var(--sh-text-txt800,'')",
+    "text-txt900":"var(--sh-text-txt900,'')",
+};
+```
+
+```css filename="/ui/theme/colors/dark/vars.css"
+[data-theme='dark'] {
+    --sh-text-txt600: '#000000';
+    --sh-text-txt700: '#000000';
+    --sh-text-txt800: '#000000';
+    --sh-text-txt900: '#000000';
+}
+```
+
+```css filename="/ui/theme/colors/light/vars.css"
+[data-theme='light'] {
+    --sh-text-txt600: '#ffffff';
+    --sh-text-txt700: '#ffffff';
+    --sh-text-txt800: '#ffffff';
+    --sh-text-txt900: '#ffffff';
+}
+```
+
+```css filename="/ui/theme/colors/vars.css"
+/* from blue theme due to it is a default theme */
+:root {
+    --sh-text-txt600: '#ff00ff';
+    --sh-text-txt700: '';
+    --sh-text-txt800: '';
+    --sh-text-txt900: '';
+}
+```
+
+Also, the same files will be generated for `useTheme` inside **effects** section.
