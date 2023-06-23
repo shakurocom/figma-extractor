@@ -42,20 +42,4 @@ describe('writeFile', () => {
 
     expect(vol.toJSON()).toMatchSnapshot();
   });
-
-  it('writes test data without eslint rules on the begin of the file', () => {
-    writeFile(
-      `
-    module.exports = {
-      a: 1,
-      b: 2,
-      c: 3,
-    };
-    `,
-      path.join('/ui/theme/', 'file-name.js'),
-      { useEslintDisabledRules: false },
-    );
-
-    expect(vol.toJSON()).toMatchSnapshot();
-  });
 });

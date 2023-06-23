@@ -1,6 +1,7 @@
 import { ClientInterface, FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
 import { Plugin } from '../plugins';
+import { addEslintDisableAtTheTopOfText } from './add-eslint-disable';
 import { runFormattingFile } from './run-formatting-file';
 import { styleTypeUtils } from './style-type-utils';
 import { writeFile } from './write-file';
@@ -18,6 +19,7 @@ export interface Core {
   styleTypeUtils: typeof styleTypeUtils;
   writeFile: typeof writeFile;
   runFormattingFile: typeof runFormattingFile;
+  addEslintDisableRules: typeof addEslintDisableAtTheTopOfText;
 }
 
 export const createCore = (args: { config: Config; rootPath: string; plugins: Plugin[] }): Core => {
@@ -26,5 +28,6 @@ export const createCore = (args: { config: Config; rootPath: string; plugins: Pl
     styleTypeUtils,
     writeFile,
     runFormattingFile,
+    addEslintDisableRules: addEslintDisableAtTheTopOfText,
   };
 };
