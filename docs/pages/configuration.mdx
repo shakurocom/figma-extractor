@@ -28,7 +28,7 @@ type Config = {
     colors?: {
       disabled?: boolean;
       // custom key name
-      keyName?: (name?: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
       // Enable using of theme
       useTheme?: boolean;
     };
@@ -40,7 +40,7 @@ type Config = {
     effects?: {
       disabled?: boolean;
       // custom key name
-      keyName?: (name?: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
       // Enable using of theme
       useTheme?: boolean;
     };

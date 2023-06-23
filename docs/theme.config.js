@@ -18,8 +18,8 @@ export default {
   },
   logo: (
     <>
-      <span className="hidden mr-2 font-extrabold md:inline">Figma exctractor</span>
-      <span className="hidden text-gray-600 font-normal md:inline">
+      <span className="nx-hidden nx-mr-2 nx-font-extrabold md:nx-inline">Figma extractor</span>
+      <span className="nx-hidden nx-text-gray-600 nx-font-normal md:nx-inline">
         Extract style system from figma
       </span>
     </>

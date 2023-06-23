@@ -8,6 +8,4 @@ Package for extract style system and svg icons from figma.
 2. Add file config `figma-extractor.config.js`
 3. Run `yarn figma-extract`
 
-> you also should install `eslint` and `typescript` if it's not installed
-
 For more documentation, follow this: https://figma-extractor.vercel.app
