@@ -12,11 +12,8 @@ export const colorsPlugin: Plugin = (
   const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
 
   if (!config?.styles?.colors?.disabled) {
-    const colors = getColorStyles(
-      metaColors,
-      fileNodes,
-      config?.styles?.colors?.keyName ?? getColorName,
-    );
+    const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
+    const colors = getColorStyles(metaColors, fileNodes, name => keyNameCallback(name, false));
 
     const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
 

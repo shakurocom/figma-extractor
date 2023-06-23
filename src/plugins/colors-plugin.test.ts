@@ -66,12 +66,13 @@ describe('colorsPlugin', () => {
   });
 
   it('should create data with custom keyName function', () => {
+    const keyName = jest.fn((name?: string) => name + '__extra');
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
           colors: {
-            keyName: (name?: string) => name + '__extra',
+            keyName,
           },
         },
       },
@@ -85,5 +86,7 @@ describe('colorsPlugin', () => {
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
+
+    expect((keyName as jest.Mock).mock.calls[0][1]).toBeFalsy();
   });
 });

@@ -38,11 +38,8 @@ export const colorsThemePlugin: Plugin = (
 
   const themesCollection = createThemeCollection({ allowedThemes, defaultTheme });
 
-  const colors = getColorStyles(
-    metaColors,
-    fileNodes,
-    config?.styles?.colors?.keyName ?? getColorName,
-  );
+  const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
+  const colors = getColorStyles(metaColors, fileNodes, name => keyNameCallback(name, true));
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme } of separateThemes({ allowedThemes, data: colors })) {

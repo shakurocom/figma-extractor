@@ -7,7 +7,7 @@ type Config = {
     defaultTheme?: string;
     colors?: {
       disabled: boolean;
-      keyName?: (name?: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
       useTheme?: boolean;
     };
     gradients?: {
@@ -16,7 +16,7 @@ type Config = {
     };
     effects?: {
       disabled: boolean;
-      keyName?: (name?: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
       useTheme?: boolean;
     };
     textStyles?: {

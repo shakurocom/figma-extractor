@@ -140,6 +140,30 @@ describe('colorsThemePlugin', () => {
     ).toThrow('Color name: "text-txt900+prefix" without theme contains not-valid chars.');
   });
 
+  it('should check the second parameter of the custom keyName function', () => {
+    const keyName = jest.fn((name?: string) => name);
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          colors: {
+            useTheme: true,
+            keyName,
+          },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+
+    colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+
+    expect((keyName as jest.Mock).mock.calls[0][1]).toBeTruthy();
+  });
+
   describe('create theme data without defined defaultTheme field', () => {
     it('should create js files with css variables', () => {
       const core = createCore({
