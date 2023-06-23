@@ -4,14 +4,11 @@ const namingConventionRuleComment = '/* eslint-disable @typescript-eslint/naming
 
 export const addEslintDisableAtTheTopOfText = (
   content: string,
-  options: {
-    disabledMaxLines: boolean;
-    disabledTypescriptNamingConvention: boolean;
-  },
+  rules: Array<'disable-max-lines' | 'disable-typescript-naming-convention'>,
 ) => {
   return `
-    ${options.disabledMaxLines ? maxLineRuleComment : ''}
-    ${options.disabledTypescriptNamingConvention ? namingConventionRuleComment : ''}
+    ${rules.includes('disable-max-lines') ? maxLineRuleComment : ''}
+    ${rules.includes('disable-typescript-naming-convention') ? namingConventionRuleComment : ''}
     ${content}
     `;
 };

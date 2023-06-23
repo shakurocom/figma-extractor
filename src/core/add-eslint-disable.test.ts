@@ -1,6 +1,18 @@
 import { addEslintDisableAtTheTopOfText } from './add-eslint-disable';
 
 describe('addEslintDisableAtTheTopOfText', () => {
+  it('should return content without any rules', () => {
+    expect(
+      addEslintDisableAtTheTopOfText(
+        `any content
+    any content
+    and more content
+    `,
+        [],
+      ),
+    ).toMatchSnapshot();
+  });
+
   it('should return content with all rules', () => {
     expect(
       addEslintDisableAtTheTopOfText(
@@ -8,10 +20,7 @@ describe('addEslintDisableAtTheTopOfText', () => {
     any content
     and more content
     `,
-        {
-          disabledMaxLines: true,
-          disabledTypescriptNamingConvention: true,
-        },
+        ['disable-max-lines', 'disable-typescript-naming-convention'],
       ),
     ).toMatchSnapshot();
   });
@@ -23,10 +32,7 @@ describe('addEslintDisableAtTheTopOfText', () => {
     any content
     and more content
     `,
-        {
-          disabledMaxLines: true,
-          disabledTypescriptNamingConvention: false,
-        },
+        ['disable-max-lines'],
       ),
     ).toMatchSnapshot();
   });
@@ -38,25 +44,7 @@ describe('addEslintDisableAtTheTopOfText', () => {
     any content
     and more content
     `,
-        {
-          disabledMaxLines: false,
-          disabledTypescriptNamingConvention: true,
-        },
-      ),
-    ).toMatchSnapshot();
-  });
-
-  it('should return content without any rules', () => {
-    expect(
-      addEslintDisableAtTheTopOfText(
-        `any content
-    any content
-    and more content
-    `,
-        {
-          disabledMaxLines: false,
-          disabledTypescriptNamingConvention: false,
-        },
+        ['disable-typescript-naming-convention'],
       ),
     ).toMatchSnapshot();
   });
