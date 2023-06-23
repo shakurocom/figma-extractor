@@ -1,15 +1,15 @@
 import { createCore } from '../core';
 import { fileNodes } from '../utils/generate-styles/fixtures/file-nodes';
 import { styleMetadata } from '../utils/generate-styles/fixtures/style-metadata';
-import { effectsPlugin } from './effects-plugin';
+import { textStylesPlugin } from './text-styles-plugin';
 
-describe('effectsPlugin', () => {
+describe('textStylesPlugin', () => {
   it('should write js file and run formatting tool', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
-          effects: {},
+          textStyles: {},
         },
       },
       plugins: [],
@@ -17,15 +17,11 @@ describe('effectsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    effectsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/effects.js');
-
-    expect(core.runFormattingFile).toHaveBeenCalled();
-    expect(core.runFormattingFile).toHaveBeenCalledWith('/export-path/effects.js');
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/text-styles.js');
   });
 
   it('should write generated date for default config', () => {
@@ -33,7 +29,7 @@ describe('effectsPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          effects: {},
+          textStyles: {},
         },
       },
       plugins: [],
@@ -41,12 +37,11 @@ describe('effectsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    effectsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('should be skipped due to disabled field', () => {
@@ -54,7 +49,7 @@ describe('effectsPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          effects: {
+          textStyles: {
             disabled: true,
           },
         },
@@ -64,12 +59,38 @@ describe('effectsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    effectsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).not.toHaveBeenCalled();
-    expect(core.runFormattingFile).not.toHaveBeenCalled();
+  });
+
+  it('should create data with merged styles', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          textStyles: {
+            merge: true,
+          },
+        },
+        screens: {
+          bs: 0,
+          sm: '600px',
+          md: '900px',
+          lg: '1200px',
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('should create data with custom keyName function', () => {
@@ -77,8 +98,8 @@ describe('effectsPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          effects: {
-            keyName: name => name + '__extra',
+          textStyles: {
+            keyName: (name?: string) => name + '__extra',
           },
         },
       },
@@ -87,11 +108,10 @@ describe('effectsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    effectsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 });

@@ -6,7 +6,7 @@ import { sortTextStyles } from '../lib/text/sort-text-styles/sort-text-styles';
 import { Plugin } from './types';
 
 export const textStylesPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules },
   { styleMetadata, fileNodes },
 ) => {
   if (!config?.styles?.textStyles?.disabled) {
@@ -30,15 +30,17 @@ export const textStylesPlugin: Plugin = (
     const fontFamilyTemplate = JSON.stringify(result.fontFamily);
     const textStylesTemplate = `{${textStyles.join()}};`;
     writeFile(
-      `
+      addEslintDisableRules(
+        `
       const fontFamily = ${fontFamilyTemplate};
 
       const textVariants = ${textStylesTemplate};
 
       module.exports = {fontFamily, textVariants}`,
+        ['disable-max-lines'],
+      ),
       path.join(config?.styles?.exportPath || '', 'text-styles.js'),
     );
-    runFormattingFile(path.join(config?.styles?.exportPath || '', 'text-styles.js'));
   }
 };
 

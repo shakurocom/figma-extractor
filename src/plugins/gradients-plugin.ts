@@ -6,7 +6,7 @@ import { stringifyRecordsWithSort } from '../lib/stringify';
 import { Plugin } from './types';
 
 export const gradientsPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules },
   { styleMetadata, fileNodes },
 ) => {
   if (!config?.styles?.gradients?.disabled) {
@@ -18,8 +18,10 @@ export const gradientsPlugin: Plugin = (
     );
 
     const gradientsTemplate = `module.exports = ${stringifyRecordsWithSort(gradients)};`;
-    writeFile(gradientsTemplate, path.join(config?.styles?.exportPath || '', 'gradients.js'));
-    runFormattingFile(path.join(config?.styles?.exportPath || '', 'gradients.js'));
+    writeFile(
+      addEslintDisableRules(gradientsTemplate, ['disable-max-lines']),
+      path.join(config?.styles?.exportPath || '', 'gradients.js'),
+    );
   }
 };
 

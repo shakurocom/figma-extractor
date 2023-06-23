@@ -6,7 +6,7 @@ import { stringifyRecordsWithSort } from '../lib/stringify';
 import { Plugin } from './types';
 
 export const colorsPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules },
   { styleMetadata, fileNodes },
 ) => {
   const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
@@ -20,8 +20,10 @@ export const colorsPlugin: Plugin = (
 
     const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
 
-    writeFile(colorTemplate, path.join(config?.styles?.exportPath || '', 'colors.js'));
-    runFormattingFile(path.join(config?.styles?.exportPath || '', 'colors.js'));
+    writeFile(
+      addEslintDisableRules(colorTemplate, ['disable-max-lines']),
+      path.join(config?.styles?.exportPath || '', 'colors.js'),
+    );
   }
 };
 

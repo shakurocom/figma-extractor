@@ -19,10 +19,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow(
       '`config -> styles -> allowedThemes` field is required when the useTheme is equal true',
     );
@@ -44,10 +43,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow('`config -> styles -> allowedThemes` field must have one or more theme name');
   });
 
@@ -68,10 +66,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow("`config -> styles -> defaultTheme` field must be one of allowedThemes' values");
   });
 
@@ -91,10 +88,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow("None of themes was found inside figma data. Check your themes and figma's themes");
   });
 
@@ -106,7 +102,7 @@ describe('colorsThemePlugin', () => {
           allowedThemes: ['light', 'dark', 'monochrome'],
           colors: {
             useTheme: true,
-            keyName: name => (name === 'light/text/txt900' ? name + '+prefix' : name),
+            keyName: (name?: string) => (name === 'light/text/txt900' ? name + '+prefix' : name),
           },
         },
       },
@@ -115,10 +111,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow('Color name: "text-txt900+prefix" from "light" theme contains not-valid chars.');
   });
 
@@ -130,7 +125,7 @@ describe('colorsThemePlugin', () => {
           allowedThemes: ['light', 'dark', 'monochrome'],
           colors: {
             useTheme: true,
-            keyName: name => (name === 'text/txt900' ? name + '+prefix' : name),
+            keyName: (name?: string) => (name === 'text/txt900' ? name + '+prefix' : name),
           },
         },
       },
@@ -139,10 +134,9 @@ describe('colorsThemePlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
     expect(() =>
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes }),
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
     ).toThrow('Color name: "text-txt900+prefix" without theme contains not-valid chars.');
   });
 
@@ -163,29 +157,32 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/monochrome/index.js');
-      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot(
+      expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
+        '/export-path/colors/dark/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
+        '/export-path/colors/dark/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
         '/export-path/colors/monochrome/index.js',
       );
-      expect(core.writeFile.mock.calls[6][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[6][0]).toMatchSnapshot('/export-path/colors/index.js');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[0][0]).toBe('/export-path/colors/light/index.js');
-      expect(core.runFormattingFile.mock.calls[2][0]).toBe('/export-path/colors/dark/index.js');
-      expect(core.runFormattingFile.mock.calls[4][0]).toBe(
+      expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
         '/export-path/colors/monochrome/index.js',
       );
-      expect(core.runFormattingFile.mock.calls[6][0]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+        '/export-path/colors/index.js',
+      );
     });
 
     it('should create css files with css variables', () => {
@@ -204,29 +201,32 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[3][1]).toBe('/export-path/colors/dark/vars.css');
-      expect(core.writeFile.mock.calls[3][0]).toMatchSnapshot('/export-path/colors/dark/vars.css');
-      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/monochrome/vars.css');
-      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot(
+      expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
+        '/export-path/colors/dark/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
+        '/export-path/colors/dark/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe(
         '/export-path/colors/monochrome/vars.css',
       );
-      expect(core.writeFile.mock.calls[7][1]).toBe('/export-path/colors/vars.css');
-      expect(core.writeFile.mock.calls[7][0]).toMatchSnapshot('/export-path/colors/vars.css');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/light/vars.css');
-      expect(core.runFormattingFile.mock.calls[3][0]).toBe('/export-path/colors/dark/vars.css');
-      expect(core.runFormattingFile.mock.calls[5][0]).toBe(
+      expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
         '/export-path/colors/monochrome/vars.css',
       );
-      expect(core.runFormattingFile.mock.calls[7][0]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
+        '/export-path/colors/vars.css',
+      );
     });
 
     it("should create theme-list.ts files with themes' types", () => {
@@ -245,16 +245,14 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[8][1]).toBe('/export-path/themes-list.ts');
-      expect(core.writeFile.mock.calls[8][0]).toMatchSnapshot('/export-path/themes-list.ts');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[8][0]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
+        '/export-path/themes-list.ts',
+      );
     });
   });
 
@@ -276,22 +274,26 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot('/export-path/colors/dark/index.js');
-      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot('/export-path/colors/index.js');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[0][0]).toBe('/export-path/colors/light/index.js');
-      expect(core.runFormattingFile.mock.calls[2][0]).toBe('/export-path/colors/dark/index.js');
-      expect(core.runFormattingFile.mock.calls[4][0]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
+        '/export-path/colors/dark/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
+        '/export-path/colors/dark/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
+        '/export-path/colors/index.js',
+      );
     });
 
     it('should create css files with css variables', () => {
@@ -311,22 +313,26 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[3][1]).toBe('/export-path/colors/dark/vars.css');
-      expect(core.writeFile.mock.calls[3][0]).toMatchSnapshot('/export-path/colors/dark/vars.css');
-      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/vars.css');
-      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot('/export-path/colors/vars.css');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/light/vars.css');
-      expect(core.runFormattingFile.mock.calls[3][0]).toBe('/export-path/colors/dark/vars.css');
-      expect(core.runFormattingFile.mock.calls[5][0]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
+        '/export-path/colors/dark/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
+        '/export-path/colors/dark/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
+        '/export-path/colors/vars.css',
+      );
     });
 
     it("should create theme-list.ts files with themes' types", () => {
@@ -346,16 +352,14 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[6][1]).toBe('/export-path/themes-list.ts');
-      expect(core.writeFile.mock.calls[6][0]).toMatchSnapshot('/export-path/themes-list.ts');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[6][0]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+        '/export-path/themes-list.ts',
+      );
     });
   });
 
@@ -377,26 +381,26 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot('/export-path/colors/light/index.js');
-      expect(core.writeFile.mock.calls[2][1]).toBe('/export-path/colors/dark-blue/index.js');
-      expect(core.writeFile.mock.calls[2][0]).toMatchSnapshot(
+      expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
+        '/export-path/colors/light/index.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
         '/export-path/colors/dark-blue/index.js',
       );
-      expect(core.writeFile.mock.calls[4][1]).toBe('/export-path/colors/index.js');
-      expect(core.writeFile.mock.calls[4][0]).toMatchSnapshot('/export-path/colors/index.js');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[0][0]).toBe('/export-path/colors/light/index.js');
-      expect(core.runFormattingFile.mock.calls[2][0]).toBe(
+      expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
         '/export-path/colors/dark-blue/index.js',
       );
-      expect(core.runFormattingFile.mock.calls[4][0]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe('/export-path/colors/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
+        '/export-path/colors/index.js',
+      );
     });
 
     it('should create css files with css variables', () => {
@@ -416,26 +420,27 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[1][1]).toBe('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[1][0]).toMatchSnapshot('/export-path/colors/light/vars.css');
-      expect(core.writeFile.mock.calls[3][1]).toBe('/export-path/colors/dark-blue/vars.css');
-      expect(core.writeFile.mock.calls[3][0]).toMatchSnapshot(
-        '/export-path/colors/dark-blue/vars.css',
-      );
-      expect(core.writeFile.mock.calls[5][1]).toBe('/export-path/colors/vars.css');
-      expect(core.writeFile.mock.calls[5][0]).toMatchSnapshot('/export-path/colors/vars.css');
 
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[1][0]).toBe('/export-path/colors/light/vars.css');
-      expect(core.runFormattingFile.mock.calls[3][0]).toBe(
+      expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
+        '/export-path/colors/light/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
         '/export-path/colors/dark-blue/vars.css',
       );
-      expect(core.runFormattingFile.mock.calls[5][0]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
+        '/export-path/colors/dark-blue/vars.css',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe('/export-path/colors/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
+        '/export-path/colors/vars.css',
+      );
     });
 
     it("should create theme-list.ts files with themes' types", () => {
@@ -455,16 +460,14 @@ describe('colorsThemePlugin', () => {
       });
 
       core.writeFile = jest.fn();
-      core.runFormattingFile = jest.fn();
 
-      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+      colorsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect(core.writeFile.mock.calls[6][1]).toBe('/export-path/themes-list.ts');
-      expect(core.writeFile.mock.calls[6][0]).toMatchSnapshot('/export-path/themes-list.ts');
-
-      expect(core.runFormattingFile).toHaveBeenCalled();
-      expect(core.runFormattingFile.mock.calls[6][0]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+        '/export-path/themes-list.ts',
+      );
     });
   });
 });

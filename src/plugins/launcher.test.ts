@@ -2,11 +2,11 @@ import { launchPlugins } from './launcher';
 
 describe('launchPlugins', () => {
   it('launches all existed plugins step-by-step', () => {
-    const core = {
+    const core: any = {
       plugins: [jest.fn(), jest.fn(), jest.fn()],
     };
 
-    const data = {};
+    const data: any = {};
 
     launchPlugins(core, data).then(() => {
       expect(core.plugins[0]).toHaveBeenCalled();
@@ -19,7 +19,7 @@ describe('launchPlugins', () => {
   });
 
   it('launches all existed plugins step-by-step with waiting for their promises', () => {
-    const core = {
+    const core: any = {
       plugins: [
         jest.fn(() => Promise.resolve()),
         jest.fn(() => Promise.resolve()),
@@ -27,7 +27,7 @@ describe('launchPlugins', () => {
       ],
     };
 
-    const data = {};
+    const data: any = {};
 
     launchPlugins(core, data).then(() => {
       expect(core.plugins[0]).toHaveBeenCalled();

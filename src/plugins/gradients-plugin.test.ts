@@ -17,15 +17,11 @@ describe('gradientsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][1]).toBe('/export-path/gradients.js');
-
-    expect(core.runFormattingFile).toHaveBeenCalled();
-    expect(core.runFormattingFile).toHaveBeenCalledWith('/export-path/gradients.js');
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/gradients.js');
   });
 
   it('should write generated date for default config', () => {
@@ -41,12 +37,11 @@ describe('gradientsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   it('should be skipped due to disabled field', () => {
@@ -64,12 +59,10 @@ describe('gradientsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).not.toHaveBeenCalled();
-    expect(core.runFormattingFile).not.toHaveBeenCalled();
   });
 
   it('should create data with custom keyName function', () => {
@@ -78,7 +71,7 @@ describe('gradientsPlugin', () => {
         styles: {
           exportPath: '/export-path/',
           gradients: {
-            keyName: name => name + '__extra',
+            keyName: (name?: string) => name + '__extra',
           },
         },
       },
@@ -87,11 +80,10 @@ describe('gradientsPlugin', () => {
     });
 
     core.writeFile = jest.fn();
-    core.runFormattingFile = jest.fn();
 
-    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes });
+    gradientsPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect(core.writeFile.mock.calls[0][0]).toMatchSnapshot();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 });

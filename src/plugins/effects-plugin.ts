@@ -6,7 +6,7 @@ import { stringifyRecordsWithSort } from '../lib/stringify';
 import { Plugin } from './types';
 
 export const effectsPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules },
   { styleMetadata, fileNodes },
 ) => {
   if (!config?.styles?.effects?.disabled) {
@@ -18,8 +18,10 @@ export const effectsPlugin: Plugin = (
     );
 
     const effectTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}};`;
-    writeFile(effectTemplate, path.join(config?.styles?.exportPath || '', 'effects.js'));
-    runFormattingFile(path.join(config?.styles?.exportPath || '', 'effects.js'));
+    writeFile(
+      addEslintDisableRules(effectTemplate, ['disable-max-lines']),
+      path.join(config?.styles?.exportPath || '', 'effects.js'),
+    );
   }
 };
 

@@ -22,7 +22,7 @@ import { Plugin } from './types';
 type ColorName = string;
 
 export const colorsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, runFormattingFile },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules },
   { styleMetadata, fileNodes },
 ) => {
   const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
@@ -95,17 +95,23 @@ export const colorsThemePlugin: Plugin = (
     }
 
     const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
-    writeFile(jsTemplate, path.join(fullPath, 'index.js'));
-    runFormattingFile(path.join(fullPath, 'index.js'));
+    writeFile(
+      addEslintDisableRules(jsTemplate, ['disable-max-lines']),
+      path.join(fullPath, 'index.js'),
+    );
 
     writeFile(cssData, path.join(fullPath, 'vars.css'));
-    runFormattingFile(path.join(fullPath, 'vars.css'));
   }
 
   const themeListTSData = generateThemeListTS(themesCollection, defaultTheme);
 
-  writeFile(themeListTSData, path.join(config?.styles?.exportPath || '', 'themes-list.ts'));
-  runFormattingFile(path.join(config?.styles?.exportPath || '', `themes-list.ts`));
+  writeFile(
+    addEslintDisableRules(themeListTSData, [
+      'disable-max-lines',
+      'disable-typescript-naming-convention',
+    ]),
+    path.join(config?.styles?.exportPath || '', 'themes-list.ts'),
+  );
 };
 
 colorsThemePlugin.pluginName = 'colors-theme';

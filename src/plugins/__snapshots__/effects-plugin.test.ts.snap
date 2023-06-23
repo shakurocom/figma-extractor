@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`effectsPlugin should create data with custom keyName function 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {boxShadow: {"colorful/shadow300__extra":"0px 10px 46px rgba(51, 229, 101, 0.70)","dark/shadow300__extra":"0px 10px 46px rgba(0, 0, 0, 0.50)","dark/shadow400__extra":"0px 0px 10px rgba(178, 178, 0, 1.00)","light/shadow300__extra":"0px 10px 46px rgba(255, 255, 255, 0.50)","monochrome/shadow300__extra":"0px 10px 46px rgba(142, 142, 142, 0.50)","shadow200__extra":"0px 18px 88px rgba(24, 39, 75, 0.14)","shadow300__extra":"0px 10px 46px rgba(24, 24, 24, 0.50)"}};
+    "
+`;
+
+exports[`effectsPlugin should write generated date for default config 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {boxShadow: {"colorful/shadow300":"0px 10px 46px rgba(51, 229, 101, 0.70)","dark/shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","dark/shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)","light/shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)","monochrome/shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)","shadow200":"0px 18px 88px rgba(24, 39, 75, 0.14)","shadow300":"0px 10px 46px rgba(24, 24, 24, 0.50)"}};
+    "
+`;

@@ -28,23 +28,23 @@ jest.mock(
   './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files',
 );
 
-getClient.mockImplementation(() => ({
+(getClient as jest.Mock).mockImplementation(() => ({
   fileStyles: () => Promise.resolve({ data: { meta: { styles: [] } } }),
   fileNodes: () => Promise.resolve({ data: {} }),
 }));
-generateIcons.mockImplementation(() => Promise.resolve());
+(generateIcons as jest.Mock).mockImplementation(() => Promise.resolve());
 
 describe('bin', () => {
-  let originalArgv;
-  let originalCwd;
+  let originalArgv: any;
+  let originalCwd: any;
 
   beforeEach(async () => {
-    cosmiconfig.mockClear();
-    getClient.mockClear();
-    createCore.mockClear();
-    launchPlugins.mockClear();
-    generateIcons.mockClear();
-    generateIconSpriteFromLocalFiles.mockClear();
+    (cosmiconfig as jest.Mock).mockClear();
+    (getClient as jest.Mock).mockClear();
+    (createCore as jest.Mock).mockClear();
+    (launchPlugins as jest.Mock).mockClear();
+    (generateIcons as jest.Mock).mockClear();
+    (generateIconSpriteFromLocalFiles as jest.Mock).mockClear();
     // Remove all cached modules. The cache needs to be cleared before running
     // each command, otherwise you will see the same results from the command
     // run in your first test in subsequent tests.
@@ -64,18 +64,18 @@ describe('bin', () => {
   });
 
   it('should be launched with empty config', async () => {
-    cosmiconfig.mockReset();
-    let resolver;
+    (cosmiconfig as jest.Mock).mockReset();
+    let resolver: any;
     const promise = new Promise(res => (resolver = res));
     const search = jest.fn(() => {
       return {
-        then: func => {
+        then: (func: any) => {
           return func({ config: {} }).then(resolver);
         },
       };
     });
 
-    cosmiconfig.mockImplementationOnce(
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
       jest.fn(() => ({
         search,
       })),
@@ -113,11 +113,11 @@ describe('bin', () => {
   });
 
   it('should be launched with a filled config', async () => {
-    let resolver;
+    let resolver: any;
     const promise = new Promise(res => (resolver = res));
     const search = jest.fn(() => {
       return {
-        then: func => {
+        then: (func: any) => {
           return func({
             config: {
               apiKey: '123',
@@ -144,7 +144,7 @@ describe('bin', () => {
       };
     });
 
-    cosmiconfig.mockImplementationOnce(
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
       jest.fn(() => ({
         search,
       })),
@@ -205,11 +205,11 @@ describe('bin', () => {
   });
 
   it('should be launched with flag --only=icons and config must have only icons section is enabled', async () => {
-    let resolver;
+    let resolver: any;
     const promise = new Promise(res => (resolver = res));
     const search = jest.fn(() => {
       return {
-        then: func => {
+        then: (func: any) => {
           return func({
             config: {
               apiKey: '123',
@@ -236,7 +236,7 @@ describe('bin', () => {
       };
     });
 
-    cosmiconfig.mockImplementationOnce(
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
       jest.fn(() => ({
         search,
       })),
@@ -310,11 +310,11 @@ describe('bin', () => {
   });
 
   it('should be launched with flag --only=icons,colors and config must have only icons and colors sections are enabled', async () => {
-    let resolver;
+    let resolver: any;
     const promise = new Promise(res => (resolver = res));
     const search = jest.fn(() => {
       return {
-        then: func => {
+        then: (func: any) => {
           return func({
             config: {
               apiKey: '123',
@@ -341,7 +341,7 @@ describe('bin', () => {
       };
     });
 
-    cosmiconfig.mockImplementationOnce(
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
       jest.fn(() => ({
         search,
       })),
@@ -415,11 +415,11 @@ describe('bin', () => {
   });
 
   it('should be launched with flag --local-icons and it must be generated only local icons', async () => {
-    let resolver;
+    let resolver: any;
     const promise = new Promise(res => (resolver = res));
     const search = jest.fn(() => {
       return {
-        then: func => {
+        then: (func: any) => {
           return func({
             config: {
               apiKey: '123',
@@ -446,7 +446,7 @@ describe('bin', () => {
       };
     });
 
-    cosmiconfig.mockImplementationOnce(
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
       jest.fn(() => ({
         search,
       })),
@@ -509,14 +509,14 @@ describe('bin', () => {
  *
  * @param {...string} args - positional and option arguments for the command to run
  */
-async function runCommand(...args) {
+async function runCommand(...args: any[]) {
   process.argv = [
     'node', // Not used but a value is required at this index in the array
     'bin.js', // Not used but a value is required at this index in the array
     ...args,
   ];
   process.cwd = () => '/test-figma-extractor';
-  let resolver;
+  let resolver: any;
   const promise = new Promise(res => (resolver = res));
   jest.isolateModules(() => {
     require('./bin');

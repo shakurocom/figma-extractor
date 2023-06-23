@@ -2,6 +2,9 @@
 
 exports[`textStylesPlugin should create data with custom keyName function 1`] = `
 "
+    /* eslint-disable max-lines */
+    
+    
       const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
 
       const textVariants = {'heading/bs-h500__extra': {
@@ -76,11 +79,15 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
     }};;
 
-      module.exports = {fontFamily, textVariants}"
+      module.exports = {fontFamily, textVariants}
+    "
 `;
 
 exports[`textStylesPlugin should create data with merged styles 1`] = `
 "
+    /* eslint-disable max-lines */
+    
+    
       const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
 
       const textVariants = {'heading/bs-h500': {
@@ -211,11 +218,15 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
     }};;
 
-      module.exports = {fontFamily, textVariants}"
+      module.exports = {fontFamily, textVariants}
+    "
 `;
 
 exports[`textStylesPlugin should write generated date for default config 1`] = `
 "
+    /* eslint-disable max-lines */
+    
+    
       const fontFamily = {"font1":"'Hind Vadodara', Arial, sans-serif"};
 
       const textVariants = {'heading/bs-h500': {
@@ -290,5 +301,6 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
     }};;
 
-      module.exports = {fontFamily, textVariants}"
+      module.exports = {fontFamily, textVariants}
+    "
 `;

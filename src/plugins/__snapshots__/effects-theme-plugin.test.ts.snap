@@ -24,20 +24,42 @@ exports[`effectsThemePlugin create theme data with defined defaultTheme field sh
 }"
 `;
 
-exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/dark/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"};"`;
+exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/dark/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/index.js 1`] = `"module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')","shadow400":"var(--sh-shadow400,'')"};"`;
+exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')","shadow400":"var(--sh-shadow400,'')"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/light/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};"`;
+exports[`effectsThemePlugin create theme data with defined defaultTheme field should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
+    "
+`;
 
 exports[`effectsThemePlugin create theme data with defined defaultTheme field should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
 "
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
 export type DefaultTheme = 'monochrome';
 
 export type Theme = 'light' | 'dark';  
-  "
+  
+    "
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/dark-blue/vars.css 1`] = `
@@ -61,20 +83,42 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 }"
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.js 1`] = `"module.exports = {};"`;
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.js 1`] = `"module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')"};"`;
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};"`;
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
+    "
+`;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
 "
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
 export type DefaultTheme = 'monochrome';
 
 export type Theme = 'light' | 'dark-blue';  
-  "
+  
+    "
 `;
 
 exports[`effectsThemePlugin create theme data without defined defaultTheme field should create css files with css variables: /export-path/effects/dark/vars.css 1`] = `
@@ -107,20 +151,48 @@ exports[`effectsThemePlugin create theme data without defined defaultTheme field
 }"
 `;
 
-exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/dark/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"};"`;
+exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/dark/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/index.js 1`] = `"module.exports = {"shadow300":"var(--sh-shadow300,'')","shadow400":"var(--sh-shadow400,'')"};"`;
+exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"var(--sh-shadow300,'')","shadow400":"var(--sh-shadow400,'')"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/light/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};"`;
+exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
+    "
+`;
 
-exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `"module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};"`;
+exports[`effectsThemePlugin create theme data without defined defaultTheme field should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
+    "
+`;
 
 exports[`effectsThemePlugin create theme data without defined defaultTheme field should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
 "
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
 export type DefaultTheme = '';
 
 export type Theme = 'light' | 'dark' | 'monochrome';  
-  "
+  
+    "
 `;
