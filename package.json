@@ -10,6 +10,7 @@
   "bin": {
     "figma-extract": "./dist/bin.js"
   },
+  "types": "index.d.ts",
   "files": [
     "dist",
     "README.md",

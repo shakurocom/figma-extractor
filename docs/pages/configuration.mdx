@@ -79,6 +79,8 @@ type Config = {
 <Tabs items={['Config with disabled theme', 'Config with enabled theme']}>
   <Tab>
 ```jsx filename="figma-extractor.config.js" copy
+// @ts-check
+
 function getTextStyleName(name) {
   // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
 
@@ -95,6 +97,9 @@ const iconNaming = originalName => {
   return formattedName;
 };
 
+/**
+* @type {import('@shakuroinc/figma-extractor').Config}
+**/
 module.exports = {
   apiKey: 'xxxxxx', // your Figma api access key
   fileId: 'xxxxxx', // Figma file id
@@ -128,6 +133,8 @@ module.exports = {
   </Tab>
   <Tab>
 ```jsx filename="figma-extractor.config.js" copy
+// @ts-check
+
 function getTextStyleName(name) {
   // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
 
@@ -148,6 +155,9 @@ const iconNaming = originalName => {
   return formattedName;
 };
 
+/**
+* @type {import('@shakuroinc/figma-extractor').Config}
+**/
 module.exports = {
   apiKey: 'xxxxxx', // your Figma api access key
   fileId: 'xxxxxx', // Figma file id
