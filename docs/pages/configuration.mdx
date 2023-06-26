@@ -1,3 +1,5 @@
+import { Tab, Tabs } from 'nextra-theme-docs';
+
 # Config
 
 ```ts showLineNumbers
@@ -74,8 +76,9 @@ type Config = {
 
 ## Config example:
 
+<Tabs items={['Config with disabled theme', 'Config with enabled theme']}>
+  <Tab>
 ```jsx filename="figma-extractor.config.js" copy
-const { bool } = require('prop-types');
 function getTextStyleName(name) {
   // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
 
@@ -122,6 +125,65 @@ module.exports = {
   },
 };
 ```
+  </Tab>
+  <Tab>
+```jsx filename="figma-extractor.config.js" copy
+function getTextStyleName(name) {
+  // format name from like "Heading / bs-h200 - 80 b" to "bs-h200"
+
+  const splitLeftPart = name?.split(' / ');
+  const splitRightPart = splitLeftPart?.[splitLeftPart?.length - 1]
+    .split(' ')[0]
+    ?.replace('.', '-');
+
+  return splitRightPart || '';
+}
+
+function getColorAndEffectKeyName(name = '') {
+  return name.replace(/\s+/gi, '');
+}
+
+const iconNaming = originalName => {
+  const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+  return formattedName;
+};
+
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  styles: {
+    exportPath: './ui/theme',
+    allowedThemes: ['example-theme-1','example-theme-2'], // allowed themes
+    // defaultTheme: 'example-theme-1', // If there is a default theme
+    colors: {
+      keyName: getColorAndEffectKeyName,
+      useTheme: true,
+    },
+    effects: {
+      keyName: getColorAndEffectKeyName,
+      useTheme: true,
+    },
+    gradients: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    textStyles: {
+      keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
+      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
+    },
+  },
+  icons: {
+    // disabled: true,
+    nodeIds: ['2310:0', '2090:11', '276:18'],
+    iconName: name => iconNaming(name), // custom format icon name
+    exportPath: './ui/atoms/icon',
+    generateSprite: true,
+    generateTypes: true,
+    localIcons: false,
+  },
+};
+```
+  </Tab>
+</Tabs>
 
 ## Merging of text styles
 
