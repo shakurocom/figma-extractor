@@ -19,68 +19,8 @@ Before examples, we take such colors from API data:
 Plugin creates themes' files for only defined themes from a config, other styles will be ignored.
 
 ---
-1. There are some themes and the default theme is **empty**. 
 
-Config:
-```json
-{
-  "styles": {
-    "colors": {
-      "useTheme": true,
-      "allowedThemes": ["dark","light"]
-    }
-  }
-}
-```
-It will generate such files:
-
-* `themes-list.ts`:
-```ts
-export type DefaultTheme = '';
-
-export type Theme = 'light' | 'dark'; 
-```
-* `colors/dark/index.js`:
-```js
-module.exports = {
-    "text-txt900":"#000000",
-    "text-txt700":"#00ff00"
-};
-```
-* `colors/light/index.js`:
-```js
-module.exports = {
-    "text-txt900":"#ffffff"
-};
-```
-* `colors/index.js`:
-```js
-module.exports = {
-    "text-txt900":"var(--sh-text-txt900,'')",
-    "text-txt700":"var(--sh-text-txt700,'')"
-};
-```
-* `colors/dark/vars.css`:
-```css
-[data-theme='dark'] {
-    --sh-text-txt900: '#000000';
-    --sh-text-txt700: '#00ff00';
-}
-```
-* `colors/light/vars.css`:
-```css
-[data-theme='light'] {
-    --sh-text-txt900: '#ffffff';
-    --sh-text-txt700: '';
-}
-```
-* `colors/vars.css`:
-```css
-:root {
-}
-```
----
-2. There are some themes and the default theme is **defined**. 
+1. There are some themes and the default theme. 
 
 Config:
 ```json
@@ -100,7 +40,7 @@ It will generate such files:
 ```ts
 export type DefaultTheme = 'monochrome';
 
-export type Theme = 'light' | 'dark'; 
+export type Theme = 'light' | 'dark' | 'monochrome'; 
 ```
 * `colors/dark/index.js`:
 ```js
@@ -115,7 +55,20 @@ module.exports = {
     "text-txt900":"#ffffff",
 };
 ```
+* `colors/monochrome/index.js`:
+```js
+module.exports = {
+    "text-txt900":"#ff00ff",
+};
+```
 * `colors/index.js`:
+```js
+module.exports = {
+    "text-txt900":"#ff00ff",
+    "text-txt700":""
+};
+```
+* `colors/with-vars.js`:
 ```js
 module.exports = {
     "text-txt900":"var(--sh-text-txt900,'#ff00ff')",
@@ -133,6 +86,13 @@ module.exports = {
 ```css
 [data-theme='light'] {
     --sh-text-txt900: '#ffffff';
+    --sh-text-txt700: '';
+}
+```
+* `colors/monochrome/vars.css`:
+```css
+[data-theme='monochrome'] {
+    --sh-text-txt900: '#ff00ff';
     --sh-text-txt700: '';
 }
 ```
@@ -164,7 +124,7 @@ It will generate such files:
 ```ts
 export type DefaultTheme = 'monochrome';
 
-export type Theme = 'light' | 'dark-blue'; 
+export type Theme = 'light' | 'dark-blue' | 'monochrome'; 
 ```
 * `colors/dark-blue/index.js`:
 ```js
@@ -176,7 +136,19 @@ module.exports = {
     "text-txt900":"#ffffff",
 };
 ```
+* `colors/monochrome/index.js`:
+```js
+module.exports = {
+    "text-txt900":"#ff00ff",
+};
+```
 * `colors/index.js`:
+```js
+module.exports = {
+    "text-txt900":"#ff00ff",
+};
+```
+* `colors/with-vars.js`:
 ```js
 module.exports = {
     "text-txt900":"var(--sh-text-txt900,'#ff00ff')",
@@ -192,6 +164,12 @@ module.exports = {
 ```css
 [data-theme='light'] {
     --sh-text-txt900: '#ffffff';
+}
+```
+* `colors/monochrome/vars.css`:
+```css
+[data-theme='monochrome'] {
+    --sh-text-txt900: '#ff00ff';
 }
 ```
 * `colors/vars.css` (from *monochrome* theme):

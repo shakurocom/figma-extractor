@@ -7,7 +7,6 @@ import {
   addNewNameToEachTheme,
   checkConfigAndThrowCommonError,
   createThemeCollection,
-  DEFAULT_THEME_NAME,
   generateCSSVariables,
   generateJsColors,
   generateJsVariables,
@@ -36,7 +35,7 @@ export const colorsThemePlugin: Plugin = (
     defaultTheme: config?.styles?.defaultTheme,
   });
 
-  const themesCollection = createThemeCollection({ allowedThemes, defaultTheme });
+  const themesCollection = createThemeCollection({ allowedThemes });
 
   const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
   const colors = getColorStyles(metaColors, fileNodes, name => keyNameCallback(name, true));
@@ -70,7 +69,7 @@ export const colorsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     let jsData: Record<ColorName, string> = {};
-    if (currentThemeIsDefault || themeName === DEFAULT_THEME_NAME) {
+    if (currentThemeIsDefault) {
       jsData = generateJsVariables(
         variables,
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
@@ -86,8 +85,6 @@ export const colorsThemePlugin: Plugin = (
 
     let fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
     if (currentThemeIsDefault) {
-      fullPath = path.join(config?.styles?.exportPath || '', `colors`);
-    } else if (themeName === DEFAULT_THEME_NAME) {
       fullPath = path.join(config?.styles?.exportPath || '', `colors`);
     }
 

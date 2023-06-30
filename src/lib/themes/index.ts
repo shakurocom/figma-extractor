@@ -7,7 +7,6 @@ export type VariablesCollection = Record<string, string>;
 export type ThemeCollection = Record<ThemeName, VariablesCollection>;
 
 export const NOT_FOUND_THEME_NAME = '_';
-export const DEFAULT_THEME_NAME = '__DEFAULT__';
 
 export const checkConfigAndThrowCommonError = ({
   allowedThemes,
@@ -17,7 +16,7 @@ export const checkConfigAndThrowCommonError = ({
   defaultTheme?: string;
 }): {
   allowedThemes: string[];
-  defaultTheme?: string;
+  defaultTheme: string;
 } => {
   if (!Array.isArray(allowedThemes)) {
     throw new Error(
@@ -25,11 +24,17 @@ export const checkConfigAndThrowCommonError = ({
     );
   }
 
+  if (typeof defaultTheme !== 'string') {
+    throw new Error(
+      '`config -> styles -> defaultTheme` field is required when the useTheme is equal true',
+    );
+  }
+
   if (allowedThemes.length === 0) {
     throw new Error('`config -> styles -> allowedThemes` field must have one or more theme name');
   }
 
-  if (defaultTheme && !allowedThemes.includes(defaultTheme)) {
+  if (!allowedThemes.includes(defaultTheme)) {
     throw new Error(
       "`config -> styles -> defaultTheme` field must be one of allowedThemes' values",
     );
@@ -43,25 +48,14 @@ export const checkConfigAndThrowCommonError = ({
 
 export const createThemeCollection = ({
   allowedThemes,
-  defaultTheme,
 }: {
   allowedThemes: string[];
-  defaultTheme?: string;
 }): ThemeCollection => {
-  const themesCollection = [...allowedThemes, NOT_FOUND_THEME_NAME].reduce<ThemeCollection>(
-    (col, current) => {
-      col[current] = {};
+  return [...allowedThemes, NOT_FOUND_THEME_NAME].reduce<ThemeCollection>((col, current) => {
+    col[current] = {};
 
-      return col;
-    },
-    {},
-  );
-
-  if (!defaultTheme) {
-    themesCollection[DEFAULT_THEME_NAME] = {};
-  }
-
-  return themesCollection;
+    return col;
+  }, {});
 };
 
 export const variableNameIsValid = (name: string) => !!name.match(/^[\w\-]+$/);
@@ -139,11 +133,7 @@ export const generateCSSVariables = (
     return a > b ? 1 : -1;
   });
 
-  if (themeName === DEFAULT_THEME_NAME) {
-    return `
-:root {
-}`;
-  } else if (themeName && themeName !== NOT_FOUND_THEME_NAME) {
+  if (themeName && themeName !== NOT_FOUND_THEME_NAME) {
     return `
 [data-theme='${themeName}'] {
   ${data.join('\n')}
@@ -160,12 +150,10 @@ export const generateThemeListTS = (themeCollection: ThemeCollection, defaultThe
   const themes: string[] = Object.keys(themeCollection)
     .filter(theme => {
       if (defaultTheme) {
-        return (
-          theme !== defaultTheme && theme !== NOT_FOUND_THEME_NAME && theme !== DEFAULT_THEME_NAME
-        );
+        return theme !== defaultTheme && theme !== NOT_FOUND_THEME_NAME;
       }
 
-      return theme !== NOT_FOUND_THEME_NAME && theme !== DEFAULT_THEME_NAME;
+      return theme !== NOT_FOUND_THEME_NAME;
     })
     .map(theme => `'${theme}'`);
 
@@ -183,15 +171,14 @@ export function* getRealThemesFromCollection({
   defaultTheme,
 }: {
   themesCollection: ThemeCollection;
-  defaultTheme?: string;
+  defaultTheme: string;
 }) {
   for (const [themeName, variables] of Object.entries(themesCollection)) {
     if (themeName === NOT_FOUND_THEME_NAME) {
       continue;
     }
 
-    const currentThemeIsDefault =
-      defaultTheme && themesCollection[defaultTheme] && defaultTheme === themeName;
+    const currentThemeIsDefault = !!themesCollection[defaultTheme] && defaultTheme === themeName;
 
     yield { themeName, variables, currentThemeIsDefault };
   }

@@ -7,7 +7,6 @@ import {
   addNewNameToEachTheme,
   checkConfigAndThrowCommonError,
   createThemeCollection,
-  DEFAULT_THEME_NAME,
   generateCSSVariables,
   generateJsColors,
   generateJsVariables,
@@ -36,7 +35,7 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme: config?.styles?.defaultTheme,
   });
 
-  const themesCollection = createThemeCollection({ allowedThemes, defaultTheme });
+  const themesCollection = createThemeCollection({ allowedThemes });
 
   const effects = getEffectStyles(
     metaEffects,
@@ -75,7 +74,7 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     let jsData: Record<EffectName, string> = {};
-    if (currentThemeIsDefault || themeName === DEFAULT_THEME_NAME) {
+    if (currentThemeIsDefault) {
       jsData = generateJsVariables(
         variables,
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
@@ -91,8 +90,6 @@ export const effectsThemePlugin: Plugin = (
 
     let fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
     if (currentThemeIsDefault) {
-      fullPath = path.join(config?.styles?.exportPath || '', `effects`);
-    } else if (themeName === DEFAULT_THEME_NAME) {
       fullPath = path.join(config?.styles?.exportPath || '', `effects`);
     }
 

@@ -27,12 +27,37 @@ describe('effectsThemePlugin', () => {
     );
   });
 
+  it('should throw the error because the defaultTheme is not defined', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: [],
+          effects: {
+            useTheme: true,
+          },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+    });
+
+    core.writeFile = jest.fn();
+
+    expect(() =>
+      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+    ).toThrow(
+      '`config -> styles -> defaultTheme` field is required when the useTheme is equal true',
+    );
+  });
+
   it('should throw the error because the allowedThemes is empty', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
           allowedThemes: [],
+          defaultTheme: 'any',
           effects: {
             useTheme: true,
           },
@@ -78,6 +103,7 @@ describe('effectsThemePlugin', () => {
         styles: {
           exportPath: '/export-path/',
           allowedThemes: ['theme1', 'theme2'],
+          defaultTheme: 'theme1',
           effects: {
             useTheme: true,
           },
@@ -100,6 +126,7 @@ describe('effectsThemePlugin', () => {
         styles: {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
           effects: {
             useTheme: true,
             keyName: (name?: string) => (name === 'light/shadow300' ? name + '+prefix' : name),
@@ -123,6 +150,7 @@ describe('effectsThemePlugin', () => {
         styles: {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
           effects: {
             useTheme: true,
             keyName: (name?: string) => (name === 'shadow300' ? name + '+prefix' : name),
@@ -140,227 +168,109 @@ describe('effectsThemePlugin', () => {
     ).toThrow('Effect name: "shadow300+prefix" without theme contains not-valid chars.');
   });
 
-  describe('create theme data without defined defaultTheme field', () => {
-    it('should create js files with css variables', () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            effects: {
-              useTheme: true,
-            },
+  it('should create js files with css variables', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
+          effects: {
+            useTheme: true,
           },
         },
-        plugins: [],
-        rootPath: '/root-path',
-      });
-
-      core.writeFile = jest.fn();
-
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
-        '/export-path/effects/light/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
-        '/export-path/effects/light/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
-        '/export-path/effects/dark/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
-        '/export-path/effects/dark/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
-        '/export-path/effects/monochrome/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-        '/export-path/effects/monochrome/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/effects/index.js');
-      expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
-        '/export-path/effects/index.js',
-      );
+      },
+      plugins: [],
+      rootPath: '/root-path',
     });
 
-    it('should create css files with css variables', () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            effects: {
-              useTheme: true,
-            },
-          },
-        },
-        plugins: [],
-        rootPath: '/root-path',
-      });
+    core.writeFile = jest.fn();
 
-      core.writeFile = jest.fn();
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
-        '/export-path/effects/light/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
-        '/export-path/effects/light/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
-        '/export-path/effects/dark/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
-        '/export-path/effects/dark/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe(
-        '/export-path/effects/monochrome/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
-        '/export-path/effects/monochrome/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/vars.css');
-      expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
-        '/export-path/effects/vars.css',
-      );
-    });
-
-    it("should create theme-list.ts files with themes' types", () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            effects: {
-              useTheme: true,
-            },
-          },
-        },
-        plugins: [],
-        rootPath: '/root-path',
-      });
-
-      core.writeFile = jest.fn();
-
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/themes-list.ts');
-      expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
-        '/export-path/themes-list.ts',
-      );
-    });
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
+      '/export-path/effects/light/index.js',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
+      '/export-path/effects/light/index.js',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
+      '/export-path/effects/dark/index.js',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
+      '/export-path/effects/dark/index.js',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe('/export-path/effects/index.js');
+    expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
+      '/export-path/effects/index.js',
+    );
   });
 
-  describe('create theme data with defined defaultTheme field', () => {
-    it('should create js files with css variables', () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
+  it('should create css files with css variables', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
+          effects: {
+            useTheme: true,
           },
         },
-        plugins: [],
-        rootPath: '/root-path',
-      });
-
-      core.writeFile = jest.fn();
-
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
-        '/export-path/effects/light/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
-        '/export-path/effects/light/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
-        '/export-path/effects/dark/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
-        '/export-path/effects/dark/index.js',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe('/export-path/effects/index.js');
-      expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-        '/export-path/effects/index.js',
-      );
+      },
+      plugins: [],
+      rootPath: '/root-path',
     });
 
-    it('should create css files with css variables', () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
+    core.writeFile = jest.fn();
+
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
+      '/export-path/effects/light/vars.css',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
+      '/export-path/effects/light/vars.css',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
+      '/export-path/effects/dark/vars.css',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
+      '/export-path/effects/dark/vars.css',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe('/export-path/effects/vars.css');
+    expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
+      '/export-path/effects/vars.css',
+    );
+  });
+
+  it("should create theme-list.ts files with themes' types", () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
+          effects: {
+            useTheme: true,
           },
         },
-        plugins: [],
-        rootPath: '/root-path',
-      });
-
-      core.writeFile = jest.fn();
-
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
-        '/export-path/effects/light/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[1][0]).toMatchSnapshot(
-        '/export-path/effects/light/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[3][1]).toBe(
-        '/export-path/effects/dark/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
-        '/export-path/effects/dark/vars.css',
-      );
-      expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe('/export-path/effects/vars.css');
-      expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
-        '/export-path/effects/vars.css',
-      );
+      },
+      plugins: [],
+      rootPath: '/root-path',
     });
 
-    it("should create theme-list.ts files with themes' types", () => {
-      const core = createCore({
-        config: {
-          styles: {
-            exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'monochrome'],
-            defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
-          },
-        },
-        plugins: [],
-        rootPath: '/root-path',
-      });
+    core.writeFile = jest.fn();
 
-      core.writeFile = jest.fn();
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
-
-      expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/themes-list.ts');
-      expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
-        '/export-path/themes-list.ts',
-      );
-    });
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/themes-list.ts');
+    expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+      '/export-path/themes-list.ts',
+    );
   });
 
   describe("create theme data with one theme which doesn't exist in figma", () => {
