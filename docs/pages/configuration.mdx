@@ -25,6 +25,7 @@ type Config = {
     /**
        Default theme for styles fields with flag `useTheme`
        It's used like default variables inside generated CSS variables
+       Note: If there is at least one styles field with flag `useTheme` then this field is required
      */
     defaultTheme?: string;
     colors?: {
@@ -164,7 +165,7 @@ module.exports = {
   styles: {
     exportPath: './ui/theme',
     allowedThemes: ['example-theme-1','example-theme-2'], // allowed themes
-    // defaultTheme: 'example-theme-1', // If there is a default theme
+    defaultTheme: 'example-theme-1', // one of the allowed themes which will be meant as default theme
     colors: {
       keyName: getColorAndEffectKeyName,
       useTheme: true,
@@ -253,8 +254,8 @@ will be transformed:
 
 If the `colors` or `effects` field has `useTheme: true` then CLI will look for allowed themes and creates colors or effects according to such themes.
 
-* `allowedThemes` - list of allowed themes. By only these themes, it will be generated particular files.
-* `defaultTheme` - one of allowed themes. Default variables for CSS variables will be taken from this theme.
+* `allowedThemes` - list of the allowed themes. By only these themes, it will be generated particular files.
+* `defaultTheme` - one of the allowed themes. Default variables for CSS variables will be taken from this theme.
 
 ### Example:
 for config:
@@ -300,9 +301,24 @@ module.exports = {
 };
 ```
 
+```jsx filename="/ui/theme/colors/blue/index.js"
+module.exports = {
+    "text-txt600":"#0000ff",
+};
+```
+
 ```jsx filename="/ui/theme/colors/index.js"
 module.exports = {
-    "text-txt600":"var(--sh-text-txt600,'#ff0000')", // '#ff0000' - will be taken from a default theme if it is defined for a specific color
+    "text-txt600":"#0000ff", // it will be taken from a default theme if it is defined for a specific color
+    "text-txt700":"",
+    "text-txt800":"",
+    "text-txt900":"",
+};
+```
+
+```jsx filename="/ui/theme/colors/with-vars.js"
+module.exports = {
+    "text-txt600":"var(--sh-text-txt600,'#0000ff')", // it will be taken from a default theme if it is defined for a specific color
     "text-txt700":"var(--sh-text-txt700,'')",
     "text-txt800":"var(--sh-text-txt800,'')",
     "text-txt900":"var(--sh-text-txt900,'')",
@@ -324,6 +340,12 @@ module.exports = {
     --sh-text-txt700: '#ffffff';
     --sh-text-txt800: '#ffffff';
     --sh-text-txt900: '#ffffff';
+}
+```
+
+```css filename="/ui/theme/colors/blue/vars.css"
+[data-theme='blue'] {
+    --sh-text-txt600: '#0000ff';
 }
 ```
 
