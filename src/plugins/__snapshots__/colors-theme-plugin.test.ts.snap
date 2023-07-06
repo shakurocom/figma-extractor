@@ -40,7 +40,7 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 "
     /* eslint-disable max-lines */
     
-    module.exports = {"text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
+    module.exports = {"text-txt900":"#ff00ff"};
     "
 `;
 
@@ -57,6 +57,14 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
     /* eslint-disable max-lines */
     
     module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
     "
 `;
 
@@ -118,7 +126,7 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
 "
     /* eslint-disable max-lines */
     
-    module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
+    module.exports = {"text-txt900":"#ff00ff"};
     "
 `;
 
@@ -135,6 +143,14 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
     /* eslint-disable max-lines */
     
     module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
     "
 `;
 
