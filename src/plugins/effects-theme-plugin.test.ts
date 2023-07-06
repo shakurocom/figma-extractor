@@ -207,8 +207,14 @@ describe('effectsThemePlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
       '/export-path/effects/monochrome/index.js',
     );
-    expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/effects/index.js');
+    expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe(
+      '/export-path/effects/with-vars.js',
+    );
     expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+      '/export-path/effects/with-vars.js',
+    );
+    expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.js');
+    expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
       '/export-path/effects/index.js',
     );
   });
@@ -252,8 +258,8 @@ describe('effectsThemePlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
       '/export-path/effects/monochrome/vars.css',
     );
-    expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/vars.css');
-    expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
+    expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/effects/vars.css');
+    expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
       '/export-path/effects/vars.css',
     );
   });
@@ -279,8 +285,8 @@ describe('effectsThemePlugin', () => {
     effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/themes-list.ts');
-    expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
+    expect((core.writeFile as jest.Mock).mock.calls[9][1]).toBe('/export-path/themes-list.ts');
+    expect((core.writeFile as jest.Mock).mock.calls[9][0]).toMatchSnapshot(
       '/export-path/themes-list.ts',
     );
   });
@@ -325,8 +331,14 @@ describe('effectsThemePlugin', () => {
       expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
         '/export-path/effects/monochrome/index.js',
       );
-      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/effects/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe(
+        '/export-path/effects/with-vars.js',
+      );
       expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
+        '/export-path/effects/with-vars.js',
+      );
+      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
         '/export-path/effects/index.js',
       );
     });
@@ -370,8 +382,8 @@ describe('effectsThemePlugin', () => {
       expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
         '/export-path/effects/monochrome/vars.css',
       );
-      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/vars.css');
-      expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
+      expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/effects/vars.css');
+      expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
         '/export-path/effects/vars.css',
       );
     });
@@ -397,8 +409,8 @@ describe('effectsThemePlugin', () => {
       effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
-      expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/themes-list.ts');
-      expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
+      expect((core.writeFile as jest.Mock).mock.calls[9][1]).toBe('/export-path/themes-list.ts');
+      expect((core.writeFile as jest.Mock).mock.calls[9][0]).toMatchSnapshot(
         '/export-path/themes-list.ts',
       );
     });

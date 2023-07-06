@@ -88,21 +88,28 @@ export const effectsThemePlugin: Plugin = (
     writeFile(cssData, path.join(fullPath, 'vars.css'));
 
     if (currentThemeIsDefault) {
+      const fullPath = path.join(config?.styles?.exportPath || '', `effects`);
+
       const jsData = generateJsVariables(
         variables,
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
       );
 
-      const cssData = generateCSSVariables(variables);
-
-      const fullPath = path.join(config?.styles?.exportPath || '', `effects`);
-
       const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
       writeFile(
         addEslintDisableRules(jsTemplate, ['disable-max-lines']),
+        path.join(fullPath, 'with-vars.js'),
+      );
+
+      const jsLegacyData = generateJsColors(variables);
+
+      const jsLegacyTemplate = `module.exports = ${stringifyRecordsWithSort(jsLegacyData)};`;
+      writeFile(
+        addEslintDisableRules(jsLegacyTemplate, ['disable-max-lines']),
         path.join(fullPath, 'index.js'),
       );
 
+      const cssData = generateCSSVariables(variables);
       writeFile(cssData, path.join(fullPath, 'vars.css'));
     }
   }
