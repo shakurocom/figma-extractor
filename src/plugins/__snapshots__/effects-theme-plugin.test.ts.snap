@@ -54,7 +54,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 
 export type DefaultTheme = 'monochrome';
 
-export type Theme = 'light' | 'dark-blue';  
+export type Theme = 'light' | 'dark-blue' | 'monochrome';  
   
     "
 `;
@@ -116,7 +116,7 @@ exports[`effectsThemePlugin should create theme-list.ts files with themes' types
 
 export type DefaultTheme = 'monochrome';
 
-export type Theme = 'light' | 'dark';  
+export type Theme = 'light' | 'dark' | 'monochrome';  
   
     "
 `;

@@ -149,10 +149,6 @@ export const generateCSSVariables = (
 export const generateThemeListTS = (themeCollection: ThemeCollection, defaultTheme?: string) => {
   const themes: string[] = Object.keys(themeCollection)
     .filter(theme => {
-      if (defaultTheme) {
-        return theme !== defaultTheme && theme !== NOT_FOUND_THEME_NAME;
-      }
-
       return theme !== NOT_FOUND_THEME_NAME;
     })
     .map(theme => `'${theme}'`);
