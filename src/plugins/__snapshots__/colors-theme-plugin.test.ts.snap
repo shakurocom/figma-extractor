@@ -14,6 +14,13 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 }"
 `;
 
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-text-txt900: '#ff00ff';
+}"
+`;
+
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
@@ -42,6 +49,14 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
     /* eslint-disable max-lines */
     
     module.exports = {"text-txt900":"#ffffff"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"text-txt900":"#ff00ff"};
     "
 `;
 
@@ -75,6 +90,14 @@ exports[`colorsThemePlugin should create css files with css variables: /export-p
 }"
 `;
 
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-text-txt700: '';
+--sh-text-txt900: '#ff00ff';
+}"
+`;
+
 exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
@@ -104,6 +127,14 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
     /* eslint-disable max-lines */
     
     module.exports = {"text-txt900":"#ffffff"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"text-txt900":"#ff00ff"};
     "
 `;
 
