@@ -73,25 +73,11 @@ export const effectsThemePlugin: Plugin = (
     themesCollection,
     defaultTheme,
   })) {
-    let jsData: Record<EffectName, string> = {};
-    if (currentThemeIsDefault) {
-      jsData = generateJsVariables(
-        variables,
-        defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
-      );
-    } else {
-      jsData = generateJsColors(variables);
-    }
+    const jsData: Record<EffectName, string> = generateJsColors(variables);
 
-    const cssData = generateCSSVariables(
-      variables,
-      defaultTheme === themeName ? undefined : themeName,
-    );
+    const cssData = generateCSSVariables(variables, themeName);
 
-    let fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
-    if (currentThemeIsDefault) {
-      fullPath = path.join(config?.styles?.exportPath || '', `effects`);
-    }
+    const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
     const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
     writeFile(
@@ -100,6 +86,25 @@ export const effectsThemePlugin: Plugin = (
     );
 
     writeFile(cssData, path.join(fullPath, 'vars.css'));
+
+    if (currentThemeIsDefault) {
+      const jsData = generateJsVariables(
+        variables,
+        defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
+      );
+
+      const cssData = generateCSSVariables(variables);
+
+      const fullPath = path.join(config?.styles?.exportPath || '', `effects`);
+
+      const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
+      writeFile(
+        addEslintDisableRules(jsTemplate, ['disable-max-lines']),
+        path.join(fullPath, 'index.js'),
+      );
+
+      writeFile(cssData, path.join(fullPath, 'vars.css'));
+    }
   }
 
   const themeListTSData = generateThemeListTS(themesCollection, defaultTheme);

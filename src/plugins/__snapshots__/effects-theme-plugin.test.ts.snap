@@ -14,6 +14,13 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 }"
 `;
 
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+}"
+`;
+
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
@@ -42,6 +49,14 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     
     module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
 
@@ -75,6 +90,14 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 }"
 `;
 
+exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+--sh-shadow400: '';
+}"
+`;
+
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
@@ -104,6 +127,14 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     
     module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
+    "
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    
+    module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
 
