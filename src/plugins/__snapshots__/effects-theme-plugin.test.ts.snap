@@ -31,7 +31,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {};
     "
 `;
@@ -39,7 +39,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
@@ -47,7 +47,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
     "
 `;
@@ -55,7 +55,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
@@ -63,7 +63,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')"};
     "
 `;
@@ -117,7 +117,7 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/dark/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"};
     "
 `;
@@ -125,7 +125,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
@@ -133,7 +133,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/light/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"};
     "
 `;
@@ -141,7 +141,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"};
     "
 `;
@@ -149,7 +149,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
 "
     /* eslint-disable max-lines */
-    
+    /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')","shadow400":"var(--sh-shadow400,'')"};
     "
 `;

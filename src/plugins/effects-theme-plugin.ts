@@ -81,7 +81,10 @@ export const effectsThemePlugin: Plugin = (
 
     const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
     writeFile(
-      addEslintDisableRules(jsTemplate, ['disable-max-lines']),
+      addEslintDisableRules(jsTemplate, [
+        'disable-max-lines',
+        'disable-typescript-naming-convention',
+      ]),
       path.join(fullPath, 'index.js'),
     );
 
@@ -97,7 +100,10 @@ export const effectsThemePlugin: Plugin = (
 
       const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
       writeFile(
-        addEslintDisableRules(jsTemplate, ['disable-max-lines']),
+        addEslintDisableRules(jsTemplate, [
+          'disable-max-lines',
+          'disable-typescript-naming-convention',
+        ]),
         path.join(fullPath, 'with-vars.js'),
       );
 
@@ -105,7 +111,10 @@ export const effectsThemePlugin: Plugin = (
 
       const jsLegacyTemplate = `module.exports = ${stringifyRecordsWithSort(jsLegacyData)};`;
       writeFile(
-        addEslintDisableRules(jsLegacyTemplate, ['disable-max-lines']),
+        addEslintDisableRules(jsLegacyTemplate, [
+          'disable-max-lines',
+          'disable-typescript-naming-convention',
+        ]),
         path.join(fullPath, 'index.js'),
       );
 
