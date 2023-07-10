@@ -106,7 +106,7 @@ module.exports = {
   apiKey: 'xxxxxx', // your Figma api access key
   fileId: 'xxxxxx', // Figma file id
   styles: {
-    exportPath: './ui/theme',
+    exportPath: './theme',
     colors: {
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
@@ -125,7 +125,7 @@ module.exports = {
     // disabled: true,
     nodeIds: ['2310:0', '2090:11', '276:18'],
     iconName: name => iconNaming(name), // custom format icon name
-    exportPath: './ui/atoms/icon',
+    exportPath: './atoms/icon',
     generateSprite: true,
     generateTypes: true,
     localIcons: false,
@@ -180,9 +180,9 @@ module.exports = {
   apiKey: 'xxxxxx', // your Figma api access key
   fileId: 'xxxxxx', // Figma file id
   styles: {
-    exportPath: './ui/theme',
-    allowedThemes: ['example-theme-1','example-theme-2'], // allowed themes
-    defaultTheme: 'example-theme-1', // one of the allowed themes which will be meant as default theme
+    exportPath: './theme',
+    allowedThemes: ['light','dark'], // allowed themes
+    defaultTheme: 'light', // one of the allowed themes which will be meant as default theme
     colors: {
       keyName: getColorAndEffectKeyName,
       useTheme: true,
@@ -203,7 +203,7 @@ module.exports = {
     // disabled: true,
     nodeIds: ['2310:0', '2090:11', '276:18'],
     iconName: name => iconNaming(name), // custom format icon name
-    exportPath: './ui/atoms/icon',
+    exportPath: './atoms/icon',
     generateSprite: true,
     generateTypes: true,
     localIcons: false,
@@ -240,7 +240,7 @@ for config:
 module.exports = {
   ...
   styles: {
-    exportPath: './ui/theme',
+    exportPath: './theme',
     textStyles: {
       ...,
       merge: true,
@@ -297,7 +297,7 @@ module.exports = {
   allowedThemes: ['light','dark','blue'],
   defaultTheme: 'blue',
   styles: {
-    exportPath: './ui/theme',
+    exportPath: './theme',
     colors: {
       ...,
       useTheme: true,
@@ -310,9 +310,11 @@ module.exports = {
 The CLI will generate such files:
 
 ```tsx filename="/ui/theme/themes-list.ts"
-export type DefaultTheme = 'blue';
+export const DEFAULT_THEME = 'blue';
 
-export type Theme = 'light' | 'dark' | 'blue';
+export const THEMES = ['light', 'dark', 'blue'];
+
+export type Theme = typeof THEMES[number];
 ```
 
 ```jsx filename="/ui/theme/colors/dark/index.js"
@@ -359,32 +361,32 @@ module.exports = {
 
 ```css filename="/ui/theme/colors/dark/vars.css"
 [data-theme='dark'] {
-    --sh-text-txt600: '#000000';
-    --sh-text-txt700: '#000000';
-    --sh-text-txt800: '#000000';
-    --sh-text-txt900: '#000000';
+    --sh-text-txt600: #000000;
+    --sh-text-txt700: #000000;
+    --sh-text-txt800: #000000;
+    --sh-text-txt900: #000000;
 }
 ```
 
 ```css filename="/ui/theme/colors/light/vars.css"
 [data-theme='light'] {
-    --sh-text-txt600: '#ffffff';
-    --sh-text-txt700: '#ffffff';
-    --sh-text-txt800: '#ffffff';
-    --sh-text-txt900: '#ffffff';
+    --sh-text-txt600: #ffffff;
+    --sh-text-txt700: #ffffff;
+    --sh-text-txt800: #ffffff;
+    --sh-text-txt900: #ffffff;
 }
 ```
 
 ```css filename="/ui/theme/colors/blue/vars.css"
 [data-theme='blue'] {
-    --sh-text-txt600: '#0000ff';
+    --sh-text-txt600: #0000ff;
 }
 ```
 
 ```css filename="/ui/theme/colors/vars.css"
 /* from blue theme due to it is a default theme */
 :root {
-    --sh-text-txt600: '#ff00ff';
+    --sh-text-txt600: #ff00ff;
     --sh-text-txt700: '';
     --sh-text-txt800: '';
     --sh-text-txt900: '';
