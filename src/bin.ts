@@ -6,8 +6,17 @@ import path from 'path';
 
 import { getClient } from './lib/client';
 import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
-import { generateStyles } from './utils/generate-styles/generate-styles';
+import { createCore } from './core';
 import { generateIcons } from './generate-icons';
+import {
+  colorsPlugin,
+  colorsThemePlugin,
+  effectsPlugin,
+  effectsThemePlugin,
+  gradientsPlugin,
+  launchPlugins,
+  textStylesPlugin,
+} from './plugins';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -31,7 +40,7 @@ const getOnlyArgs = (onlyArg: string) => {
   return onlyArgs;
 };
 
-const disabledKeys = ['icons', 'colors', 'effects', 'textStyles', 'gradients'] as OnlyArgs[];
+const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'gradients'];
 
 async function run(config: Config) {
   const rootPath = process.cwd();
@@ -81,12 +90,27 @@ async function run(config: Config) {
     });
   }
 
+  const core = createCore({
+    rootPath,
+    config,
+    plugins: [
+      config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
+      textStylesPlugin,
+      config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
+      gradientsPlugin,
+    ],
+  });
+
   const client = getClient(config.apiKey);
   const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
   const nodeIds = meta.styles.map(item => item.node_id);
   const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
 
-  generateStyles(config, meta.styles, fileNodes);
+  launchPlugins(core, {
+    figmaClient: client,
+    styleMetadata: meta.styles,
+    fileNodes,
+  });
 
   if (!config.icons?.disabled) {
     if (config.icons.localIcons) {
@@ -144,7 +168,7 @@ const explorer = cosmiconfig(moduleName, {
 explorer
   .search()
   .then((result: { config: Config }) => {
-    run(result.config);
+    return run(result.config);
   })
   .catch((error: any) => {
     console.log('error', error);

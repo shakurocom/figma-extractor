@@ -3,17 +3,21 @@ type Config = {
   fileId: string;
   styles: {
     exportPath: string;
+    allowedThemes?: string[];
+    defaultTheme?: string;
     colors?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
+      useTheme?: boolean;
     };
     gradients?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string) => string;
     };
     effects?: {
       disabled: boolean;
-      keyName?: (name: string) => string;
+      keyName?: (name?: string, useTheme?: boolean) => string;
+      useTheme?: boolean;
     };
     textStyles?: {
       disabled: boolean;

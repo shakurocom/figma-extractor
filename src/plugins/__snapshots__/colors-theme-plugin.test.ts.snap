@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/dark-blue/vars.css 1`] = `
+"
+[data-theme='dark-blue'] {
+  --sh-text-txt900: '';
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
+"
+[data-theme='light'] {
+  --sh-text-txt900: #ffffff;
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-text-txt900: #ff00ff;
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/vars.css 1`] = `
+"
+:root {
+  --sh-text-txt900: #ff00ff;
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/dark-blue/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ffffff"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'monochrome';
+
+export const THEMES = ['light', 'dark-blue', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
+  
+    "
+`;
+
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
+"
+[data-theme='dark'] {
+  --sh-text-txt700: #00ff00;
+--sh-text-txt900: #000000;
+}"
+`;
+
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
+"
+[data-theme='light'] {
+  --sh-text-txt700: '';
+--sh-text-txt900: #ffffff;
+}"
+`;
+
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-text-txt700: '';
+--sh-text-txt900: #ff00ff;
+}"
+`;
+
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/vars.css 1`] = `
+"
+:root {
+  --sh-text-txt700: '';
+--sh-text-txt900: #ff00ff;
+}"
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/dark/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt700":"#00ff00","text-txt900":"#000000"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ffffff"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt900":"#ff00ff"};
+    "
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,'#ff00ff')"};
+    "
+`;
+
+exports[`colorsThemePlugin should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'monochrome';
+
+export const THEMES = ['light', 'dark', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
+  
+    "
+`;

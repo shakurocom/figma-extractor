@@ -1,12 +1,11 @@
 import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
 import { formattedColor } from './color/formatted-color/formatted-color';
-import { getColorName } from './color/get-color-name/get-color-name';
 
 export const getColorStyles = (
   metaColors: FullStyleMetadata[],
   fileNodes: FileNodesResponse,
-  config: Config,
+  keyNameCallback: (name?: string) => string,
 ) => {
   const colorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
 
@@ -16,8 +15,10 @@ export const getColorStyles = (
         ? acc
         : {
             ...acc,
-            [config?.styles?.colors?.keyName?.(item?.name as string) ?? getColorName(item?.name)]:
-              formattedColor((item as any).fills?.[0]?.color, (item as any).fills[0]?.opacity),
+            [keyNameCallback(item?.name)]: formattedColor(
+              (item as any).fills?.[0]?.color,
+              (item as any).fills[0]?.opacity,
+            ),
           },
     {} as Record<string, string>,
   );

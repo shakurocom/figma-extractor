@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/dark-blue/vars.css 1`] = `
+"
+[data-theme='dark-blue'] {
+  --sh-shadow300: '';
+}"
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
+"
+[data-theme='light'] {
+  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
+}"
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+}"
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/vars.css 1`] = `
+"
+:root {
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+}"
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {}};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')"}};
+    "
+`;
+
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'monochrome';
+
+export const THEMES = ['light', 'dark-blue', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
+  
+    "
+`;
+
+exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/dark/vars.css 1`] = `
+"
+[data-theme='dark'] {
+  --sh-shadow300: 0px 10px 46px rgba(0, 0, 0, 0.50);
+--sh-shadow400: 0px 0px 10px rgba(178, 178, 0, 1.00);
+}"
+`;
+
+exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
+"
+[data-theme='light'] {
+  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
+--sh-shadow400: '';
+}"
+`;
+
+exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
+"
+[data-theme='monochrome'] {
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+--sh-shadow400: '';
+}"
+`;
+
+exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/vars.css 1`] = `
+"
+:root {
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+--sh-shadow400: '';
+}"
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/dark/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"}};
+    "
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    "
+`;
+
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')","shadow400":"var(--sh-shadow400,'')"}};
+    "
+`;
+
+exports[`effectsThemePlugin should create theme-list.ts files with themes' types: /export-path/themes-list.ts 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'monochrome';
+
+export const THEMES = ['light', 'dark', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
+  
+    "
+`;

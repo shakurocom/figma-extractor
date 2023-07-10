@@ -2,7 +2,6 @@ import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
 import { getFontFamily } from './text/get-font-family/get-font-family';
 import { getTextStyleName } from './text/get-text-style-name/get-text-style-name';
-import { sortTextStyles } from './text/sort-text-styles/sort-text-styles';
 
 export type TextStyle = {
   [x: string]: {
@@ -18,14 +17,11 @@ export const getTextStyles = (
   metaTextStyles: FullStyleMetadata[],
   fileNodes: FileNodesResponse,
   config: Config,
-  options?: {
-    textStylesBeforeSorting?: (textStyles: TextStyle[]) => TextStyle[];
-  },
 ) => {
   const textStylesNodes = metaTextStyles.map(item => fileNodes.nodes[item.node_id]?.document);
   const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(textStylesNodes);
 
-  let textStyles = textStylesNodes.map(({ name, style }: any) => {
+  const textStyles = textStylesNodes.map(({ name, style }: any) => {
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
 
     const extraStyles: any = {};
@@ -45,11 +41,5 @@ export const getTextStyles = (
     };
   });
 
-  if (options?.textStylesBeforeSorting) {
-    textStyles = options?.textStylesBeforeSorting(textStyles);
-  }
-
-  const sortedTextStyles = sortTextStyles(textStyles);
-
-  return { fontFamily: formattedFontFamilyWithAdditionalFonts, textStyles: sortedTextStyles };
+  return { fontFamily: formattedFontFamilyWithAdditionalFonts, textStyles };
 };
