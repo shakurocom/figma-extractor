@@ -75,9 +75,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
-export type DefaultTheme = 'monochrome';
+export const DEFAULT_THEME = 'monochrome';
 
-export type Theme = 'light' | 'dark-blue' | 'monochrome';  
+export const THEMES = ['light', 'dark-blue', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
   
     "
 `;
@@ -161,9 +163,11 @@ exports[`effectsThemePlugin should create theme-list.ts files with themes' types
     
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
-export type DefaultTheme = 'monochrome';
+export const DEFAULT_THEME = 'monochrome';
 
-export type Theme = 'light' | 'dark' | 'monochrome';  
+export const THEMES = ['light', 'dark', 'monochrome'];  
+
+export type Theme = typeof THEMES[number];
   
     "
 `;

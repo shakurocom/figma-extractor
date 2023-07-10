@@ -160,9 +160,11 @@ export const generateThemeListTS = (themeCollection: ThemeCollection, defaultThe
   return `
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
-export type DefaultTheme = '${defaultTheme ?? ''}';
+export const DEFAULT_THEME = '${defaultTheme ?? ''}';
 
-export type Theme = ${themes.join(' | ')};  
+export const THEMES = [${themes.join(', ')}];  
+
+export type Theme = typeof THEMES[number];
   `;
 };
 
