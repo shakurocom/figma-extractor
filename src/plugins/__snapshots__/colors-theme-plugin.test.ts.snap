@@ -10,21 +10,21 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-text-txt900: '#ffffff';
+  --sh-text-txt900: #ffffff;
 }"
 `;
 
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-text-txt900: '#ff00ff';
+  --sh-text-txt900: #ff00ff;
 }"
 `;
 
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
-  --sh-text-txt900: '#ff00ff';
+  --sh-text-txt900: #ff00ff;
 }"
 `;
 
@@ -85,8 +85,8 @@ export type Theme = 'light' | 'dark-blue' | 'monochrome';
 exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
-  --sh-text-txt700: '#00ff00';
---sh-text-txt900: '#000000';
+  --sh-text-txt700: #00ff00;
+--sh-text-txt900: #000000;
 }"
 `;
 
@@ -94,7 +94,7 @@ exports[`colorsThemePlugin should create css files with css variables: /export-p
 "
 [data-theme='light'] {
   --sh-text-txt700: '';
---sh-text-txt900: '#ffffff';
+--sh-text-txt900: #ffffff;
 }"
 `;
 
@@ -102,7 +102,7 @@ exports[`colorsThemePlugin should create css files with css variables: /export-p
 "
 [data-theme='monochrome'] {
   --sh-text-txt700: '';
---sh-text-txt900: '#ff00ff';
+--sh-text-txt900: #ff00ff;
 }"
 `;
 
@@ -110,7 +110,7 @@ exports[`colorsThemePlugin should create css files with css variables: /export-p
 "
 :root {
   --sh-text-txt700: '';
---sh-text-txt900: '#ff00ff';
+--sh-text-txt900: #ff00ff;
 }"
 `;
 

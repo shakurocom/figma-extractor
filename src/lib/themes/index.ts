@@ -123,7 +123,11 @@ export const generateCSSVariables = (
 ) => {
   const data: string[] = [];
   for (const [name, value] of Object.entries(variablesCollection)) {
-    data.push(`--sh-${name}: '${value}';`);
+    if (value) {
+      data.push(`--sh-${name}: ${value};`);
+    } else {
+      data.push(`--sh-${name}: '';`);
+    }
   }
   data.sort((a, b) => {
     if (a === b) {

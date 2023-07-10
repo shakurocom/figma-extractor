@@ -10,21 +10,21 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-shadow300: '0px 10px 46px rgba(255, 255, 255, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
 }"
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
 }"
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
 }"
 `;
 
@@ -85,15 +85,15 @@ export type Theme = 'light' | 'dark-blue' | 'monochrome';
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
-  --sh-shadow300: '0px 10px 46px rgba(0, 0, 0, 0.50)';
---sh-shadow400: '0px 0px 10px rgba(178, 178, 0, 1.00)';
+  --sh-shadow300: 0px 10px 46px rgba(0, 0, 0, 0.50);
+--sh-shadow400: 0px 0px 10px rgba(178, 178, 0, 1.00);
 }"
 `;
 
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-shadow300: '0px 10px 46px rgba(255, 255, 255, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
 --sh-shadow400: '';
 }"
 `;
@@ -101,7 +101,7 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
 --sh-shadow400: '';
 }"
 `;
@@ -109,7 +109,7 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-shadow300: '0px 10px 46px rgba(142, 142, 142, 0.50)';
+  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
 --sh-shadow400: '';
 }"
 `;
