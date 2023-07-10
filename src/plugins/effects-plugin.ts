@@ -19,7 +19,10 @@ export const effectsPlugin: Plugin = (
 
     const effectTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(effects)}};`;
     writeFile(
-      addEslintDisableRules(effectTemplate, ['disable-max-lines']),
+      addEslintDisableRules(effectTemplate, [
+        'disable-max-lines',
+        'disable-typescript-naming-convention',
+      ]),
       path.join(config?.styles?.exportPath || '', 'effects.js'),
     );
   }

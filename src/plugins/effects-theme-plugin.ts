@@ -79,7 +79,7 @@ export const effectsThemePlugin: Plugin = (
 
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
-    const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
+    const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
     writeFile(
       addEslintDisableRules(jsTemplate, [
         'disable-max-lines',
@@ -98,7 +98,7 @@ export const effectsThemePlugin: Plugin = (
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
       );
 
-      const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
+      const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
       writeFile(
         addEslintDisableRules(jsTemplate, [
           'disable-max-lines',
@@ -109,7 +109,10 @@ export const effectsThemePlugin: Plugin = (
 
       const jsLegacyData = generateJsColors(variables);
 
-      const jsLegacyTemplate = `module.exports = ${stringifyRecordsWithSort(jsLegacyData)};`;
+      const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(
+        jsLegacyData,
+      )}};`;
+
       writeFile(
         addEslintDisableRules(jsLegacyTemplate, [
           'disable-max-lines',
