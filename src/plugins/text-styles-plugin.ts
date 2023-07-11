@@ -37,7 +37,7 @@ export const textStylesPlugin: Plugin = (
       const textVariants = ${textStylesTemplate};
 
       module.exports = {fontFamily, textVariants}`,
-        ['disable-max-lines'],
+        ['disable-max-lines', 'disable-typescript-naming-convention'],
       ),
       path.join(config?.styles?.exportPath || '', 'text-styles.js'),
     );
