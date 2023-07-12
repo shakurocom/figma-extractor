@@ -1,0 +1,380 @@
+import { Steps, FileTree, Callout } from 'nextra-theme-docs';
+import { FileCollector, FileContent, FileLinkInjector } from '../components/file-tree-extend';
+
+# How to use themes in your project
+
+<Steps>
+### Enable usage of themes
+
+Firstly, you should enable usage of themes in the config.
+
+You can enable usage of themes for colors or effects now.
+
+Set an array of allowedThemes and defaultTheme in `Config -> styles`.
+
+After that, you may set `useTHeme: true` field inside `Config -> styles -> colors` or `Config -> styles -> effects` to enable usage of themes.
+
+```js filename="figma-extractor.config.js" {3-4,9,13}
+module.exports = {
+  ...
+  allowedThemes: ['light','dark'],
+  defaultTheme: 'light',
+  styles: {
+    exportPath: './theme',
+    colors: {
+      ...,
+      useTheme: true,
+    },
+    effects: {
+      ...,
+      useTheme: true,
+    },
+    ...
+  },
+...
+};
+```
+
+For more information to follow [there](/configuration#themes-for-colors-and-effects)
+
+### Launch the extractor.
+
+After successfully launching of the extractor you see created files like that:
+
+
+<FileCollector defaultFileOpened="themes-list.ts">
+  <FileTree>
+    <FileTree.Folder name="ui" defaultOpen>
+      <FileTree.Folder name="theme" defaultOpen>
+        <FileTree.Folder name="colors" defaultOpen>
+          <FileTree.Folder name="dark" defaultOpen>
+            <FileLinkInjector filename="color-dark-index.js">
+              <FileTree.File name="index.js" />
+            </FileLinkInjector>
+            <FileLinkInjector filename="color-dark-vars.css">
+              <FileTree.File name="vars.css" />
+            </FileLinkInjector>
+          </FileTree.Folder>
+
+          <FileTree.Folder name="light" defaultOpen>
+            <FileLinkInjector filename="color-light-index.js">
+              <FileTree.File name="index.js" />
+            </FileLinkInjector>
+            <FileLinkInjector filename="color-light-vars.css">
+              <FileTree.File name="vars.css" />
+            </FileLinkInjector>
+          </FileTree.Folder>
+
+          <FileLinkInjector filename="color-index.js">
+            <FileTree.File name="index.js" />
+          </FileLinkInjector>
+          <FileLinkInjector filename="color-vars.css">
+            <FileTree.File name="vars.css" />
+          </FileLinkInjector>
+          <FileLinkInjector filename="color-with-vars.js">
+            <FileTree.File name="with-vars.js" />
+          </FileLinkInjector>
+        </FileTree.Folder>
+        <FileTree.Folder name="effects" defaultOpen>
+          <FileTree.Folder name="dark" defaultOpen>
+            <FileLinkInjector filename="effects-dark-index.js">
+                <FileTree.File name="index.js" />
+            </FileLinkInjector>
+            <FileLinkInjector filename="effects-dark-vars.css">
+                <FileTree.File name="vars.css" />
+            </FileLinkInjector>
+          </FileTree.Folder>
+
+          <FileTree.Folder name="light" defaultOpen>
+            <FileLinkInjector filename="effects-light-index.js">
+                <FileTree.File name="index.js" />
+            </FileLinkInjector>
+            <FileLinkInjector filename="effects-light-vars.css">
+                <FileTree.File name="vars.css" />
+            </FileLinkInjector>
+          </FileTree.Folder>
+
+          <FileLinkInjector filename="effects-index.js">
+            <FileTree.File name="index.js" />
+          </FileLinkInjector>
+          <FileLinkInjector filename="effects-vars.css">
+            <FileTree.File name="vars.css" />
+          </FileLinkInjector>
+          <FileLinkInjector filename="effects-with-vars.js">
+            <FileTree.File name="with-vars.js" />
+          </FileLinkInjector>
+        </FileTree.Folder>
+        <FileLinkInjector filename="themes-list.ts">
+          <FileTree.File name="themes-list.ts" />
+        </FileLinkInjector>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree>
+  <FileContent filename="themes-list.ts">
+```ts filename="themes-list.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'light';
+
+export const THEMES = ['dark', 'light'];
+
+export type Theme = (typeof THEMES)[number];
+```
+  </FileContent>
+
+  <FileContent filename="color-with-vars.js">
+```js filename="with-vars.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  bg100: "var(--sh-bg100,'#ffffff')",
+  bg200: "var(--sh-bg200,'#f7f9fc')",
+  txt100: "var(--sh-txt100,'#ffffff')",
+  txt800: "var(--sh-txt800,'#a4acc0')",
+};
+```
+  </FileContent>
+
+  <FileContent filename="color-vars.css">
+```css filename="vars.css"
+:root {
+  --sh-bg100: #ffffff;
+  --sh-bg200: #f7f9fc;
+  --sh-txt100: #ffffff;
+  --sh-txt800: #a4acc0;
+}
+```
+  </FileContent>
+
+  <FileContent filename="color-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  bg100: '#ffffff',
+  bg200: '#f7f9fc',
+  txt100: '#ffffff',
+  txt800: '#a4acc0',
+};
+```
+  </FileContent>
+
+  <FileContent filename="color-dark-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  bg100: '#121928',
+  bg200: '#2d3646',
+  txt100: '#121928',
+  txt800: '#a4acc0',
+};
+```
+  </FileContent>
+
+  <FileContent filename="color-dark-vars.css">
+```css filename="vars.css"
+[data-theme='dark'] {
+  --sh-bg100: #121928;
+  --sh-bg200: #2d3646;
+  --sh-txt100: #121928;
+  --sh-txt800: #a4acc0;
+}
+```
+  </FileContent>
+
+  <FileContent filename="color-light-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  bg100: '#ffffff',
+  bg200: '#f7f9fc',
+  txt100: '#ffffff',
+  txt800: '#a4acc0',
+};
+```
+  </FileContent>
+
+  <FileContent filename="color-light-vars.css">
+```css filename="vars.css"
+[data-theme='light'] {
+  --sh-bg100: #ffffff;
+  --sh-bg200: #f7f9fc;
+  --sh-txt100: #ffffff;
+  --sh-txt800: #a4acc0;
+}
+```
+  </FileContent>
+
+  <FileContent filename="effects-with-vars.js">
+```js filename="with-vars.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  boxShadow: {
+    dp100: "var(--sh-dp100,'0px 8px 24px rgba(65, 74, 92, 0.40)')",
+    dp1000: "var(--sh-dp1000,'0px 8px 24px rgba(186, 193, 204, 0.70)')",
+    dp250: "var(--sh-dp250,'0px 0px 16px rgba(255, 10, 10, 0.16)')",
+    dp900: "var(--sh-dp900,'0px 0px 12px rgba(53, 156, 252, 0.56)')",
+  },
+};
+```
+  </FileContent>
+
+  <FileContent filename="effects-vars.css">
+```css filename="vars.css"
+:root {
+  --sh-dp1000: 0px 8px 24px rgba(186, 193, 204, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(65, 74, 92, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.16);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.56);
+}
+```
+  </FileContent>
+
+  <FileContent filename="effects-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
+    dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.16)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.56)',
+  },
+};
+```
+  </FileContent>
+
+  <FileContent filename="effects-dark-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(13, 15, 19, 0.40)',
+    dp1000: '0px 8px 24px rgba(3, 12, 26, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.08)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.24)',
+  },
+};
+```
+  </FileContent>
+
+  <FileContent filename="effects-dark-vars.css">
+```css filename="vars.css"
+[data-theme='dark'] {
+  --sh-dp1000: 0px 8px 24px rgba(3, 12, 26, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(13, 15, 19, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.08);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.24);
+}
+```
+  </FileContent>
+
+  <FileContent filename="effects-light-index.js">
+```js filename="index.js"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+module.exports = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
+    dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.16)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.56)',
+  },
+};
+```
+  </FileContent>
+
+  <FileContent filename="effects-light-vars.css">
+```css filename="vars.css"
+[data-theme='light'] {
+  --sh-dp1000: 0px 8px 24px rgba(186, 193, 204, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(65, 74, 92, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.16);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.56);
+}
+```
+  </FileContent>
+</FileCollector>
+
+### Install `next-themes` package in your project
+
+Generated files can be used with https://github.com/pacocoursey/next-themes.
+
+`next-themes` is a great solution for switching themes.
+
+
+### Include received themes in `next-themes`
+
+Inside `app.tsx` you should add following code:
+
+```tsx filename="app.tsx"
+import { THEMES, DEFAULT_THEME } from '@sh/ui/theme/themes-list';
+
+<ThemeProvider attribute="data-theme" defaultTheme={DEFAULT_THEME} themes={THEMES}>
+  {children}
+</ThemeProvider>
+```
+
+### Include generated js files in `tailwind.config.js`
+
+```js filename="tailwind.config.js" /with-vars/
+const colors = require('./theme/colors/with-vars');
+const effects = require('./theme/effects/with-vars');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  ...
+  theme: {
+    ...
+    ...effects,
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      ...colors,
+    },
+  },
+  ...
+};
+```
+<Callout emoji="⚠️">
+  Note: You should import `with-vars.js` file instead of `index.js`.
+
+  `index.js` contents real data from Figma and it's been left only for legacy code.
+
+  `with-vars.js` contents CSS variables for correctly working with themes.
+</Callout>
+
+### Include generated CSS files in `global-styles`.
+
+You should include all CSS variables for each theme and a root theme.
+
+In `ui/organisms/global-styles/index.css` add following lines:
+
+```css filename="ui/organisms/global-styles/index.css"
+
+@import "@sh/ui/theme/colors/vars.css";
+@import "@sh/ui/theme/colors/light/vars.css";
+@import "@sh/ui/theme/colors/dark/vars.css";
+
+@import "@sh/ui/theme/effects/vars.css";
+@import "@sh/ui/theme/effects/light/vars.css";
+@import "@sh/ui/theme/effects/dark/vars.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Finish.
+
+Now you can use tailwind's classes as usually.
+
+</Steps>
