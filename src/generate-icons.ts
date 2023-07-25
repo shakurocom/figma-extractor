@@ -6,6 +6,7 @@ import { getClient } from './lib/client';
 import { generateIconTypes } from './lib/generate-icon-types';
 import { generateIconsSprite } from './lib/generate-icons-sprite';
 import { optimizeSvg } from './lib/optimize-svg';
+import { Config } from './types';
 
 const naming = (originalName: string) => {
   const formattedName = originalName.replace(/ /g, '').replace('/', '-');

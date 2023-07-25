@@ -1,6 +1,8 @@
 import { ClientInterface, FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
-import { Plugin } from '../plugins';
+import { Plugin } from '@/plugins';
+import { Config } from '@/types';
+
 import { addEslintDisableAtTheTopOfText } from './add-eslint-disable';
 import { runFormattingFile } from './run-formatting-file';
 import { styleTypeUtils } from './style-type-utils';

@@ -47,7 +47,6 @@ const config: Config = {
       params: {
         overrides: {
           removeViewBox: false,
-          removeRasterImages: false,
         },
       },
     },

@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
-import { generateIconTypes } from '../../generate-icon-types';
-import { generateIconsSprite } from '../../generate-icons-sprite';
+import { Config } from '@/types';
+
+import { generateIconTypes } from '../../lib/generate-icon-types';
+import { generateIconsSprite } from '../../lib/generate-icons-sprite';
 
 const getIconNameByFilename = (filename: string): string => filename.split('.')[0];
 

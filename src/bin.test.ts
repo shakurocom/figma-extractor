@@ -1,7 +1,7 @@
 import { cosmiconfig } from 'cosmiconfig';
 
 import { getClient } from './lib/client';
-import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
+import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
 import { createCore } from './core';
 import { generateIcons } from './generate-icons';
 import {
@@ -24,9 +24,7 @@ jest.mock('./lib/client');
 jest.mock('./plugins');
 jest.mock('./core');
 jest.mock('./generate-icons');
-jest.mock(
-  './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files',
-);
+jest.mock('./lib/icon/generate-icons-sprite-from-local-files');
 
 (getClient as jest.Mock).mockImplementation(() => ({
   fileStyles: () => Promise.resolve({ data: { meta: { styles: [] } } }),

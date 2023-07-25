@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import shell from 'shelljs';
 
+import { Config } from '@/types';
+
 const fileLengthRuleDisableComment = '/* eslint-disable max-lines */';
 
 const namingConventionRuleDisableComment =

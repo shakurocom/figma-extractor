@@ -5,7 +5,7 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
-import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files/generate-icons-sprite-from-local-files';
+import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
 import { createCore } from './core';
 import { generateIcons } from './generate-icons';
 import {
@@ -17,6 +17,7 @@ import {
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
+import { Config, OnlyArgs } from './types';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')

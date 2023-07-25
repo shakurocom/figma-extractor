@@ -1,5 +1,7 @@
 import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
+import { Config } from '@/types';
+
 import { getFontFamily } from './text/get-font-family/get-font-family';
 import { getTextStyleName } from './text/get-text-style-name/get-text-style-name';
 
