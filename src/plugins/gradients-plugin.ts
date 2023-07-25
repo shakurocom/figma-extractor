@@ -19,7 +19,10 @@ export const gradientsPlugin: Plugin = (
 
     const gradientsTemplate = `module.exports = ${stringifyRecordsWithSort(gradients)};`;
     writeFile(
-      addEslintDisableRules(gradientsTemplate, ['disable-max-lines']),
+      addEslintDisableRules(gradientsTemplate, [
+        'disable-max-lines',
+        'disable-typescript-naming-convention',
+      ]),
       path.join(config?.styles?.exportPath || '', 'gradients.js'),
     );
   }

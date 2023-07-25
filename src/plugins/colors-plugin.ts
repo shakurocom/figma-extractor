@@ -18,7 +18,10 @@ export const colorsPlugin: Plugin = (
     const colorTemplate = `module.exports = ${stringifyRecordsWithSort(colors)};`;
 
     writeFile(
-      addEslintDisableRules(colorTemplate, ['disable-max-lines']),
+      addEslintDisableRules(colorTemplate, [
+        'disable-max-lines',
+        'disable-typescript-naming-convention',
+      ]),
       path.join(config?.styles?.exportPath || '', 'colors.js'),
     );
   }
