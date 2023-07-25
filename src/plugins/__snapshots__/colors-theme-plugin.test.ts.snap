@@ -77,7 +77,7 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 
 export const DEFAULT_THEME = 'monochrome';
 
-export const THEMES = ['light', 'dark-blue', 'monochrome'];  
+export const THEMES = ['light', 'dark-blue', 'monochrome'] as const;  
 
 export type Theme = typeof THEMES[number];
   
@@ -165,7 +165,7 @@ exports[`colorsThemePlugin should create theme-list.ts files with themes' types:
 
 export const DEFAULT_THEME = 'monochrome';
 
-export const THEMES = ['light', 'dark', 'monochrome'];  
+export const THEMES = ['light', 'dark', 'monochrome'] as const;  
 
 export type Theme = typeof THEMES[number];
   

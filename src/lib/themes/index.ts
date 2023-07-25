@@ -162,7 +162,7 @@ export const generateThemeListTS = (themeCollection: ThemeCollection, defaultThe
 
 export const DEFAULT_THEME = '${defaultTheme ?? ''}';
 
-export const THEMES = [${themes.join(', ')}];  
+export const THEMES = [${themes.join(', ')}] as const;  
 
 export type Theme = typeof THEMES[number];
   `;
