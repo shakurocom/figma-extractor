@@ -1,4 +1,4 @@
-type Config = {
+export type Config = {
   apiKey: string;
   fileId: string;
   styles: {
@@ -39,4 +39,4 @@ type Config = {
   };
 };
 
-type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'gradients' | 'icons';
+export type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'gradients' | 'icons';
