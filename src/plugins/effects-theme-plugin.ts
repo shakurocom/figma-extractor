@@ -91,7 +91,7 @@ export const effectsThemePlugin: Plugin = (
     writeFile(cssData, path.join(fullPath, 'vars.css'));
 
     if (currentThemeIsDefault) {
-      const fullPath = path.join(config?.styles?.exportPath || '', `effects`);
+      const fullPath = path.join(config?.styles?.exportPath || '', 'effects');
 
       const jsData = generateJsVariables(
         variables,

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { createCore } from '../core';
 import { fileNodes } from '../utils/generate-styles/fixtures/file-nodes';
 import { styleMetadata } from '../utils/generate-styles/fixtures/style-metadata';

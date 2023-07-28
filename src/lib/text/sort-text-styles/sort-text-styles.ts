@@ -69,7 +69,7 @@ function renderGeneralStyles(styles: {
       ${renderStyle('fontWeight: [value],', styles.fontWeight)}
       ${renderStyle('textTransform: "[value]",', styles.textTransform)}
       ${renderStyle('lineHeight: [value],', styles.lineHeight)}
-      ${renderStyle(`letterSpacing: '[value]px',`, styles.letterSpacing)}
+      ${renderStyle("letterSpacing: '[value]px',", styles.letterSpacing)}
   `;
 }
 

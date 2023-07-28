@@ -22,9 +22,8 @@ class MediaCollection {
     const result: TextStyle[] = [];
     Object.keys(this.cache).map(className => {
       const mediaList = this.cache[className];
-      const media = mediaList
-        .sort(this.sort.bind(this))
-        .reduce<TextStyle['0']>((collection, current) => {
+      const media = mediaList.sort(this.sort.bind(this)).reduce<TextStyle['0']>(
+        (collection, current) => {
           if (current.media === 'bs') {
             return {
               ...collection,
@@ -37,7 +36,9 @@ class MediaCollection {
             ...collection,
             [mediaKey]: current.data,
           };
-        }, {} as TextStyle['0']);
+        },
+        {} as TextStyle['0'],
+      );
 
       result.push({
         [className]: media,

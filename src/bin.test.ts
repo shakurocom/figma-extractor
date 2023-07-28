@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { cosmiconfig } from 'cosmiconfig';
 
 import { getClient } from './lib/client';

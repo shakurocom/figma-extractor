@@ -86,7 +86,7 @@ export const colorsThemePlugin: Plugin = (
     writeFile(cssData, path.join(fullPath, 'vars.css'));
 
     if (currentThemeIsDefault) {
-      const fullPath = path.join(config?.styles?.exportPath || '', `colors`);
+      const fullPath = path.join(config?.styles?.exportPath || '', 'colors');
 
       const jsData = generateJsVariables(
         variables,
