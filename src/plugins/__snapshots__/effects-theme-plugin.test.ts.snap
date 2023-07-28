@@ -64,7 +64,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')"}};
+    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,0px 10px 46px rgba(142, 142, 142, 0.50))"}};
     "
 `;
 
@@ -152,7 +152,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,'0px 10px 46px rgba(142, 142, 142, 0.50)')","shadow400":"var(--sh-shadow400,'')"}};
+    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,0px 10px 46px rgba(142, 142, 142, 0.50))","shadow400":"var(--sh-shadow400,'')"}};
     "
 `;
 

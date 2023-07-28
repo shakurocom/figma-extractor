@@ -100,7 +100,8 @@ export const generateJsVariables = (
 ) => {
   const data: Record<string, string> = {};
   for (const name of Object.keys(variablesCollection)) {
-    data[name] = `var(--sh-${name},'${defaultVariablesCollection[name] ?? ''}')`;
+    const fallbackValue = defaultVariablesCollection[name];
+    data[name] = `var(--sh-${name},${fallbackValue ? fallbackValue : "''"})`;
   }
 
   return data;
