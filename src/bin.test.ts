@@ -99,7 +99,7 @@ describe('bin', () => {
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
+      expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
         icons: {
           exportPath: '/test-figma-extractor',
           localIcons: false,
@@ -180,7 +180,7 @@ describe('bin', () => {
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
+      expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
         apiKey: '123',
         fileId: 'fsdfhjkh423j423',
         icons: {
@@ -277,7 +277,7 @@ describe('bin', () => {
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
+      expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
         apiKey: '123',
         fileId: 'fsdfhjkh423j423',
         icons: {
@@ -382,7 +382,7 @@ describe('bin', () => {
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
+      expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
         apiKey: '123',
         fileId: 'fsdfhjkh423j423',
         icons: {

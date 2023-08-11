@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ClientInterface } from 'figma-js';
 import fs from 'fs';
 import path from 'path';
 
@@ -14,8 +15,10 @@ const naming = (originalName: string) => {
   return formattedName;
 };
 
-export const generateIcons = async (config: Config) => {
-  const client = getClient(config.apiKey);
+export const generateIcons = async (client: ClientInterface, config: Config) => {
+  if (!config?.icons?.exportPath) {
+    throw new Error('config -> icons -> exportPath is required field');
+  }
   const pathIconsFolder = path.join(config?.icons?.exportPath ?? '', 'svg');
   const pathSpriteFolder = path.join(config?.icons?.exportPath ?? '');
 
@@ -23,8 +26,8 @@ export const generateIcons = async (config: Config) => {
     fs.mkdirSync(pathIconsFolder, { recursive: true });
   }
 
-  const download = async (uri: string, filename: string) =>
-    new Promise(async (resolve, reject) => {
+  const download = async function (uri: string, filename: string) {
+    const promise = new Promise(async (resolve, reject) => {
       const writer = fs.createWriteStream(filename);
       const response = await axios({
         url: uri,
@@ -38,12 +41,19 @@ export const generateIcons = async (config: Config) => {
 
       await response.data.pipe(writer);
       await writer.on('finish', async () => {
-        await optimizeSvg(filename);
-        console.log('Downloaded!', filename);
         resolve(filename);
       });
       writer.on('error', reject);
     });
+
+    return promise.then(res => {
+      return optimizeSvg(filename).then(() => {
+        console.log('Downloaded!', filename);
+
+        return res;
+      });
+    });
+  };
 
   const { data } = await client.fileNodes(config.fileId, { ids: config?.icons?.nodeIds });
   const iconNames: string[] = [];

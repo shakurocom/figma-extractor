@@ -121,7 +121,7 @@ async function run(config: Config) {
         console.error(err);
       }
     } else {
-      generateIcons(config).catch(err => {
+      generateIcons(client, config).catch(err => {
         console.error(err);
         console.error(err.stack);
       });
