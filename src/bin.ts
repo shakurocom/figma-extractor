@@ -5,15 +5,16 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
+import { generateIcons } from './lib/icon/generate-icons';
 import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
 import { createCore } from './core';
-import { generateIcons } from './generate-icons';
 import {
   colorsPlugin,
   colorsThemePlugin,
   effectsPlugin,
   effectsThemePlugin,
   gradientsPlugin,
+  iconsPlugin,
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
@@ -99,6 +100,7 @@ async function run(config: Config) {
       textStylesPlugin,
       config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
       gradientsPlugin,
+      iconsPlugin,
     ],
   });
 

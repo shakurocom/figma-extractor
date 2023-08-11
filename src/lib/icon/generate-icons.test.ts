@@ -4,14 +4,14 @@ import { vol } from 'memfs';
 import moxios from 'moxios';
 import path from 'path';
 
-import { generateIconTypes } from './lib/generate-icon-types';
-import { generateIconsSprite } from './lib/generate-icons-sprite';
-import { iconsFileNodes } from './utils/generate-styles/fixtures/icons-file-nodes';
+import { iconsFileNodes } from '../../utils/generate-styles/fixtures/icons-file-nodes';
+import { generateIconTypes } from '../generate-icon-types';
+import { generateIconsSprite } from '../generate-icons-sprite';
 import { generateIcons } from './generate-icons';
 
 jest.mock('fs');
-jest.mock('./lib/generate-icon-types');
-jest.mock('./lib/generate-icons-sprite');
+jest.mock('../generate-icon-types');
+jest.mock('../generate-icons-sprite');
 
 const createClient = (): ClientInterface => {
   return {
@@ -33,40 +33,34 @@ const createClient = (): ClientInterface => {
   } as any;
 };
 
+const svgDirectory = path.join(__dirname, '../../utils/generate-styles/fixtures');
+
 const stunRequest = () => {
   moxios.stubRequest('https://path-to-svg-file-12790:103137', {
     status: 200,
-    response: (fs as any).__originalFs.createReadStream(
-      path.join(__dirname, '/utils/generate-styles/fixtures/profile.svg'),
-    ),
+    response: (fs as any).__originalFs.createReadStream(path.join(svgDirectory, 'profile.svg')),
   });
 
   moxios.stubRequest('https://path-to-svg-file-12790:103136', {
     status: 200,
-    response: (fs as any).__originalFs.createReadStream(
-      path.join(__dirname, '/utils/generate-styles/fixtures/settings.svg'),
-    ),
+    response: (fs as any).__originalFs.createReadStream(path.join(svgDirectory, 'settings.svg')),
   });
 
   moxios.stubRequest('https://path-to-svg-file-12790:103135', {
     status: 200,
     response: (fs as any).__originalFs.createReadStream(
-      path.join(__dirname, '/utils/generate-styles/fixtures/sidebar-notifications.svg'),
+      path.join(svgDirectory, 'sidebar-notifications.svg'),
     ),
   });
 
   moxios.stubRequest('https://path-to-svg-file-17310:267509', {
     status: 200,
-    response: (fs as any).__originalFs.createReadStream(
-      path.join(__dirname, '/utils/generate-styles/fixtures/pin.svg'),
-    ),
+    response: (fs as any).__originalFs.createReadStream(path.join(svgDirectory, 'pin.svg')),
   });
 
   moxios.stubRequest('https://path-to-svg-file-16901:275425', {
     status: 200,
-    response: (fs as any).__originalFs.createReadStream(
-      path.join(__dirname, '/utils/generate-styles/fixtures/unpin.svg'),
-    ),
+    response: (fs as any).__originalFs.createReadStream(path.join(svgDirectory, 'unpin.svg')),
   });
 };
 

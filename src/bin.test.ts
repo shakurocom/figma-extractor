@@ -2,13 +2,14 @@
 import { cosmiconfig } from 'cosmiconfig';
 
 import { getClient } from './lib/client';
+import { generateIcons } from './lib/icon/generate-icons';
 import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
 import { createCore } from './core';
-import { generateIcons } from './generate-icons';
 import {
   colorsPlugin,
   effectsPlugin,
   gradientsPlugin,
+  iconsPlugin,
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
@@ -24,7 +25,7 @@ jest.mock('cosmiconfig', () => {
 jest.mock('./lib/client');
 jest.mock('./plugins');
 jest.mock('./core');
-jest.mock('./generate-icons');
+jest.mock('./lib/icon/generate-icons');
 jest.mock('./lib/icon/generate-icons-sprite-from-local-files');
 
 (getClient as jest.Mock).mockImplementation(() => ({
@@ -96,7 +97,7 @@ describe('bin', () => {
             exportPath: '/test-figma-extractor',
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
       expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
@@ -177,7 +178,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
       expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
@@ -274,7 +275,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
       expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
@@ -379,7 +380,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
       expect(generateIcons).toHaveBeenCalledWith((getClient as jest.Mock).mock.results[0].value, {
@@ -476,7 +477,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
       });
       expect(launchPlugins).toHaveBeenCalled();
       expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith({

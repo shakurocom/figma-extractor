@@ -3,11 +3,10 @@ import { ClientInterface } from 'figma-js';
 import fs from 'fs';
 import path from 'path';
 
-import { getClient } from './lib/client';
-import { generateIconTypes } from './lib/generate-icon-types';
-import { generateIconsSprite } from './lib/generate-icons-sprite';
-import { optimizeSvg } from './lib/optimize-svg';
-import { Config } from './types';
+import { Config } from '../../types';
+import { generateIconTypes } from '../generate-icon-types';
+import { generateIconsSprite } from '../generate-icons-sprite';
+import { optimizeSvg } from '../optimize-svg';
 
 const naming = (originalName: string) => {
   const formattedName = originalName.replace(/ /g, '').replace('/', '-');
