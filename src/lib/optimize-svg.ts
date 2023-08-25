@@ -57,16 +57,19 @@ export const optimizeSvg = async (file: string) => {
   return new Promise((resolve, reject) => {
     fs.readFile(file, 'utf8', function (err, data) {
       if (err) {
-        throw err;
+        reject(err);
+
+        return;
       }
 
-      resolve(
-        fs.writeFile(
-          file,
-          optimize(data, { path: file, ...config }).data,
-          err => err && console.log('error', reject),
-        ),
-      );
+      fs.writeFile(file, optimize(data, { path: file, ...config }).data, function (err) {
+        if (err) {
+          reject(err);
+
+          return;
+        }
+        resolve(file);
+      });
     });
   });
 };

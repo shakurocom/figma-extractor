@@ -81,9 +81,10 @@ describe('generateIcons', () => {
   afterEach(() => {
     vol.reset();
     (downloadStreamingToFile as jest.Mock).mockReset();
+    (optimizeSvg as jest.Mock).mockReset();
   });
 
-  it('should thrown the error because exportPath is empty', () => {
+  it('should throw the error because exportPath is empty', () => {
     return expect(
       generateIcons({} as any, {
         fileId: 'any',
@@ -92,6 +93,38 @@ describe('generateIcons', () => {
         },
       }),
     ).rejects.toThrow('config -> icons -> exportPath is required field');
+  });
+
+  it('should throw the error because launching of downloadStreamingToFile triggers the error', () => {
+    (downloadStreamingToFile as jest.Mock).mockImplementationOnce(() => {
+      throw new Error('Inner error');
+    });
+
+    return expect(
+      generateIcons(createClient(), {
+        fileId: 'any',
+        icons: {
+          exportPath: '/tmp',
+          nodeIds: ['12790:103016'],
+        },
+      }),
+    ).rejects.toThrow('Inner error');
+  });
+
+  it('should throw the error because launching of optimizeSvg triggers the error', () => {
+    (optimizeSvg as jest.Mock).mockImplementationOnce(() => {
+      throw new Error('Inner error');
+    });
+
+    return expect(
+      generateIcons(createClient(), {
+        fileId: 'any',
+        icons: {
+          exportPath: '/tmp',
+          nodeIds: ['12790:103016'],
+        },
+      }),
+    ).rejects.toThrow('Inner error');
   });
 
   it('should create folder for exporting', () => {
