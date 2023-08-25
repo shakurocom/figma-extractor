@@ -1,9 +1,9 @@
-import axios from 'axios';
 import { ClientInterface } from 'figma-js';
 import fs from 'fs';
 import path from 'path';
 
 import { Config } from '../../types';
+import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
 import { generateIconsSprite } from '../generate-icons-sprite';
 import { optimizeSvg } from '../optimize-svg';
@@ -25,39 +25,10 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
     fs.mkdirSync(pathIconsFolder, { recursive: true });
   }
 
-  const download = async function (uri: string, filename: string) {
-    const promise = new Promise(async (resolve, reject) => {
-      const writer = fs.createWriteStream(filename);
-      const response = await axios({
-        url: uri,
-        method: 'GET',
-        responseType: 'stream',
-        headers: {
-          // eslint-disable-next-line @typescript-eslint/naming-convention
-          'X-Figma-Token': config.apiKey,
-        },
-      });
-
-      await response.data.pipe(writer);
-      await writer.on('finish', async () => {
-        resolve(filename);
-      });
-      writer.on('error', reject);
-    });
-
-    return promise.then(res => {
-      return optimizeSvg(filename).then(() => {
-        console.log('Downloaded!', filename);
-
-        return res;
-      });
-    });
-  };
-
   const { data } = await client.fileNodes(config.fileId, { ids: config?.icons?.nodeIds });
   const iconNames: string[] = [];
-  const nodes = Object.entries(data.nodes);
-  const promises = nodes.map(async ([, value]) => {
+  const nodes = Object.values(data.nodes);
+  for (const value of nodes) {
     const imagesData: { id: string; name: string }[] = (value as any)?.document?.children?.map(
       (item: any) => {
         const formattedName = config?.icons?.iconName?.(item.name) || naming(item.name);
@@ -75,16 +46,18 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
       data: { images },
     } = await client.fileImages(config.fileId, { ids: imageIds, format: 'svg' });
 
-    const result = await imagesData.map(async item => {
-      return await download(`${images[item.id]}`, `${pathIconsFolder}/${item.name}.svg`);
-    });
+    for (const item of imagesData) {
+      const filename = `${pathIconsFolder}/${item.name}.svg`;
+      await downloadStreamingToFile(`${images[item.id]}`, filename, {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        'X-Figma-Token': config.apiKey,
+      });
 
-    await Promise.all(result);
+      await optimizeSvg(filename);
 
-    return new Promise(res => res(result));
-  });
-
-  await Promise.all(promises);
+      console.log('Downloaded!', filename);
+    }
+  }
 
   if (config?.icons?.generateTypes) {
     generateIconTypes(iconNames, pathSpriteFolder);
