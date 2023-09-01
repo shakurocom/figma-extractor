@@ -3,6 +3,25 @@ import { Tab, Tabs } from 'nextra-theme-docs';
 # Config
 
 ```ts showLineNumbers
+type IconConfig = {
+  disabled?: boolean;
+  nodeIds: string[];
+  // custom format icon name
+  iconName: (nameFromFigma: string) => string;
+  exportPath: string;
+  // If the field is true, then the SVG sprite will be generated
+  generateSprite: boolean;
+  // If the field is true, then the file with icons' names as types will be created
+  generateTypes: boolean;
+  // If the field is true, then the extractor will only generate SVG sprite from local icons
+  // else all available icons will be downloaded and the sprile will be generated from them
+  localIcons?: boolean;
+  // It allows changing svgo config if you need or disable at all
+  // if this field is a function, then the function will be run before svgo optimization. And changed config from this function will be passed to svgo optimization
+  // if this field is boolean and equals `false` then svgo optimozation won't be run at all
+  optimizeSvg?: false | (config?: SVGOConfig) => SVGOConfig;
+};
+
 type Config = {
   // your Figma api access key
   apiKey: string;
@@ -55,20 +74,8 @@ type Config = {
       merge?: boolean;
     };
   };
-  icons: {
-    disabled?: boolean;
-    nodeIds: string[];
-    // custom format icon name
-    iconName: (nameFromFigma: string) => string;
-    exportPath: string;
-    // If the field is true, then the SVG sprite will be generated
-    generateSprite: boolean;
-    // If the field is true, then the file with icons' names as types will be created
-    generateTypes: boolean;
-    // If the field is true, then the extractor will only generate SVG sprite from local icons
-    // else all available icons will be downloaded and the sprile will be generated from them
-    localIcons?: boolean;
-  };
+  // Configuration of icons can have more one setting
+  icons: IconConfig | IconConfig[];
   /*
      It's used when textStyles -> merge == true,
      It contains title for each allowed screen size for generation accurate media queries
