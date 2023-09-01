@@ -5,8 +5,6 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
-import { generateIcons } from './lib/icon/generate-icons';
-import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
 import { createCore } from './core';
 import {
   colorsPlugin,
@@ -114,21 +112,6 @@ async function run(config: Config) {
     styleMetadata: meta.styles,
     fileNodes,
   });
-
-  if (!config.icons?.disabled) {
-    if (config.icons.localIcons) {
-      try {
-        generateIconSpriteFromLocalFiles(config);
-      } catch (err) {
-        console.error(err);
-      }
-    } else {
-      generateIcons(client, config).catch(err => {
-        console.error(err);
-        console.error(err.stack);
-      });
-    }
-  }
 }
 
 function generateSearchPlaces(moduleName: string) {
