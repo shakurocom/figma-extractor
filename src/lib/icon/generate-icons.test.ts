@@ -7,14 +7,22 @@ import { iconsFileNodes } from '../../utils/generate-styles/fixtures/icons-file-
 import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
 import { generateIconsSprite } from '../generate-icons-sprite';
-import { optimizeSvg } from '../optimize-svg';
+import { defaultSVGConfig, optimizeSvg } from '../optimize-svg';
 import { generateIcons } from './generate-icons';
 
 jest.mock('fs');
 jest.mock('../generate-icon-types');
 jest.mock('../generate-icons-sprite');
 jest.mock('../download-streaming-to-file');
-jest.mock('../optimize-svg');
+jest.mock('../optimize-svg', () => {
+  const { defaultSVGConfig } = jest.requireActual('../optimize-svg');
+
+  return {
+    __esModule: true,
+    defaultSVGConfig,
+    optimizeSvg: jest.fn(),
+  };
+});
 
 const createClient = (): ClientInterface => {
   return {
@@ -199,11 +207,17 @@ describe('generateIcons', () => {
         { 'X-Figma-Token': 'api_key' },
       );
 
-      expect(optimizeSvg).toHaveBeenNthCalledWith(1, '/tmp/svg/profile.svg');
-      expect(optimizeSvg).toHaveBeenNthCalledWith(2, '/tmp/svg/settings.svg');
-      expect(optimizeSvg).toHaveBeenNthCalledWith(3, '/tmp/svg/sidebar-notifications.svg');
-      expect(optimizeSvg).toHaveBeenNthCalledWith(4, '/tmp/svg/pin.svg');
-      expect(optimizeSvg).toHaveBeenNthCalledWith(5, '/tmp/svg/unpin.svg');
+      expect(optimizeSvg).toHaveBeenNthCalledWith(1, '/tmp/svg/profile.svg', {
+        ...defaultSVGConfig,
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(2, '/tmp/svg/settings.svg', {
+        ...defaultSVGConfig,
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(3, '/tmp/svg/sidebar-notifications.svg', {
+        ...defaultSVGConfig,
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(4, '/tmp/svg/pin.svg', { ...defaultSVGConfig });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(5, '/tmp/svg/unpin.svg', { ...defaultSVGConfig });
 
       expect(vol.toJSON()).toMatchSnapshot();
     });
@@ -257,6 +271,57 @@ describe('generateIcons', () => {
       },
     }).then(() => {
       expect(generateIconsSprite).toHaveBeenCalledWith('/tmp');
+    });
+  });
+
+  it('should launch generation with custom optimize config', () => {
+    const client = createClient();
+
+    return generateIcons(client, {
+      apiKey: 'api_key',
+      fileId: 'file_id',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+        optimizeSvg: config => ({ ...config, plugins: [] }),
+      },
+    }).then(() => {
+      expect(optimizeSvg).toHaveBeenNthCalledWith(1, '/tmp/svg/profile.svg', {
+        ...defaultSVGConfig,
+        plugins: [],
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(2, '/tmp/svg/settings.svg', {
+        ...defaultSVGConfig,
+        plugins: [],
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(3, '/tmp/svg/sidebar-notifications.svg', {
+        ...defaultSVGConfig,
+        plugins: [],
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(4, '/tmp/svg/pin.svg', {
+        ...defaultSVGConfig,
+        plugins: [],
+      });
+      expect(optimizeSvg).toHaveBeenNthCalledWith(5, '/tmp/svg/unpin.svg', {
+        ...defaultSVGConfig,
+        plugins: [],
+      });
+    });
+  });
+
+  it('should launch generation without optimize svg', () => {
+    const client = createClient();
+
+    return generateIcons(client, {
+      apiKey: 'api_key',
+      fileId: 'file_id',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+        optimizeSvg: false,
+      },
+    }).then(() => {
+      expect(optimizeSvg).not.toHaveBeenCalled();
     });
   });
 });

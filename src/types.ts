@@ -1,3 +1,5 @@
+type SVGCallback = (config?: import('svgo').Config) => import('svgo').Config;
+
 export type Config = {
   apiKey: string;
   fileId: string;
@@ -33,6 +35,7 @@ export type Config = {
     generateSprite: boolean;
     generateTypes: boolean;
     localIcons?: boolean;
+    optimizeSvg?: false | SVGCallback;
   };
   screens?: {
     [title: string]: number;

@@ -1,12 +1,16 @@
 import { ClientInterface } from 'figma-js';
 import fs from 'fs';
 import path from 'path';
+import { type Config as ConfigSVG } from 'svgo';
 
 import { Config } from '../../types';
 import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
 import { generateIconsSprite } from '../generate-icons-sprite';
-import { optimizeSvg } from '../optimize-svg';
+import { defaultSVGConfig, optimizeSvg } from '../optimize-svg';
+
+const isSvgCallback = (obj: any): obj is (config?: ConfigSVG) => ConfigSVG =>
+  typeof obj === 'function';
 
 const naming = (originalName: string) => {
   const formattedName = originalName.replace(/ /g, '').replace('/', '-');
@@ -23,6 +27,14 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
 
   if (!fs.existsSync(pathIconsFolder)) {
     fs.mkdirSync(pathIconsFolder, { recursive: true });
+  }
+
+  let enableOptimizeSvg = true;
+  let svgConfig: ConfigSVG = { ...defaultSVGConfig };
+  if (config?.icons.optimizeSvg === false) {
+    enableOptimizeSvg = false;
+  } else if (isSvgCallback(config?.icons.optimizeSvg)) {
+    svgConfig = config?.icons.optimizeSvg({ ...defaultSVGConfig });
   }
 
   const { data } = await client.fileNodes(config.fileId, { ids: config?.icons?.nodeIds });
@@ -53,7 +65,9 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
         'X-Figma-Token': config.apiKey,
       });
 
-      await optimizeSvg(filename);
+      if (enableOptimizeSvg) {
+        await optimizeSvg(filename, svgConfig);
+      }
 
       console.log('Downloaded!', filename);
     }
