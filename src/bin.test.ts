@@ -245,6 +245,102 @@ describe('bin', () => {
     });
   });
 
+  it('should be launched with flag --only=icons and config icons is an array', async () => {
+    let resolver: any;
+    const promise = new Promise(res => (resolver = res));
+    const search = jest.fn(() => {
+      return {
+        then: (func: any) => {
+          return func({
+            config: {
+              apiKey: '123',
+              fileId: 'fsdfhjkh423j423',
+              styles: {
+                exportPath: './ui/theme',
+                colors: {},
+                effects: {},
+                gradients: {},
+                textStyles: {
+                  merge: true,
+                },
+              },
+              icons: [
+                {
+                  nodeIds: ['2310:0'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+                {
+                  nodeIds: ['2090:11', '276:18'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+              ],
+            },
+          }).then(resolver);
+        },
+      };
+    });
+
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
+      jest.fn(() => ({
+        search,
+      })),
+    );
+
+    await runCommand('--only=icons');
+
+    return promise.then(() => {
+      expect(createCore).toBeCalledWith({
+        rootPath: '/test-figma-extractor',
+        config: {
+          apiKey: '123',
+          fileId: 'fsdfhjkh423j423',
+          icons: [
+            {
+              disabled: false,
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: false,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2310:0'],
+            },
+            {
+              disabled: false,
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: false,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2090:11', '276:18'],
+            },
+          ],
+          styles: {
+            exportPath: '/test-figma-extractor/ui/theme',
+            colors: {
+              disabled: true,
+            },
+            effects: {
+              disabled: true,
+            },
+            gradients: {
+              disabled: true,
+            },
+            textStyles: {
+              disabled: true,
+              merge: true,
+            },
+          },
+        },
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+      });
+      expect(launchPlugins).toHaveBeenCalled();
+    });
+  });
+
   it('should be launched with flag --only=icons,colors and config must have only icons and colors sections are enabled', async () => {
     let resolver: any;
     const promise = new Promise(res => (resolver = res));
@@ -375,6 +471,93 @@ describe('bin', () => {
             generateTypes: true,
             nodeIds: ['2310:0', '2090:11', '276:18'],
           },
+          styles: {
+            exportPath: '/test-figma-extractor/ui/theme',
+            colors: {},
+            effects: {},
+            gradients: {},
+            textStyles: {
+              merge: true,
+            },
+          },
+        },
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+      });
+      expect(launchPlugins).toHaveBeenCalled();
+    });
+  });
+
+  it('should be launched with flag --local-icons and config icons is an array', async () => {
+    let resolver: any;
+    const promise = new Promise(res => (resolver = res));
+    const search = jest.fn(() => {
+      return {
+        then: (func: any) => {
+          return func({
+            config: {
+              apiKey: '123',
+              fileId: 'fsdfhjkh423j423',
+              styles: {
+                exportPath: './ui/theme',
+                colors: {},
+                effects: {},
+                gradients: {},
+                textStyles: {
+                  merge: true,
+                },
+              },
+              icons: [
+                {
+                  nodeIds: ['2310:0'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+                {
+                  nodeIds: ['2090:11', '276:18'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+              ],
+            },
+          }).then(resolver);
+        },
+      };
+    });
+
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
+      jest.fn(() => ({
+        search,
+      })),
+    );
+
+    await runCommand('--local-icons');
+
+    return promise.then(() => {
+      expect(createCore).toBeCalledWith({
+        rootPath: '/test-figma-extractor',
+        config: {
+          apiKey: '123',
+          fileId: 'fsdfhjkh423j423',
+          icons: [
+            {
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: true,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2310:0'],
+            },
+            {
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: true,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2090:11', '276:18'],
+            },
+          ],
           styles: {
             exportPath: '/test-figma-extractor/ui/theme',
             colors: {},

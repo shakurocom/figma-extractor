@@ -53,11 +53,17 @@ async function run(config: Config) {
       ...config.styles,
       exportPath: path.join(rootPath, config?.styles?.exportPath || ''),
     },
-    icons: {
-      ...config?.icons,
-      exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
-      localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
-    },
+    icons: Array.isArray(config.icons)
+      ? config.icons.map(conf => ({
+          ...conf,
+          exportPath: path.join(rootPath, conf.exportPath || ''),
+          localIcons: argv.localIcons ?? conf.localIcons ?? false,
+        }))
+      : {
+          ...config?.icons,
+          exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
+          localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
+        },
   };
 
   const onlyArgs = getOnlyArgs(argv.only);
@@ -65,14 +71,21 @@ async function run(config: Config) {
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
-      const prop =
+      const prop: Partial<Config> =
         item === 'icons'
-          ? {
-              icons: {
-                ...config.icons,
-                disabled: includedKey ? false : true,
-              },
-            }
+          ? Array.isArray(config.icons)
+            ? {
+                icons: config.icons.map(conf => ({
+                  ...conf,
+                  disabled: includedKey ? false : true,
+                })),
+              }
+            : {
+                icons: {
+                  ...config.icons,
+                  disabled: includedKey ? false : true,
+                },
+              }
           : {
               styles: {
                 ...config.styles,

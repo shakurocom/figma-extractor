@@ -12,70 +12,221 @@ describe('iconsPlugin', () => {
     (generateIconSpriteFromLocalFiles as jest.Mock).mockReset();
   });
 
-  it('should be disabled and launch nothing', () => {
-    const core = createCore({
-      config: {
-        icons: {
-          disabled: true,
-          exportPath: '/export-path/',
+  describe('single icon config', () => {
+    it('should be disabled and launch nothing', () => {
+      const core = createCore({
+        config: {
+          icons: {
+            disabled: true,
+            exportPath: '/export-path/',
+          },
         },
-      },
-      plugins: [],
-      rootPath: '/root-path',
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).not.toHaveBeenCalled();
+        expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      });
     });
 
-    const figmaClient = jest.fn();
+    it('should launch download and generation icon', () => {
+      const core = createCore({
+        config: {
+          icons: {
+            exportPath: '/export-path/',
+          },
+        },
+        plugins: [],
+        rootPath: '/root-path',
+      });
 
-    iconsPlugin(core, { figmaClient } as any);
+      (generateIcons as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
 
-    expect(generateIcons).not.toHaveBeenCalled();
-    expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons, core.config);
+        expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      });
+    });
+
+    it('should launch only generation local icons (with property localIcon = true)', () => {
+      const core = createCore({
+        config: {
+          icons: {
+            exportPath: '/export-path/',
+            localIcons: true,
+          },
+        },
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      (generateIconSpriteFromLocalFiles as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
+
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).not.toHaveBeenCalled();
+        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(core.config.icons);
+      });
+    });
   });
 
-  it('should launch download and generation icon', () => {
-    const core = createCore({
-      config: {
-        icons: {
-          exportPath: '/export-path/',
+  describe('multi icon config (icons is an array)', () => {
+    it('should be disabled all configs and launch nothing', () => {
+      const core = createCore({
+        config: {
+          icons: [
+            {
+              disabled: true,
+              exportPath: '/export-path/',
+            },
+            {
+              disabled: true,
+              exportPath: '/export-path/',
+            },
+          ],
         },
-      },
-      plugins: [],
-      rootPath: '/root-path',
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).not.toHaveBeenCalled();
+        expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      });
     });
 
-    (generateIcons as jest.Mock).mockImplementationOnce(() => {
-      return Promise.resolve();
-    });
-
-    const figmaClient = jest.fn();
-
-    iconsPlugin(core, { figmaClient } as any);
-
-    expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config);
-    expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
-  });
-
-  it('should launch only generation local icons (with property localIcon = true)', () => {
-    const core = createCore({
-      config: {
-        icons: {
-          exportPath: '/export-path/',
-          localIcons: true,
+    it('should be disabled for one config and another config should be launched', () => {
+      const core = createCore({
+        config: {
+          icons: [
+            {
+              disabled: true,
+              exportPath: '/export-path/',
+            },
+            {
+              disabled: false,
+              exportPath: '/export-path/',
+            },
+          ],
         },
-      },
-      plugins: [],
-      rootPath: '/root-path',
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      const figmaClient = jest.fn();
+
+      (generateIcons as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).toHaveBeenCalled();
+        expect(generateIcons).toHaveBeenCalledTimes(1);
+        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons[1], core.config);
+        expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      });
     });
 
-    (generateIconSpriteFromLocalFiles as jest.Mock).mockImplementationOnce(() => {
-      return Promise.resolve();
+    it('should launch both configs for downloading and generating icons', () => {
+      const core = createCore({
+        config: {
+          icons: [
+            {
+              exportPath: '/export-path/',
+            },
+            {
+              exportPath: '/export-path-2/',
+            },
+          ],
+        },
+        plugins: [],
+        rootPath: '/root-path',
+      });
+
+      (generateIcons as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
+      (generateIcons as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
+
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).toHaveBeenCalledTimes(2);
+        expect(generateIcons).toHaveBeenNthCalledWith(
+          1,
+          figmaClient,
+          core.config.icons[0],
+          core.config,
+        );
+        expect(generateIcons).toHaveBeenNthCalledWith(
+          2,
+          figmaClient,
+          core.config.icons[1],
+          core.config,
+        );
+        expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
+      });
     });
 
-    const figmaClient = jest.fn();
+    it('should launch generation local icons for one config and generation icons', () => {
+      const core = createCore({
+        config: {
+          icons: [
+            {
+              exportPath: '/export-path/',
+              localIcons: true,
+            },
+            {
+              exportPath: '/export-path-2/',
+            },
+          ],
+        },
+        plugins: [],
+        rootPath: '/root-path',
+      });
 
-    iconsPlugin(core, { figmaClient } as any);
+      (generateIcons as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
+      (generateIconSpriteFromLocalFiles as jest.Mock).mockImplementationOnce(() => {
+        return Promise.resolve();
+      });
 
-    expect(generateIcons).not.toHaveBeenCalled();
-    expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(core.config);
+      const figmaClient = jest.fn();
+
+      const result = iconsPlugin(core, { figmaClient } as any);
+
+      return (result as Promise<void>).then(() => {
+        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons[1], core.config);
+        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(core.config.icons[0]);
+      });
+    });
   });
 });

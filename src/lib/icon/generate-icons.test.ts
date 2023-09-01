@@ -93,73 +93,82 @@ describe('generateIcons', () => {
   });
 
   it('should throw the error because exportPath is empty', () => {
-    return expect(
-      generateIcons({} as any, {
-        fileId: 'any',
-        icons: {
-          nodeIds: [],
-        },
-      }),
-    ).rejects.toThrow('config -> icons -> exportPath is required field');
+    const config: any = {
+      fileId: 'any',
+      icons: {
+        nodeIds: [],
+      },
+    };
+
+    return expect(generateIcons({} as any, config.icons, config)).rejects.toThrow(
+      'config -> icons -> exportPath is required field',
+    );
   });
 
   it('should throw the error because launching of downloadStreamingToFile triggers the error', () => {
+    const config: any = {
+      fileId: 'any',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+      },
+    };
+
     (downloadStreamingToFile as jest.Mock).mockImplementationOnce(() => {
       throw new Error('Inner error');
     });
 
-    return expect(
-      generateIcons(createClient(), {
-        fileId: 'any',
-        icons: {
-          exportPath: '/tmp',
-          nodeIds: ['12790:103016'],
-        },
-      }),
-    ).rejects.toThrow('Inner error');
+    return expect(generateIcons(createClient(), config.icons, config)).rejects.toThrow(
+      'Inner error',
+    );
   });
 
   it('should throw the error because launching of optimizeSvg triggers the error', () => {
+    const config: any = {
+      fileId: 'any',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+      },
+    };
+
     (optimizeSvg as jest.Mock).mockImplementationOnce(() => {
       throw new Error('Inner error');
     });
 
-    return expect(
-      generateIcons(createClient(), {
-        fileId: 'any',
-        icons: {
-          exportPath: '/tmp',
-          nodeIds: ['12790:103016'],
-        },
-      }),
-    ).rejects.toThrow('Inner error');
+    return expect(generateIcons(createClient(), config.icons, config)).rejects.toThrow(
+      'Inner error',
+    );
   });
 
   it('should create folder for exporting', () => {
-    const spy = jest.spyOn(fs, 'mkdirSync');
-
-    return generateIcons(createClient(), {
+    const config: any = {
       fileId: 'any',
       icons: {
         exportPath: '/tmp',
         nodeIds: [],
       },
-    }).then(() => {
+    };
+
+    const spy = jest.spyOn(fs, 'mkdirSync');
+
+    return generateIcons(createClient(), config.icons, config).then(() => {
       expect(spy).toHaveBeenCalledWith('/tmp/svg', { recursive: true });
     });
   });
 
   it('should download and write svg icons', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
         exportPath: '/tmp',
         nodeIds: ['12790:103016'],
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(client.fileNodes).toHaveBeenCalledWith('file_id', { ids: ['12790:103016'] });
       expect(client.fileImages).toHaveBeenNthCalledWith(1, 'file_id', {
         format: 'svg',
@@ -225,8 +234,7 @@ describe('generateIcons', () => {
 
   it('should download and write svg icons with custom icon name', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
@@ -234,15 +242,16 @@ describe('generateIcons', () => {
         nodeIds: ['12790:103016'],
         iconName: (name: string) => name + '_extra',
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(vol.toJSON()).toMatchSnapshot();
     });
   });
 
   it('should launch generation of icon types', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
@@ -250,7 +259,9 @@ describe('generateIcons', () => {
         nodeIds: ['12790:103016'],
         generateTypes: true,
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(generateIconTypes).toHaveBeenCalledWith(
         ['profile', 'settings', 'sidebar-notifications', 'pin', 'unpin'],
         '/tmp',
@@ -260,8 +271,7 @@ describe('generateIcons', () => {
 
   it('should launch generation an icon sprite', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
@@ -269,15 +279,16 @@ describe('generateIcons', () => {
         nodeIds: ['12790:103016'],
         generateSprite: true,
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(generateIconsSprite).toHaveBeenCalledWith('/tmp');
     });
   });
 
   it('should launch generation with custom optimize config', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
@@ -285,7 +296,9 @@ describe('generateIcons', () => {
         nodeIds: ['12790:103016'],
         optimizeSvg: config => ({ ...config, plugins: [] }),
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(optimizeSvg).toHaveBeenNthCalledWith(1, '/tmp/svg/profile.svg', {
         ...defaultSVGConfig,
         plugins: [],
@@ -311,8 +324,7 @@ describe('generateIcons', () => {
 
   it('should launch generation without optimize svg', () => {
     const client = createClient();
-
-    return generateIcons(client, {
+    const config: any = {
       apiKey: 'api_key',
       fileId: 'file_id',
       icons: {
@@ -320,7 +332,9 @@ describe('generateIcons', () => {
         nodeIds: ['12790:103016'],
         optimizeSvg: false,
       },
-    }).then(() => {
+    };
+
+    return generateIcons(client, config.icons, config).then(() => {
       expect(optimizeSvg).not.toHaveBeenCalled();
     });
   });

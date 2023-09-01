@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { type Config as ConfigSVG } from 'svgo';
 
-import { Config } from '../../types';
+import { Config, IconConfig } from '../../types';
 import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
 import { generateIconsSprite } from '../generate-icons-sprite';
@@ -18,12 +18,16 @@ const naming = (originalName: string) => {
   return formattedName;
 };
 
-export const generateIcons = async (client: ClientInterface, config: Config) => {
-  if (!config?.icons?.exportPath) {
+export const generateIcons = async (
+  client: ClientInterface,
+  iconConfig: IconConfig,
+  config: Config,
+) => {
+  if (!iconConfig.exportPath) {
     throw new Error('config -> icons -> exportPath is required field');
   }
-  const pathIconsFolder = path.join(config?.icons?.exportPath ?? '', 'svg');
-  const pathSpriteFolder = path.join(config?.icons?.exportPath ?? '');
+  const pathIconsFolder = path.join(iconConfig.exportPath ?? '', 'svg');
+  const pathSpriteFolder = path.join(iconConfig.exportPath ?? '');
 
   if (!fs.existsSync(pathIconsFolder)) {
     fs.mkdirSync(pathIconsFolder, { recursive: true });
@@ -31,19 +35,19 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
 
   let enableOptimizeSvg = true;
   let svgConfig: ConfigSVG = { ...defaultSVGConfig };
-  if (config?.icons.optimizeSvg === false) {
+  if (iconConfig.optimizeSvg === false) {
     enableOptimizeSvg = false;
-  } else if (isSvgCallback(config?.icons.optimizeSvg)) {
-    svgConfig = config?.icons.optimizeSvg({ ...defaultSVGConfig });
+  } else if (isSvgCallback(iconConfig.optimizeSvg)) {
+    svgConfig = iconConfig.optimizeSvg({ ...defaultSVGConfig });
   }
 
-  const { data } = await client.fileNodes(config.fileId, { ids: config?.icons?.nodeIds });
+  const { data } = await client.fileNodes(config.fileId, { ids: iconConfig.nodeIds });
   const iconNames: string[] = [];
   const nodes = Object.values(data.nodes);
   for (const value of nodes) {
     const imagesData: { id: string; name: string }[] = (value as any)?.document?.children?.map(
       (item: any) => {
-        const formattedName = config?.icons?.iconName?.(item.name) || naming(item.name);
+        const formattedName = iconConfig.iconName?.(item.name) || naming(item.name);
         iconNames.push(formattedName);
 
         return {
@@ -73,10 +77,10 @@ export const generateIcons = async (client: ClientInterface, config: Config) => 
     }
   }
 
-  if (config?.icons?.generateTypes) {
+  if (iconConfig.generateTypes) {
     generateIconTypes(iconNames, pathSpriteFolder);
   }
-  if (config?.icons?.generateSprite) {
+  if (iconConfig.generateSprite) {
     generateIconsSprite(pathSpriteFolder);
   }
 
