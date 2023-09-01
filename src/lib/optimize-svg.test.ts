@@ -2,7 +2,7 @@ import fs from 'fs';
 import { vol } from 'memfs';
 import path from 'path';
 
-import { optimizeSvg } from './optimize-svg';
+import { defaultSVGConfig, optimizeSvg } from './optimize-svg';
 
 jest.mock('fs');
 jest.mock('fs/promises');
@@ -24,7 +24,25 @@ describe('optimizeSvg', () => {
 
     expect(vol.toJSON()).toMatchSnapshot();
 
-    return optimizeSvg(fileName).then(() => {
+    return optimizeSvg(fileName, { ...defaultSVGConfig }).then(() => {
+      expect(vol.toJSON()).toMatchSnapshot();
+    });
+  });
+
+  it('should optimize svg with a custom config', () => {
+    const fileName = '/tmp/svg/pin.svg';
+
+    vol.fromJSON({
+      [fileName]: (fs as any).__originalFs.readFileSync(path.join(svgDirectory, 'pin.svg'), {
+        encoding: 'UTF-8',
+      }),
+    });
+
+    return optimizeSvg(fileName, {
+      ...defaultSVGConfig,
+      plugins: [],
+      js2svg: { pretty: false },
+    }).then(() => {
       expect(vol.toJSON()).toMatchSnapshot();
     });
   });
@@ -32,7 +50,7 @@ describe('optimizeSvg', () => {
   it("should thrown the error because a file doesn't exist", () => {
     const fileName = '/tmp/svg/pin.svg';
 
-    return expect(optimizeSvg(fileName)).rejects.toThrow(
+    return expect(optimizeSvg(fileName, { ...defaultSVGConfig })).rejects.toThrow(
       "ENOENT: no such file or directory, open '/tmp/svg/pin.svg'",
     );
   });
@@ -54,7 +72,7 @@ describe('optimizeSvg', () => {
       },
     );
 
-    return expect(optimizeSvg(fileName)).rejects.toThrow(
+    return expect(optimizeSvg(fileName, { ...defaultSVGConfig })).rejects.toThrow(
       "The file: '/tmp/svg/pin.svg' can't be written",
     );
   });
