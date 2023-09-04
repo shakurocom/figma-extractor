@@ -38,7 +38,7 @@ export type Config = {
       merge?: boolean;
     };
   };
-  icons?: IconConfig | IconConfig[];
+  icons: IconConfig | IconConfig[];
   screens?: {
     [title: string]: number;
   };
