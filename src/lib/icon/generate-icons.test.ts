@@ -118,7 +118,7 @@ describe('generateIcons', () => {
       throw new Error('Inner error');
     });
 
-    return expect(generateIcons(createClient(), config.icons, config)).rejects.toThrow(
+    return expect(generateIcons(createClient(), config.icons, config, jest.fn())).rejects.toThrow(
       'Inner error',
     );
   });
@@ -136,7 +136,7 @@ describe('generateIcons', () => {
       throw new Error('Inner error');
     });
 
-    return expect(generateIcons(createClient(), config.icons, config)).rejects.toThrow(
+    return expect(generateIcons(createClient(), config.icons, config, jest.fn())).rejects.toThrow(
       'Inner error',
     );
   });
@@ -152,7 +152,7 @@ describe('generateIcons', () => {
 
     const spy = jest.spyOn(fs, 'mkdirSync');
 
-    return generateIcons(createClient(), config.icons, config).then(() => {
+    return generateIcons(createClient(), config.icons, config, jest.fn()).then(() => {
       expect(spy).toHaveBeenCalledWith('/tmp/svg', { recursive: true });
     });
   });
@@ -168,7 +168,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(client.fileNodes).toHaveBeenCalledWith('file_id', { ids: ['12790:103016'] });
       expect(client.fileImages).toHaveBeenNthCalledWith(1, 'file_id', {
         format: 'svg',
@@ -244,7 +244,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(vol.toJSON()).toMatchSnapshot();
     });
   });
@@ -261,7 +261,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(generateIconTypes).toHaveBeenCalledWith(
         ['profile', 'settings', 'sidebar-notifications', 'pin', 'unpin'],
         '/tmp',
@@ -281,7 +281,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(generateIconsSprite).toHaveBeenCalledWith('/tmp');
     });
   });
@@ -298,7 +298,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(optimizeSvg).toHaveBeenNthCalledWith(1, '/tmp/svg/profile.svg', {
         ...defaultSVGConfig,
         plugins: [],
@@ -334,7 +334,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return generateIcons(client, config.icons, config).then(() => {
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
       expect(optimizeSvg).not.toHaveBeenCalled();
     });
   });

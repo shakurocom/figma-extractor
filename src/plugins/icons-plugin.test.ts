@@ -23,6 +23,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log: jest.fn(),
       });
 
       const figmaClient = jest.fn();
@@ -36,6 +37,7 @@ describe('iconsPlugin', () => {
     });
 
     it('should launch download and generation icon', () => {
+      const log = jest.fn();
       const core = createCore({
         config: {
           icons: {
@@ -44,6 +46,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log,
       });
 
       (generateIcons as jest.Mock).mockImplementationOnce(() => {
@@ -55,12 +58,18 @@ describe('iconsPlugin', () => {
       const result = iconsPlugin(core, { figmaClient } as any);
 
       return (result as Promise<void>).then(() => {
-        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons, core.config);
+        expect(generateIcons).toHaveBeenCalledWith(
+          figmaClient,
+          core.config.icons,
+          core.config,
+          expect.any(Function),
+        );
         expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
       });
     });
 
     it('should launch only generation local icons (with property localIcon = true)', () => {
+      const log = jest.fn();
       const core = createCore({
         config: {
           icons: {
@@ -70,6 +79,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log,
       });
 
       (generateIconSpriteFromLocalFiles as jest.Mock).mockImplementationOnce(() => {
@@ -82,7 +92,10 @@ describe('iconsPlugin', () => {
 
       return (result as Promise<void>).then(() => {
         expect(generateIcons).not.toHaveBeenCalled();
-        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(core.config.icons);
+        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(
+          core.config.icons,
+          expect.any(Function),
+        );
       });
     });
   });
@@ -104,6 +117,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log: jest.fn(),
       });
 
       const figmaClient = jest.fn();
@@ -132,6 +146,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log: jest.fn(),
       });
 
       const figmaClient = jest.fn();
@@ -145,7 +160,12 @@ describe('iconsPlugin', () => {
       return (result as Promise<void>).then(() => {
         expect(generateIcons).toHaveBeenCalled();
         expect(generateIcons).toHaveBeenCalledTimes(1);
-        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons[1], core.config);
+        expect(generateIcons).toHaveBeenCalledWith(
+          figmaClient,
+          core.config.icons[1],
+          core.config,
+          expect.any(Function),
+        );
         expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
       });
     });
@@ -164,6 +184,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log: jest.fn(),
       });
 
       (generateIcons as jest.Mock).mockImplementationOnce(() => {
@@ -184,12 +205,14 @@ describe('iconsPlugin', () => {
           figmaClient,
           core.config.icons[0],
           core.config,
+          expect.any(Function),
         );
         expect(generateIcons).toHaveBeenNthCalledWith(
           2,
           figmaClient,
           core.config.icons[1],
           core.config,
+          expect.any(Function),
         );
         expect(generateIconSpriteFromLocalFiles).not.toHaveBeenCalled();
       });
@@ -210,6 +233,7 @@ describe('iconsPlugin', () => {
         },
         plugins: [],
         rootPath: '/root-path',
+        log: jest.fn(),
       });
 
       (generateIcons as jest.Mock).mockImplementationOnce(() => {
@@ -224,8 +248,16 @@ describe('iconsPlugin', () => {
       const result = iconsPlugin(core, { figmaClient } as any);
 
       return (result as Promise<void>).then(() => {
-        expect(generateIcons).toHaveBeenCalledWith(figmaClient, core.config.icons[1], core.config);
-        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(core.config.icons[0]);
+        expect(generateIcons).toHaveBeenCalledWith(
+          figmaClient,
+          core.config.icons[1],
+          core.config,
+          expect.any(Function),
+        );
+        expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith(
+          core.config.icons[0],
+          expect.any(Function),
+        );
       });
     });
   });

@@ -21,12 +21,19 @@ import { Plugin } from './types';
 type EffectName = string;
 
 export const effectsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
   { styleMetadata, fileNodes },
 ) => {
   const metaEffects = styleMetadata.filter(styleTypeUtils.isEffect);
 
+  log('[info:effects-theme] >>> ', 'Effects-theme plugin starts working...');
+
   if (config?.styles?.effects?.disabled) {
+    log(
+      '[info:effects-theme] >>> ',
+      'Effects-theme plugin has been disabled so the plugin had not been launched',
+    );
+
     return;
   }
 
@@ -34,6 +41,9 @@ export const effectsThemePlugin: Plugin = (
     allowedThemes: config?.styles?.allowedThemes,
     defaultTheme: config?.styles?.defaultTheme,
   });
+
+  log('[info:effects-theme] >>> ', 'Allowed themes: ', JSON.stringify(allowedThemes));
+  log('[info:effects-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
 
@@ -44,7 +54,16 @@ export const effectsThemePlugin: Plugin = (
   );
 
   let anyThemeIsUsed = false;
-  for (const { newName, value, theme } of separateThemes({ allowedThemes, data: effects })) {
+  for (const { newName, value, theme, originalName } of separateThemes({
+    allowedThemes,
+    data: effects,
+  })) {
+    log(
+      '[info:effects-theme] >>> ',
+      `'${newName}' ${
+        theme === NOT_FOUND_THEME_NAME ? 'without theme' : `on '${theme}' theme`
+      } => '${value}'  (original: '${originalName}')`,
+    );
     if (theme === NOT_FOUND_THEME_NAME) {
       if (!variableNameIsValid(newName)) {
         throw new Error(`Effect name: "${newName}" without theme contains not-valid chars.`);
@@ -74,6 +93,9 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     const jsData: Record<EffectName, string> = generateJsColors(variables);
+    for (const [name, value] of Object.entries(jsData)) {
+      log(`[info:effects-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
+    }
 
     const cssData = generateCSSVariables(variables, themeName);
 

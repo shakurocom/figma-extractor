@@ -14,6 +14,7 @@ describe('effectsPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -34,6 +35,7 @@ describe('effectsPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -56,6 +58,7 @@ describe('effectsPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -77,6 +80,7 @@ describe('effectsPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();

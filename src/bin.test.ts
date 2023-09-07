@@ -2,6 +2,7 @@
 import { cosmiconfig } from 'cosmiconfig';
 
 import { getClient } from './lib/client';
+import { createLog } from './utils/log';
 import { createCore } from './core';
 import {
   colorsPlugin,
@@ -23,6 +24,12 @@ jest.mock('cosmiconfig', () => {
 jest.mock('./lib/client');
 jest.mock('./plugins');
 jest.mock('./core');
+
+jest.mock('./utils/log');
+
+const mockLog = jest.fn();
+(createLog as jest.Mock).mockImplementation(() => mockLog);
+(launchPlugins as jest.Mock).mockImplementation(() => Promise.resolve());
 
 (getClient as jest.Mock).mockImplementation(() => ({
   fileStyles: () => Promise.resolve({ data: { meta: { styles: [] } } }),
@@ -91,6 +98,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -163,6 +171,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -240,6 +249,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -336,6 +346,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -413,6 +424,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -482,6 +494,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
@@ -569,6 +582,7 @@ describe('bin', () => {
           },
         },
         plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
     });

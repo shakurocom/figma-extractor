@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { type Config as ConfigSVG } from 'svgo';
 
+import { Core } from '../../core';
 import { Config, IconConfig } from '../../types';
 import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
@@ -22,6 +23,7 @@ export const generateIcons = async (
   client: ClientInterface,
   iconConfig: IconConfig,
   config: Config,
+  log: Core['log'],
 ) => {
   if (!iconConfig.exportPath) {
     throw new Error('config -> icons -> exportPath is required field');
@@ -31,6 +33,7 @@ export const generateIcons = async (
 
   if (!fs.existsSync(pathIconsFolder)) {
     fs.mkdirSync(pathIconsFolder, { recursive: true });
+    log(`${pathIconsFolder} directory has been created`);
   }
 
   let enableOptimizeSvg = true;
@@ -64,6 +67,18 @@ export const generateIcons = async (
 
     for (const item of imagesData) {
       const filename = `${pathIconsFolder}/${item.name}.svg`;
+      log(
+        'Before downloading of image:',
+        JSON.stringify(
+          {
+            url: images[item.id],
+            filename,
+            optimizeSvg: enableOptimizeSvg ? 'enabled' : 'disabled',
+          },
+          null,
+          2,
+        ),
+      );
       await downloadStreamingToFile(`${images[item.id]}`, filename, {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         'X-Figma-Token': config.apiKey,
@@ -78,6 +93,11 @@ export const generateIcons = async (
   }
 
   if (iconConfig.generateTypes) {
+    log(
+      `Start the generation of types for icons. path: '${pathSpriteFolder}' icons names: ${JSON.stringify(
+        iconNames,
+      )}`,
+    );
     generateIconTypes(iconNames, pathSpriteFolder);
   }
   if (iconConfig.generateSprite) {

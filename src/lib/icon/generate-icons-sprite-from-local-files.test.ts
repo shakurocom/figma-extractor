@@ -60,9 +60,11 @@ describe('generateIconSpriteFromLocalFiles', () => {
       },
     };
 
+    const log = jest.fn();
+
     fs.mkdirSync('/tmp/svg', { recursive: true });
 
-    generateIconSpriteFromLocalFiles(config.icons);
+    generateIconSpriteFromLocalFiles(config.icons, log);
 
     expect(generateIconTypes).toHaveBeenCalledWith([], '/tmp');
     expect(generateIconsSprite).toHaveBeenCalledWith('/tmp');
@@ -78,6 +80,8 @@ describe('generateIconSpriteFromLocalFiles', () => {
         generateTypes: true,
       },
     };
+
+    const log = jest.fn();
 
     vol.fromJSON({
       '/tmp/svg/profile.svg': (fs as any).__originalFs.readFileSync(
@@ -100,7 +104,7 @@ describe('generateIconSpriteFromLocalFiles', () => {
       ),
     });
 
-    generateIconSpriteFromLocalFiles(config.icons);
+    generateIconSpriteFromLocalFiles(config.icons, log);
 
     expect(generateIconTypes).toHaveBeenCalledWith(
       ['profile', 'settings', 'sidebar-notifications'],

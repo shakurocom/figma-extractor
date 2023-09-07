@@ -6,9 +6,11 @@ import { sortTextStyles } from '../lib/text/sort-text-styles/sort-text-styles';
 import { Plugin } from './types';
 
 export const textStylesPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
   { styleMetadata, fileNodes },
 ) => {
+  log('[info:text-styles] >>> ', 'Text styles plugin starts working...');
+
   if (!config?.styles?.textStyles?.disabled) {
     const metaTextStyles = styleMetadata.filter(styleTypeUtils.isText);
     const result = getTextStyles(metaTextStyles, fileNodes, config);
@@ -16,12 +18,32 @@ export const textStylesPlugin: Plugin = (
     let rawTextStyle = result.textStyles;
 
     if (!!config?.styles?.textStyles?.merge) {
+      log('[info:text-styles/merge] >>> ', 'Merging of text styles has been enabled');
       if (config?.screens) {
+        log(
+          '[info:text-styles/merge] >>> ',
+          'Available screens: ',
+          JSON.stringify(config?.screens),
+        );
         rawTextStyle = mergeTextStyle({ textStyles: rawTextStyle, screens: config?.screens });
       } else {
         console.warn(
           "Attention! You have merging of text styles is enabled and don't have any screens. Add some screens for correctly working it.",
         );
+      }
+    }
+
+    if (result.fontFamily) {
+      for (const [fontTitle, fontValue] of Object.entries(result.fontFamily)) {
+        log('[info:text-styles/fonts] >>> ', `'${fontTitle}' => '${fontValue}'`);
+      }
+    }
+
+    if (Array.isArray(rawTextStyle)) {
+      for (let i = 0; i < rawTextStyle.length; i++) {
+        for (const [styleTitle, styleValue] of Object.entries(rawTextStyle[i])) {
+          log('[info:text-styles/styles] >>> ', `'${styleTitle}' => `, JSON.stringify(styleValue));
+        }
       }
     }
 
@@ -40,6 +62,11 @@ export const textStylesPlugin: Plugin = (
         ['disable-max-lines', 'disable-typescript-naming-convention'],
       ),
       path.join(config?.styles?.exportPath || '', 'text-styles.js'),
+    );
+  } else {
+    log(
+      '[info:text-styles] >>> ',
+      'Text styles plugin has been disabled so the plugin had not been launched',
     );
   }
 };

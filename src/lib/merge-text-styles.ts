@@ -125,7 +125,6 @@ export const mergeTextStyle = ({
   textStyles: TextStyle[];
 }): TextStyle[] => {
   const screensKeys = Object.keys(screens) as Screens[];
-  console.log(screensKeys);
   const mediaCollection = new MediaCollection(screens);
   textStyles.forEach(textStyle => {
     Object.keys(textStyle).map(key => {

@@ -22,9 +22,15 @@ export interface Core {
   writeFile: typeof writeFile;
   runFormattingFile: typeof runFormattingFile;
   addEslintDisableRules: typeof addEslintDisableAtTheTopOfText;
+  log: (...args: string[]) => void;
 }
 
-export const createCore = (args: { config: Config; rootPath: string; plugins: Plugin[] }): Core => {
+export const createCore = (args: {
+  config: Config;
+  rootPath: string;
+  plugins: Plugin[];
+  log: (...args: string[]) => void;
+}): Core => {
   return {
     ...args,
     styleTypeUtils,

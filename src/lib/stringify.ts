@@ -1,14 +1,7 @@
-export const stringifyRecordsWithSort = (obj: Record<string, any>) => {
-  const sorted = Object.keys(obj)
-    .sort()
-    .reduce(
-      (acc, key) => {
-        acc[key] = obj[key];
+import { sortCollection } from './sort-collection';
 
-        return acc;
-      },
-      {} as Record<string, any>,
-    );
+export const stringifyRecordsWithSort = (obj: Record<string, any>) => {
+  const sorted = sortCollection(obj);
 
   return JSON.stringify(sorted);
 };

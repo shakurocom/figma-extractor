@@ -5,6 +5,7 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
+import { createLog } from './utils/log';
 import { createCore } from './core';
 import {
   colorsPlugin,
@@ -28,6 +29,10 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
       'Bypass downloading icons from Figma, generate sprite from local svg files instead',
     type: 'boolean',
   })
+  .option('verbose', {
+    description: 'More informative data output',
+    type: 'boolean',
+  })
   .help('h')
   .alias('h', 'help').argv;
 
@@ -45,7 +50,12 @@ const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'g
 async function run(config: Config) {
   const rootPath = process.cwd();
 
+  const log = createLog(!!argv.verbose);
+
   console.log('Please wait...');
+
+  log('Income config: ', JSON.stringify(config, null, 2));
+  log('Root path: ', rootPath);
 
   config = {
     ...config,
@@ -68,9 +78,26 @@ async function run(config: Config) {
 
   const onlyArgs = getOnlyArgs(argv.only);
 
+  log(
+    'Income console arguments: ',
+    JSON.stringify(argv, (key, value) => {
+      if (key === '$0') {
+        return undefined;
+      }
+
+      return value;
+    }),
+  );
+  log("Income the list of 'only' console argument: ", JSON.stringify(onlyArgs));
+
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
+      if (includedKey) {
+        log('[info:only arguments] >>> ', `'${item}' has been enabled in config`);
+      } else {
+        log('[info:only arguments] >>> ', `'${item}' has been disabled automatically`);
+      }
       const prop: Partial<Config> =
         item === 'icons'
           ? Array.isArray(config.icons)
@@ -101,6 +128,11 @@ async function run(config: Config) {
         ...prop,
       };
     });
+
+    log(
+      "Changed config after launching of filtering by 'only' console argument: ",
+      JSON.stringify(config, null, 2),
+    );
   }
 
   const core = createCore({
@@ -113,17 +145,30 @@ async function run(config: Config) {
       gradientsPlugin,
       iconsPlugin,
     ],
+    log,
   });
 
+  log('Getting of Figma client by api_key: ', config.apiKey);
+
   const client = getClient(config.apiKey);
+
+  log('Getting of meta style from figma by file_id: ', config.fileId);
+
   const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+
   const nodeIds = meta.styles.map(item => item.node_id);
+
+  log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
+
   const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
 
+  log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
     styleMetadata: meta.styles,
     fileNodes,
+  }).then(() => {
+    log('Finish');
   });
 }
 
