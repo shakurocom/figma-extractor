@@ -141,6 +141,66 @@ describe('generateIcons', () => {
     );
   });
 
+  it('should throw the error because there are icon duplicates', () => {
+    const config: any = {
+      fileId: 'any',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+      },
+    };
+
+    const client = createClient();
+    (client as any).fileNodes = jest.fn(function (fileId: any, { ids }: any) {
+      if (ids.length > 0) {
+        return {
+          data: {
+            ...iconsFileNodes,
+            nodes: {
+              ...iconsFileNodes.nodes,
+              '12790:103016': {
+                ...iconsFileNodes.nodes['12790:103016'],
+                document: {
+                  ...iconsFileNodes.nodes['12790:103016'].document,
+                  children: [
+                    ...iconsFileNodes.nodes['12790:103016'].document.children,
+                    {
+                      id: '52790:503137',
+                      name: 'profile',
+                      type: 'COMPONENT',
+                      scrollBehavior: 'SCROLLS',
+                      blendMode: 'PASS_THROUGH',
+                      children: [[Object]],
+                      absoluteBoundingBox: { x: 5294, y: 665, width: 24, height: 24 },
+                      absoluteRenderBounds: { x: 5294, y: 665, width: 24, height: 24 },
+                      constraints: { vertical: 'TOP', horizontal: 'LEFT' },
+                      layoutAlign: 'INHERIT',
+                      layoutGrow: 0,
+                      clipsContent: true,
+                      background: [],
+                      fills: [],
+                      strokes: [],
+                      strokeWeight: 1,
+                      strokeAlign: 'INSIDE',
+                      backgroundColor: { r: 0, g: 0, b: 0, a: 0 },
+                      effects: [],
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        };
+      }
+
+      return { data: { nodes: {} } };
+    });
+
+    return expect(generateIcons(client, config.icons, config, jest.fn())).rejects.toThrow(
+      "Icon with name: 'profile' is duplicate",
+    );
+  });
+
   it('should create folder for exporting', () => {
     const config: any = {
       fileId: 'any',

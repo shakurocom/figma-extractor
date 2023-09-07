@@ -51,6 +51,11 @@ export const generateIcons = async (
     const imagesData: { id: string; name: string }[] = (value as any)?.document?.children?.map(
       (item: any) => {
         const formattedName = iconConfig.iconName?.(item.name) || naming(item.name);
+
+        if (iconNames.includes(formattedName)) {
+          throw new Error(`Icon with name: '${formattedName}' is duplicate`);
+        }
+
         iconNames.push(formattedName);
 
         return {
