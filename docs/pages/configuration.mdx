@@ -3,6 +3,25 @@ import { Tab, Tabs } from 'nextra-theme-docs';
 # Config
 
 ```ts showLineNumbers
+type IconConfig = {
+  disabled?: boolean;
+  nodeIds: string[];
+  // custom format icon name
+  iconName: (nameFromFigma: string) => string;
+  exportPath: string;
+  // If the field is true, then the SVG sprite will be generated
+  generateSprite: boolean;
+  // If the field is true, then the file with icons' names as types will be created
+  generateTypes: boolean;
+  // If the field is true, then the extractor will only generate SVG sprite from local icons
+  // else all available icons will be downloaded and the sprile will be generated from them
+  localIcons?: boolean;
+  // It allows changing svgo config if you need or disable at all
+  // if this field is a function, then the function will be run before svgo optimization. And changed config from this function will be passed to svgo optimization
+  // if this field is boolean and equals `false` then svgo optimozation won't be run at all
+  optimizeSvg?: false | (config?: SVGOConfig) => SVGOConfig;
+};
+
 type Config = {
   // your Figma api access key
   apiKey: string;
@@ -55,20 +74,8 @@ type Config = {
       merge?: boolean;
     };
   };
-  icons: {
-    disabled?: boolean;
-    nodeIds: string[];
-    // custom format icon name
-    iconName: (nameFromFigma: string) => string;
-    exportPath: string;
-    // If the field is true, then the SVG sprite will be generated
-    generateSprite: boolean;
-    // If the field is true, then the file with icons' names as types will be created
-    generateTypes: boolean;
-    // If the field is true, then the extractor will only generate SVG sprite from local icons
-    // else all available icons will be downloaded and the sprile will be generated from them
-    localIcons?: boolean;
-  };
+  // Configuration of icons can have more one setting
+  icons: IconConfig | IconConfig[];
   /*
      It's used when textStyles -> merge == true,
      It contains title for each allowed screen size for generation accurate media queries
@@ -81,7 +88,7 @@ type Config = {
 
 ## Config example:
 
-<Tabs items={['Config with disabled theme', 'Config with enabled theme']}>
+<Tabs items={['Config with disabled theme', 'Config with enabled theme','Config with multi icons']}>
   <Tab>
 ```jsx filename="figma-extractor.config.js" copy
 // @ts-check
@@ -263,6 +270,139 @@ module.exports = {
     generateTypes: true,
     localIcons: false,
   },
+  screens: {
+    bs: 0,
+    ...screens,
+  },
+};
+```
+
+```js filename="/theme/screens.js" copy
+const screens = {
+  sm: '600px',
+  md: '979px',
+  lg: '1200px',
+  xl: '1600px',
+};
+
+module.exports = { screens };
+```
+  </Tab>
+  <Tab>
+If you have black&white and color icons in your project. You might be useful to download all icons through one way.
+
+In this case, you can use such config:
+```jsx filename="figma-extractor.config.js" copy
+// @ts-check
+const { screens } = require('./theme/screens');
+
+function getKeyName(name) {
+  if (name.toLowerCase().startsWith('ui-kit') || name.toLowerCase().startsWith('ui kit')) {
+    return 'INTERNAL_DO_NOT_USE';
+  }
+
+  /**
+   * format name from like:
+   *  "heading/h800 - md" ->  "h800-md"
+   *  "heading / h800 - md" ->  "h800-md"
+   *  "conventions are ignored/heading/h800 - md bla bla" -> "h800-md"
+   */
+  const resultName = name
+    .split('/')
+    .at(-1)?
+    .replace(' - ', '-')
+    .split(' ')
+    .find(name => name !== '');
+
+  if (!resultName) {
+    throw `getKeyName for "${name}" returns an empty string, check getKeyName implementation`;
+  }
+
+  return resultName;
+}
+
+function getKeyNameWithTheme(name = '') {
+  if (name.toLowerCase().startsWith('ui-kit') || name.toLowerCase().startsWith('ui kit')) {
+    return 'INTERNAL_DO_NOT_USE';
+  }
+
+  const splittedName = name.split('/');
+
+  /**
+   * format name from like:
+   *  "dark/heading/h800 - md" ->  "h800-md"
+   *  "dark / heading / h800 - md" ->  "h800-md"
+   */
+  let resultName = splittedName
+    .at(-1)
+    ?.replace(' - ', '-')
+    .split(' ')
+    .find(name => name !== '');
+
+  resultName = `${splittedName[0]}/${resultName}`;
+
+  if (!resultName) {
+    throw `getKeyNameWithTheme for "${name}" returns an empty string, check getKeyNameWithTheme implementation`;
+  }
+
+  return resultName;
+}
+
+const iconNaming = originalName => {
+  const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+  return formattedName.toLowerCase();
+};
+
+/**
+* @type {import('@shakuroinc/figma-extractor').Config}
+**/
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  styles: {
+    colors: {
+      keyName: getKeyNameWithTheme,
+    },
+    effects: {
+      keyName: getKeyNameWithTheme,
+    },
+    gradients: {
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    textStyles: {
+      keyName: nameFromFigma => `.v-${getKeyName(nameFromFigma)}`,
+      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
+    },
+  },
+  icons: [
+    // Let's assume this block is used to download black&white icons
+    {
+      nodeIds: ['2310:0', '2090:11'],
+      iconName: name => iconNaming(name), // custom format icon name
+      exportPath: './atoms/icon',
+      generateSprite: false,
+      generateTypes: false,
+      localIcons: false,
+    },
+    // This block is used to download color icons
+    {
+      nodeIds: ['276:18', '276:21'],
+      iconName: name => iconNaming(name), // custom format icon name
+      exportPath: './atoms/icon',
+      optimizeSvg: false, // For color icons, we must disable svg optimization otherwise downloaded icons will be changed
+      generateSprite: false,
+      generateTypes: false,
+      localIcons: false,
+    },
+    // And the last block is used to generate a sprite and types
+    {
+      nodeIds: [],
+      exportPath: './atoms/icon',
+      generateSprite: true,
+      generateTypes: true,
+      localIcons: true, // This field is required for this block. It allows working only local icons
+    },
+  ],
   screens: {
     bs: 0,
     ...screens,

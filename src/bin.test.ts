@@ -2,13 +2,13 @@
 import { cosmiconfig } from 'cosmiconfig';
 
 import { getClient } from './lib/client';
-import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
+import { createLog } from './utils/log';
 import { createCore } from './core';
-import { generateIcons } from './generate-icons';
 import {
   colorsPlugin,
   effectsPlugin,
   gradientsPlugin,
+  iconsPlugin,
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
@@ -24,14 +24,17 @@ jest.mock('cosmiconfig', () => {
 jest.mock('./lib/client');
 jest.mock('./plugins');
 jest.mock('./core');
-jest.mock('./generate-icons');
-jest.mock('./lib/icon/generate-icons-sprite-from-local-files');
+
+jest.mock('./utils/log');
+
+const mockLog = jest.fn();
+(createLog as jest.Mock).mockImplementation(() => mockLog);
+(launchPlugins as jest.Mock).mockImplementation(() => Promise.resolve());
 
 (getClient as jest.Mock).mockImplementation(() => ({
   fileStyles: () => Promise.resolve({ data: { meta: { styles: [] } } }),
   fileNodes: () => Promise.resolve({ data: {} }),
 }));
-(generateIcons as jest.Mock).mockImplementation(() => Promise.resolve());
 
 describe('bin', () => {
   let originalArgv: any;
@@ -42,8 +45,6 @@ describe('bin', () => {
     (getClient as jest.Mock).mockClear();
     (createCore as jest.Mock).mockClear();
     (launchPlugins as jest.Mock).mockClear();
-    (generateIcons as jest.Mock).mockClear();
-    (generateIconSpriteFromLocalFiles as jest.Mock).mockClear();
     // Remove all cached modules. The cache needs to be cleared before running
     // each command, otherwise you will see the same results from the command
     // run in your first test in subsequent tests.
@@ -96,18 +97,10 @@ describe('bin', () => {
             exportPath: '/test-figma-extractor',
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
-        icons: {
-          exportPath: '/test-figma-extractor',
-          localIcons: false,
-        },
-        styles: {
-          exportPath: '/test-figma-extractor',
-        },
-      });
     });
   });
 
@@ -177,29 +170,10 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
-        apiKey: '123',
-        fileId: 'fsdfhjkh423j423',
-        icons: {
-          exportPath: '/test-figma-extractor/ui/atoms/icon',
-          localIcons: false,
-          generateSprite: true,
-          generateTypes: true,
-          nodeIds: ['2310:0', '2090:11', '276:18'],
-        },
-        styles: {
-          exportPath: '/test-figma-extractor/ui/theme',
-          colors: {},
-          effects: {},
-          gradients: {},
-          textStyles: {
-            merge: true,
-          },
-        },
-      });
     });
   });
 
@@ -274,37 +248,107 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
-        apiKey: '123',
-        fileId: 'fsdfhjkh423j423',
-        icons: {
-          disabled: false,
-          exportPath: '/test-figma-extractor/ui/atoms/icon',
-          localIcons: false,
-          generateSprite: true,
-          generateTypes: true,
-          nodeIds: ['2310:0', '2090:11', '276:18'],
+    });
+  });
+
+  it('should be launched with flag --only=icons and config icons is an array', async () => {
+    let resolver: any;
+    const promise = new Promise(res => (resolver = res));
+    const search = jest.fn(() => {
+      return {
+        then: (func: any) => {
+          return func({
+            config: {
+              apiKey: '123',
+              fileId: 'fsdfhjkh423j423',
+              styles: {
+                exportPath: './ui/theme',
+                colors: {},
+                effects: {},
+                gradients: {},
+                textStyles: {
+                  merge: true,
+                },
+              },
+              icons: [
+                {
+                  nodeIds: ['2310:0'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+                {
+                  nodeIds: ['2090:11', '276:18'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+              ],
+            },
+          }).then(resolver);
         },
-        styles: {
-          exportPath: '/test-figma-extractor/ui/theme',
-          colors: {
-            disabled: true,
-          },
-          effects: {
-            disabled: true,
-          },
-          gradients: {
-            disabled: true,
-          },
-          textStyles: {
-            disabled: true,
-            merge: true,
+      };
+    });
+
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
+      jest.fn(() => ({
+        search,
+      })),
+    );
+
+    await runCommand('--only=icons');
+
+    return promise.then(() => {
+      expect(createCore).toBeCalledWith({
+        rootPath: '/test-figma-extractor',
+        config: {
+          apiKey: '123',
+          fileId: 'fsdfhjkh423j423',
+          icons: [
+            {
+              disabled: false,
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: false,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2310:0'],
+            },
+            {
+              disabled: false,
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: false,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2090:11', '276:18'],
+            },
+          ],
+          styles: {
+            exportPath: '/test-figma-extractor/ui/theme',
+            colors: {
+              disabled: true,
+            },
+            effects: {
+              disabled: true,
+            },
+            gradients: {
+              disabled: true,
+            },
+            textStyles: {
+              disabled: true,
+              merge: true,
+            },
           },
         },
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
+      expect(launchPlugins).toHaveBeenCalled();
     });
   });
 
@@ -379,37 +423,10 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIcons).toHaveBeenCalledWith({
-        apiKey: '123',
-        fileId: 'fsdfhjkh423j423',
-        icons: {
-          disabled: false,
-          exportPath: '/test-figma-extractor/ui/atoms/icon',
-          localIcons: false,
-          generateSprite: true,
-          generateTypes: true,
-          nodeIds: ['2310:0', '2090:11', '276:18'],
-        },
-        styles: {
-          exportPath: '/test-figma-extractor/ui/theme',
-          colors: {
-            disabled: false,
-          },
-          effects: {
-            disabled: true,
-          },
-          gradients: {
-            disabled: true,
-          },
-          textStyles: {
-            disabled: true,
-            merge: true,
-          },
-        },
-      });
     });
   });
 
@@ -476,29 +493,98 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin],
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
-      expect(generateIconSpriteFromLocalFiles).toHaveBeenCalledWith({
-        apiKey: '123',
-        fileId: 'fsdfhjkh423j423',
-        icons: {
-          exportPath: '/test-figma-extractor/ui/atoms/icon',
-          localIcons: true,
-          generateSprite: true,
-          generateTypes: true,
-          nodeIds: ['2310:0', '2090:11', '276:18'],
+    });
+  });
+
+  it('should be launched with flag --local-icons and config icons is an array', async () => {
+    let resolver: any;
+    const promise = new Promise(res => (resolver = res));
+    const search = jest.fn(() => {
+      return {
+        then: (func: any) => {
+          return func({
+            config: {
+              apiKey: '123',
+              fileId: 'fsdfhjkh423j423',
+              styles: {
+                exportPath: './ui/theme',
+                colors: {},
+                effects: {},
+                gradients: {},
+                textStyles: {
+                  merge: true,
+                },
+              },
+              icons: [
+                {
+                  nodeIds: ['2310:0'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+                {
+                  nodeIds: ['2090:11', '276:18'],
+                  exportPath: './ui/atoms/icon',
+                  generateSprite: true,
+                  generateTypes: true,
+                  localIcons: false,
+                },
+              ],
+            },
+          }).then(resolver);
         },
-        styles: {
-          exportPath: '/test-figma-extractor/ui/theme',
-          colors: {},
-          effects: {},
-          gradients: {},
-          textStyles: {
-            merge: true,
+      };
+    });
+
+    (cosmiconfig as jest.Mock).mockImplementationOnce(
+      jest.fn(() => ({
+        search,
+      })),
+    );
+
+    await runCommand('--local-icons');
+
+    return promise.then(() => {
+      expect(createCore).toBeCalledWith({
+        rootPath: '/test-figma-extractor',
+        config: {
+          apiKey: '123',
+          fileId: 'fsdfhjkh423j423',
+          icons: [
+            {
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: true,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2310:0'],
+            },
+            {
+              exportPath: '/test-figma-extractor/ui/atoms/icon',
+              localIcons: true,
+              generateSprite: true,
+              generateTypes: true,
+              nodeIds: ['2090:11', '276:18'],
+            },
+          ],
+          styles: {
+            exportPath: '/test-figma-extractor/ui/theme',
+            colors: {},
+            effects: {},
+            gradients: {},
+            textStyles: {
+              merge: true,
+            },
           },
         },
+        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        log: mockLog,
       });
+      expect(launchPlugins).toHaveBeenCalled();
     });
   });
 });

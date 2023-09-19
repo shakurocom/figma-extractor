@@ -1,3 +1,16 @@
+type SVGCallback = (config?: import('svgo').Config) => import('svgo').Config;
+
+export type IconConfig = {
+  disabled: boolean;
+  nodeIds: string[];
+  iconName: (nameFromFigma: string) => string;
+  exportPath: string;
+  generateSprite: boolean;
+  generateTypes: boolean;
+  localIcons?: boolean;
+  optimizeSvg?: false | SVGCallback;
+};
+
 export type Config = {
   apiKey: string;
   fileId: string;
@@ -25,15 +38,7 @@ export type Config = {
       merge?: boolean;
     };
   };
-  icons: {
-    disabled: boolean;
-    nodeIds: string[];
-    iconName: (nameFromFigma: string) => string;
-    exportPath: string;
-    generateSprite: boolean;
-    generateTypes: boolean;
-    localIcons?: boolean;
-  };
+  icons: IconConfig | IconConfig[];
   screens?: {
     [title: string]: number;
   };

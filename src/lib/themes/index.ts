@@ -82,7 +82,7 @@ export function* separateThemes({
       if (separatedTheme && allowedThemes?.includes(separatedTheme.trim())) {
         const newName = replaceSlashToDash(others.join('/'));
 
-        yield { newName, theme: separatedTheme.trim(), value };
+        yield { newName, theme: separatedTheme.trim(), value, originalName: name };
 
         continue;
       }
@@ -90,7 +90,7 @@ export function* separateThemes({
 
     const newName = replaceSlashToDash(name);
 
-    yield { newName, theme: NOT_FOUND_THEME_NAME, value };
+    yield { newName, theme: NOT_FOUND_THEME_NAME, value, originalName: name };
   }
 }
 

@@ -1863,6 +1863,13 @@
   resolved "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
+"@types/moxios@^0.4.15":
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/@types/moxios/-/moxios-0.4.15.tgz#d8b774f360ba652801b5807e0833f6ff30a17770"
+  integrity sha512-eHD7i0/Uu7pFGzS4uIed2InJLj5H6xOOsqPjGtRyvyC/jnzRt6q6Xtnm2PQlkcqKHjRybEqjw71dcPnzfDouhw==
+  dependencies:
+    axios ">=0.13.0"
+
 "@types/node@*":
   version "14.14.21"
   resolved "https://registry.npmjs.org/@types/node/-/node-14.14.21.tgz#d934aacc22424fe9622ebf6857370c052eae464e"
@@ -2168,14 +2175,7 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  dependencies:
-    follow-redirects "^1.10.0"
-
-axios@^1.4.0:
+axios@>=0.13.0, axios@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
   integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
@@ -2183,6 +2183,13 @@ axios@^1.4.0:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  dependencies:
+    follow-redirects "^1.10.0"
 
 babel-jest@^29.6.1:
   version "29.6.1"
@@ -4551,6 +4558,11 @@ minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.7"
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
+
+moxios@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/moxios/-/moxios-0.4.0.tgz#fc0da2c65477d725ca6b9679d58370ed0c52f53b"
+  integrity sha512-r+7DOsTcoTAwY6TGIDtjeTEBXMW8aGgk74MfASOC1tgYXD8Kq+cnqQHUdMnvfjf/CK7Pg/Wo52ohqy5zlyv9XQ==
 
 ms@2.1.2:
   version "2.1.2"

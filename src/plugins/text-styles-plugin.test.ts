@@ -14,6 +14,7 @@ describe('textStylesPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -34,6 +35,7 @@ describe('textStylesPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -56,6 +58,7 @@ describe('textStylesPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -83,6 +86,7 @@ describe('textStylesPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();
@@ -105,6 +109,7 @@ describe('textStylesPlugin', () => {
       },
       plugins: [],
       rootPath: '/root-path',
+      log: jest.fn(),
     });
 
     core.writeFile = jest.fn();

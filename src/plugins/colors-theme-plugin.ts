@@ -21,12 +21,19 @@ import { Plugin } from './types';
 type ColorName = string;
 
 export const colorsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules },
+  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
   { styleMetadata, fileNodes },
 ) => {
   const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
 
+  log('[info:color-theme] >>> ', 'Colors-theme plugin starts working...');
+
   if (config?.styles?.colors?.disabled) {
+    log(
+      '[info:color-theme] >>> ',
+      'Colors-theme plugin has been disabled so the plugin had not been launched',
+    );
+
     return;
   }
 
@@ -35,13 +42,25 @@ export const colorsThemePlugin: Plugin = (
     defaultTheme: config?.styles?.defaultTheme,
   });
 
+  log('[info:color-theme] >>> ', 'Allowed themes: ', JSON.stringify(allowedThemes));
+  log('[info:color-theme] >>> ', 'Default themes: ', defaultTheme);
+
   const themesCollection = createThemeCollection({ allowedThemes });
 
   const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
   const colors = getColorStyles(metaColors, fileNodes, name => keyNameCallback(name, true));
 
   let anyThemeIsUsed = false;
-  for (const { newName, value, theme } of separateThemes({ allowedThemes, data: colors })) {
+  for (const { newName, value, theme, originalName } of separateThemes({
+    allowedThemes,
+    data: colors,
+  })) {
+    log(
+      '[info:color-theme] >>> ',
+      `'${newName}' ${
+        theme === NOT_FOUND_THEME_NAME ? 'without theme' : `on '${theme}' theme`
+      } => '${value}'  (original: '${originalName}')`,
+    );
     if (theme === NOT_FOUND_THEME_NAME) {
       if (!variableNameIsValid(newName)) {
         throw new Error(`Color name: "${newName}" without theme contains not-valid chars.`);
@@ -69,6 +88,9 @@ export const colorsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     const jsData: Record<ColorName, string> = generateJsColors(variables);
+    for (const [name, value] of Object.entries(jsData)) {
+      log(`[info:color-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
+    }
 
     const cssData = generateCSSVariables(variables, themeName);
 

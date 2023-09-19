@@ -5,15 +5,15 @@ const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
-import { generateIconSpriteFromLocalFiles } from './lib/icon/generate-icons-sprite-from-local-files';
+import { createLog } from './utils/log';
 import { createCore } from './core';
-import { generateIcons } from './generate-icons';
 import {
   colorsPlugin,
   colorsThemePlugin,
   effectsPlugin,
   effectsThemePlugin,
   gradientsPlugin,
+  iconsPlugin,
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
@@ -27,6 +27,10 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
   .option('local-icons', {
     description:
       'Bypass downloading icons from Figma, generate sprite from local svg files instead',
+    type: 'boolean',
+  })
+  .option('verbose', {
+    description: 'More informative data output',
     type: 'boolean',
   })
   .help('h')
@@ -46,7 +50,12 @@ const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'g
 async function run(config: Config) {
   const rootPath = process.cwd();
 
+  const log = createLog(!!argv.verbose);
+
   console.log('Please wait...');
+
+  log('Income config: ', JSON.stringify(config, null, 2));
+  log('Root path: ', rootPath);
 
   config = {
     ...config,
@@ -54,26 +63,56 @@ async function run(config: Config) {
       ...config.styles,
       exportPath: path.join(rootPath, config?.styles?.exportPath || ''),
     },
-    icons: {
-      ...config?.icons,
-      exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
-      localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
-    },
+    icons: Array.isArray(config.icons)
+      ? config.icons.map(conf => ({
+          ...conf,
+          exportPath: path.join(rootPath, conf.exportPath || ''),
+          localIcons: argv.localIcons ?? conf.localIcons ?? false,
+        }))
+      : {
+          ...config?.icons,
+          exportPath: path.join(rootPath, config?.icons?.exportPath || ''),
+          localIcons: argv.localIcons ?? config?.icons?.localIcons ?? false,
+        },
   };
 
   const onlyArgs = getOnlyArgs(argv.only);
 
+  log(
+    'Income console arguments: ',
+    JSON.stringify(argv, (key, value) => {
+      if (key === '$0') {
+        return undefined;
+      }
+
+      return value;
+    }),
+  );
+  log("Income the list of 'only' console argument: ", JSON.stringify(onlyArgs));
+
   if (onlyArgs) {
     disabledKeys?.forEach(item => {
       const includedKey = onlyArgs.includes(item);
-      const prop =
+      if (includedKey) {
+        log('[info:only arguments] >>> ', `'${item}' has been enabled in config`);
+      } else {
+        log('[info:only arguments] >>> ', `'${item}' has been disabled automatically`);
+      }
+      const prop: Partial<Config> =
         item === 'icons'
-          ? {
-              icons: {
-                ...config.icons,
-                disabled: includedKey ? false : true,
-              },
-            }
+          ? Array.isArray(config.icons)
+            ? {
+                icons: config.icons.map(conf => ({
+                  ...conf,
+                  disabled: includedKey ? false : true,
+                })),
+              }
+            : {
+                icons: {
+                  ...config.icons,
+                  disabled: includedKey ? false : true,
+                },
+              }
           : {
               styles: {
                 ...config.styles,
@@ -89,6 +128,11 @@ async function run(config: Config) {
         ...prop,
       };
     });
+
+    log(
+      "Changed config after launching of filtering by 'only' console argument: ",
+      JSON.stringify(config, null, 2),
+    );
   }
 
   const core = createCore({
@@ -99,34 +143,33 @@ async function run(config: Config) {
       textStylesPlugin,
       config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
       gradientsPlugin,
+      iconsPlugin,
     ],
+    log,
   });
 
+  log('Getting of Figma client by api_key: ', config.apiKey);
+
   const client = getClient(config.apiKey);
+
+  log('Getting of meta style from figma by file_id: ', config.fileId);
+
   const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+
   const nodeIds = meta.styles.map(item => item.node_id);
+
+  log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
+
   const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
 
+  log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
     styleMetadata: meta.styles,
     fileNodes,
+  }).then(() => {
+    log('Finish');
   });
-
-  if (!config.icons?.disabled) {
-    if (config.icons.localIcons) {
-      try {
-        generateIconSpriteFromLocalFiles(config);
-      } catch (err) {
-        console.error(err);
-      }
-    } else {
-      generateIcons(config).catch(err => {
-        console.error(err);
-        console.error(err.stack);
-      });
-    }
-  }
 }
 
 function generateSearchPlaces(moduleName: string) {
