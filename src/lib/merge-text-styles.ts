@@ -9,7 +9,7 @@ type MediaCacheItem = { media: Screens; data: TextStyle['0'] };
 class MediaCollection {
   private cache: { [className: string]: MediaCacheItem[] } = {};
 
-  constructor(private screens: Record<Screens, number>) {}
+  constructor(private screens: Record<Screens, string | number>) {}
 
   add(className: string, data: MediaCacheItem) {
     if (!Array.isArray(this.cache[className])) {
@@ -30,7 +30,11 @@ class MediaCollection {
               ...current.data,
             };
           }
-          const mediaKey = `@media (min-width: ${this.screens[current.media]})`;
+          const screen = this.screens[current.media];
+          const mediaScreenSize =
+            typeof screen === 'string' && screen.match(/[\d]+px$/i) ? screen : screen + 'px';
+
+          const mediaKey = `@media (min-width: ${mediaScreenSize})`;
 
           return {
             ...collection,
@@ -49,8 +53,12 @@ class MediaCollection {
   }
 
   private sort(a: MediaCacheItem, b: MediaCacheItem) {
-    const sizeA = Number(this.screens[a.media]) || 0;
-    const sizeB = Number(this.screens[b.media]) || 0;
+    const screenA = this.screens[a.media];
+    const screenB = this.screens[b.media];
+
+    const sizeA = (typeof screenA === 'string' ? parseInt(screenA, 10) : screenA) || 0;
+    const sizeB = (typeof screenB === 'string' ? parseInt(screenB, 10) : screenB) || 0;
+
     if (sizeA === sizeB) {
       return 0;
     }
@@ -121,7 +129,7 @@ export const mergeTextStyle = ({
   screens,
   textStyles,
 }: {
-  screens: Record<Screens, number>;
+  screens: Record<Screens, number | string>;
   textStyles: TextStyle[];
 }): TextStyle[] => {
   const screensKeys = Object.keys(screens) as Screens[];

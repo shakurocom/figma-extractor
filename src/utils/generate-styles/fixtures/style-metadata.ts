@@ -209,7 +209,7 @@ export const styleMetadata = {
       style_type: 'TEXT',
       thumbnail_url:
         'https://s3-alpha-sig.figma.com/checkpoints/wKM/37c/LhBvSNNI4fGbbzD4/style_thumbnail_0.png?Expires=1622419200&Signature=YCAonHi9XwvAmUeOmysU4JDP-3ZGQ6Ql03RIDkv4d~p0uHPFfoTNlj8F6hkV3-YAjDgKEjDMRjnSLef1C8hC3p2pZduAYzXHKfSn5LUrRvSbL7BEoEpBiYgtAmm4JF7z2M2P1CqYLfwk9P-WfzzjPH6Fi8f8ONM2UDoDSGZpNOOPMVyG9MlKmB-Ofvz9Fgd4SbDHq-faMaHnsVTnrLmQtKxm~7y1V2tFu8~97ESZdVdkUq8qtvSxNl545UBpks3dbU16lr3JJSWARF3LPj5Q24o9trKHcYaAhhxcboL7ir0PzE9rLYK4a-PXAbEfZ3VyiEjktAoin8DBn6CaigIM8w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-      name: 'heading/h500 - sm',
+      name: 'heading/h500 - md',
       description: '',
       created_at: '2021-05-04T19:18:54.565Z',
       updated_at: '2021-05-04T19:18:54.565Z',
@@ -227,7 +227,7 @@ export const styleMetadata = {
       style_type: 'TEXT',
       thumbnail_url:
         'https://s3-alpha-sig.figma.com/checkpoints/wKM/37c/LhBvSNNI4fGbbzD4/style_thumbnail_0.png?Expires=1622419200&Signature=YCAonHi9XwvAmUeOmysU4JDP-3ZGQ6Ql03RIDkv4d~p0uHPFfoTNlj8F6hkV3-YAjDgKEjDMRjnSLef1C8hC3p2pZduAYzXHKfSn5LUrRvSbL7BEoEpBiYgtAmm4JF7z2M2P1CqYLfwk9P-WfzzjPH6Fi8f8ONM2UDoDSGZpNOOPMVyG9MlKmB-Ofvz9Fgd4SbDHq-faMaHnsVTnrLmQtKxm~7y1V2tFu8~97ESZdVdkUq8qtvSxNl545UBpks3dbU16lr3JJSWARF3LPj5Q24o9trKHcYaAhhxcboL7ir0PzE9rLYK4a-PXAbEfZ3VyiEjktAoin8DBn6CaigIM8w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-      name: 'heading/h500 - md',
+      name: 'heading/h500 - sm',
       description: '',
       created_at: '2021-05-04T19:18:54.565Z',
       updated_at: '2021-05-04T19:18:54.565Z',

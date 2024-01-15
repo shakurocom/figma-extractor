@@ -40,7 +40,7 @@ export type Config = {
   };
   icons: IconConfig | IconConfig[];
   screens?: {
-    [title: string]: number;
+    [title: string]: number | string;
   };
 };
 
