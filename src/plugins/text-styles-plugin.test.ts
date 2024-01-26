@@ -97,6 +97,64 @@ describe('textStylesPlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
+  it('should create data with merged styles when the screens object has number items', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          textStyles: {
+            merge: true,
+          },
+        },
+        screens: {
+          bs: 0,
+          sm: 600,
+          md: 900,
+          lg: 1200,
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+      log: jest.fn(),
+    });
+
+    core.writeFile = jest.fn();
+
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
+  it('should create data with merged styles when the screens object has string items as number', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          textStyles: {
+            merge: true,
+          },
+        },
+        screens: {
+          bs: '0',
+          sm: '600',
+          md: '900',
+          lg: '1200',
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+      log: jest.fn(),
+    });
+
+    core.writeFile = jest.fn();
+
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
   it('should create data with custom keyName function', () => {
     const core = createCore({
       config: {
