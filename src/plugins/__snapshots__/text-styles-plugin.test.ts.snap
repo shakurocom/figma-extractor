@@ -64,7 +64,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
       
     },'heading/h700 - lg__extra': {
@@ -126,7 +126,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
     },'@media (min-width: 900px)': {
         
@@ -184,7 +184,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
       
     },'heading/h700': {
@@ -265,7 +265,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
     },'@media (min-width: 900px)': {
         
@@ -323,7 +323,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
       
     },'heading/h700': {
@@ -404,7 +404,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
     },'@media (min-width: 900px)': {
         
@@ -462,7 +462,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
       
     },'heading/h700': {
@@ -564,7 +564,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       fontWeight: 600,
       textTransform: "initial",
       lineHeight: 0.94,
-      
+      letterSpacing: '-2.4px',
   
       
     },'heading/h700-lg': {

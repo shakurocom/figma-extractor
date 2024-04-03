@@ -27,7 +27,7 @@ export const getTextStyles = (
     const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
 
     const extraStyles: any = {};
-    if ('letterSpacing' in style && style.letterSpacing > 0) {
+    if ('letterSpacing' in style && style.letterSpacing != 0) {
       extraStyles.letterSpacing = style.letterSpacing;
     }
 
