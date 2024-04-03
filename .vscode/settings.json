@@ -1,6 +1,11 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": false
@@ -15,8 +20,8 @@
     "editor.formatOnSave": false
   },
   "editor.codeActionsOnSave": {
-    "eslint.autoFixOnSave": true,
-    "source.fixAll.eslint": true
+    "eslint.autoFixOnSave": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "window.title": "Figma-extractor | ${activeEditorShort}${separator}${rootName}"
 }
