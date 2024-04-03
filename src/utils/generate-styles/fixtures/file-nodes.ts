@@ -369,7 +369,7 @@ export const fileNodes = {
           fontSize: 38,
           textAlignHorizontal: 'LEFT',
           textAlignVertical: 'TOP',
-          letterSpacing: 0,
+          letterSpacing: -2.4,
           lineHeightPx: 35.84000015258789,
           lineHeightPercent: 95.57333374023438,
           lineHeightPercentFontSize: 118,
