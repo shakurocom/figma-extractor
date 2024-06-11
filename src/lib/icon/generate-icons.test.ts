@@ -398,4 +398,67 @@ describe('generateIcons', () => {
       expect(optimizeSvg).not.toHaveBeenCalled();
     });
   });
+
+  it('should launch generation without skipIcon', () => {
+    const client = createClient();
+    const config: any = {
+      apiKey: 'api_key',
+      fileId: 'file_id',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+      },
+    };
+
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
+      expect(vol.toJSON()).toMatchSnapshot();
+    });
+  });
+
+  it('should launch generation with skipIcon and skip some icons', () => {
+    const client = createClient();
+    const skipIcon = jest.fn((name: string) => !name.includes('pin'));
+    const config: any = {
+      apiKey: 'api_key',
+      fileId: 'file_id',
+      icons: {
+        exportPath: '/tmp',
+        nodeIds: ['12790:103016'],
+        skipIcon,
+      },
+    };
+
+    return generateIcons(client, config.icons, config, jest.fn()).then(() => {
+      expect(vol.toJSON()).toMatchSnapshot();
+      expect(skipIcon).toHaveBeenCalledTimes(5);
+      expect(skipIcon).toHaveBeenCalledWith('pin');
+      expect(skipIcon).toHaveBeenCalledWith('unpin');
+      expect(skipIcon).toHaveBeenCalledWith('profile');
+      expect(skipIcon).toHaveBeenCalledWith('settings');
+      expect(skipIcon).toHaveBeenCalledWith('sidebar-notifications');
+
+      expect(downloadStreamingToFile).toHaveBeenCalledTimes(3);
+
+      expect(downloadStreamingToFile).toHaveBeenNthCalledWith(
+        1,
+        'https://path-to-svg-file-12790:103137',
+        '/tmp/svg/profile.svg',
+        { 'X-Figma-Token': 'api_key' },
+      );
+
+      expect(downloadStreamingToFile).toHaveBeenNthCalledWith(
+        2,
+        'https://path-to-svg-file-12790:103136',
+        '/tmp/svg/settings.svg',
+        { 'X-Figma-Token': 'api_key' },
+      );
+
+      expect(downloadStreamingToFile).toHaveBeenNthCalledWith(
+        3,
+        'https://path-to-svg-file-12790:103135',
+        '/tmp/svg/sidebar-notifications.svg',
+        { 'X-Figma-Token': 'api_key' },
+      );
+    });
+  });
 });

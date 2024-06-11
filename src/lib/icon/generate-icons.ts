@@ -48,8 +48,9 @@ export const generateIcons = async (
   const iconNames: string[] = [];
   const nodes = Object.values(data.nodes);
   for (const value of nodes) {
-    const imagesData: { id: string; name: string }[] = (value as any)?.document?.children?.map(
-      (item: any) => {
+    const imagesData: { id: string; name: string }[] = (value as any)?.document?.children
+      ?.filter((item: any) => (iconConfig.skipIcon ? iconConfig.skipIcon(item.name) : true))
+      .map((item: any) => {
         const formattedName = iconConfig.iconName?.(item.name) || naming(item.name);
 
         if (iconNames.includes(formattedName)) {
@@ -62,8 +63,7 @@ export const generateIcons = async (
           id: item.id,
           name: formattedName,
         };
-      },
-    );
+      });
 
     const imageIds = imagesData.map((item: any) => item.id);
     const {
