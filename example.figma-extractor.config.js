@@ -38,6 +38,7 @@ module.exports = {
   icons: {
     nodeIds: ['2310:0', '2090:11', '276:18'],
     iconName: name => iconNaming(name), // custom format icon name
+    skipIcon: name => !name.startsWith('.'), // custom skip icon name
     exportPath: './ui/atoms/icon',
     generateSprite: true,
     generateTypes: true,
