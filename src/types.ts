@@ -4,6 +4,7 @@ export type IconConfig = {
   disabled: boolean;
   nodeIds: string[];
   iconName: (nameFromFigma: string) => string;
+  skipIcon?: (name: string) => boolean;
   exportPath: string;
   generateSprite: boolean;
   generateTypes: boolean;
