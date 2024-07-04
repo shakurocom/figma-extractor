@@ -17,7 +17,7 @@ export interface FigmaData {
 export interface Core {
   config: Config;
   rootPath: string;
-  plugins: Plugin[];
+  plugins: Array<Plugin | undefined>;
   styleTypeUtils: typeof styleTypeUtils;
   writeFile: typeof writeFile;
   runFormattingFile: typeof runFormattingFile;
@@ -28,7 +28,7 @@ export interface Core {
 export const createCore = (args: {
   config: Config;
   rootPath: string;
-  plugins: Plugin[];
+  plugins: Array<Plugin | undefined>;
   log: (...args: string[]) => void;
 }): Core => {
   return {
