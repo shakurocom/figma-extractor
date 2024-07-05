@@ -126,7 +126,7 @@ describe('Variables2JsonAdapter', () => {
         description: '',
       },
       {
-        style_type: 'FILL',
+        style_type: 'TEXT',
         node_id: 'GlobalGeneralnumberspacing/zero',
         sort_position: '',
         file_key: '',
@@ -143,7 +143,7 @@ describe('Variables2JsonAdapter', () => {
         description: '',
       },
       {
-        style_type: 'FILL',
+        style_type: 'TEXT',
         node_id: 'GlobalGeneralnumberspacing/one',
         sort_position: '',
         file_key: '',
@@ -160,7 +160,7 @@ describe('Variables2JsonAdapter', () => {
         description: '',
       },
       {
-        style_type: 'FILL',
+        style_type: 'TEXT',
         node_id: 'GlobalGeneralnumberspacing/two',
         sort_position: '',
         file_key: '',

@@ -16,7 +16,6 @@ type RealVariables = Exclude<
 
 const resolveVariable = (
   variable: Variables2JsonData['collections'][0]['modes'][0]['variables'][0],
-  mode: Variables2JsonData['collections'][0]['modes'][0]['name'],
   data: Variables2JsonData,
 ): RealVariables => {
   if (variable.isAlias) {
@@ -26,25 +25,25 @@ const resolveVariable = (
 
     if (!foundCollection) {
       throw new Error(
-        `Alias collection not found. Collection: ${variable.value.collection}, alias name: ${variable.value.name}, mode: ${mode}`,
+        `Alias collection not found. Collection: ${variable.value.collection}, alias name: ${variable.value.name}`,
       );
     }
 
-    const foundMode = foundCollection.modes.find(item => item.name === mode);
+    const foundMode = foundCollection.modes[0];
     if (!foundMode) {
       throw new Error(
-        `the mode of alias collection not found. Collection: ${variable.value.collection}, alias name: ${variable.value.name}, mode: ${mode}`,
+        `The collections doesn't have any modes. Collection: ${variable.value.collection}, alias name: ${variable.value.name}`,
       );
     }
 
     const foundVariable = foundMode.variables.find(item => item.name === variable.value.name);
     if (!foundVariable) {
       throw new Error(
-        `the mode of alias collection not found. Collection: ${variable.value.collection}, alias name: ${variable.value.name}, mode: ${mode}`,
+        `the variable of alias collection not found. Collection: ${variable.value.collection}, alias name: ${variable.value.name}`,
       );
     }
 
-    return resolveVariable(foundVariable, mode, data);
+    return resolveVariable(foundVariable, data);
   }
 
   return variable;
@@ -100,7 +99,7 @@ export class Variables2JsonAdapter implements ImportVariablesAdapter, ImportVari
             const variable = mode.variables[varIndex];
             const node_id = collection.name + mode.name + variable.type + variable.name;
             result.push({
-              style_type: 'FILL',
+              style_type: variable.type === 'color' ? 'FILL' : 'TEXT',
               node_id,
               sort_position: '',
               file_key: '',
@@ -141,7 +140,7 @@ export class Variables2JsonAdapter implements ImportVariablesAdapter, ImportVari
       } of this.getVariableGenerator(this.data.collections)) {
         const id = collectionName + modeName + originalVariable.type + originalVariable.name;
 
-        const variable = resolveVariable(originalVariable, modeName, this.data);
+        const variable = resolveVariable(originalVariable, this.data);
 
         const fill = getFill(variable);
 
