@@ -689,6 +689,7 @@ async function runCommand(...args: any[]) {
     ...args,
   ];
   process.cwd = () => '/test-figma-extractor';
+  process.env.INIT_CWD = '/test-figma-extractor';
   let resolver: any;
   const promise = new Promise(res => (resolver = res));
   jest.isolateModules(() => {

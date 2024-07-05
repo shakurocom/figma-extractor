@@ -64,6 +64,13 @@ const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'g
 
 async function run(config: Config) {
   const rootPath = process.cwd();
+  // Note: We can't use just process.cwd() because a developer often launches `yarn extract` from root path
+  // And if your project is divided to workspaces folders then you probably have the command line of the extractor like: `yarn --cwd ui extract`
+  // So in such case process.cwd() returns `root_path/ui`. And we can't trust this command
+  // However, process.env.INIT_CWD is the path of the current launched command.
+  // And it is the path like: `root_path`, regardless of running `yarn --cwd ui extract`
+  const executedPath = process.env?.INIT_CWD ?? process.cwd();
+  console.log('process.env.INIT_CWD: ', process.env.INIT_CWD);
 
   const log = createLog(!!argv.verbose);
 
@@ -171,7 +178,7 @@ async function run(config: Config) {
     if (enabledImportVariables) {
       log('Create import variables client with file path: ', argv.file);
 
-      const filePath = path.isAbsolute(argv.file) ? argv.file : path.join(rootPath, argv.file);
+      const filePath = path.isAbsolute(argv.file) ? argv.file : path.join(executedPath, argv.file);
       log('Resolved file path of variables: ', filePath);
 
       const variablesData = await getVariablesJson(filePath);
