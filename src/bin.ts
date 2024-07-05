@@ -7,6 +7,7 @@ import path from 'path';
 import { getClient } from './lib/client';
 import { createLog } from './utils/log';
 import { createCore } from './core';
+import { createImportVariablesAdapter, getVariablesJson } from './import-variables';
 import {
   colorsPlugin,
   colorsThemePlugin,
@@ -19,6 +20,7 @@ import {
 } from './plugins';
 import { Config, OnlyArgs } from './types';
 
+let enabledImportVariables = false;
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
   .example('$0 --only=icons,colors', 'Extract only icons and colors')
@@ -32,6 +34,19 @@ const argv = require('yargs/yargs')(process.argv.slice(2))
   .option('verbose', {
     description: 'More informative data output',
     type: 'boolean',
+  })
+  .command({
+    command: 'import-variables <file>',
+    aliases: ['iv'],
+    desc: 'Import figma variables from file',
+    builder: (yargs: any) =>
+      yargs.positional('file', {
+        describe: 'JSON file with variables',
+        type: 'string',
+      }),
+    handler: () => {
+      enabledImportVariables = true;
+    },
   })
   .help('h')
   .alias('h', 'help').argv;
@@ -140,10 +155,10 @@ async function run(config: Config) {
     config,
     plugins: [
       config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
-      textStylesPlugin,
+      !enabledImportVariables ? textStylesPlugin : undefined,
       config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
       gradientsPlugin,
-      iconsPlugin,
+      !enabledImportVariables ? iconsPlugin : undefined,
     ],
     log,
   });
@@ -152,20 +167,38 @@ async function run(config: Config) {
 
   const client = getClient(config.apiKey);
 
-  log('Getting of meta style from figma by file_id: ', config.fileId);
+  const { styleMetadata, fileNodes } = await (async function () {
+    if (enabledImportVariables) {
+      log('Create import variables client with file path: ', argv.file);
 
-  const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+      const filePath = path.isAbsolute(argv.file) ? argv.file : path.join(rootPath, argv.file);
+      log('Resolved file path of variables: ', filePath);
 
-  const nodeIds = meta.styles.map(item => item.node_id);
+      const variablesData = await getVariablesJson(filePath);
 
-  log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
+      // TODO: Add an adapter class from config and CLI argument as the second parameter
+      const importClient = await createImportVariablesAdapter(variablesData);
 
-  const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
+      return { styleMetadata: importClient.styleMetadata, fileNodes: importClient.fileNodes };
+    } else {
+      log('Getting of meta style from figma by file_id: ', config.fileId);
+
+      const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+
+      const nodeIds = meta.styles.map(item => item.node_id);
+
+      log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
+
+      const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
+
+      return { styleMetadata: meta.styles, fileNodes };
+    }
+  })();
 
   log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
-    styleMetadata: meta.styles,
+    styleMetadata,
     fileNodes,
   }).then(() => {
     log('Finish');

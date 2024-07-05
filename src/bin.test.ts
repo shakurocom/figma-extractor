@@ -4,6 +4,7 @@ import { cosmiconfig } from 'cosmiconfig';
 import { getClient } from './lib/client';
 import { createLog } from './utils/log';
 import { createCore } from './core';
+import { createImportVariablesAdapter, getVariablesJson } from './import-variables';
 import {
   colorsPlugin,
   effectsPlugin,
@@ -26,6 +27,18 @@ jest.mock('./plugins');
 jest.mock('./core');
 
 jest.mock('./utils/log');
+
+jest.mock('./import-variables', () => {
+  return {
+    getVariablesJson: jest.fn(() => Promise.resolve({ abc: 1 })),
+    createImportVariablesAdapter: jest.fn(() =>
+      Promise.resolve({
+        fileNodes: 'file-nodes',
+        styleMetadata: 'style-metadata',
+      }),
+    ),
+  };
+});
 
 const mockLog = jest.fn();
 (createLog as jest.Mock).mockImplementation(() => mockLog);
@@ -586,6 +599,81 @@ describe('bin', () => {
       });
       expect(launchPlugins).toHaveBeenCalled();
     });
+  });
+
+  describe('import-variables command', () => {
+    it('should launch import from exist file', async () => {
+      let resolver: any;
+      const promise = new Promise(res => (resolver = res));
+      const search = jest.fn(() => {
+        return {
+          then: (func: any) => {
+            return func({
+              config: {
+                apiKey: '123',
+                fileId: 'fsdfhjkh423j423',
+                styles: {
+                  exportPath: './ui/theme',
+                  colors: {},
+                  effects: {},
+                  gradients: {},
+                  textStyles: {
+                    merge: true,
+                  },
+                },
+                icons: [],
+              },
+            }).then(resolver);
+          },
+        };
+      });
+
+      (cosmiconfig as jest.Mock).mockImplementationOnce(
+        jest.fn(() => ({
+          search,
+        })),
+      );
+
+      await runCommand('import-variables', './fixtures/variables.json');
+
+      return promise.then(() => {
+        expect(getVariablesJson).toHaveBeenCalledWith(
+          '/test-figma-extractor/fixtures/variables.json',
+        );
+        expect(createImportVariablesAdapter).toHaveBeenCalledWith({ abc: 1 });
+        expect(getClient).toHaveBeenCalledWith('123');
+        expect(createCore).toBeCalledWith({
+          rootPath: '/test-figma-extractor',
+          config: {
+            apiKey: '123',
+            fileId: 'fsdfhjkh423j423',
+            icons: [],
+            styles: {
+              exportPath: '/test-figma-extractor/ui/theme',
+              colors: {},
+              effects: {},
+              gradients: {},
+              textStyles: {
+                merge: true,
+              },
+            },
+          },
+          plugins: [colorsPlugin, undefined, effectsPlugin, gradientsPlugin, undefined],
+          log: mockLog,
+        });
+        expect(launchPlugins).toHaveBeenCalled();
+        expect(launchPlugins).toHaveBeenCalledWith(undefined, {
+          figmaClient: {
+            fileNodes: expect.anything(),
+            fileStyles: expect.anything(),
+          },
+          styleMetadata: 'style-metadata',
+          fileNodes: 'file-nodes',
+        });
+      });
+    });
+
+    it.todo('should throw an error if the parsing of the file has some errors');
   });
 });
 
