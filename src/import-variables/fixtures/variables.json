@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "collections": [
+    {
+      "name": "Global",
+      "modes": [
+        {
+          "name": "General",
+          "variables": [
+            {
+              "name": "color/brand/100",
+              "type": "color",
+              "isAlias": false,
+              "value": {
+                "r": 0,
+                "g": 244,
+                "b": 255,
+                "a": 1
+              }
+            },
+            {
+              "name": "color/brand/200",
+              "type": "color",
+              "isAlias": false,
+              "value": {
+                "r": 22,
+                "g": 200,
+                "b": 255,
+                "a": 0.6
+              }
+            },
+            {
+              "name": "color/brand/300",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Global",
+                "name": "color/brand/100"
+              }
+            },
+            {
+              "name": "spacing/zero",
+              "type": "number",
+              "isAlias": false,
+              "value": 0
+            },
+            {
+              "name": "spacing/one",
+              "type": "number",
+              "isAlias": false,
+              "value": 1
+            },
+            {
+              "name": "spacing/two",
+              "type": "number",
+              "isAlias": true,
+              "value": {
+                "collection": "Theme",
+                "name": "spacing/1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Theme",
+      "modes": [
+        {
+          "name": "General",
+          "variables": [
+            {
+              "name": "spacing/1",
+              "type": "number",
+              "isAlias": false,
+              "value": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

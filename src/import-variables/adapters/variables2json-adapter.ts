@@ -76,7 +76,7 @@ const getFill = (variable: RealVariables) => {
 };
 
 export class Variables2JsonAdapter implements ImportVariablesAdapter, ImportVariablesValidatorData {
-  constructor(readonly data: unknown) {}
+  constructor(public data: unknown) {}
 
   validateData = () => {
     try {

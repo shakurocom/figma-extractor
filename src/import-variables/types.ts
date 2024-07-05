@@ -1,7 +1,7 @@
 import type { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
 export interface ImportVariablesAdapter {
-  readonly data: unknown;
+  data: unknown;
   get styleMetadata(): FullStyleMetadata[];
   get fileNodes(): FileNodesResponse;
 }

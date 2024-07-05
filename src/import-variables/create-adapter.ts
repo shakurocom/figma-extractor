@@ -1,4 +1,3 @@
-import { checkFilePath, readFile } from '../utils/fs-util';
 import { Variables2JsonAdapter } from './adapters';
 import type { ImportVariablesAdapter, ImportVariablesValidatorData } from './types';
 
@@ -6,16 +5,11 @@ const isValidatorDataInstance = (data: unknown): data is ImportVariablesValidato
   typeof data === 'object' && !!data && 'validateData' in data;
 
 export const createImportVariablesAdapter = async (
-  filePath: string,
+  data: unknown,
+  // TODO: Replace to config adapter and resolve it through importing of external file with adapters
+  classAdapter: new (data: unknown) => ImportVariablesAdapter = Variables2JsonAdapter,
 ): Promise<ImportVariablesAdapter> => {
-  if (!checkFilePath(filePath)) {
-    throw new Error(`File: ${filePath} doesn't exist`);
-  }
-
-  const data = await readFile(filePath);
-
-  // TODO: Replace to changeable class name through config
-  const adapter = new Variables2JsonAdapter(JSON.parse(data));
+  const adapter = new classAdapter(data);
 
   if (isValidatorDataInstance(adapter)) {
     const err = adapter.validateData();
