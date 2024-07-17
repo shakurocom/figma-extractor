@@ -1,5 +1,7 @@
 import path from 'path';
 
+import { Mode } from '@/types';
+
 import { getColorName } from '../lib/color/get-color-name/get-color-name';
 import { getColorStyles } from '../lib/get-color-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
@@ -21,21 +23,14 @@ import { Plugin } from './types';
 type ColorName = string;
 
 export const colorsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
-  { styleMetadata, fileNodes },
+  { config, writeFile, addEslintDisableRules, log },
+  { variables },
 ) => {
-  const metaColors = styleMetadata.filter(styleTypeUtils.isFill);
+  const filteredCollections = variables.filter(({ name }) =>
+    config?.styles?.colors?.collectionNames?.includes(name),
+  );
 
-  log('[info:color-theme] >>> ', 'Colors-theme plugin starts working...');
-
-  if (config?.styles?.colors?.disabled) {
-    log(
-      '[info:color-theme] >>> ',
-      'Colors-theme plugin has been disabled so the plugin had not been launched',
-    );
-
-    return;
-  }
+  const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
 
   const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
     allowedThemes: config?.styles?.allowedThemes,
@@ -46,9 +41,8 @@ export const colorsThemePlugin: Plugin = (
   log('[info:color-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
-
   const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
-  const colors = getColorStyles(metaColors, fileNodes, name => keyNameCallback(name, true));
+  const colors = getColorStyles(modes, name => keyNameCallback(name));
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme, originalName } of separateThemes({

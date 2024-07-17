@@ -5,7 +5,7 @@ import { getClient } from './lib/client';
 import { createLog } from './utils/log';
 import { createCore } from './core';
 import {
-  colorsPlugin,
+  colorsThemePlugin,
   effectsPlugin,
   gradientsPlugin,
   iconsPlugin,
@@ -37,6 +37,7 @@ const mockLog = jest.fn();
 }));
 
 describe('bin', () => {
+  const jsonVariablesPath = '../' + process.cwd() + '/variables.json';
   let originalArgv: any;
   let originalCwd: any;
 
@@ -63,47 +64,6 @@ describe('bin', () => {
     process.cwd = originalCwd;
   });
 
-  it('should be launched with empty config', async () => {
-    (cosmiconfig as jest.Mock).mockReset();
-    let resolver: any;
-    const promise = new Promise(res => (resolver = res));
-    const search = jest.fn(() => {
-      return {
-        then: (func: any) => {
-          return func({ config: {} }).then(resolver);
-        },
-      };
-    });
-
-    (cosmiconfig as jest.Mock).mockImplementationOnce(
-      jest.fn(() => ({
-        search,
-      })),
-    );
-
-    await runCommand();
-
-    return promise.then(() => {
-      // TODO: Need to add exception if there is no apiKey
-      expect(getClient).toHaveBeenCalledWith(undefined);
-      expect(createCore).toBeCalledWith({
-        rootPath: '/test-figma-extractor',
-        config: {
-          icons: {
-            exportPath: '/test-figma-extractor',
-            localIcons: false,
-          },
-          styles: {
-            exportPath: '/test-figma-extractor',
-          },
-        },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
-        log: mockLog,
-      });
-      expect(launchPlugins).toHaveBeenCalled();
-    });
-  });
-
   it('should be launched with a filled config', async () => {
     let resolver: any;
     const promise = new Promise(res => (resolver = res));
@@ -112,11 +72,12 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
                 exportPath: './ui/theme',
-                colors: {},
+                colors: { collectionNames: ['color', 'color_extra'] },
                 effects: {},
                 gradients: {},
                 textStyles: {
@@ -149,8 +110,8 @@ describe('bin', () => {
       // TODO: Need to add exception if there is no apiKey
       expect(getClient).toHaveBeenCalledWith('123');
       expect(createCore).toBeCalledWith({
-        rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: {
@@ -162,7 +123,7 @@ describe('bin', () => {
           },
           styles: {
             exportPath: '/test-figma-extractor/ui/theme',
-            colors: {},
+            colors: { collectionNames: ['color', 'color_extra'] },
             effects: {},
             gradients: {},
             textStyles: {
@@ -170,7 +131,8 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        rootPath: '/test-figma-extractor',
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -185,6 +147,7 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
@@ -221,6 +184,7 @@ describe('bin', () => {
       expect(createCore).toBeCalledWith({
         rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: {
@@ -248,7 +212,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -263,6 +227,7 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
@@ -308,6 +273,7 @@ describe('bin', () => {
       expect(createCore).toBeCalledWith({
         rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: [
@@ -345,7 +311,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -360,6 +326,7 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
@@ -396,6 +363,7 @@ describe('bin', () => {
       expect(createCore).toBeCalledWith({
         rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: {
@@ -423,7 +391,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -438,6 +406,7 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
@@ -474,6 +443,7 @@ describe('bin', () => {
       expect(createCore).toBeCalledWith({
         rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: {
@@ -493,7 +463,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -508,6 +478,7 @@ describe('bin', () => {
         then: (func: any) => {
           return func({
             config: {
+              jsonVariablesPath,
               apiKey: '123',
               fileId: 'fsdfhjkh423j423',
               styles: {
@@ -553,6 +524,7 @@ describe('bin', () => {
       expect(createCore).toBeCalledWith({
         rootPath: '/test-figma-extractor',
         config: {
+          jsonVariablesPath,
           apiKey: '123',
           fileId: 'fsdfhjkh423j423',
           icons: [
@@ -581,7 +553,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsPlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();

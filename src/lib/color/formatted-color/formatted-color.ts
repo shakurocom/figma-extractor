@@ -1,9 +1,9 @@
-import { Color } from 'figma-js';
+import { RGBA } from '@/types';
 
 import { hex2RGB } from '../hex-2-rgb/hex-2-rgb';
 import { RGBToHex } from '../rgb-to-hex/rgb-to-hex';
 
-export function formattedColor(color: Color, opacity?: number) {
+export function formattedColor(color: RGBA, opacity?: number) {
   const hex = RGBToHex(color);
 
   if (opacity || opacity === 0) {

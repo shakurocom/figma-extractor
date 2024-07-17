@@ -19,9 +19,13 @@ const iconNaming = originalName => {
 module.exports = {
   apiKey: 'xxxxxx',
   fileId: 'xxxxxx',
+  jsonVariablesPath: './variables.json',
   styles: {
     exportPath: './ui/theme',
+    allowedThemes: ['light'], // allowed themes
+    defaultTheme: 'light',
     colors: {
+      collectionNames: ['color', 'color_extra'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
     effects: {

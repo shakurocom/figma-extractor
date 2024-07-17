@@ -2,13 +2,14 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
+import fs from 'fs';
 import path from 'path';
 
 import { getClient } from './lib/client';
 import { createLog } from './utils/log';
+import { readJsonFile } from './utils/read-json-file';
 import { createCore } from './core';
 import {
-  colorsPlugin,
   colorsThemePlugin,
   effectsPlugin,
   effectsThemePlugin,
@@ -17,7 +18,7 @@ import {
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
-import { Config, OnlyArgs } from './types';
+import { Config, OnlyArgs, ThemeVariablesConfig, Variable } from './types';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -134,12 +135,11 @@ async function run(config: Config) {
       JSON.stringify(config, null, 2),
     );
   }
-
   const core = createCore({
     rootPath,
     config,
     plugins: [
-      config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
+      colorsThemePlugin,
       textStylesPlugin,
       config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
       gradientsPlugin,
@@ -148,25 +148,39 @@ async function run(config: Config) {
     log,
   });
 
+  const variables = await readJsonFile<ThemeVariablesConfig[]>(
+    path.join(rootPath, config.jsonVariablesPath || ''),
+  );
+
   log('Getting of Figma client by api_key: ', config.apiKey);
 
   const client = getClient(config.apiKey);
 
   log('Getting of meta style from figma by file_id: ', config.fileId);
 
-  const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
+  const { meta } = await client
+    .fileStyles(config.fileId)
+    .then(({ data }) => data)
+    .catch(data => {
+      throw new Error(data.message);
+    });
 
   const nodeIds = meta.styles.map(item => item.node_id);
 
   log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
 
-  const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
+  const { data: fileNodes } = await client
+    .fileNodes(config.fileId, { ids: nodeIds })
+    .catch(data => {
+      throw new Error(data.message);
+    });
 
   log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
-    styleMetadata: meta.styles,
     fileNodes,
+    styleMetadata: meta.styles,
+    variables,
   }).then(() => {
     log('Finish');
   });

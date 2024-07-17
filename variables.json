@@ -1,0 +1,1835 @@
+[
+    {
+      "name": "color",
+      "modes": [
+        {
+          "name": "light",
+          "modeId": "3919:21",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.9607843160629272,
+                "g": 0.9607843160629272,
+                "b": 0.9607843160629272,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 0.4588235318660736,
+                "g": 0.4588235318660736,
+                "b": 0.4588235318660736,
+                "a": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "dark",
+          "modeId": "3919:22",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        },
+        {
+          "name": "balck",
+          "modeId": "4019:18",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        },
+        {
+          "name": "vscode",
+          "modeId": "4019:19",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "responsive",
+      "modes": [
+        {
+          "name": "bs",
+          "modeId": "9:4",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "mobile"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 1200
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 1200
+            }
+          ]
+        },
+        {
+          "name": "sm",
+          "modeId": "9:5",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "tablet"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 375
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 375
+            }
+          ]
+        },
+        {
+          "name": "md",
+          "modeId": "9:6",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "laptop"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 768
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 768
+            }
+          ]
+        },
+        {
+          "name": "lg",
+          "modeId": "2005:0",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "desktop"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 2560
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 2560
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "modes": [
+        {
+          "name": "default",
+          "modeId": "9:7",
+          "variables": [
+            {
+              "name": "space/0",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 0
+            },
+            {
+              "name": "space/10",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 2
+            },
+            {
+              "name": "space/20",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 4
+            },
+            {
+              "name": "space/30",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 6
+            },
+            {
+              "name": "space/40",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 8
+            },
+            {
+              "name": "space/50",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 12
+            },
+            {
+              "name": "space/60",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 16
+            },
+            {
+              "name": "space/70",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 24
+            },
+            {
+              "name": "space/80",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 32
+            },
+            {
+              "name": "space/90",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 48
+            },
+            {
+              "name": "space/100",
+              "type": "FLOAT",
+              "scopes": [
+                "GAP"
+              ],
+              "value": 64
+            },
+            {
+              "name": "radius/100",
+              "type": "FLOAT",
+              "scopes": [
+                "CORNER_RADIUS"
+              ],
+              "value": 4
+            },
+            {
+              "name": "radius/200",
+              "type": "FLOAT",
+              "scopes": [
+                "CORNER_RADIUS"
+              ],
+              "value": 8
+            },
+            {
+              "name": "radius/400",
+              "type": "FLOAT",
+              "scopes": [
+                "CORNER_RADIUS"
+              ],
+              "value": 16
+            },
+            {
+              "name": "radius/full",
+              "type": "FLOAT",
+              "scopes": [
+                "CORNER_RADIUS"
+              ],
+              "value": 9999
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "modes": [
+        {
+          "name": "bs",
+          "modeId": "58:0",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 14
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 18
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        },
+        {
+          "name": "sm",
+          "modeId": "2003:0",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 16
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 20
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        },
+        {
+          "name": "md",
+          "modeId": "2003:1",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 20
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 48
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        },
+        {
+          "name": "lg",
+          "modeId": "2003:2",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 48
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 64
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "FONT_FAMILY"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 48
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "typography_xl",
+      "modes": [
+        {
+          "name": "xl",
+          "modeId": "4019:6",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 80
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 96
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 18
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        },
+        {
+          "name": "2xl",
+          "modeId": "4019:7",
+          "variables": [
+            {
+              "name": "heading/900/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 96
+            },
+            {
+              "name": "heading/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 120
+            },
+            {
+              "name": "heading/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "heading/800/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "heading/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "heading/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "heading/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "heading/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/900/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/900/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/900/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/900/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            },
+            {
+              "name": "paragraph/800/font",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "Inter"
+            },
+            {
+              "name": "paragraph/800/size",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_SIZE"
+              ],
+              "value": 24
+            },
+            {
+              "name": "paragraph/800/weight",
+              "type": "FLOAT",
+              "scopes": [
+                "FONT_WEIGHT"
+              ],
+              "value": 700
+            },
+            {
+              "name": "paragraph/800/line",
+              "type": "FLOAT",
+              "scopes": [
+                "LINE_HEIGHT"
+              ],
+              "value": 32
+            },
+            {
+              "name": "paragraph/800/spacing",
+              "type": "FLOAT",
+              "scopes": [
+                "LETTER_SPACING"
+              ],
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "responsive_xl",
+      "modes": [
+        {
+          "name": "xl",
+          "modeId": "4019:14",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "mobile"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 1920
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 1600
+            }
+          ]
+        },
+        {
+          "name": "2xl",
+          "modeId": "4019:15",
+          "variables": [
+            {
+              "name": "device",
+              "type": "STRING",
+              "scopes": [
+                "ALL_SCOPES"
+              ],
+              "value": "tablet"
+            },
+            {
+              "name": "max-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 2560
+            },
+            {
+              "name": "min-width",
+              "type": "FLOAT",
+              "scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "value": 1921
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "color_extra",
+      "modes": [
+        {
+          "name": "contrastLight",
+          "modeId": "4019:24",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.9607843160629272,
+                "g": 0.9607843160629272,
+                "b": 0.9607843160629272,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 0.4588235318660736,
+                "g": 0.4588235318660736,
+                "b": 0.4588235318660736,
+                "a": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "contrastDark",
+          "modeId": "4019:25",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        },
+        {
+          "name": "contrastBalck",
+          "modeId": "4019:26",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        },
+        {
+          "name": "contrastSepia",
+          "modeId": "4019:27",
+          "variables": [
+            {
+              "name": "background/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.11764705926179886,
+                "g": 0.11764705926179886,
+                "b": 0.11764705926179886,
+                "a": 1
+              }
+            },
+            {
+              "name": "background/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "EFFECT_COLOR",
+                "SHAPE_FILL",
+                "FRAME_FILL"
+              ],
+              "value": {
+                "r": 0.21960784494876862,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/default",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              }
+            },
+            {
+              "name": "text/900/hover",
+              "type": "COLOR",
+              "scopes": [
+                "TEXT_FILL"
+              ],
+              "value": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0.699999988079071
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]

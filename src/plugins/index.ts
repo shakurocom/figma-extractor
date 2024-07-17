@@ -1,4 +1,3 @@
-export * from './colors-plugin';
 export * from './colors-theme-plugin';
 export * from './effects-plugin';
 export * from './effects-theme-plugin';

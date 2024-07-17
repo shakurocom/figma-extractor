@@ -1,38 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/dark-blue/vars.css 1`] = `
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/contrastLight/vars.css 1`] = `
 "
-[data-theme='dark-blue'] {
-  --sh-text-txt900: '';
+[data-theme='contrastLight'] {
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
+}"
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
+"
+[data-theme='dark'] {
+  --sh-background-900-default: rgba(30, 30, 30, 1.00);
+--sh-background-900-hover: rgba(56, 56, 56, 1.00);
+--sh-text-900-default: rgba(255, 255, 255, 1.00);
+--sh-text-900-hover: rgba(255, 255, 255, 0.70);
 }"
 `;
 
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-text-txt900: #ffffff;
-}"
-`;
-
-exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
-"
-[data-theme='monochrome'] {
-  --sh-text-txt900: #ff00ff;
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
 }"
 `;
 
 exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
-  --sh-text-txt900: #ff00ff;
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
 }"
 `;
 
-exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/dark-blue/index.js 1`] = `
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/contrastLight/index.js 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {};
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
+    "
+`;
+
+exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/dark/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"background-900-default":"rgba(30, 30, 30, 1.00)","background-900-hover":"rgba(56, 56, 56, 1.00)","text-900-default":"rgba(255, 255, 255, 1.00)","text-900-hover":"rgba(255, 255, 255, 0.70)"};
     "
 `;
 
@@ -40,7 +60,7 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ff00ff"};
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
     "
 `;
 
@@ -48,15 +68,7 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ffffff"};
-    "
-`;
-
-exports[`colorsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
-"
-    /* eslint-disable max-lines */
-    /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ff00ff"};
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
     "
 `;
 
@@ -64,7 +76,7 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"var(--sh-text-txt900,#ff00ff)"};
+    module.exports = {"background-900-default":"var(--sh-background-900-default,rgba(255, 255, 255, 1.00))","background-900-hover":"var(--sh-background-900-hover,rgba(245, 245, 245, 1.00))","text-900-default":"var(--sh-text-900-default,rgba(30, 30, 30, 1.00))","text-900-hover":"var(--sh-text-900-hover,rgba(117, 117, 117, 1.00))"};
     "
 `;
 
@@ -75,52 +87,68 @@ exports[`colorsThemePlugin create theme data with one theme which doesn't exist 
     
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
-export const DEFAULT_THEME = 'monochrome';
+export const DEFAULT_THEME = 'contrastLight';
 
-export const THEMES = ['light', 'dark-blue', 'monochrome'] as const;  
+export const THEMES = ['light', 'dark', 'contrastLight'] as const;  
 
 export type Theme = typeof THEMES[number];
   
     "
 `;
 
+exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/contrastLight/vars.css 1`] = `
+"
+[data-theme='contrastLight'] {
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
+}"
+`;
+
 exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
-  --sh-text-txt700: #00ff00;
---sh-text-txt900: #000000;
+  --sh-background-900-default: rgba(30, 30, 30, 1.00);
+--sh-background-900-hover: rgba(56, 56, 56, 1.00);
+--sh-text-900-default: rgba(255, 255, 255, 1.00);
+--sh-text-900-hover: rgba(255, 255, 255, 0.70);
 }"
 `;
 
 exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-text-txt700: '';
---sh-text-txt900: #ffffff;
-}"
-`;
-
-exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/monochrome/vars.css 1`] = `
-"
-[data-theme='monochrome'] {
-  --sh-text-txt700: '';
---sh-text-txt900: #ff00ff;
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
 }"
 `;
 
 exports[`colorsThemePlugin should create css files with css variables: /export-path/colors/vars.css 1`] = `
 "
 :root {
-  --sh-text-txt700: '';
---sh-text-txt900: #ff00ff;
+  --sh-background-900-default: rgba(255, 255, 255, 1.00);
+--sh-background-900-hover: rgba(245, 245, 245, 1.00);
+--sh-text-900-default: rgba(30, 30, 30, 1.00);
+--sh-text-900-hover: rgba(117, 117, 117, 1.00);
 }"
+`;
+
+exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/contrastLight/index.js 1`] = `
+"
+    /* eslint-disable max-lines */
+    /* eslint-disable @typescript-eslint/naming-convention */
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
+    "
 `;
 
 exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/dark/index.js 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt700":"#00ff00","text-txt900":"#000000"};
+    module.exports = {"background-900-default":"rgba(30, 30, 30, 1.00)","background-900-hover":"rgba(56, 56, 56, 1.00)","text-900-default":"rgba(255, 255, 255, 1.00)","text-900-hover":"rgba(255, 255, 255, 0.70)"};
     "
 `;
 
@@ -128,7 +156,7 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ff00ff"};
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
     "
 `;
 
@@ -136,15 +164,7 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ffffff"};
-    "
-`;
-
-exports[`colorsThemePlugin should create js files with css variables: /export-path/colors/monochrome/index.js 1`] = `
-"
-    /* eslint-disable max-lines */
-    /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt900":"#ff00ff"};
+    module.exports = {"background-900-default":"rgba(255, 255, 255, 1.00)","background-900-hover":"rgba(245, 245, 245, 1.00)","text-900-default":"rgba(30, 30, 30, 1.00)","text-900-hover":"rgba(117, 117, 117, 1.00)"};
     "
 `;
 
@@ -152,7 +172,7 @@ exports[`colorsThemePlugin should create js files with css variables: /export-pa
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {"text-txt700":"var(--sh-text-txt700,'')","text-txt900":"var(--sh-text-txt900,#ff00ff)"};
+    module.exports = {"background-900-default":"var(--sh-background-900-default,rgba(255, 255, 255, 1.00))","background-900-hover":"var(--sh-background-900-hover,rgba(245, 245, 245, 1.00))","text-900-default":"var(--sh-text-900-default,rgba(30, 30, 30, 1.00))","text-900-hover":"var(--sh-text-900-hover,rgba(117, 117, 117, 1.00))"};
     "
 `;
 
@@ -163,9 +183,9 @@ exports[`colorsThemePlugin should create theme-list.ts files with themes' types:
     
 // THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
 
-export const DEFAULT_THEME = 'monochrome';
+export const DEFAULT_THEME = 'contrastLight';
 
-export const THEMES = ['light', 'dark', 'monochrome'] as const;  
+export const THEMES = ['light', 'dark', 'contrastLight'] as const;  
 
 export type Theme = typeof THEMES[number];
   
