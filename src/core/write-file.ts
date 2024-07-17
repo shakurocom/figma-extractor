@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import shell from 'shelljs';
 
 // NOTE: temporarily changed writeFile to writeFileSync to make testing easier:
 // it is unclear how to test callback version without introducing promises.
@@ -15,6 +16,7 @@ export const writeFile = (content: string, filePath: string) => {
 
   try {
     fs.writeFileSync(filePath, content);
+    shell.exec(`yarn eslint ${path.join(filePath)} --fix`);
     console.log(`Generate ${filePath} is completed`);
   } catch {
     console.log(`Formatting ${filePath} file...`);
