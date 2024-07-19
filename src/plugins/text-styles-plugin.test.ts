@@ -1,15 +1,24 @@
+/* eslint-disable max-lines */
+import path from 'path';
+
 import { createCore } from '../core';
+import { ThemeVariablesConfig } from '../types';
 import { fileNodes } from '../utils/generate-styles/fixtures/file-nodes';
 import { styleMetadata } from '../utils/generate-styles/fixtures/style-metadata';
+import { readJsonFile } from '../utils/read-json-file';
 import { textStylesPlugin } from './text-styles-plugin';
 
 describe('textStylesPlugin', () => {
+  const rootPath = process.cwd();
+  const jsonVariablesPath = './variables.json';
+  const variables = readJsonFile<ThemeVariablesConfig[]>(path.join(rootPath, jsonVariablesPath));
+
   it('should write js file and run formatting tool', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {},
+          textStyles: { collectionNames: ['typography', 'typography_xl'] },
         },
       },
       plugins: [],
@@ -19,7 +28,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/text-styles.js');
@@ -30,7 +39,7 @@ describe('textStylesPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {},
+          textStyles: { collectionNames: ['typography', 'typography_xl'] },
         },
       },
       plugins: [],
@@ -40,7 +49,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
@@ -51,9 +60,7 @@ describe('textStylesPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {
-            disabled: true,
-          },
+          textStyles: { collectionNames: ['typography', 'typography_xl'], disabled: true },
         },
       },
       plugins: [],
@@ -63,7 +70,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).not.toHaveBeenCalled();
   });
@@ -73,9 +80,7 @@ describe('textStylesPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {
-            merge: true,
-          },
+          textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
         },
         screens: {
           bs: 0,
@@ -91,7 +96,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
@@ -102,9 +107,7 @@ describe('textStylesPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {
-            merge: true,
-          },
+          textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
         },
         screens: {
           bs: 0,
@@ -120,7 +123,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
@@ -131,9 +134,7 @@ describe('textStylesPlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: {
-            merge: true,
-          },
+          textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
         },
         screens: {
           bs: '0',
@@ -149,7 +150,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
@@ -161,6 +162,7 @@ describe('textStylesPlugin', () => {
         styles: {
           exportPath: '/export-path/',
           textStyles: {
+            collectionNames: ['typography', 'typography_xl'],
             keyName: (name?: string) => name + '__extra',
           },
         },
@@ -172,7 +174,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();

@@ -1,47 +1,81 @@
-import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
+import { Config, Mode, ThemeVariablesConfig, Variable } from '@/types';
 
-import { Config } from '@/types';
+import { getFontFamily } from './text/get-font-family';
+import { getTextStyleName } from './text/get-text-style-name';
 
-import { getFontFamily } from './text/get-font-family/get-font-family';
-import { getTextStyleName } from './text/get-text-style-name/get-text-style-name';
-
-export type TextStyle = {
-  [x: string]: {
-    fontFamily: string;
-    fontSize: string;
-    fontWeight: string;
-    textTransform: string;
-    lineHeight: string;
-  };
+export type GroupedFontProperty = {
+  fontFamily: string;
+  fontSize: number;
+  fontWeight: number;
+  lineHeight: number;
+  letterSpacing?: number;
 };
 
-export const getTextStyles = (
-  metaTextStyles: FullStyleMetadata[],
-  fileNodes: FileNodesResponse,
-  config: Config,
-) => {
-  const textStylesNodes = metaTextStyles.map(item => fileNodes.nodes[item.node_id]?.document);
-  const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(textStylesNodes);
+export type TextStyle = {
+  [x: string]: GroupedFontProperty;
+};
 
-  const textStyles = textStylesNodes.map(({ name, style }: any) => {
-    const fontVar = Object.entries(fontFamily).find(([, value]) => value === style.fontFamily);
+function groupFontProperties(properties: Variable[]) {
+  const grouped: { [key: string]: GroupedFontProperty } = {};
 
-    const extraStyles: any = {};
-    if ('letterSpacing' in style && style.letterSpacing != 0) {
-      extraStyles.letterSpacing = style.letterSpacing;
+  properties.forEach(prop => {
+    const groupName = prop.name.split('/').slice(0, 2).join('-');
+    if (!grouped[groupName]) {
+      grouped[groupName] = {} as GroupedFontProperty;
     }
 
-    return {
-      [`${config?.styles?.textStyles?.keyName?.(name) || getTextStyleName(name)}`]: {
-        fontFamily: `fontFamily.${fontVar?.[0]}`,
-        fontSize: `${style.fontSize}`,
-        fontWeight: `${style.fontWeight}`,
-        textTransform: `${style.textCase && style.textCase === 'UPPER' ? 'uppercase' : 'initial'}`,
-        lineHeight: `${(style.lineHeightPx / style.fontSize).toFixed(2)}`,
-        ...extraStyles,
-      },
-    };
+    switch (prop.scopes[0]) {
+      case 'FONT_FAMILY':
+        grouped[groupName].fontFamily = prop.value as string;
+        break;
+      // FIXME: temp hack - need to remove. designer should pick correct scope
+      case 'ALL_SCOPES':
+        grouped[groupName].fontFamily = prop.value as string;
+        break;
+      case 'FONT_SIZE':
+        grouped[groupName].fontSize = prop.value as number;
+        break;
+      case 'FONT_WEIGHT':
+        grouped[groupName].fontWeight = prop.value as number;
+        break;
+      case 'LINE_HEIGHT':
+        grouped[groupName].lineHeight = prop.value as number;
+        break;
+      case 'LETTER_SPACING':
+        grouped[groupName].letterSpacing = prop.value as number;
+        break;
+    }
   });
+
+  return grouped;
+}
+
+export const getTextStyles = (variables: ThemeVariablesConfig[], config: Config) => {
+  const filteredCollections = variables.filter(({ name }) =>
+    config?.styles?.textStyles?.collectionNames?.includes(name),
+  );
+
+  const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
+  const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(modes);
+
+  const textStyles = modes.reduce<{ [x: string]: GroupedFontProperty }[]>((acc, item) => {
+    const groupedFontProperties = groupFontProperties(item.variables);
+
+    const formattedVariables = Object.entries(groupedFontProperties).map(([key, value]) => {
+      const fontVar = Object.entries(fontFamily).find(([, font]) => font === value.fontFamily);
+      const keyName = config?.styles?.textStyles?.keyName || getTextStyleName;
+
+      return {
+        [keyName?.(`${key}/${item.name}`)]: {
+          ...value,
+          fontFamily: `fontFamily.${fontVar?.[0]}`,
+          lineHeight: `${((value.lineHeight || 0) / value.fontSize || 1).toFixed(2)}` as any,
+        },
+      };
+    });
+
+    return [...acc, ...formattedVariables];
+  }, []);
 
   return { fontFamily: formattedFontFamilyWithAdditionalFonts, textStyles };
 };

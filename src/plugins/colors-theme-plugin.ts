@@ -57,6 +57,8 @@ export const colorsThemePlugin: Plugin = (
     );
     if (theme === NOT_FOUND_THEME_NAME) {
       if (!variableNameIsValid(newName)) {
+        console.log('12312');
+
         throw new Error(`Color name: "${newName}" without theme contains not-valid chars.`);
       }
       themesCollection[NOT_FOUND_THEME_NAME][newName] = value;

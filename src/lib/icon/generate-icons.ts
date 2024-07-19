@@ -45,6 +45,7 @@ export const generateIcons = async (
   }
 
   const { data } = await client.fileNodes(config.fileId, { ids: iconConfig.nodeIds });
+
   const iconNames: string[] = [];
   const nodes = Object.values(data.nodes);
   for (const value of nodes) {

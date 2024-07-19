@@ -36,6 +36,7 @@ export type Config = {
       useTheme?: boolean;
     };
     textStyles?: {
+      collectionNames: string[];
       disabled: boolean;
       keyName?: (nameFromFigma: string) => string;
       merge?: boolean;

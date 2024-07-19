@@ -2,7 +2,6 @@
 
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
-import fs from 'fs';
 import path from 'path';
 
 import { getClient } from './lib/client';
@@ -18,7 +17,7 @@ import {
   launchPlugins,
   textStylesPlugin,
 } from './plugins';
-import { Config, OnlyArgs, ThemeVariablesConfig, Variable } from './types';
+import { Config, OnlyArgs, ThemeVariablesConfig } from './types';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -158,22 +157,13 @@ async function run(config: Config) {
 
   log('Getting of meta style from figma by file_id: ', config.fileId);
 
-  const { meta } = await client
-    .fileStyles(config.fileId)
-    .then(({ data }) => data)
-    .catch(data => {
-      throw new Error(data.message);
-    });
+  const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
 
   const nodeIds = meta.styles.map(item => item.node_id);
 
   log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
 
-  const { data: fileNodes } = await client
-    .fileNodes(config.fileId, { ids: nodeIds })
-    .catch(data => {
-      throw new Error(data.message);
-    });
+  const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
 
   log('Run plugins');
   launchPlugins(core, {

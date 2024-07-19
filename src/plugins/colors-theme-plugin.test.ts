@@ -123,12 +123,12 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'contrastLight'],
+          allowedThemes: ['dark', 'contrastLight'],
           defaultTheme: 'contrastLight',
           colors: {
             collectionNames: ['color', 'color_extra'],
             keyName: (name?: string) => {
-              return name === 'contrastSepia/text/900/hover' ? name + '+prefix' : name;
+              return name === 'light/text/base/500' ? name + '+prefix' : name;
             },
           },
         },
@@ -141,7 +141,7 @@ describe('colorsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() => colorsThemePlugin(core, { variables } as any)).toThrow(
-      'Color name: "contrastSepia-text-900-hover+prefix" without theme contains not-valid chars.',
+      'Color name: "light-text-base-500+prefix" without theme contains not-valid chars.',
     );
   });
 

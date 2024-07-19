@@ -2,21 +2,19 @@ import path from 'path';
 
 import { getTextStyles } from '../lib/get-text-styles';
 import { mergeTextStyle } from '../lib/merge-text-styles';
-import { sortTextStyles } from '../lib/text/sort-text-styles/sort-text-styles';
+import { sortTextStyles } from '../lib/text/sort-text-styles';
 import { Plugin } from './types';
 
 export const textStylesPlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
-  { styleMetadata, fileNodes },
+  { config, writeFile, addEslintDisableRules, log },
+  { variables },
 ) => {
   log('[info:text-styles] >>> ', 'Text styles plugin starts working...');
 
   if (!config?.styles?.textStyles?.disabled) {
-    const metaTextStyles = styleMetadata.filter(styleTypeUtils.isText);
-    const result = getTextStyles(metaTextStyles, fileNodes, config);
+    const result = getTextStyles(variables, config);
 
     let rawTextStyle = result.textStyles;
-
     if (!!config?.styles?.textStyles?.merge) {
       log('[info:text-styles/merge] >>> ', 'Merging of text styles has been enabled');
       if (config?.screens) {
