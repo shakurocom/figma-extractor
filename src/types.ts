@@ -23,7 +23,6 @@ export type Config = {
     colors?: {
       disabled: boolean;
       keyName?: (name?: string) => string;
-      useTheme?: boolean;
       collectionNames: string[];
     };
     gradients?: {
@@ -33,7 +32,6 @@ export type Config = {
     effects?: {
       disabled: boolean;
       keyName?: (name?: string, useTheme?: boolean) => string;
-      useTheme?: boolean;
     };
     textStyles?: {
       collectionNames: string[];
