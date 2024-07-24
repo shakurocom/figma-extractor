@@ -2,7 +2,7 @@ import path from 'path';
 
 import { Mode } from '@/types';
 
-import { getColorName } from '../lib/color/get-color-name/get-color-name';
+import { getColorName } from '../lib/get-color-name';
 import { getColorStyles } from '../lib/get-color-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
 import {
@@ -58,8 +58,6 @@ export const colorsThemePlugin: Plugin = (
       );
       if (theme === NOT_FOUND_THEME_NAME) {
         if (!variableNameIsValid(newName)) {
-          console.log('12312');
-
           throw new Error(`Color name: "${newName}" without theme contains not-valid chars.`);
         }
         themesCollection[NOT_FOUND_THEME_NAME][newName] = value;

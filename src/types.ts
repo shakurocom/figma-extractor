@@ -32,6 +32,7 @@ export type Config = {
     effects?: {
       disabled: boolean;
       keyName?: (name?: string, useTheme?: boolean) => string;
+      collectionNames: string[];
     };
     textStyles?: {
       collectionNames: string[];

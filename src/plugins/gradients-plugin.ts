@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { getColorName } from '../lib/color/get-color-name/get-color-name';
+import { getColorName } from '../lib/get-color-name';
 import { getGradientStyles } from '../lib/get-gradient-styles';
 import { sortCollection } from '../lib/sort-collection';
 import { Plugin } from './types';

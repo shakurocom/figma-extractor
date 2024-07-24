@@ -6,7 +6,7 @@ import { createLog } from './utils/log';
 import { createCore } from './core';
 import {
   colorsThemePlugin,
-  effectsPlugin,
+  effectsThemePlugin,
   gradientsPlugin,
   iconsPlugin,
   launchPlugins,
@@ -132,7 +132,13 @@ describe('bin', () => {
           },
         },
         rootPath: '/test-figma-extractor',
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -212,7 +218,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -311,7 +323,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -391,7 +409,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -463,7 +487,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -553,7 +583,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsPlugin, gradientsPlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          gradientsPlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();

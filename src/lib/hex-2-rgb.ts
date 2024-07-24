@@ -1,4 +1,4 @@
-import { RGB_HEX_REGEX } from '../constants';
+import { RGB_HEX_REGEX } from './color/constants';
 
 export const hex2RGB = (str: string) => {
   const [, short, long] = String(str).match(RGB_HEX_REGEX) || [];

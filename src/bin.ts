@@ -10,7 +10,6 @@ import { readJsonFile } from './utils/read-json-file';
 import { createCore } from './core';
 import {
   colorsThemePlugin,
-  effectsPlugin,
   effectsThemePlugin,
   gradientsPlugin,
   iconsPlugin,
@@ -140,7 +139,7 @@ async function run(config: Config) {
     plugins: [
       colorsThemePlugin,
       textStylesPlugin,
-      config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
+      effectsThemePlugin,
       gradientsPlugin,
       iconsPlugin,
     ],

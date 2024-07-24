@@ -1,6 +1,7 @@
 import path from 'path';
 
-import { getEffectName } from '../lib/color/get-effect-name/get-effect-name';
+import { Mode } from '@/types';
+
 import { getEffectStyles } from '../lib/get-effect-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
 import {
@@ -21,13 +22,9 @@ import { Plugin } from './types';
 type EffectName = string;
 
 export const effectsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
-  { styleMetadata, fileNodes },
+  { config, writeFile, addEslintDisableRules, log },
+  { variables },
 ) => {
-  const metaEffects = styleMetadata.filter(styleTypeUtils.isEffect);
-
-  log('[info:effects-theme] >>> ', 'Effects-theme plugin starts working...');
-
   if (config?.styles?.effects?.disabled) {
     log(
       '[info:effects-theme] >>> ',
@@ -36,6 +33,12 @@ export const effectsThemePlugin: Plugin = (
 
     return;
   }
+  log('[info:effects-theme] >>> ', 'Effects-theme plugin starts working...');
+  const filteredCollections = variables.filter(({ name }) =>
+    config?.styles?.effects?.collectionNames?.includes(name),
+  );
+
+  const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
 
   const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
     allowedThemes: config?.styles?.allowedThemes,
@@ -46,12 +49,7 @@ export const effectsThemePlugin: Plugin = (
   log('[info:effects-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
-
-  const effects = getEffectStyles(
-    metaEffects,
-    fileNodes,
-    config?.styles?.effects?.keyName ?? getEffectName,
-  );
+  const effects = getEffectStyles(modes, config);
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme, originalName } of separateThemes({

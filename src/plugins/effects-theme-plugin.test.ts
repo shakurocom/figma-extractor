@@ -1,18 +1,24 @@
 /* eslint-disable max-lines */
+import path from 'path';
+
 import { createCore } from '../core';
+import { ThemeVariablesConfig } from '../types';
 import { fileNodes } from '../utils/generate-styles/fixtures/file-nodes';
 import { styleMetadata } from '../utils/generate-styles/fixtures/style-metadata';
+import { readJsonFile } from '../utils/read-json-file';
 import { effectsThemePlugin } from './effects-theme-plugin';
 
 describe('effectsThemePlugin', () => {
+  const rootPath = process.cwd();
+  const jsonVariablesPath = './variables.json';
+  const variables = readJsonFile<ThemeVariablesConfig[]>(path.join(rootPath, jsonVariablesPath));
+
   it('should throw the error because the allowedThemes is not defined', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -23,7 +29,11 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
     ).toThrow(
       '`config -> styles -> allowedThemes` field is required when the useTheme is equal true',
     );
@@ -35,9 +45,7 @@ describe('effectsThemePlugin', () => {
         styles: {
           exportPath: '/export-path/',
           allowedThemes: [],
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -48,7 +56,11 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
     ).toThrow(
       '`config -> styles -> defaultTheme` field is required when the useTheme is equal true',
     );
@@ -61,9 +73,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: [],
           defaultTheme: 'any',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -74,7 +84,11 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
     ).toThrow('`config -> styles -> allowedThemes` field must have one or more theme name');
   });
 
@@ -85,9 +99,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
           defaultTheme: 'another',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -98,7 +110,11 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
     ).toThrow("`config -> styles -> defaultTheme` field must be one of allowedThemes' values");
   });
 
@@ -109,9 +125,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: ['theme1', 'theme2'],
           defaultTheme: 'theme1',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -122,7 +136,11 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
     ).toThrow("None of themes was found inside figma data. Check your themes and figma's themes");
   });
 
@@ -134,8 +152,10 @@ describe('effectsThemePlugin', () => {
           allowedThemes: ['light', 'dark', 'monochrome'],
           defaultTheme: 'monochrome',
           effects: {
-            useTheme: true,
-            keyName: (name?: string) => (name === 'light/shadow300' ? name + '+prefix' : name),
+            collectionNames: ['effects'],
+            keyName: (name?: string) => {
+              return name === 'light/shadow-600' ? name + '+prefix' : name;
+            },
           },
         },
       },
@@ -147,8 +167,12 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
-    ).toThrow('Effect name: "shadow300+prefix" from "light" theme contains not-valid chars.');
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
+    ).toThrow('Effect name: "shadow-600+prefix" from "light" theme contains not-valid chars.');
   });
 
   it('should throw the error because some colors from no themes contain not-valid chars', () => {
@@ -156,11 +180,14 @@ describe('effectsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'monochrome'],
-          defaultTheme: 'monochrome',
+          allowedThemes: ['light'],
+          defaultTheme: 'light',
           effects: {
-            useTheme: true,
-            keyName: (name?: string) => (name === 'shadow300' ? name + '+prefix' : name),
+            collectionNames: ['effects'],
+
+            keyName: (name?: string) => {
+              return name === 'dark/shadow-600' ? name + '+prefix' : name;
+            },
           },
         },
       },
@@ -172,8 +199,12 @@ describe('effectsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() =>
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any),
-    ).toThrow('Effect name: "shadow300+prefix" without theme contains not-valid chars.');
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any),
+    ).toThrow('Effect name: "dark-shadow-600+prefix" without theme contains not-valid chars.');
   });
 
   it('should create js files with css variables', () => {
@@ -183,9 +214,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
           defaultTheme: 'monochrome',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -195,7 +224,7 @@ describe('effectsThemePlugin', () => {
 
     core.writeFile = jest.fn();
 
-    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
@@ -235,9 +264,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
           defaultTheme: 'monochrome',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -247,7 +274,7 @@ describe('effectsThemePlugin', () => {
 
     core.writeFile = jest.fn();
 
-    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
@@ -281,9 +308,7 @@ describe('effectsThemePlugin', () => {
           exportPath: '/export-path/',
           allowedThemes: ['light', 'dark', 'monochrome'],
           defaultTheme: 'monochrome',
-          effects: {
-            useTheme: true,
-          },
+          effects: { collectionNames: ['effects'] },
         },
       },
       plugins: [],
@@ -293,7 +318,7 @@ describe('effectsThemePlugin', () => {
 
     core.writeFile = jest.fn();
 
-    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[9][1]).toBe('/export-path/themes-list.ts');
@@ -310,9 +335,7 @@ describe('effectsThemePlugin', () => {
             exportPath: '/export-path/',
             allowedThemes: ['light', 'dark-blue', 'monochrome'],
             defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
+            effects: { collectionNames: ['effects'] },
           },
         },
         plugins: [],
@@ -322,7 +345,11 @@ describe('effectsThemePlugin', () => {
 
       core.writeFile = jest.fn();
 
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
       expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
@@ -362,9 +389,7 @@ describe('effectsThemePlugin', () => {
             exportPath: '/export-path/',
             allowedThemes: ['light', 'dark-blue', 'monochrome'],
             defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
+            effects: { collectionNames: ['effects'] },
           },
         },
         plugins: [],
@@ -374,7 +399,11 @@ describe('effectsThemePlugin', () => {
 
       core.writeFile = jest.fn();
 
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
       expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe(
@@ -408,9 +437,7 @@ describe('effectsThemePlugin', () => {
             exportPath: '/export-path/',
             allowedThemes: ['light', 'dark-blue', 'monochrome'],
             defaultTheme: 'monochrome',
-            effects: {
-              useTheme: true,
-            },
+            effects: { collectionNames: ['effects'] },
           },
         },
         plugins: [],
@@ -420,7 +447,11 @@ describe('effectsThemePlugin', () => {
 
       core.writeFile = jest.fn();
 
-      effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes } as any);
+      effectsThemePlugin(core, {
+        styleMetadata: styleMetadata.styles,
+        fileNodes,
+        variables,
+      } as any);
 
       expect(core.writeFile).toHaveBeenCalled();
       expect((core.writeFile as jest.Mock).mock.calls[9][1]).toBe('/export-path/themes-list.ts');

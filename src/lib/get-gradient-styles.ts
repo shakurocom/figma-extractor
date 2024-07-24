@@ -1,6 +1,6 @@
 import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
 
-import { formattedColor } from './color/formatted-color/formatted-color';
+import { formattedColor } from './formatted-color';
 
 export const getGradientStyles = (
   metaColors: FullStyleMetadata[],
@@ -23,7 +23,7 @@ export const getGradientStyles = (
         return {
           ...acc,
           [key]: `linear-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
-            formattedColor(gradient?.color, gradient?.color?.a),
+            formattedColor(gradient?.color),
           )})`,
         };
       }
@@ -32,7 +32,7 @@ export const getGradientStyles = (
         return {
           ...acc,
           [key]: `radial-gradient(${(item as any).fills?.[0]?.gradientStops.map((gradient: any) =>
-            formattedColor(gradient?.color, gradient?.color?.a),
+            formattedColor(gradient?.color),
           )})`,
         };
       }

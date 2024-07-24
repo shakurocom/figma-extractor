@@ -10,6 +10,7 @@
             "name": "bg/base/300",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -24,6 +25,7 @@
             "name": "bg/base/300-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -38,6 +40,7 @@
             "name": "bg/base/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -52,6 +55,7 @@
             "name": "bg/base/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -81,6 +85,7 @@
             "name": "bg/base/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -110,6 +115,7 @@
             "name": "bg/secondary/500",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -121,9 +127,66 @@
             }
           },
           {
+            "name": "bg/overlays/100",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05000000074505806
+            }
+          },
+          {
+            "name": "bg/overlays/200",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "bg/overlays/300",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "bg/overlays/400",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.4000000059604645
+            }
+          },
+          {
             "name": "bg/secondary/500-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -138,6 +201,7 @@
             "name": "bg/secondary/500-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -152,6 +216,7 @@
             "name": "bg/secondary/500-disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -166,6 +231,7 @@
             "name": "bg/secondary/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -180,6 +246,7 @@
             "name": "bg/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -194,6 +261,7 @@
             "name": "bg/secondary/200-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -223,6 +291,7 @@
             "name": "bg/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -237,6 +306,7 @@
             "name": "bg/secondary/100-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -251,6 +321,7 @@
             "name": "bg/primary/500-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -265,6 +336,7 @@
             "name": "bg/primary/500-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -279,6 +351,7 @@
             "name": "bg/primary/500-disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -293,6 +366,7 @@
             "name": "bg/primary/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -307,6 +381,7 @@
             "name": "bg/primary/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -321,6 +396,7 @@
             "name": "bg/primary/200-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -335,6 +411,7 @@
             "name": "bg/primary/100",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -349,6 +426,7 @@
             "name": "bg/primary/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -363,6 +441,7 @@
             "name": "bg/primary/100-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -377,6 +456,7 @@
             "name": "bg/secondary/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -391,6 +471,7 @@
             "name": "bg/primary/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -405,6 +486,7 @@
             "name": "bg/base/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -666,7 +748,6 @@
             "name": "icon/base/900",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
               "SHAPE_FILL"
             ],
             "value": {
@@ -680,7 +761,7 @@
             "name": "icon/base/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -693,7 +774,7 @@
             "name": "icon/base/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -706,7 +787,6 @@
             "name": "icon/base/100",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
               "SHAPE_FILL"
             ],
             "value": {
@@ -720,7 +800,7 @@
             "name": "icon/base/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -733,7 +813,7 @@
             "name": "icon/primary/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -746,7 +826,7 @@
             "name": "icon/primary/500-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -759,7 +839,7 @@
             "name": "icon/primary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -772,7 +852,7 @@
             "name": "icon/primary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -785,7 +865,7 @@
             "name": "icon/primary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -798,7 +878,7 @@
             "name": "icon/primary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0,
@@ -811,7 +891,7 @@
             "name": "icon/primary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -824,7 +904,7 @@
             "name": "icon/secondary/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -837,7 +917,7 @@
             "name": "icon/secondary/300-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -850,7 +930,7 @@
             "name": "icon/secondary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -863,7 +943,7 @@
             "name": "icon/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -876,7 +956,7 @@
             "name": "icon/secondary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -889,7 +969,7 @@
             "name": "icon/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -902,7 +982,7 @@
             "name": "icon/secondary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -928,7 +1008,7 @@
             "name": "stroke/base/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -941,7 +1021,7 @@
             "name": "stroke/base/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -954,8 +1034,7 @@
             "name": "stroke/base/100",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
-              "SHAPE_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 1,
@@ -968,7 +1047,7 @@
             "name": "stroke/base/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -981,7 +1060,7 @@
             "name": "stroke/primary/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -994,7 +1073,7 @@
             "name": "stroke/primary/500-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -1007,7 +1086,7 @@
             "name": "stroke/primary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -1020,7 +1099,7 @@
             "name": "stroke/primary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -1033,7 +1112,7 @@
             "name": "stroke/primary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -1046,7 +1125,7 @@
             "name": "stroke/primary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0,
@@ -1059,7 +1138,7 @@
             "name": "stroke/primary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -1072,7 +1151,7 @@
             "name": "stroke/secondary/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -1085,7 +1164,7 @@
             "name": "stroke/secondary/300-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -1098,7 +1177,7 @@
             "name": "stroke/secondary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -1111,7 +1190,7 @@
             "name": "stroke/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -1124,7 +1203,7 @@
             "name": "stroke/secondary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -1137,7 +1216,7 @@
             "name": "stroke/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.47058823704719543,
@@ -1150,7 +1229,7 @@
             "name": "stroke/secondary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -1163,8 +1242,8 @@
             "name": "success/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.09019608050584793,
@@ -1177,8 +1256,8 @@
             "name": "success/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.07058823853731155,
@@ -1191,8 +1270,8 @@
             "name": "success/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.09019608050584793,
@@ -1205,8 +1284,8 @@
             "name": "success/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.09019608050584793,
@@ -1219,9 +1298,8 @@
             "name": "success/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.09019608050584793,
@@ -1234,8 +1312,8 @@
             "name": "success/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.09019608050584793,
@@ -1248,8 +1326,8 @@
             "name": "danger/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9529411792755127,
@@ -1262,8 +1340,8 @@
             "name": "warning/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1276,8 +1354,8 @@
             "name": "warning/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -1290,8 +1368,8 @@
             "name": "warning/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1304,8 +1382,8 @@
             "name": "warning/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1318,9 +1396,8 @@
             "name": "warning/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1333,8 +1410,8 @@
             "name": "warning/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1347,8 +1424,8 @@
             "name": "danger/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -1361,8 +1438,8 @@
             "name": "danger/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9529411792755127,
@@ -1375,8 +1452,8 @@
             "name": "danger/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9529411792755127,
@@ -1389,9 +1466,8 @@
             "name": "danger/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9529411792755127,
@@ -1404,8 +1480,8 @@
             "name": "danger/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9529411792755127,
@@ -1415,67 +1491,43 @@
             }
           },
           {
-            "name": "effects/100",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.05000000074505806
-            }
-          },
-          {
-            "name": "effects/200",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "effects/300",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "effects/400",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.4000000059604645
-            }
-          },
-          {
             "name": "text/base/white",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 1,
               "g": 1,
               "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "_utils/_section-bg",
+            "type": "COLOR",
+            "scopes": [
+              "STROKE_COLOR",
+              "ALL_FILLS"
+            ],
+            "value": {
+              "r": 0.9132649898529053,
+              "g": 0.9132649898529053,
+              "b": 0.9132649898529053,
+              "a": 1
+            }
+          },
+          {
+            "name": "_utils/_section-stroke",
+            "type": "COLOR",
+            "scopes": [
+              "STROKE_COLOR",
+              "ALL_FILLS"
+            ],
+            "value": {
+              "r": 0.7603678107261658,
+              "g": 0.7603678107261658,
+              "b": 0.7603678107261658,
               "a": 1
             }
           }
@@ -1489,6 +1541,7 @@
             "name": "bg/base/300",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1503,6 +1556,7 @@
             "name": "bg/base/300-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1517,6 +1571,7 @@
             "name": "bg/base/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1531,6 +1586,7 @@
             "name": "bg/base/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1560,6 +1616,7 @@
             "name": "bg/base/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1589,6 +1646,7 @@
             "name": "bg/secondary/500",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1600,9 +1658,66 @@
             }
           },
           {
+            "name": "bg/overlays/100",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05000000074505806
+            }
+          },
+          {
+            "name": "bg/overlays/200",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "bg/overlays/300",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "bg/overlays/400",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "FRAME_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.4000000059604645
+            }
+          },
+          {
             "name": "bg/secondary/500-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1617,6 +1732,7 @@
             "name": "bg/secondary/500-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1631,6 +1747,7 @@
             "name": "bg/secondary/500-disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1645,6 +1762,7 @@
             "name": "bg/secondary/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1659,6 +1777,7 @@
             "name": "bg/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1673,6 +1792,7 @@
             "name": "bg/secondary/200-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1702,6 +1822,7 @@
             "name": "bg/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1716,6 +1837,7 @@
             "name": "bg/secondary/100-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1730,6 +1852,7 @@
             "name": "bg/primary/500-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1744,6 +1867,7 @@
             "name": "bg/primary/500-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1758,6 +1882,7 @@
             "name": "bg/primary/500-disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1772,6 +1897,7 @@
             "name": "bg/primary/200",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1786,6 +1912,7 @@
             "name": "bg/primary/200-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1800,6 +1927,7 @@
             "name": "bg/primary/200-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1814,6 +1942,7 @@
             "name": "bg/primary/100",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1828,6 +1957,7 @@
             "name": "bg/primary/100-hover",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1842,6 +1972,7 @@
             "name": "bg/primary/100-pressed",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1856,6 +1987,7 @@
             "name": "bg/secondary/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1870,6 +2002,7 @@
             "name": "bg/primary/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -1884,6 +2017,7 @@
             "name": "bg/base/disabled",
             "type": "COLOR",
             "scopes": [
+              "EFFECT_COLOR",
               "SHAPE_FILL",
               "FRAME_FILL"
             ],
@@ -2145,7 +2279,6 @@
             "name": "icon/base/900",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
               "SHAPE_FILL"
             ],
             "value": {
@@ -2159,7 +2292,7 @@
             "name": "icon/base/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -2172,7 +2305,7 @@
             "name": "icon/base/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2185,7 +2318,6 @@
             "name": "icon/base/100",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
               "SHAPE_FILL"
             ],
             "value": {
@@ -2199,7 +2331,7 @@
             "name": "icon/base/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2212,7 +2344,7 @@
             "name": "icon/primary/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2225,7 +2357,7 @@
             "name": "icon/primary/500-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4000000059604645,
@@ -2238,7 +2370,7 @@
             "name": "icon/primary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2251,7 +2383,7 @@
             "name": "icon/primary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2264,7 +2396,7 @@
             "name": "icon/primary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2277,7 +2409,7 @@
             "name": "icon/primary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2290,7 +2422,7 @@
             "name": "icon/primary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2303,7 +2435,7 @@
             "name": "icon/secondary/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2316,7 +2448,7 @@
             "name": "icon/secondary/300-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.6823529601097107,
@@ -2329,7 +2461,7 @@
             "name": "icon/secondary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2342,7 +2474,7 @@
             "name": "icon/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2355,7 +2487,7 @@
             "name": "icon/secondary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2368,7 +2500,7 @@
             "name": "icon/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2381,7 +2513,7 @@
             "name": "icon/secondary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "SHAPE_FILL"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2407,7 +2539,7 @@
             "name": "stroke/base/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.7019608020782471,
@@ -2420,7 +2552,7 @@
             "name": "stroke/base/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2433,8 +2565,7 @@
             "name": "stroke/base/100",
             "type": "COLOR",
             "scopes": [
-              "STROKE_COLOR",
-              "SHAPE_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.11764705926179886,
@@ -2447,7 +2578,7 @@
             "name": "stroke/base/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2460,7 +2591,7 @@
             "name": "stroke/primary/500",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2473,7 +2604,7 @@
             "name": "stroke/primary/500-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4000000059604645,
@@ -2486,7 +2617,7 @@
             "name": "stroke/primary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2499,7 +2630,7 @@
             "name": "stroke/primary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2512,7 +2643,7 @@
             "name": "stroke/primary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2525,7 +2656,7 @@
             "name": "stroke/primary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.20000000298023224,
@@ -2538,7 +2669,7 @@
             "name": "stroke/primary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2551,7 +2682,7 @@
             "name": "stroke/secondary/300",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2564,7 +2695,7 @@
             "name": "stroke/secondary/300-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.6823529601097107,
@@ -2577,7 +2708,7 @@
             "name": "stroke/secondary/200",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2590,7 +2721,7 @@
             "name": "stroke/secondary/200-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2603,7 +2734,7 @@
             "name": "stroke/secondary/100",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2616,7 +2747,7 @@
             "name": "stroke/secondary/100-hover",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.5764706134796143,
@@ -2629,7 +2760,7 @@
             "name": "stroke/secondary/disabled",
             "type": "COLOR",
             "scopes": [
-              "TEXT_FILL"
+              "STROKE_COLOR"
             ],
             "value": {
               "r": 0.4588235318660736,
@@ -2642,8 +2773,8 @@
             "name": "success/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.2705882489681244,
@@ -2656,8 +2787,8 @@
             "name": "success/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.45490196347236633,
@@ -2670,8 +2801,8 @@
             "name": "success/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.2705882489681244,
@@ -2684,8 +2815,8 @@
             "name": "success/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.2705882489681244,
@@ -2698,9 +2829,8 @@
             "name": "success/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.2705882489681244,
@@ -2713,8 +2843,8 @@
             "name": "success/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.2705882489681244,
@@ -2727,8 +2857,8 @@
             "name": "danger/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -2741,8 +2871,8 @@
             "name": "warning/300",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -2755,8 +2885,8 @@
             "name": "warning/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9764705896377563,
@@ -2769,8 +2899,8 @@
             "name": "warning/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -2783,8 +2913,8 @@
             "name": "warning/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -2797,9 +2927,8 @@
             "name": "warning/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -2812,8 +2941,8 @@
             "name": "warning/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9686274528503418,
@@ -2826,8 +2955,8 @@
             "name": "danger/300-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9725490212440491,
@@ -2840,8 +2969,8 @@
             "name": "danger/200",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -2854,8 +2983,8 @@
             "name": "danger/200-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -2868,9 +2997,8 @@
             "name": "danger/100",
             "type": "COLOR",
             "scopes": [
-              "EFFECT_COLOR",
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -2883,8 +3011,8 @@
             "name": "danger/100-hover",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
-              "FRAME_FILL"
+              "STROKE_COLOR",
+              "ALL_FILLS"
             ],
             "value": {
               "r": 0.9607843160629272,
@@ -2894,67 +3022,43 @@
             }
           },
           {
-            "name": "effects/100",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.05000000074505806
-            }
-          },
-          {
-            "name": "effects/200",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "effects/300",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "effects/400",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.4000000059604645
-            }
-          },
-          {
             "name": "text/base/white",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 1,
               "g": 1,
               "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "_utils/_section-bg",
+            "type": "COLOR",
+            "scopes": [
+              "STROKE_COLOR",
+              "ALL_FILLS"
+            ],
+            "value": {
+              "r": 0.20997720956802368,
+              "g": 0.20997720956802368,
+              "b": 0.20997720956802368,
+              "a": 1
+            }
+          },
+          {
+            "name": "_utils/_section-stroke",
+            "type": "COLOR",
+            "scopes": [
+              "STROKE_COLOR",
+              "ALL_FILLS"
+            ],
+            "value": {
+              "r": 0.13652344048023224,
+              "g": 0.13652344048023224,
+              "b": 0.13652344048023224,
               "a": 1
             }
           }
@@ -3205,7 +3309,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3213,7 +3317,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3221,7 +3325,7 @@
             "name": "body/padding/px-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 24
           },
@@ -3229,7 +3333,7 @@
             "name": "body/padding/py-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 24
           },
@@ -3539,7 +3643,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3547,7 +3651,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3555,7 +3659,7 @@
             "name": "body/padding/px-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 24
           },
@@ -3563,7 +3667,7 @@
             "name": "body/padding/py-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 24
           },
@@ -3873,7 +3977,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3881,7 +3985,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -3889,7 +3993,7 @@
             "name": "body/padding/px-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 80
           },
@@ -3897,7 +4001,7 @@
             "name": "body/padding/py-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 80
           },
@@ -4207,7 +4311,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -4215,7 +4319,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "value": 0
           },
@@ -4223,7 +4327,7 @@
             "name": "body/padding/px-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 120
           },
@@ -4231,7 +4335,7 @@
             "name": "body/padding/py-100",
             "type": "FLOAT",
             "scopes": [
-              "GAP"
+              "WIDTH_HEIGHT"
             ],
             "value": 120
           },
@@ -5881,180 +5985,129 @@
             "value": 99999
           },
           {
-            "name": "blur/100",
+            "name": "stroke/0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 16
-          },
-          {
-            "name": "blur/200",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 32
-          },
-          {
-            "name": "depth/1200",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 48
-          },
-          {
-            "name": "depth/800",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 32
-          },
-          {
-            "name": "depth/400",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 16
-          },
-          {
-            "name": "depth/200",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 8
-          },
-          {
-            "name": "depth/100",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 4
-          },
-          {
-            "name": "depth/025",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": 1
-          },
-          {
-            "name": "depth/0",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
             "value": 0
           },
           {
-            "name": "depth/025-negative",
+            "name": "stroke/px",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
-            "value": -1
+            "value": 1
           },
           {
-            "name": "depth/100-negative",
+            "name": "stroke/0,5",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
-            "value": -4
+            "value": 2
           },
           {
-            "name": "depth/200-negative",
+            "name": "stroke/1",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
-            "value": -8
-          },
-          {
-            "name": "depth/400-negative",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": -16
-          },
-          {
-            "name": "depth/800-negative",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": -32
-          },
-          {
-            "name": "depth/1200-negative",
-            "type": "FLOAT",
-            "scopes": [
-              "ALL_SCOPES"
-            ],
-            "value": -48
+            "value": 4
           }
         ]
       }
     ]
   },
   {
-    "name": "effect",
+    "name": "effects",
     "modes": [
       {
         "name": "light",
         "modeId": "4095:4",
         "variables": [
           {
-            "name": "shadow/100",
+            "name": "shadow/600/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "bg-blur/100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 16
+          },
+          {
+            "name": "bg-blur/100/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 0,
               "g": 0,
               "b": 0,
-              "a": 0.05000000074505806
+              "a": 0.800000011920929
             }
           },
           {
-            "name": "shadow/200",
+            "name": "bg-blur/200/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 40
+          },
+          {
+            "name": "bg-blur/200/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 0,
               "g": 0,
               "b": 0,
-              "a": 0.10000000149011612
+              "a": 0.800000011920929
             }
           },
           {
-            "name": "shadow/300",
-            "type": "COLOR",
+            "name": "shadow/600/y",
+            "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.20000000298023224
-            }
+            "value": 16
           },
           {
-            "name": "shadow/400",
+            "name": "shadow/600/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 32
+          },
+          {
+            "name": "shadow/600/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": -8
+          },
+          {
+            "name": "shadow/600/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "EFFECT_COLOR"
             ],
             "value": {
               "r": 0,
@@ -6062,6 +6115,14 @@
               "b": 0,
               "a": 0.4000000059604645
             }
+          },
+          {
+            "name": "shadow/500/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
           },
           {
             "name": "shadow/400/x",
@@ -6099,13 +6160,237 @@
             "name": "shadow/400/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "EFFECT_COLOR"
             ],
             "value": {
               "r": 0,
               "g": 0,
               "b": 0,
               "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "shadow/500/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 16
+          },
+          {
+            "name": "shadow/500/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 16
+          },
+          {
+            "name": "shadow/500/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": -8
+          },
+          {
+            "name": "shadow/500/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "shadow/300/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/300/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 4
+          },
+          {
+            "name": "shadow/300/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 4
+          },
+          {
+            "name": "shadow/300/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": -1
+          },
+          {
+            "name": "shadow/300/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.15000000596046448
+            }
+          },
+          {
+            "name": "shadow/200/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/200/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/200/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 4
+          },
+          {
+            "name": "shadow/200/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/200/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.15000000596046448
+            }
+          },
+          {
+            "name": "shadow/100/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/100/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 4
+          },
+          {
+            "name": "shadow/100/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/100/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05000000074505806
+            }
+          },
+          {
+            "name": "gradients/500/color-1",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.43529412150382996,
+              "b": 0.9333333373069763,
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/500/color-2",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.20000000298023224,
+              "g": 0.5568627715110779,
+              "b": 0.9686274528503418,
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/100/color-1",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/100/color-2",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0
             }
           }
         ]
@@ -6115,36 +6400,86 @@
         "modeId": "4095:5",
         "variables": [
           {
-            "name": "shadow/100",
+            "name": "shadow/600/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "bg-blur/100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 16
+          },
+          {
+            "name": "bg-blur/100/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
               "g": 1,
               "b": 1,
-              "a": 0.05000000074505806
+              "a": 0.800000011920929
             }
           },
           {
-            "name": "shadow/200",
+            "name": "bg-blur/200/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 40
+          },
+          {
+            "name": "bg-blur/200/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
               "g": 1,
               "b": 1,
-              "a": 0.10000000149011612
+              "a": 0.800000011920929
             }
           },
           {
-            "name": "shadow/300",
+            "name": "shadow/600/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/600/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/600/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/600/color",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "EFFECT_COLOR"
             ],
             "value": {
               "r": 1,
@@ -6154,17 +6489,12 @@
             }
           },
           {
-            "name": "shadow/400",
-            "type": "COLOR",
+            "name": "shadow/500/x",
+            "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.4000000059604645
-            }
+            "value": 0
           },
           {
             "name": "shadow/400/x",
@@ -6180,7 +6510,7 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": 16
+            "value": 0
           },
           {
             "name": "shadow/400/blur",
@@ -6188,7 +6518,7 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": 32
+            "value": 0
           },
           {
             "name": "shadow/400/spread",
@@ -6196,10 +6526,221 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": -4
+            "value": 1
           },
           {
             "name": "shadow/400/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "shadow/500/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/500/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/500/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/500/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "shadow/300/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/300/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/300/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/300/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/300/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "shadow/200/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/200/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/200/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/200/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/200/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "shadow/100/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/100/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/100/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 1
+          },
+          {
+            "name": "shadow/100/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "gradients/500/color-1",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.20000000298023224,
+              "g": 0.5568627715110779,
+              "b": 0.9686274528503418,
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/500/color-2",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.4000000059604645,
+              "g": 0.6666666865348816,
+              "b": 0.9764705896377563,
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/100/color-1",
             "type": "COLOR",
             "scopes": [
               "ALL_SCOPES"
@@ -6208,7 +6749,20 @@
               "r": 1,
               "g": 1,
               "b": 1,
-              "a": 0.20000000298023224
+              "a": 1
+            }
+          },
+          {
+            "name": "gradients/100/color-2",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0
             }
           }
         ]
@@ -6216,7 +6770,7 @@
     ]
   },
   {
-    "name": "responsive_xl",
+    "name": "responsive_extra",
     "modes": [
       {
         "name": "xl",
@@ -6458,7 +7012,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "GAP"
             ],
             "value": 0
           },
@@ -6466,7 +7020,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "GAP"
             ],
             "value": 0
           },
@@ -6792,7 +7346,7 @@
             "name": "body/padding/px-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "GAP"
             ],
             "value": 0
           },
@@ -6800,7 +7354,7 @@
             "name": "body/padding/py-0",
             "type": "FLOAT",
             "scopes": [
-              "ALL_SCOPES"
+              "GAP"
             ],
             "value": 0
           },
@@ -6889,7 +7443,7 @@
     ]
   },
   {
-    "name": "typography_xl",
+    "name": "typography_extra",
     "modes": [
       {
         "name": "xl",
@@ -6899,7 +7453,7 @@
             "name": "title/900/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -6939,7 +7493,7 @@
             "name": "body/900/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -6979,7 +7533,7 @@
             "name": "body/500/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7019,7 +7573,7 @@
             "name": "title/800/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7059,7 +7613,7 @@
             "name": "btn/500/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7099,7 +7653,7 @@
             "name": "btn/200/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7139,7 +7693,7 @@
             "name": "nav/100/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7185,7 +7739,7 @@
             "name": "title/900/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7225,7 +7779,7 @@
             "name": "body/900/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7265,7 +7819,7 @@
             "name": "body/500/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7305,7 +7859,7 @@
             "name": "title/800/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7345,7 +7899,7 @@
             "name": "btn/500/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7385,7 +7939,7 @@
             "name": "btn/200/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7425,7 +7979,7 @@
             "name": "nav/100/font",
             "type": "STRING",
             "scopes": [
-              "ALL_SCOPES"
+              "FONT_FAMILY"
             ],
             "value": "Inter"
           },
@@ -7476,7 +8030,8 @@
             "name": "bg/base/300",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
@@ -7489,7 +8044,8 @@
             "name": "bg/base/300-hover",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
@@ -7502,7 +8058,7 @@
             "name": "text/base/300",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 0.2371593415737152,
@@ -7515,7 +8071,7 @@
             "name": "text/base/300-hover",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 0.3592422604560852,
@@ -7534,7 +8090,8 @@
             "name": "bg/base/300",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
@@ -7547,7 +8104,8 @@
             "name": "bg/base/300-hover",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "FRAME_FILL"
             ],
             "value": {
               "r": 1,
@@ -7560,7 +8118,7 @@
             "name": "text/base/300",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 1,
@@ -7573,12 +8131,49 @@
             "name": "text/base/300-hover",
             "type": "COLOR",
             "scopes": [
-              "ALL_SCOPES"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 1,
               "g": 0.5232248902320862,
               "b": 0.5232248902320862,
+              "a": 1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": ".utils",
+    "modes": [
+      {
+        "name": "Mode 1",
+        "modeId": "4173:0",
+        "variables": [
+          {
+            "name": "page-section-bg",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.9132649898529053,
+              "g": 0.9132649898529053,
+              "b": 0.9132649898529053,
+              "a": 1
+            }
+          },
+          {
+            "name": "ui-kit-200",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.9132649898529053,
+              "g": 0.9132649898529053,
+              "b": 0.9132649898529053,
               "a": 1
             }
           }

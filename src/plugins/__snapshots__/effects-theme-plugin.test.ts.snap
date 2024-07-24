@@ -3,28 +3,56 @@
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/dark-blue/vars.css 1`] = `
 "
 [data-theme='dark-blue'] {
-  --sh-shadow300: '';
+  --sh-bg-blur-100: '';
+--sh-bg-blur-200: '';
+--sh-shadow-100: '';
+--sh-shadow-200: '';
+--sh-shadow-300: '';
+--sh-shadow-400: '';
+--sh-shadow-500: '';
+--sh-shadow-600: '';
 }"
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
+  --sh-bg-blur-100: blur(8px);
+--sh-bg-blur-200: blur(20px);
+--sh-shadow-100: 0px 1px 0px rgba(0, 0, 0, 0.05);
+--sh-shadow-200: 0px 1px 0px rgba(0, 0, 0, 0.15);
+--sh-shadow-300: 0px 4px -1px rgba(0, 0, 0, 0.15);
+--sh-shadow-400: 0px 16px -4px rgba(0, 0, 0, 0.20);
+--sh-shadow-500: 0px 16px -8px rgba(0, 0, 0, 0.10);
+--sh-shadow-600: 0px 16px -8px rgba(0, 0, 0, 0.40);
 }"
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+  --sh-bg-blur-100: '';
+--sh-bg-blur-200: '';
+--sh-shadow-100: '';
+--sh-shadow-200: '';
+--sh-shadow-300: '';
+--sh-shadow-400: '';
+--sh-shadow-500: '';
+--sh-shadow-600: '';
 }"
 `;
 
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
+  --sh-bg-blur-100: '';
+--sh-bg-blur-200: '';
+--sh-shadow-100: '';
+--sh-shadow-200: '';
+--sh-shadow-300: '';
+--sh-shadow-400: '';
+--sh-shadow-500: '';
+--sh-shadow-600: '';
 }"
 `;
 
@@ -40,7 +68,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    module.exports = {boxShadow: {}};
     "
 `;
 
@@ -48,7 +76,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"}};
+    module.exports = {boxShadow: {"bg-blur-100":"blur(8px)","bg-blur-200":"blur(20px)","shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"}};
     "
 `;
 
@@ -56,7 +84,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    module.exports = {boxShadow: {}};
     "
 `;
 
@@ -64,7 +92,7 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,0px 10px 46px rgba(142, 142, 142, 0.50))"}};
+    module.exports = {boxShadow: {"bg-blur-100":"var(--sh-bg-blur-100,'')","bg-blur-200":"var(--sh-bg-blur-200,'')","shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"}};
     "
 `;
 
@@ -87,32 +115,56 @@ export type Theme = typeof THEMES[number];
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
-  --sh-shadow300: 0px 10px 46px rgba(0, 0, 0, 0.50);
---sh-shadow400: 0px 0px 10px rgba(178, 178, 0, 1.00);
+  --sh-bg-blur-100: blur(8px);
+--sh-bg-blur-200: blur(20px);
+--sh-shadow-100: 0px 0px 1px rgba(255, 255, 255, 0.10);
+--sh-shadow-200: 0px 0px 1px rgba(255, 255, 255, 0.10);
+--sh-shadow-300: 0px 0px 1px rgba(255, 255, 255, 0.10);
+--sh-shadow-400: 0px 0px 1px rgba(255, 255, 255, 0.20);
+--sh-shadow-500: 0px 0px 1px rgba(255, 255, 255, 0.20);
+--sh-shadow-600: 0px 0px 1px rgba(255, 255, 255, 0.20);
 }"
 `;
 
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-shadow300: 0px 10px 46px rgba(255, 255, 255, 0.50);
---sh-shadow400: '';
+  --sh-bg-blur-100: blur(8px);
+--sh-bg-blur-200: blur(20px);
+--sh-shadow-100: 0px 1px 0px rgba(0, 0, 0, 0.05);
+--sh-shadow-200: 0px 1px 0px rgba(0, 0, 0, 0.15);
+--sh-shadow-300: 0px 4px -1px rgba(0, 0, 0, 0.15);
+--sh-shadow-400: 0px 16px -4px rgba(0, 0, 0, 0.20);
+--sh-shadow-500: 0px 16px -8px rgba(0, 0, 0, 0.10);
+--sh-shadow-600: 0px 16px -8px rgba(0, 0, 0, 0.40);
 }"
 `;
 
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
---sh-shadow400: '';
+  --sh-bg-blur-100: '';
+--sh-bg-blur-200: '';
+--sh-shadow-100: '';
+--sh-shadow-200: '';
+--sh-shadow-300: '';
+--sh-shadow-400: '';
+--sh-shadow-500: '';
+--sh-shadow-600: '';
 }"
 `;
 
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-shadow300: 0px 10px 46px rgba(142, 142, 142, 0.50);
---sh-shadow400: '';
+  --sh-bg-blur-100: '';
+--sh-bg-blur-200: '';
+--sh-shadow-100: '';
+--sh-shadow-200: '';
+--sh-shadow-300: '';
+--sh-shadow-400: '';
+--sh-shadow-500: '';
+--sh-shadow-600: '';
 }"
 `;
 
@@ -120,7 +172,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(0, 0, 0, 0.50)","shadow400":"0px 0px 10px rgba(178, 178, 0, 1.00)"}};
+    module.exports = {boxShadow: {"bg-blur-100":"blur(8px)","bg-blur-200":"blur(20px)","shadow-100":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-200":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-300":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-400":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-500":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-600":"0px 0px 1px rgba(255, 255, 255, 0.20)"}};
     "
 `;
 
@@ -128,7 +180,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    module.exports = {boxShadow: {}};
     "
 `;
 
@@ -136,7 +188,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(255, 255, 255, 0.50)"}};
+    module.exports = {boxShadow: {"bg-blur-100":"blur(8px)","bg-blur-200":"blur(20px)","shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"}};
     "
 `;
 
@@ -144,7 +196,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"0px 10px 46px rgba(142, 142, 142, 0.50)"}};
+    module.exports = {boxShadow: {}};
     "
 `;
 
@@ -152,7 +204,7 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow300":"var(--sh-shadow300,0px 10px 46px rgba(142, 142, 142, 0.50))","shadow400":"var(--sh-shadow400,'')"}};
+    module.exports = {boxShadow: {"bg-blur-100":"var(--sh-bg-blur-100,'')","bg-blur-200":"var(--sh-bg-blur-200,'')","shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"}};
     "
 `;
 
