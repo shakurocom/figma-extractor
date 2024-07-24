@@ -135,12 +135,7 @@ async function run(config: Config) {
   const core = createCore({
     rootPath,
     config,
-    plugins: [
-      colorsThemePlugin,
-      textStylesPlugin,
-      effectsThemePlugin,
-      iconsPlugin,
-    ],
+    plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
     log,
   });
 

@@ -131,12 +131,7 @@ describe('bin', () => {
           },
         },
         rootPath: '/test-figma-extractor',
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -216,12 +211,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -320,12 +310,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -405,12 +390,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -482,12 +462,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -577,12 +552,7 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [
-          colorsThemePlugin,
-          textStylesPlugin,
-          effectsThemePlugin,
-          iconsPlugin,
-        ],
+        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
