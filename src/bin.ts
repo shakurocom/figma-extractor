@@ -11,7 +11,6 @@ import { createCore } from './core';
 import {
   colorsThemePlugin,
   effectsThemePlugin,
-  gradientsPlugin,
   iconsPlugin,
   launchPlugins,
   textStylesPlugin,
@@ -140,7 +139,6 @@ async function run(config: Config) {
       colorsThemePlugin,
       textStylesPlugin,
       effectsThemePlugin,
-      gradientsPlugin,
       iconsPlugin,
     ],
     log,
