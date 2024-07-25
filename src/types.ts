@@ -25,10 +25,6 @@ export type Config = {
       keyName?: (name?: string) => string;
       collectionNames: string[];
     };
-    gradients?: {
-      disabled: boolean;
-      keyName?: (name?: string) => string;
-    };
     effects?: {
       disabled: boolean;
       keyName?: (name?: string, useTheme?: boolean) => string;

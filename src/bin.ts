@@ -161,7 +161,6 @@ async function run(config: Config) {
   launchPlugins(core, {
     figmaClient: client,
     fileNodes,
-    styleMetadata: meta.styles,
     variables,
   }).then(() => {
     log('Finish');

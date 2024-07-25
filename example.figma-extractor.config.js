@@ -29,12 +29,11 @@ module.exports = {
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
     effects: {
-      // keyName: nameFromFigma => nameFromFigma`, // custom key name
-    },
-    gradients: {
+      collectionNames: ['effects'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
     textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
       merge: true,
     },

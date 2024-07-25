@@ -79,7 +79,7 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'contrastLight'],
+          allowedThemes: ['light', 'dark', 'tm3'],
           defaultTheme: 'another',
           colors: {},
         },
@@ -123,8 +123,8 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['dark', 'contrastLight'],
-          defaultTheme: 'contrastLight',
+          allowedThemes: ['dark', 'tm3'],
+          defaultTheme: 'tm3',
           colors: {
             collectionNames: ['color', 'color_extra'],
             keyName: (name?: string) => {
@@ -150,8 +150,8 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'contrastLight'],
-          defaultTheme: 'contrastLight',
+          allowedThemes: ['light', 'dark', 'tm3'],
+          defaultTheme: 'tm3',
           colors: {
             collectionNames: ['color', 'color_extra'],
           },
@@ -179,11 +179,9 @@ describe('colorsThemePlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
       '/export-path/colors/dark/index.js',
     );
-    expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
-      '/export-path/colors/contrastLight/index.js',
-    );
+    expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe('/export-path/colors/tm3/index.js');
     expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-      '/export-path/colors/contrastLight/index.js',
+      '/export-path/colors/tm3/index.js',
     );
     expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe('/export-path/colors/with-vars.js');
     expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
@@ -200,8 +198,8 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'contrastLight'],
-          defaultTheme: 'contrastLight',
+          allowedThemes: ['light', 'dark', 'tm3'],
+          defaultTheme: 'tm3',
           colors: {
             collectionNames: ['color', 'color_extra'],
           },
@@ -229,11 +227,9 @@ describe('colorsThemePlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[3][0]).toMatchSnapshot(
       '/export-path/colors/dark/vars.css',
     );
-    expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe(
-      '/export-path/colors/contrastLight/vars.css',
-    );
+    expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe('/export-path/colors/tm3/vars.css');
     expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
-      '/export-path/colors/contrastLight/vars.css',
+      '/export-path/colors/tm3/vars.css',
     );
     expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/colors/vars.css');
     expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
@@ -246,8 +242,8 @@ describe('colorsThemePlugin', () => {
       config: {
         styles: {
           exportPath: '/export-path/',
-          allowedThemes: ['light', 'dark', 'contrastLight'],
-          defaultTheme: 'contrastLight',
+          allowedThemes: ['light', 'dark', 'tm3'],
+          defaultTheme: 'tm3',
           colors: {
             collectionNames: ['color', 'color_extra'],
           },
@@ -275,8 +271,8 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'contrastLight'],
-            defaultTheme: 'contrastLight',
+            allowedThemes: ['light', 'dark', 'tm3'],
+            defaultTheme: 'tm3',
             colors: {
               collectionNames: ['color', 'color_extra'],
             },
@@ -305,10 +301,10 @@ describe('colorsThemePlugin', () => {
         '/export-path/colors/dark/index.js',
       );
       expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
-        '/export-path/colors/contrastLight/index.js',
+        '/export-path/colors/tm3/index.js',
       );
       expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-        '/export-path/colors/contrastLight/index.js',
+        '/export-path/colors/tm3/index.js',
       );
       expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe(
         '/export-path/colors/with-vars.js',
@@ -327,8 +323,8 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'contrastLight'],
-            defaultTheme: 'contrastLight',
+            allowedThemes: ['light', 'dark', 'tm3'],
+            defaultTheme: 'tm3',
             colors: {
               collectionNames: ['color', 'color_extra'],
             },
@@ -358,10 +354,10 @@ describe('colorsThemePlugin', () => {
         '/export-path/colors/dark/vars.css',
       );
       expect((core.writeFile as jest.Mock).mock.calls[5][1]).toBe(
-        '/export-path/colors/contrastLight/vars.css',
+        '/export-path/colors/tm3/vars.css',
       );
       expect((core.writeFile as jest.Mock).mock.calls[5][0]).toMatchSnapshot(
-        '/export-path/colors/contrastLight/vars.css',
+        '/export-path/colors/tm3/vars.css',
       );
       expect((core.writeFile as jest.Mock).mock.calls[8][1]).toBe('/export-path/colors/vars.css');
       expect((core.writeFile as jest.Mock).mock.calls[8][0]).toMatchSnapshot(
@@ -374,8 +370,8 @@ describe('colorsThemePlugin', () => {
         config: {
           styles: {
             exportPath: '/export-path/',
-            allowedThemes: ['light', 'dark', 'contrastLight'],
-            defaultTheme: 'contrastLight',
+            allowedThemes: ['light', 'dark', 'tm3'],
+            defaultTheme: 'tm3',
             colors: {
               collectionNames: ['color', 'color_extra'],
             },

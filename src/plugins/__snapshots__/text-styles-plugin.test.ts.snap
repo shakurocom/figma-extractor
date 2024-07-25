@@ -43,6 +43,42 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
   
       
+    },'body-600/bs__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600/lg__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600/md__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600/sm__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
     },'body-900/bs__extra': {
       
       fontFamily: fontFamily.font1,
@@ -333,6 +369,75 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
   
       
     },'body-500-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    }
+    },'body-600-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
@@ -837,6 +942,75 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
+    },'body-600': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    }
+    },'body-600-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
     },'body-900': {
       
       fontFamily: fontFamily.font1,
@@ -1333,6 +1507,75 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
+    },'body-600': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+    }
+    },'body-600-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
     },'body-900': {
       
       fontFamily: fontFamily.font1,
@@ -1788,6 +2031,42 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
   
       
     },'body-500-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'body-600-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 18,
+      fontWeight: 400,
+      lineHeight: 1.33,
+      
+  
+      
+    },'body-600-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
