@@ -30,6 +30,10 @@ export type Config = {
       keyName?: (name?: string, useTheme?: boolean) => string;
       collectionNames: string[];
     };
+    responsive?: {
+      disabled: boolean;
+      collectionNames: string[];
+    };
     textStyles?: {
       collectionNames: string[];
       disabled: boolean;
@@ -43,7 +47,7 @@ export type Config = {
   };
 };
 
-export type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'gradients' | 'icons';
+export type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'responsive' | 'icons';
 
 export type ThemeVariablesConfig = {
   name: string;

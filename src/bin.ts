@@ -13,6 +13,7 @@ import {
   effectsThemePlugin,
   iconsPlugin,
   launchPlugins,
+  responsivePlugin,
   textStylesPlugin,
 } from './plugins';
 import { Config, OnlyArgs, ThemeVariablesConfig } from './types';
@@ -43,7 +44,7 @@ const getOnlyArgs = (onlyArg: string) => {
   return onlyArgs;
 };
 
-const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'gradients'];
+const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'responsive'];
 
 async function run(config: Config) {
   const rootPath = process.cwd();
@@ -135,7 +136,13 @@ async function run(config: Config) {
   const core = createCore({
     rootPath,
     config,
-    plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+    plugins: [
+      colorsThemePlugin,
+      textStylesPlugin,
+      effectsThemePlugin,
+      responsivePlugin,
+      iconsPlugin,
+    ],
     log,
   });
 

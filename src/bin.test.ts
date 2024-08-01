@@ -9,6 +9,7 @@ import {
   effectsThemePlugin,
   iconsPlugin,
   launchPlugins,
+  responsivePlugin,
   textStylesPlugin,
 } from './plugins';
 
@@ -78,7 +79,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: { collectionNames: ['color', 'color_extra'] },
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -124,14 +125,20 @@ describe('bin', () => {
             exportPath: '/test-figma-extractor/ui/theme',
             colors: { collectionNames: ['color', 'color_extra'] },
             effects: {},
-            gradients: {},
+            responsive: {},
             textStyles: {
               merge: true,
             },
           },
         },
         rootPath: '/test-figma-extractor',
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -153,7 +160,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: {},
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -202,7 +209,7 @@ describe('bin', () => {
             effects: {
               disabled: true,
             },
-            gradients: {
+            responsive: {
               disabled: true,
             },
             textStyles: {
@@ -211,7 +218,13 @@ describe('bin', () => {
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -233,7 +246,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: {},
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -301,16 +314,20 @@ describe('bin', () => {
             effects: {
               disabled: true,
             },
-            gradients: {
-              disabled: true,
-            },
+            responsive: { disabled: true },
             textStyles: {
               disabled: true,
               merge: true,
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -332,7 +349,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: {},
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -381,16 +398,20 @@ describe('bin', () => {
             effects: {
               disabled: true,
             },
-            gradients: {
-              disabled: true,
-            },
+            responsive: { disabled: true },
             textStyles: {
               disabled: true,
               merge: true,
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -412,7 +433,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: {},
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -456,13 +477,19 @@ describe('bin', () => {
             exportPath: '/test-figma-extractor/ui/theme',
             colors: {},
             effects: {},
-            gradients: {},
+            responsive: {},
             textStyles: {
               merge: true,
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
@@ -484,7 +511,7 @@ describe('bin', () => {
                 exportPath: './ui/theme',
                 colors: {},
                 effects: {},
-                gradients: {},
+                responsive: {},
                 textStyles: {
                   merge: true,
                 },
@@ -546,13 +573,19 @@ describe('bin', () => {
             exportPath: '/test-figma-extractor/ui/theme',
             colors: {},
             effects: {},
-            gradients: {},
+            responsive: {},
             textStyles: {
               merge: true,
             },
           },
         },
-        plugins: [colorsThemePlugin, textStylesPlugin, effectsThemePlugin, iconsPlugin],
+        plugins: [
+          colorsThemePlugin,
+          textStylesPlugin,
+          effectsThemePlugin,
+          responsivePlugin,
+          iconsPlugin,
+        ],
         log: mockLog,
       });
       expect(launchPlugins).toHaveBeenCalled();
