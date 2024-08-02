@@ -32,12 +32,15 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
   return Object.entries(effects).reduce((acc, [name, value]) => {
     if (name.includes('bg-blur')) {
       const backdropBlur = acc.backdropBlur || {};
+      // format name from bg-blur-100 to 100
+      // because className in tailwind backdrop-blur-100 better then backdrop-blur-bg-blur-100
+      const backdropBlurName = name.split('-')[2];
 
       return {
         ...acc,
         backdropBlur: {
           ...backdropBlur,
-          [name]: value,
+          [backdropBlurName]: value,
         },
       };
     }

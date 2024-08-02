@@ -11,7 +11,7 @@ describe('responsivePlugin', () => {
   const jsonVariablesPath = './variables.json';
   const variables = readJsonFile<ThemeVariablesConfig[]>(path.join(rootPath, jsonVariablesPath));
 
-  it('should write js file and run formatting tool', () => {
+  it('should write responsive js file and run formatting tool', () => {
     const core = createCore({
       config: {
         styles: {
@@ -29,6 +29,26 @@ describe('responsivePlugin', () => {
     responsivePlugin(core, { variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    // expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/text-styles.js');
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/responsive.js');
+  });
+
+  it('should write screens js file and run formatting tool', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          responsive: { collectionNames: ['responsive', 'responsive_extra'] },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+      log: jest.fn(),
+    });
+
+    core.writeFile = jest.fn();
+
+    responsivePlugin(core, { variables } as any);
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe('/export-path/screens.js');
   });
 });
