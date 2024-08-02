@@ -21,6 +21,31 @@ import { Plugin } from './types';
 
 type EffectName = string;
 
+interface FormattedEffects {
+  backdropBlur?: {
+    [key: string]: string;
+  };
+  [key: string]: any; // This allows for any other key-value pairs
+}
+
+const formattedEffects = (effects: Record<string, string>): FormattedEffects => {
+  return Object.entries(effects).reduce((acc, [name, value]) => {
+    if (name.includes('bg-blur')) {
+      const backdropBlur = acc.backdropBlur || {};
+
+      return {
+        ...acc,
+        backdropBlur: {
+          ...backdropBlur,
+          [name]: value,
+        },
+      };
+    }
+
+    return { ...acc, [name]: value };
+  }, {} as FormattedEffects);
+};
+
 export const effectsThemePlugin: Plugin = (
   { config, writeFile, addEslintDisableRules, log },
   { variables },
@@ -91,6 +116,7 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     const jsData: Record<EffectName, string> = generateJsColors(variables);
+    const { backdropBlur, ...formattedData } = formattedEffects(jsData);
     for (const [name, value] of Object.entries(jsData)) {
       log(`[info:effects-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
     }
@@ -99,7 +125,9 @@ export const effectsThemePlugin: Plugin = (
 
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
-    const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
+    const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
+    ${backdropBlur && `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}}`};`;
+
     writeFile(
       addEslintDisableRules(jsTemplate, [
         'disable-max-lines',
@@ -118,7 +146,10 @@ export const effectsThemePlugin: Plugin = (
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
       );
 
-      const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
+      const { backdropBlur, ...formattedData } = formattedEffects(jsData);
+      const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
+      ${backdropBlur && `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}}`};`;
+
       writeFile(
         addEslintDisableRules(jsTemplate, [
           'disable-max-lines',
@@ -128,10 +159,11 @@ export const effectsThemePlugin: Plugin = (
       );
 
       const jsLegacyData = generateJsColors(variables);
+      const { backdropBlur: backdropBlurLegacy, ...formattedDataLegacy } =
+        formattedEffects(jsLegacyData);
 
-      const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(
-        jsLegacyData,
-      )}};`;
+      const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedDataLegacy)},
+      ${backdropBlurLegacy && `backdropBlur: ${stringifyRecordsWithSort(backdropBlurLegacy)}}`};`;
 
       writeFile(
         addEslintDisableRules(jsLegacyTemplate, [
