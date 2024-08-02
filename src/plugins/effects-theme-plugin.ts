@@ -126,7 +126,7 @@ export const effectsThemePlugin: Plugin = (
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
     const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
-    ${backdropBlur && `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}}`};`;
+    ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}` : ''}}`;
 
     writeFile(
       addEslintDisableRules(jsTemplate, [
@@ -148,7 +148,7 @@ export const effectsThemePlugin: Plugin = (
 
       const { backdropBlur, ...formattedData } = formattedEffects(jsData);
       const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
-      ${backdropBlur && `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}}`};`;
+      ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}` : ''}}`;
 
       writeFile(
         addEslintDisableRules(jsTemplate, [
@@ -163,7 +163,7 @@ export const effectsThemePlugin: Plugin = (
         formattedEffects(jsLegacyData);
 
       const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedDataLegacy)},
-      ${backdropBlurLegacy && `backdropBlur: ${stringifyRecordsWithSort(backdropBlurLegacy)}}`};`;
+      ${backdropBlurLegacy ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlurLegacy)}` : ''}}`;
 
       writeFile(
         addEslintDisableRules(jsLegacyTemplate, [
