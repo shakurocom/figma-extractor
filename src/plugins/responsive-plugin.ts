@@ -29,6 +29,16 @@ export const responsivePlugin: Plugin = (
     ),
     path.join(config?.styles?.exportPath || '', 'responsive.js'),
   );
+  writeFile(
+    addEslintDisableRules(
+      `
+    const screens = ${JSON.stringify(screens)};
+
+    module.exports = {screens}`,
+      ['disable-max-lines', 'disable-typescript-naming-convention'],
+    ),
+    path.join(config?.styles?.exportPath || '', 'screens.js'),
+  );
 };
 
 responsivePlugin.pluginName = 'responsive';
