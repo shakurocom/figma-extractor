@@ -16,7 +16,7 @@ export type GroupedEffectProperty = {
   type: EffectType;
 };
 
-type EffectType = 'bg-blur' | 'shadow';
+type EffectType = 'backdrop-blur' | 'shadow' | 'blur';
 
 export type EffectStyle = {
   [x: string]: GroupedEffectProperty;
@@ -32,28 +32,33 @@ function groupEffectProperties(properties: Variable[]) {
     }
 
     switch (prop.name.split('/')[0] as EffectType) {
-      case 'bg-blur':
-        grouped[groupName].type = 'bg-blur';
+      case 'backdrop-blur':
+        grouped[groupName].type = 'backdrop-blur';
+        grouped[groupName].blur = prop.value as number;
+        break;
+      case 'blur':
+        grouped[groupName].type = 'blur';
+        grouped[groupName].blur = prop.value as number;
         break;
       case 'shadow':
         grouped[groupName].type = 'shadow';
-        break;
-    }
-    switch (prop.name.split('/').at(-1) as keyof GroupedEffectProperty) {
-      case 'x':
-        grouped[groupName].x = prop.value as number;
-        break;
-      case 'y':
-        grouped[groupName].y = prop.value as number;
-        break;
-      case 'blur':
-        grouped[groupName].blur = prop.value as number;
-        break;
-      case 'spread':
-        grouped[groupName].spread = prop.value as number;
-        break;
-      case 'color':
-        grouped[groupName].color = prop.value as Color;
+        switch (prop.name.split('/').at(-1) as keyof GroupedEffectProperty) {
+          case 'x':
+            grouped[groupName].x = prop.value as number;
+            break;
+          case 'y':
+            grouped[groupName].y = prop.value as number;
+            break;
+          case 'blur':
+            grouped[groupName].blur = prop.value as number;
+            break;
+          case 'spread':
+            grouped[groupName].spread = prop.value as number;
+            break;
+          case 'color':
+            grouped[groupName].color = prop.value as Color;
+            break;
+        }
         break;
     }
   });
@@ -77,13 +82,13 @@ export const getEffectStyles = (modes: Mode[], config: Config) => {
             }px ${formattedColor(value.color)}`,
           };
         }
-        if (value.type === 'bg-blur') {
+        if (value.type === 'backdrop-blur' || value.type === 'blur') {
           // for some reason, Figma also divides the value by 2.
-          // In figma variables 20px, in css style backdrop-filter: blur(calc(var(--bg-blur-200-blur, 20px) / 2));
+          // In figma variables 20px, in css style backdrop-filter: blur(calc(var(--backdrop-blur-200-blur, 20px) / 2));
           // Make sure that the value is divided by two in css.
           return {
             ...acc,
-            [keyName?.(`${item.name}/${key}`)]: `blur(${(value.blur || 0) / 2}px)`,
+            [keyName?.(`${item.name}/${key}`)]: `${(value.blur || 0) / 2}px`,
           };
         }
 

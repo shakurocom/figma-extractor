@@ -25,15 +25,35 @@ interface FormattedEffects {
   backdropBlur?: {
     [key: string]: string;
   };
+  blur?: {
+    [key: string]: string;
+  };
   [key: string]: any; // This allows for any other key-value pairs
 }
 
+const template = ({
+  blur,
+  backdropBlur,
+  ...formattedData
+}: {
+  blur?: {
+    [key: string]: string | number;
+  };
+  backdropBlur?: {
+    [key: string]: string | number;
+  };
+}) => `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
+    ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)},` : ''}
+    ${blur ? `blur: ${stringifyRecordsWithSort(blur)},` : ''}
+    }
+    `;
+
 const formattedEffects = (effects: Record<string, string>): FormattedEffects => {
   return Object.entries(effects).reduce((acc, [name, value]) => {
-    if (name.includes('bg-blur')) {
+    if (name.includes('backdrop-blur')) {
       const backdropBlur = acc.backdropBlur || {};
-      // format name from bg-blur-100 to 100
-      // because className in tailwind backdrop-blur-100 better then backdrop-blur-bg-blur-100
+      // format name from backdrop-blur-100 to 100
+      // because className in tailwind backdrop-blur-100 better then backdrop-blur-backdrop-blur-100
       const backdropBlurName = name.split('-')[2];
 
       return {
@@ -41,6 +61,20 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
         backdropBlur: {
           ...backdropBlur,
           [backdropBlurName]: value,
+        },
+      };
+    }
+    if (name.includes('blur')) {
+      const blur = acc.blur || {};
+      // format name from backdrop-blur-100 to 100
+      // because className in tailwind backdrop-blur-100 better then backdrop-blur-backdrop-blur-100
+      const blurName = name.split('-')[1];
+
+      return {
+        ...acc,
+        blur: {
+          ...blur,
+          [blurName]: value,
         },
       };
     }
@@ -119,7 +153,7 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     const jsData: Record<EffectName, string> = generateJsColors(variables);
-    const { backdropBlur, ...formattedData } = formattedEffects(jsData);
+    const effects = formattedEffects(jsData);
     for (const [name, value] of Object.entries(jsData)) {
       log(`[info:effects-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
     }
@@ -128,8 +162,7 @@ export const effectsThemePlugin: Plugin = (
 
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
-    const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
-    ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}` : ''}}`;
+    const jsTemplate = template(effects);
 
     writeFile(
       addEslintDisableRules(jsTemplate, [
@@ -149,9 +182,8 @@ export const effectsThemePlugin: Plugin = (
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
       );
 
-      const { backdropBlur, ...formattedData } = formattedEffects(jsData);
-      const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
-      ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)}` : ''}}`;
+      const effects = formattedEffects(jsData);
+      const jsTemplate = template(effects);
 
       writeFile(
         addEslintDisableRules(jsTemplate, [
@@ -162,11 +194,9 @@ export const effectsThemePlugin: Plugin = (
       );
 
       const jsLegacyData = generateJsColors(variables);
-      const { backdropBlur: backdropBlurLegacy, ...formattedDataLegacy } =
-        formattedEffects(jsLegacyData);
+      const effectsLegacy = formattedEffects(jsLegacyData);
 
-      const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedDataLegacy)},
-      ${backdropBlurLegacy ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlurLegacy)}` : ''}}`;
+      const jsLegacyTemplate = template(effectsLegacy);
 
       writeFile(
         addEslintDisableRules(jsLegacyTemplate, [

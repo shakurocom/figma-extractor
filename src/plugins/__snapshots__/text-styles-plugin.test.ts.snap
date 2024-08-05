@@ -155,7 +155,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
@@ -164,7 +164,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
@@ -173,12 +173,48 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
       
     },'btn-200/sm__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250/bs__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250/lg__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250/md__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250/sm__extra': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -804,6 +840,75 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    }
+    },'btn-200-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
       fontWeight: 600,
       lineHeight: 1.14,
       
@@ -833,7 +938,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
     }
-    },'btn-200-bs': {
+    },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -842,7 +947,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-200-lg': {
+    },'btn-250-lg': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -851,7 +956,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-200-md': {
+    },'btn-250-md': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -860,7 +965,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-200-sm': {
+    },'btn-250-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -1783,6 +1888,75 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    }
+    },'btn-200-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
       fontWeight: 600,
       lineHeight: 1.14,
       
@@ -1812,7 +1986,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
     }
-    },'btn-200-bs': {
+    },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -1821,7 +1995,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-lg': {
+    },'btn-250-lg': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -1830,7 +2004,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-md': {
+    },'btn-250-md': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -1839,7 +2013,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-sm': {
+    },'btn-250-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -2762,6 +2936,75 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      '@media (min-width: 600px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 900px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    },'@media (min-width: 1200px)': {
+        
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+    }
+    },'btn-200-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-200-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
       fontWeight: 600,
       lineHeight: 1.14,
       
@@ -2791,7 +3034,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
     }
-    },'btn-200-bs': {
+    },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -2800,7 +3043,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-lg': {
+    },'btn-250-lg': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -2809,7 +3052,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-md': {
+    },'btn-250-md': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -2818,7 +3061,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200-sm': {
+    },'btn-250-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -3609,7 +3852,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
@@ -3618,7 +3861,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
@@ -3627,12 +3870,48 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 600,
+      fontWeight: 450,
       lineHeight: 1.14,
       
   
       
     },'btn-200-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 450,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.14,
+      
+  
+      
+    },'btn-250-sm': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,

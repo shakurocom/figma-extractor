@@ -3,8 +3,11 @@
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/dark-blue/vars.css 1`] = `
 "
 [data-theme='dark-blue'] {
-  --sh-bg-blur-100: '';
---sh-bg-blur-200: '';
+  --sh-backdrop-blur-100: '';
+--sh-backdrop-blur-200: '';
+--sh-blur-100: '';
+--sh-blur-200: '';
+--sh-blur-300: '';
 --sh-shadow-100: '';
 --sh-shadow-200: '';
 --sh-shadow-300: '';
@@ -17,8 +20,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-bg-blur-100: blur(8px);
---sh-bg-blur-200: blur(20px);
+  --sh-backdrop-blur-100: 8px;
+--sh-backdrop-blur-200: 20px;
+--sh-blur-100: 8px;
+--sh-blur-200: 20px;
+--sh-blur-300: 32px;
 --sh-shadow-100: 0px 1px 0px rgba(0, 0, 0, 0.05);
 --sh-shadow-200: 0px 1px 0px rgba(0, 0, 0, 0.15);
 --sh-shadow-300: 0px 4px -1px rgba(0, 0, 0, 0.15);
@@ -31,8 +37,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-bg-blur-100: '';
---sh-bg-blur-200: '';
+  --sh-backdrop-blur-100: '';
+--sh-backdrop-blur-200: '';
+--sh-blur-100: '';
+--sh-blur-200: '';
+--sh-blur-300: '';
 --sh-shadow-100: '';
 --sh-shadow-200: '';
 --sh-shadow-300: '';
@@ -45,8 +54,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-bg-blur-100: '';
---sh-bg-blur-200: '';
+  --sh-backdrop-blur-100: '';
+--sh-backdrop-blur-200: '';
+--sh-blur-100: '';
+--sh-blur-200: '';
+--sh-blur-300: '';
 --sh-shadow-100: '';
 --sh-shadow-200: '';
 --sh-shadow-300: '';
@@ -61,7 +73,10 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {},
+    
+    
     }
+    
     "
 `;
 
@@ -70,7 +85,10 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {},
-      }
+    
+    
+    }
+    
     "
 `;
 
@@ -79,7 +97,10 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {"shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
-    backdropBlur: {"100":"blur(8px)","200":"blur(20px)"}}
+    backdropBlur: {"100":"8px","200":"20px"},
+    blur: {"100":"8px","200":"20px","300":"32px"},
+    }
+    
     "
 `;
 
@@ -88,7 +109,10 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {},
+    
+    
     }
+    
     "
 `;
 
@@ -97,7 +121,10 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {"shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"},
-      backdropBlur: {"100":"var(--sh-bg-blur-100,'')","200":"var(--sh-bg-blur-200,'')"}}
+    backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
+    blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
+    }
+    
     "
 `;
 
@@ -120,8 +147,11 @@ export type Theme = typeof THEMES[number];
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/dark/vars.css 1`] = `
 "
 [data-theme='dark'] {
-  --sh-bg-blur-100: blur(8px);
---sh-bg-blur-200: blur(20px);
+  --sh-backdrop-blur-100: 8px;
+--sh-backdrop-blur-200: 20px;
+--sh-blur-100: 8px;
+--sh-blur-200: 20px;
+--sh-blur-300: 32px;
 --sh-shadow-100: 0px 0px 1px rgba(255, 255, 255, 0.10);
 --sh-shadow-200: 0px 0px 1px rgba(255, 255, 255, 0.10);
 --sh-shadow-300: 0px 0px 1px rgba(255, 255, 255, 0.10);
@@ -134,8 +164,11 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/light/vars.css 1`] = `
 "
 [data-theme='light'] {
-  --sh-bg-blur-100: blur(8px);
---sh-bg-blur-200: blur(20px);
+  --sh-backdrop-blur-100: 8px;
+--sh-backdrop-blur-200: 20px;
+--sh-blur-100: 8px;
+--sh-blur-200: 20px;
+--sh-blur-300: 32px;
 --sh-shadow-100: 0px 1px 0px rgba(0, 0, 0, 0.05);
 --sh-shadow-200: 0px 1px 0px rgba(0, 0, 0, 0.15);
 --sh-shadow-300: 0px 4px -1px rgba(0, 0, 0, 0.15);
@@ -148,8 +181,11 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/monochrome/vars.css 1`] = `
 "
 [data-theme='monochrome'] {
-  --sh-bg-blur-100: '';
---sh-bg-blur-200: '';
+  --sh-backdrop-blur-100: '';
+--sh-backdrop-blur-200: '';
+--sh-blur-100: '';
+--sh-blur-200: '';
+--sh-blur-300: '';
 --sh-shadow-100: '';
 --sh-shadow-200: '';
 --sh-shadow-300: '';
@@ -162,8 +198,11 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 exports[`effectsThemePlugin should create css files with css variables: /export-path/effects/vars.css 1`] = `
 "
 :root {
-  --sh-bg-blur-100: '';
---sh-bg-blur-200: '';
+  --sh-backdrop-blur-100: '';
+--sh-backdrop-blur-200: '';
+--sh-blur-100: '';
+--sh-blur-200: '';
+--sh-blur-300: '';
 --sh-shadow-100: '';
 --sh-shadow-200: '';
 --sh-shadow-300: '';
@@ -178,7 +217,10 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {"shadow-100":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-200":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-300":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-400":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-500":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-600":"0px 0px 1px rgba(255, 255, 255, 0.20)"},
-    backdropBlur: {"100":"blur(8px)","200":"blur(20px)"}}
+    backdropBlur: {"100":"8px","200":"20px"},
+    blur: {"100":"8px","200":"20px","300":"32px"},
+    }
+    
     "
 `;
 
@@ -187,7 +229,10 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {},
-      }
+    
+    
+    }
+    
     "
 `;
 
@@ -196,7 +241,10 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {"shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
-    backdropBlur: {"100":"blur(8px)","200":"blur(20px)"}}
+    backdropBlur: {"100":"8px","200":"20px"},
+    blur: {"100":"8px","200":"20px","300":"32px"},
+    }
+    
     "
 `;
 
@@ -205,7 +253,10 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {},
+    
+    
     }
+    
     "
 `;
 
@@ -214,7 +265,10 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     module.exports = {boxShadow: {"shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"},
-      backdropBlur: {"100":"var(--sh-bg-blur-100,'')","200":"var(--sh-bg-blur-200,'')"}}
+    backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
+    blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
+    }
+    
     "
 `;
 
