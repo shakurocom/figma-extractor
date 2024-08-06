@@ -38,7 +38,6 @@ export type Config = {
       collectionNames: string[];
       disabled: boolean;
       keyName?: (nameFromFigma: string) => string;
-      merge?: boolean;
     };
   };
   icons: IconConfig | IconConfig[];

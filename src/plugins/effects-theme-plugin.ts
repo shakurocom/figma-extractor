@@ -34,7 +34,7 @@ interface FormattedEffects {
 const template = ({
   blur,
   backdropBlur,
-  ...formattedData
+  boxShadow,
 }: {
   blur?: {
     [key: string]: string | number;
@@ -42,7 +42,11 @@ const template = ({
   backdropBlur?: {
     [key: string]: string | number;
   };
-}) => `module.exports = {boxShadow: ${stringifyRecordsWithSort(formattedData)},
+  boxShadow?: {
+    [key: string]: string | number;
+  };
+}) => `module.exports = {
+    ${boxShadow ? `boxShadow: ${stringifyRecordsWithSort(boxShadow)},` : ''}
     ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)},` : ''}
     ${blur ? `blur: ${stringifyRecordsWithSort(blur)},` : ''}
     }
@@ -66,8 +70,7 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
     }
     if (name.includes('blur')) {
       const blur = acc.blur || {};
-      // format name from backdrop-blur-100 to 100
-      // because className in tailwind backdrop-blur-100 better then backdrop-blur-backdrop-blur-100
+      // format name from blur-100 to 100
       const blurName = name.split('-')[1];
 
       return {
@@ -75,6 +78,19 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
         blur: {
           ...blur,
           [blurName]: value,
+        },
+      };
+    }
+    if (name.includes('shadow')) {
+      const shadow = acc.boxShadow || {};
+      // format name from boxShadow-100 to 100
+      const shadowName = name.split('-')[1];
+
+      return {
+        ...acc,
+        boxShadow: {
+          ...shadow,
+          [shadowName]: value,
         },
       };
     }

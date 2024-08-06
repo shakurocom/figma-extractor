@@ -28,6 +28,10 @@ module.exports = {
       collectionNames: ['color', 'color_extra'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
     effects: {
       collectionNames: ['effects'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
@@ -35,7 +39,6 @@ module.exports = {
     textStyles: {
       collectionNames: ['typography', 'typography_xl'],
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
-      merge: true,
     },
   },
   icons: {
