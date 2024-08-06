@@ -82,12 +82,6 @@ describe('textStylesPlugin', () => {
           exportPath: '/export-path/',
           textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
         },
-        screens: {
-          bs: 0,
-          sm: '600px',
-          md: '900px',
-          lg: '1200px',
-        },
       },
       plugins: [],
       rootPath: '/root-path',
@@ -109,12 +103,6 @@ describe('textStylesPlugin', () => {
           exportPath: '/export-path/',
           textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
         },
-        screens: {
-          bs: 0,
-          sm: 600,
-          md: 900,
-          lg: 1200,
-        },
       },
       plugins: [],
       rootPath: '/root-path',
@@ -135,12 +123,6 @@ describe('textStylesPlugin', () => {
         styles: {
           exportPath: '/export-path/',
           textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
-        },
-        screens: {
-          bs: '0',
-          sm: '600',
-          md: '900',
-          lg: '1200',
         },
       },
       plugins: [],

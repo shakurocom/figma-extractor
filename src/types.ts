@@ -41,9 +41,6 @@ export type Config = {
     };
   };
   icons: IconConfig | IconConfig[];
-  screens?: {
-    [title: string]: number | string;
-  };
 };
 
 export type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'responsive' | 'icons';

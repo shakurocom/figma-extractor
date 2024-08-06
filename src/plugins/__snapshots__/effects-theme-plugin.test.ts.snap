@@ -72,7 +72,8 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {},
+    module.exports = {
+    
     
     
     }
@@ -84,7 +85,8 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {},
+    module.exports = {
+    
     
     
     }
@@ -96,7 +98,8 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
+    module.exports = {
+    boxShadow: {"100":"0px 1px 0px rgba(0, 0, 0, 0.05)","200":"0px 1px 0px rgba(0, 0, 0, 0.15)","300":"0px 4px -1px rgba(0, 0, 0, 0.15)","400":"0px 16px -4px rgba(0, 0, 0, 0.20)","500":"0px 16px -8px rgba(0, 0, 0, 0.10)","600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
     }
@@ -108,7 +111,8 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {},
+    module.exports = {
+    
     
     
     }
@@ -120,7 +124,8 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"},
+    module.exports = {
+    boxShadow: {"100":"var(--sh-shadow-100,'')","200":"var(--sh-shadow-200,'')","300":"var(--sh-shadow-300,'')","400":"var(--sh-shadow-400,'')","500":"var(--sh-shadow-500,'')","600":"var(--sh-shadow-600,'')"},
     backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
     blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
     }
@@ -216,7 +221,8 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow-100":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-200":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-300":"0px 0px 1px rgba(255, 255, 255, 0.10)","shadow-400":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-500":"0px 0px 1px rgba(255, 255, 255, 0.20)","shadow-600":"0px 0px 1px rgba(255, 255, 255, 0.20)"},
+    module.exports = {
+    boxShadow: {"100":"0px 0px 1px rgba(255, 255, 255, 0.10)","200":"0px 0px 1px rgba(255, 255, 255, 0.10)","300":"0px 0px 1px rgba(255, 255, 255, 0.10)","400":"0px 0px 1px rgba(255, 255, 255, 0.20)","500":"0px 0px 1px rgba(255, 255, 255, 0.20)","600":"0px 0px 1px rgba(255, 255, 255, 0.20)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
     }
@@ -228,7 +234,8 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {},
+    module.exports = {
+    
     
     
     }
@@ -240,7 +247,8 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow-100":"0px 1px 0px rgba(0, 0, 0, 0.05)","shadow-200":"0px 1px 0px rgba(0, 0, 0, 0.15)","shadow-300":"0px 4px -1px rgba(0, 0, 0, 0.15)","shadow-400":"0px 16px -4px rgba(0, 0, 0, 0.20)","shadow-500":"0px 16px -8px rgba(0, 0, 0, 0.10)","shadow-600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
+    module.exports = {
+    boxShadow: {"100":"0px 1px 0px rgba(0, 0, 0, 0.05)","200":"0px 1px 0px rgba(0, 0, 0, 0.15)","300":"0px 4px -1px rgba(0, 0, 0, 0.15)","400":"0px 16px -4px rgba(0, 0, 0, 0.20)","500":"0px 16px -8px rgba(0, 0, 0, 0.10)","600":"0px 16px -8px rgba(0, 0, 0, 0.40)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
     }
@@ -252,7 +260,8 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {},
+    module.exports = {
+    
     
     
     }
@@ -264,7 +273,8 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {boxShadow: {"shadow-100":"var(--sh-shadow-100,'')","shadow-200":"var(--sh-shadow-200,'')","shadow-300":"var(--sh-shadow-300,'')","shadow-400":"var(--sh-shadow-400,'')","shadow-500":"var(--sh-shadow-500,'')","shadow-600":"var(--sh-shadow-600,'')"},
+    module.exports = {
+    boxShadow: {"100":"var(--sh-shadow-100,'')","200":"var(--sh-shadow-200,'')","300":"var(--sh-shadow-300,'')","400":"var(--sh-shadow-400,'')","500":"var(--sh-shadow-500,'')","600":"var(--sh-shadow-600,'')"},
     backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
     blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
     }

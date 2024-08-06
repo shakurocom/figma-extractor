@@ -1,5 +1,6 @@
 import path from 'path';
 
+import { getResponsive } from '../lib/get-responsive';
 import { getTextStyles } from '../lib/get-text-styles';
 import { mergeTextStyle } from '../lib/merge-text-styles';
 import { sortTextStyles } from '../lib/text/sort-text-styles';
@@ -16,9 +17,10 @@ export const textStylesPlugin: Plugin = (
 
     let rawTextStyle = result.textStyles;
     log('[info:text-styles/merge] >>> ', 'Merging of text styles has been enabled');
-    if (config?.screens) {
-      log('[info:text-styles/merge] >>> ', 'Available screens: ', JSON.stringify(config?.screens));
-      rawTextStyle = mergeTextStyle({ textStyles: rawTextStyle, screens: config?.screens });
+    const { screens } = getResponsive(variables, config);
+    if (screens) {
+      log('[info:text-styles/merge] >>> ', 'Available screens: ', JSON.stringify(screens));
+      rawTextStyle = mergeTextStyle({ textStyles: rawTextStyle, screens });
     } else {
       console.warn(
         "Attention! You have merging of text styles is enabled and don't have any screens. Add some screens for correctly working it.",

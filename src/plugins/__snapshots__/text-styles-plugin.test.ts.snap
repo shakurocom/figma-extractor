@@ -560,40 +560,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
     
       const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
 
-      const textVariants = {'body-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 400,
-      lineHeight: 1.43,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
-    },'body-500-bs': {
+      const textVariants = {'body-500-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -629,39 +596,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'body-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -698,39 +632,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'body-650': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-650-bs': {
       
       fontFamily: fontFamily.font1,
@@ -767,39 +668,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'body-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    }
     },'body-900-bs': {
       
       fontFamily: fontFamily.font1,
@@ -836,39 +704,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -905,39 +740,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -974,39 +776,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-400': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-400-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1043,39 +812,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-450': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-450-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1112,39 +848,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'btn-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-500-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1181,39 +884,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'caption-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1250,39 +920,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       letterSpacing: '0.5px',
   
       
-    },'caption-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1319,39 +956,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       letterSpacing: '0.5px',
   
       
-    },'input-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'input-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1388,39 +992,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'nav-100': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 2.00,
-      
-  
-    }
     },'nav-100-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1457,39 +1028,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'title-800': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 32,
-      fontWeight: 600,
-      lineHeight: 1.25,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 64,
-      fontWeight: 600,
-      lineHeight: 1.13,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.11,
-      
-  
-    }
     },'title-800-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1526,39 +1064,6 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
   
       
-    },'title-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.22,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 96,
-      fontWeight: 600,
-      lineHeight: 1.17,
-      
-  
-    }
     },'title-900-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1608,40 +1113,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     
       const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
 
-      const textVariants = {'body-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 400,
-      lineHeight: 1.43,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
-    },'body-500-bs': {
+      const textVariants = {'body-500-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -1677,39 +1149,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1746,39 +1185,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-650': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-650-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1815,39 +1221,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    }
     },'body-900-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1884,39 +1257,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -1953,39 +1293,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2022,39 +1329,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-400': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-400-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2091,39 +1365,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-450': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-450-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2160,39 +1401,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-500-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2229,39 +1437,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'caption-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2298,39 +1473,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       letterSpacing: '0.5px',
   
       
-    },'caption-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2367,39 +1509,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       letterSpacing: '0.5px',
   
       
-    },'input-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'input-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2436,39 +1545,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'nav-100': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 2.00,
-      
-  
-    }
     },'nav-100-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2505,39 +1581,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'title-800': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 32,
-      fontWeight: 600,
-      lineHeight: 1.25,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 64,
-      fontWeight: 600,
-      lineHeight: 1.13,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.11,
-      
-  
-    }
     },'title-800-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2574,39 +1617,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'title-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.22,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 96,
-      fontWeight: 600,
-      lineHeight: 1.17,
-      
-  
-    }
     },'title-900-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2656,40 +1666,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     
       const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
 
-      const textVariants = {'body-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 400,
-      lineHeight: 1.43,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
-    },'body-500-bs': {
+      const textVariants = {'body-500-bs': {
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
@@ -2725,39 +1702,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2794,39 +1738,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-650': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    }
     },'body-650-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2863,39 +1774,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'body-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    }
     },'body-900-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2932,39 +1810,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 450,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3001,39 +1846,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3070,39 +1882,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-400': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-400-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3139,39 +1918,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-450': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-450-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3208,39 +1954,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'btn-500': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-500-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3277,39 +1990,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'caption-200': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3346,39 +2026,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       letterSpacing: '0.5px',
   
       
-    },'caption-250': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.20000000298023224px',
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    }
     },'caption-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3415,39 +2062,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       letterSpacing: '0.5px',
   
       
-    },'input-600': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    }
     },'input-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3484,39 +2098,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'nav-100': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 2.00,
-      
-  
-    }
     },'nav-100-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3553,39 +2134,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'title-800': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 32,
-      fontWeight: 600,
-      lineHeight: 1.25,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 64,
-      fontWeight: 600,
-      lineHeight: 1.13,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.11,
-      
-  
-    }
     },'title-800-bs': {
       
       fontFamily: fontFamily.font1,
@@ -3622,39 +2170,6 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
   
       
-    },'title-900': {
-      
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-      '@media (min-width: 600px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 40,
-      fontWeight: 600,
-      lineHeight: 1.20,
-      
-  
-    },'@media (min-width: 900px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 72,
-      fontWeight: 600,
-      lineHeight: 1.22,
-      
-  
-    },'@media (min-width: 1200px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 96,
-      fontWeight: 600,
-      lineHeight: 1.17,
-      
-  
-    }
     },'title-900-bs': {
       
       fontFamily: fontFamily.font1,
