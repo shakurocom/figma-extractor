@@ -12,8 +12,6 @@ You can enable usage of themes for colors or effects now.
 
 Set an array of allowedThemes and defaultTheme in `Config -> styles`.
 
-After that, you may set `useTHeme: true` field inside `Config -> styles -> colors` or `Config -> styles -> effects` to enable usage of themes.
-
 ```js filename="figma-extractor.config.js" {3-4,9,13}
 module.exports = {
   ...
@@ -21,14 +19,6 @@ module.exports = {
   defaultTheme: 'light',
   styles: {
     exportPath: './theme',
-    colors: {
-      ...,
-      useTheme: true,
-    },
-    effects: {
-      ...,
-      useTheme: true,
-    },
     ...
   },
 ...
