@@ -6,18 +6,17 @@ import path from 'path';
 
 import { getClient } from './lib/client';
 import { createLog } from './utils/log';
+import { readJsonFile } from './utils/read-json-file';
 import { createCore } from './core';
 import {
-  colorsPlugin,
   colorsThemePlugin,
-  effectsPlugin,
   effectsThemePlugin,
-  gradientsPlugin,
   iconsPlugin,
   launchPlugins,
+  responsivePlugin,
   textStylesPlugin,
 } from './plugins';
-import { Config, OnlyArgs } from './types';
+import { Config, OnlyArgs, ThemeVariablesConfig } from './types';
 
 const argv = require('yargs/yargs')(process.argv.slice(2))
   .usage('Usage: $0 [options]')
@@ -45,7 +44,7 @@ const getOnlyArgs = (onlyArg: string) => {
   return onlyArgs;
 };
 
-const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'gradients'];
+const disabledKeys: OnlyArgs[] = ['icons', 'colors', 'effects', 'textStyles', 'responsive'];
 
 async function run(config: Config) {
   const rootPath = process.cwd();
@@ -134,19 +133,22 @@ async function run(config: Config) {
       JSON.stringify(config, null, 2),
     );
   }
-
   const core = createCore({
     rootPath,
     config,
     plugins: [
-      config?.styles?.colors?.useTheme ? colorsThemePlugin : colorsPlugin,
+      colorsThemePlugin,
       textStylesPlugin,
-      config?.styles?.effects?.useTheme ? effectsThemePlugin : effectsPlugin,
-      gradientsPlugin,
+      effectsThemePlugin,
+      responsivePlugin,
       iconsPlugin,
     ],
     log,
   });
+
+  const variables = await readJsonFile<ThemeVariablesConfig[]>(
+    path.join(rootPath, config.jsonVariablesPath || ''),
+  );
 
   log('Getting of Figma client by api_key: ', config.apiKey);
 
@@ -165,8 +167,8 @@ async function run(config: Config) {
   log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
-    styleMetadata: meta.styles,
     fileNodes,
+    variables,
   }).then(() => {
     log('Finish');
   });

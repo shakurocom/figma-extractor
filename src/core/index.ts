@@ -1,7 +1,7 @@
-import { ClientInterface, FileNodesResponse, FullStyleMetadata } from 'figma-js';
+import { ClientInterface, FileNodesResponse } from 'figma-js';
 
 import { Plugin } from '@/plugins';
-import { Config } from '@/types';
+import { Config, ThemeVariablesConfig } from '@/types';
 
 import { addEslintDisableAtTheTopOfText } from './add-eslint-disable';
 import { runFormattingFile } from './run-formatting-file';
@@ -10,8 +10,8 @@ import { writeFile } from './write-file';
 
 export interface FigmaData {
   figmaClient: ClientInterface;
-  styleMetadata: readonly FullStyleMetadata[];
   fileNodes: FileNodesResponse;
+  variables: ThemeVariablesConfig[];
 }
 
 export interface Core {

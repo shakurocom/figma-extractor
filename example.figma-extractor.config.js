@@ -19,20 +19,26 @@ const iconNaming = originalName => {
 module.exports = {
   apiKey: 'xxxxxx',
   fileId: 'xxxxxx',
+  jsonVariablesPath: './variables.json',
   styles: {
     exportPath: './ui/theme',
+    allowedThemes: ['light'], // allowed themes
+    defaultTheme: 'light',
     colors: {
+      collectionNames: ['color', 'color_extra'],
+      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    },
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
     effects: {
-      // keyName: nameFromFigma => nameFromFigma`, // custom key name
-    },
-    gradients: {
+      collectionNames: ['effects'],
       // keyName: nameFromFigma => nameFromFigma`, // custom key name
     },
     textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
       keyName: nameFromFigma => `.v-${getTextStyleName(nameFromFigma)}`,
-      merge: true,
     },
   },
   icons: {

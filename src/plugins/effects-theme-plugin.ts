@@ -1,6 +1,7 @@
 import path from 'path';
 
-import { getEffectName } from '../lib/color/get-effect-name/get-effect-name';
+import { Mode } from '@/types';
+
 import { getEffectStyles } from '../lib/get-effect-styles';
 import { stringifyRecordsWithSort } from '../lib/stringify';
 import {
@@ -20,15 +21,89 @@ import { Plugin } from './types';
 
 type EffectName = string;
 
+interface FormattedEffects {
+  backdropBlur?: {
+    [key: string]: string;
+  };
+  blur?: {
+    [key: string]: string;
+  };
+  [key: string]: any; // This allows for any other key-value pairs
+}
+
+const template = ({
+  blur,
+  backdropBlur,
+  boxShadow,
+}: {
+  blur?: {
+    [key: string]: string | number;
+  };
+  backdropBlur?: {
+    [key: string]: string | number;
+  };
+  boxShadow?: {
+    [key: string]: string | number;
+  };
+}) => `module.exports = {
+    ${boxShadow ? `boxShadow: ${stringifyRecordsWithSort(boxShadow)},` : ''}
+    ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)},` : ''}
+    ${blur ? `blur: ${stringifyRecordsWithSort(blur)},` : ''}
+    }
+    `;
+
+const formattedEffects = (effects: Record<string, string>): FormattedEffects => {
+  return Object.entries(effects).reduce((acc, [name, value]) => {
+    if (name.includes('backdrop-blur')) {
+      const backdropBlur = acc.backdropBlur || {};
+      // format name from backdrop-blur-100 to 100
+      // because className in tailwind backdrop-blur-100 better then backdrop-blur-backdrop-blur-100
+      const backdropBlurName = name.split('-')[2];
+
+      return {
+        ...acc,
+        backdropBlur: {
+          ...backdropBlur,
+          [backdropBlurName]: value,
+        },
+      };
+    }
+    if (name.includes('blur')) {
+      const blur = acc.blur || {};
+      // format name from blur-100 to 100
+      const blurName = name.split('-')[1];
+
+      return {
+        ...acc,
+        blur: {
+          ...blur,
+          [blurName]: value,
+        },
+      };
+    }
+    if (name.includes('shadow')) {
+      const shadow = acc.boxShadow || {};
+      // format name from boxShadow-100 to 100
+      const shadowName = name.split('-')[1];
+
+      return {
+        ...acc,
+        boxShadow: {
+          ...shadow,
+          [shadowName]: value,
+        },
+      };
+    }
+
+    return { ...acc, [name]: value };
+  }, {} as FormattedEffects);
+};
+
 export const effectsThemePlugin: Plugin = (
-  { config, styleTypeUtils, writeFile, addEslintDisableRules, log },
-  { styleMetadata, fileNodes },
+  { config, writeFile, addEslintDisableRules, log },
+  { variables },
 ) => {
-  const metaEffects = styleMetadata.filter(styleTypeUtils.isEffect);
-
-  log('[info:effects-theme] >>> ', 'Effects-theme plugin starts working...');
-
-  if (config?.styles?.effects?.disabled) {
+  if (config?.styles?.responsive?.disabled) {
     log(
       '[info:effects-theme] >>> ',
       'Effects-theme plugin has been disabled so the plugin had not been launched',
@@ -36,6 +111,12 @@ export const effectsThemePlugin: Plugin = (
 
     return;
   }
+  log('[info:effects-theme] >>> ', 'Effects-theme plugin starts working...');
+  const filteredCollections = variables.filter(({ name }) =>
+    config?.styles?.effects?.collectionNames?.includes(name),
+  );
+
+  const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
 
   const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
     allowedThemes: config?.styles?.allowedThemes,
@@ -46,12 +127,7 @@ export const effectsThemePlugin: Plugin = (
   log('[info:effects-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
-
-  const effects = getEffectStyles(
-    metaEffects,
-    fileNodes,
-    config?.styles?.effects?.keyName ?? getEffectName,
-  );
+  const effects = getEffectStyles(modes, config);
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme, originalName } of separateThemes({
@@ -93,6 +169,7 @@ export const effectsThemePlugin: Plugin = (
     defaultTheme,
   })) {
     const jsData: Record<EffectName, string> = generateJsColors(variables);
+    const effects = formattedEffects(jsData);
     for (const [name, value] of Object.entries(jsData)) {
       log(`[info:effects-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
     }
@@ -101,7 +178,8 @@ export const effectsThemePlugin: Plugin = (
 
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
-    const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
+    const jsTemplate = template(effects);
+
     writeFile(
       addEslintDisableRules(jsTemplate, [
         'disable-max-lines',
@@ -120,7 +198,9 @@ export const effectsThemePlugin: Plugin = (
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
       );
 
-      const jsTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(jsData)}};`;
+      const effects = formattedEffects(jsData);
+      const jsTemplate = template(effects);
+
       writeFile(
         addEslintDisableRules(jsTemplate, [
           'disable-max-lines',
@@ -130,10 +210,9 @@ export const effectsThemePlugin: Plugin = (
       );
 
       const jsLegacyData = generateJsColors(variables);
+      const effectsLegacy = formattedEffects(jsLegacyData);
 
-      const jsLegacyTemplate = `module.exports = {boxShadow: ${stringifyRecordsWithSort(
-        jsLegacyData,
-      )}};`;
+      const jsLegacyTemplate = template(effectsLegacy);
 
       writeFile(
         addEslintDisableRules(jsLegacyTemplate, [

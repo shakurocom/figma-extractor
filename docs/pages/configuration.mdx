@@ -24,56 +24,55 @@ type IconConfig = {
   optimizeSvg?: false | (config?: SVGOConfig) => SVGOConfig;
 };
 
+
 type Config = {
   // your Figma api access key
   apiKey: string;
   // Figma file id
   fileId: string;
+  // path to json variables extracted from figma extention
+  jsonVariablesPath: string; 
   styles: {
     // The main path for exporting all requested data
     exportPath: string;
 
     /*
-      Allowed themes if there is at least one styles field with flag `useTheme`
       It will parse returned name of colors or etc. and look for allowed themes at the start of names
       example: for allowedThemes: ['light','dark'] all returned names will be parsed by looking for 'light' or 'dark' at the start of name
                And if color name is 'light/text/text-900' then it will be transformed to 'text/text-900' and relate to the 'light' theme
                All others name which are not found by allowed themes will be overlooked.
-      Note: If there is at least one styles field with flag `useTheme` then this field is required
      */
     allowedThemes?: string[];
 
     /**
-       Default theme for styles fields with flag `useTheme`
        It's used like default variables inside generated CSS variables
-       Note: If there is at least one styles field with flag `useTheme` then this field is required
      */
     defaultTheme?: string;
     colors?: {
       disabled?: boolean;
       // custom key name
-      keyName?: (name?: string, useTheme?: boolean) => string;
-      // Enable using of theme
-      useTheme?: boolean;
-    };
-    gradients?: {
-      disabled?: boolean;
-      // custom key name
       keyName?: (name?: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
     };
     effects?: {
       disabled?: boolean;
       // custom key name
-      keyName?: (name?: string, useTheme?: boolean) => string;
-      // Enable using of theme
-      useTheme?: boolean;
+      keyName?: (name?: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
     };
     textStyles?: {
       disabled?: boolean;
       // custom key name
       keyName?: (nameFromFigma: string) => string;
-      // It allows merging text styles for different screen sizes to a single style
-      merge?: boolean;
+      // collections names from figma local variables
+      collectionNames: string[];
+    };
+    responsive?: {
+      disabled?: boolean;
+      // collections names from figma local variables
+      collectionNames: string[];
     };
   };
   // Configuration of icons can have more one setting
@@ -82,9 +81,7 @@ type Config = {
      It's used when textStyles -> merge == true,
      It contains title for each allowed screen size for generation accurate media queries
    */
-  screens?: {
-    [title: string]: number;
-  };
+
 };
 ```
 
@@ -132,20 +129,23 @@ const iconNaming = originalName => {
 module.exports = {
   apiKey: 'xxxxxx', // your Figma api access key
   fileId: 'xxxxxx', // Figma file id
+  jsonVariablesPath: string; // path to the json file that contains the variables
   styles: {
     exportPath: './theme',
     colors: {
+      collectionNames: string[];
       keyName: getKeyName, // custom key name
     },
     effects: {
-      // keyName: nameFromFigma => nameFromFigma, // custom key name
+      collectionNames: string[];  
+      keyName: nameFromFigma => nameFromFigma, // custom key name
     },
-    gradients: {
-      // keyName: nameFromFigma => nameFromFigma, // custom key name
+    responsive: {
+      collectionNames: string[];
     },
     textStyles: {
+      collectionNames: string[];
       keyName: nameFromFigma => `.v-${getKeyName(nameFromFigma)}`,
-      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
     },
   },
   icons: {
@@ -158,10 +158,7 @@ module.exports = {
     generateTypes: true,
     localIcons: false,
   },
-  screens: {
-    bs: 0,
-    ...screens,
-  },
+
 };
 ```
 
@@ -249,19 +246,19 @@ module.exports = {
     allowedThemes: ['light','dark'], // allowed themes
     defaultTheme: 'light', // one of the allowed themes which will be meant as default theme
     colors: {
+      collectionNames: ['color', 'color_extra'],
       keyName: getKeyNameWithTheme,
-      useTheme: true,
     },
     effects: {
+      collectionNames: ['effects'],
       keyName: getKeyNameWithTheme,
-      useTheme: true,
     },
-    gradients: {
-      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
     },
     textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
       keyName: nameFromFigma => `.v-${getKeyName(nameFromFigma)}`,
-      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
     },
   },
   icons: {
@@ -274,10 +271,7 @@ module.exports = {
     generateTypes: true,
     localIcons: false,
   },
-  screens: {
-    bs: 0,
-    ...screens,
-  },
+
 };
 ```
 
@@ -365,17 +359,19 @@ module.exports = {
   fileId: 'xxxxxx', // Figma file id
   styles: {
     colors: {
+      collectionNames: ['color', 'color_extra'],
       keyName: getKeyNameWithTheme,
     },
     effects: {
+      collectionNames: ['effects'],
       keyName: getKeyNameWithTheme,
     },
-    gradients: {
-      // keyName: nameFromFigma => nameFromFigma`, // custom key name
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
     },
     textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
       keyName: nameFromFigma => `.v-${getKeyName(nameFromFigma)}`,
-      merge: true, // or false - it allows merging text styles for different screen sizes to a single style
     },
   },
   icons: [
@@ -409,10 +405,7 @@ module.exports = {
       localIcons: true, // This field is required for this block. It allows working only local icons
     },
   ],
-  screens: {
-    bs: 0,
-    ...screens,
-  },
+
 };
 ```
 
@@ -444,15 +437,8 @@ module.exports = {
     exportPath: './theme',
     textStyles: {
       ...,
-      merge: true,
     },
     ...
-  },
-  screen: {
-    bs: 0, // This is the base screen (default)
-    sm: 600,
-    md: 900,
-    lg: 1200,
   },
   ...
 };
@@ -485,8 +471,6 @@ will be transformed:
 
 ## Themes for colors and effects
 
-If the `colors` or `effects` field has `useTheme: true` then CLI will look for allowed themes and creates colors or effects according to such themes.
-
 * `allowedThemes` - list of the allowed themes. By only these themes, it will be generated particular files.
 * `defaultTheme` - one of the allowed themes. Default variables for CSS variables will be taken from this theme.
 
@@ -501,7 +485,7 @@ module.exports = {
     exportPath: './theme',
     colors: {
       ...,
-      useTheme: true,
+      
     },
     ...
   },
@@ -594,4 +578,3 @@ module.exports = {
 }
 ```
 
-Also, the same files will be generated for `useTheme` inside **effects** section.

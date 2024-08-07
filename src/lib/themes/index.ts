@@ -77,6 +77,11 @@ export function* separateThemes({
 }) {
   for (const [name, value] of Object.entries(data)) {
     const separatedData = name.split('/');
+    // ignore variables included "_" in names
+    if (name.includes('_')) {
+      continue;
+    }
+
     if (separatedData.length > 1) {
       const [separatedTheme, ...others] = separatedData;
       if (separatedTheme && allowedThemes?.includes(separatedTheme.trim())) {

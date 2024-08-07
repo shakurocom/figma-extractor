@@ -1,25 +1,21 @@
-import { FileNodesResponse, FullStyleMetadata } from 'figma-js';
+import { Mode, RGBA } from '@/types';
 
-import { formattedColor } from './color/formatted-color/formatted-color';
+import { formattedColor } from './formatted-color';
 
-export const getColorStyles = (
-  metaColors: FullStyleMetadata[],
-  fileNodes: FileNodesResponse,
-  keyNameCallback: (name?: string) => string,
-) => {
-  const colorNodes = metaColors.map(item => fileNodes.nodes[item.node_id]?.document);
+export const getColorStyles = (modes: Mode[], keyNameCallback: (name?: string) => string) => {
+  const colors = modes.reduce((acc, item) => {
+    const variables = item.variables.reduce((accVariables, variable) => {
+      return {
+        ...accVariables,
+        [keyNameCallback(`${item.name}/${variable.name}`)]: formattedColor(variable.value as RGBA),
+      };
+    }, {});
 
-  return colorNodes.reduce(
-    (acc, item) =>
-      (item as any).fills?.[0]?.type?.includes('GRADIENT')
-        ? acc
-        : {
-            ...acc,
-            [keyNameCallback(item?.name)]: formattedColor(
-              (item as any).fills?.[0]?.color,
-              (item as any).fills[0]?.opacity,
-            ),
-          },
-    {} as Record<string, string>,
-  );
+    return {
+      ...acc,
+      ...variables,
+    };
+  }, {});
+
+  return colors as Record<string, string>;
 };

@@ -4,7 +4,8 @@ export function getTextStyleName(name?: string) {
   const splitLeftPart = name?.split(' / ');
   const splitRightPart = splitLeftPart?.[splitLeftPart?.length - 1]
     .replace(/\s+/g, '')
-    .replace('.', '-');
+    .replace('.', '-')
+    .replace('/', '-');
 
   return splitRightPart || '';
 }
