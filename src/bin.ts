@@ -156,18 +156,9 @@ async function run(config: Config) {
 
   log('Getting of meta style from figma by file_id: ', config.fileId);
 
-  const { meta } = await client.fileStyles(config.fileId).then(({ data }) => data);
-
-  const nodeIds = meta.styles.map(item => item.node_id);
-
-  log('List of nodeIds has been received: ', JSON.stringify(nodeIds));
-
-  const { data: fileNodes } = await client.fileNodes(config.fileId, { ids: nodeIds });
-
   log('Run plugins');
   launchPlugins(core, {
     figmaClient: client,
-    fileNodes,
     variables,
   }).then(() => {
     log('Finish');
