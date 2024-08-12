@@ -80,9 +80,7 @@ describe('bin', () => {
                 colors: { collectionNames: ['color', 'color_extra'] },
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: {
                 nodeIds: ['2310:0', '2090:11', '276:18'],
@@ -126,9 +124,7 @@ describe('bin', () => {
             colors: { collectionNames: ['color', 'color_extra'] },
             effects: {},
             responsive: {},
-            textStyles: {
-              merge: true,
-            },
+            textStyles: {},
           },
         },
         rootPath: '/test-figma-extractor',
@@ -161,9 +157,7 @@ describe('bin', () => {
                 colors: {},
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: {
                 nodeIds: ['2310:0', '2090:11', '276:18'],
@@ -214,7 +208,6 @@ describe('bin', () => {
             },
             textStyles: {
               disabled: true,
-              merge: true,
             },
           },
         },
@@ -247,9 +240,7 @@ describe('bin', () => {
                 colors: {},
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: [
                 {
@@ -317,7 +308,6 @@ describe('bin', () => {
             responsive: { disabled: true },
             textStyles: {
               disabled: true,
-              merge: true,
             },
           },
         },
@@ -350,9 +340,7 @@ describe('bin', () => {
                 colors: {},
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: {
                 nodeIds: ['2310:0', '2090:11', '276:18'],
@@ -401,7 +389,6 @@ describe('bin', () => {
             responsive: { disabled: true },
             textStyles: {
               disabled: true,
-              merge: true,
             },
           },
         },
@@ -434,9 +421,7 @@ describe('bin', () => {
                 colors: {},
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: {
                 nodeIds: ['2310:0', '2090:11', '276:18'],
@@ -478,9 +463,7 @@ describe('bin', () => {
             colors: {},
             effects: {},
             responsive: {},
-            textStyles: {
-              merge: true,
-            },
+            textStyles: {},
           },
         },
         plugins: [
@@ -512,9 +495,7 @@ describe('bin', () => {
                 colors: {},
                 effects: {},
                 responsive: {},
-                textStyles: {
-                  merge: true,
-                },
+                textStyles: {},
               },
               icons: [
                 {
@@ -574,9 +555,7 @@ describe('bin', () => {
             colors: {},
             effects: {},
             responsive: {},
-            textStyles: {
-              merge: true,
-            },
+            textStyles: {},
           },
         },
         plugins: [

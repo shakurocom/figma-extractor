@@ -1,4 +1,4 @@
-import { ClientInterface, FileNodesResponse } from 'figma-js';
+import { ClientInterface } from 'figma-js';
 
 import { Plugin } from '@/plugins';
 import { Config, ThemeVariablesConfig } from '@/types';
@@ -10,7 +10,6 @@ import { writeFile } from './write-file';
 
 export interface FigmaData {
   figmaClient: ClientInterface;
-  fileNodes: FileNodesResponse;
   variables: ThemeVariablesConfig[];
 }
 

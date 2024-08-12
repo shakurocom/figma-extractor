@@ -71,31 +71,34 @@ export const generateIcons = async (
       data: { images },
     } = await client.fileImages(config.fileId, { ids: imageIds, format: 'svg' });
 
-    for (const item of imagesData) {
-      const filename = `${pathIconsFolder}/${item.name}.svg`;
-      log(
-        'Before downloading of image:',
-        JSON.stringify(
-          {
-            url: images[item.id],
-            filename,
-            optimizeSvg: enableOptimizeSvg ? 'enabled' : 'disabled',
-          },
-          null,
-          2,
-        ),
-      );
-      await downloadStreamingToFile(`${images[item.id]}`, filename, {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        'X-Figma-Token': config.apiKey,
-      });
+    await Promise.all(
+      imagesData.map(async item => {
+        const filename = `${pathIconsFolder}/${item.name}.svg`;
+        console.log(
+          'Before downloading of image:',
+          JSON.stringify(
+            {
+              url: images[item.id],
+              filename,
+              optimizeSvg: enableOptimizeSvg ? 'enabled' : 'disabled',
+            },
+            null,
+            2,
+          ),
+        );
 
-      if (enableOptimizeSvg) {
-        await optimizeSvg(filename, svgConfig);
-      }
+        await downloadStreamingToFile(`${images[item.id]}`, filename, {
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          'X-Figma-Token': config.apiKey,
+        });
 
-      console.log('Downloaded!', filename);
-    }
+        if (enableOptimizeSvg) {
+          await optimizeSvg(filename, svgConfig);
+        }
+
+        console.log('Downloaded!', filename);
+      }),
+    );
   }
 
   if (iconConfig.generateTypes) {
