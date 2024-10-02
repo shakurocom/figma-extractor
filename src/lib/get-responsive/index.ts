@@ -17,10 +17,8 @@ export const getResponsive = (variables: ThemeVariablesConfig[], config: Config)
     ...transformed
   } = transformProperties(groupedProperties) || {};
 
-  const { bs = {}, ...filteredScreens } = screens || {};
-
   const data = Object.entries(transformed || {}).map(([key, value]) => ({ [key]: value }));
   const merged = mergeResponsive({ data, screens });
 
-  return { screens: filteredScreens, ...merged };
+  return { screens, ...merged };
 };

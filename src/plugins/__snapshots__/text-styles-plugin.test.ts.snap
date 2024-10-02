@@ -155,7 +155,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -164,7 +164,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -173,7 +173,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -182,7 +182,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -227,7 +227,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -236,7 +236,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -245,7 +245,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -254,7 +254,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -415,18 +415,18 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     },'input-600/lg__extra': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
     },'input-600/md__extra': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
@@ -435,6 +435,42 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       fontFamily: fontFamily.font1,
       fontSize: 16,
       fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650/bs__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650/lg__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650/md__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650/sm__extra': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.50,
       
   
@@ -708,7 +744,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -717,7 +753,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -726,7 +762,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -735,7 +771,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -780,7 +816,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -789,7 +825,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -798,7 +834,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -807,7 +843,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -968,18 +1004,18 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
     },'input-600-lg': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
     },'input-600-md': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
@@ -988,6 +1024,42 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       fontFamily: fontFamily.font1,
       fontSize: 16,
       fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.50,
       
   
@@ -1261,7 +1333,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1270,7 +1342,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1279,7 +1351,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1288,7 +1360,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1333,7 +1405,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1342,7 +1414,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1351,7 +1423,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1360,7 +1432,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1521,18 +1593,18 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     },'input-600-lg': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
     },'input-600-md': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
@@ -1541,6 +1613,42 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontFamily: fontFamily.font1,
       fontSize: 16,
       fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.50,
       
   
@@ -1814,7 +1922,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1823,7 +1931,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1832,7 +1940,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1841,7 +1949,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -1886,7 +1994,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1895,7 +2003,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1904,7 +2012,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -1913,7 +2021,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -2074,18 +2182,18 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     },'input-600-lg': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
     },'input-600-md': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
@@ -2094,6 +2202,42 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       fontFamily: fontFamily.font1,
       fontSize: 16,
       fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.50,
       
   
@@ -2367,7 +2511,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -2376,7 +2520,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -2385,7 +2529,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -2394,7 +2538,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 14,
-      fontWeight: 450,
+      fontWeight: 500,
       lineHeight: 1.14,
       
   
@@ -2439,7 +2583,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -2448,7 +2592,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -2457,7 +2601,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -2466,7 +2610,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
       fontFamily: fontFamily.font1,
       fontSize: 16,
-      fontWeight: 400,
+      fontWeight: 500,
       lineHeight: 1.00,
       
   
@@ -2627,18 +2771,18 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
     },'input-600-lg': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
     },'input-600-md': {
       
       fontFamily: fontFamily.font1,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 400,
-      lineHeight: 1.33,
+      lineHeight: 1.50,
       
   
       
@@ -2647,6 +2791,42 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       fontFamily: fontFamily.font1,
       fontSize: 16,
       fontWeight: 400,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-bs': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-lg': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-md': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
+      lineHeight: 1.50,
+      
+  
+      
+    },'input-650-sm': {
+      
+      fontFamily: fontFamily.font1,
+      fontSize: 16,
+      fontWeight: 500,
       lineHeight: 1.50,
       
   

@@ -7,7 +7,267 @@
         "modeId": "3919:21",
         "variables": [
           {
-            "name": "bg/base/800",
+            "name": "primary/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.3490196168422699,
+              "b": 0.7450980544090271,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.43529412150382996,
+              "b": 0.9333333373069763,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.3490196168422699,
+              "g": 0.11372549086809158,
+              "b": 0.5803921818733215,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.47058823704719543,
+              "g": 0.1568627506494522,
+              "b": 0.7843137383460999,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5372549295425415,
+              "g": 0.22745098173618317,
+              "b": 0.8470588326454163,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.47058823704719543,
+              "g": 0.1568627506494522,
+              "b": 0.7843137383460999,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.6980392336845398,
+              "g": 0.4941176474094391,
+              "b": 0.8980392217636108,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.7960784435272217,
+              "g": 0.6549019813537598,
+              "b": 0.929411768913269,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.6980392336845398,
+              "g": 0.4941176474094391,
+              "b": 0.8980392217636108,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.9058823585510254,
+              "g": 0.8392156958580017,
+              "b": 0.9686274528503418,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.7960784435272217,
+              "g": 0.6549019813537598,
+              "b": 0.929411768913269,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.9058823585510254,
+              "g": 0.8392156958580017,
+              "b": 0.9686274528503418,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.14509804546833038,
+              "g": 0.5215686559677124,
+              "b": 0.9450980424880981,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.43529412150382996,
+              "b": 0.9333333373069763,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5372549295425415,
+              "g": 0.7372549176216125,
+              "b": 0.9725490212440491,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.6274510025978088,
+              "g": 0.7882353067398071,
+              "b": 0.9803921580314636,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5372549295425415,
+              "g": 0.7372549176216125,
+              "b": 0.9725490212440491,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.8745098114013672,
+              "g": 0.9333333373069763,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.800000011920929,
+              "g": 0.886274516582489,
+              "b": 0.9882352948188782,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.8745098114013672,
+              "g": 0.9333333373069763,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/800",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -21,7 +281,7 @@
             }
           },
           {
-            "name": "bg/base/800-hover",
+            "name": "bg/800-hover",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -35,7 +295,7 @@
             }
           },
           {
-            "name": "bg/base/300",
+            "name": "bg/300",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -49,7 +309,7 @@
             }
           },
           {
-            "name": "bg/base/300-hover",
+            "name": "bg/300-hover",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -63,7 +323,7 @@
             }
           },
           {
-            "name": "bg/base/200",
+            "name": "bg/200",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -77,7 +337,7 @@
             }
           },
           {
-            "name": "bg/base/200-hover",
+            "name": "bg/200-hover",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -91,7 +351,7 @@
             }
           },
           {
-            "name": "bg/base/100",
+            "name": "bg/100",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -105,7 +365,7 @@
             }
           },
           {
-            "name": "bg/base/100-hover",
+            "name": "bg/100-hover",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -119,343 +379,7 @@
             }
           },
           {
-            "name": "bg/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.43529412150382996,
-              "b": 0.9333333373069763,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.1568627506494522,
-              "b": 0.7843137383460999,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/overlays/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.05000000074505806
-            }
-          },
-          {
-            "name": "bg/overlays/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "bg/overlays/200-invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "bg/overlays/300",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "bg/overlays/300-invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "bg/overlays/400",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.4000000059604645
-            }
-          },
-          {
-            "name": "bg/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.22745098173618317,
-              "b": 0.8470588326454163,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/500-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.1568627506494522,
-              "b": 0.7843137383460999,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6980392336845398,
-              "g": 0.4941176474094391,
-              "b": 0.8980392217636108,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.7960784435272217,
-              "g": 0.6549019813537598,
-              "b": 0.929411768913269,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6980392336845398,
-              "g": 0.4941176474094391,
-              "b": 0.8980392217636108,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.9058823585510254,
-              "g": 0.8392156958580017,
-              "b": 0.9686274528503418,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.7960784435272217,
-              "g": 0.6549019813537598,
-              "b": 0.929411768913269,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.9058823585510254,
-              "g": 0.8392156958580017,
-              "b": 0.9686274528503418,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.14509804546833038,
-              "g": 0.5215686559677124,
-              "b": 0.9450980424880981,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/500-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.43529412150382996,
-              "b": 0.9333333373069763,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.7372549176216125,
-              "b": 0.9725490212440491,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6274510025978088,
-              "g": 0.7882353067398071,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.7372549176216125,
-              "b": 0.9725490212440491,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.8745098114013672,
-              "g": 0.9333333373069763,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.800000011920929,
-              "g": 0.886274516582489,
-              "b": 0.9882352948188782,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.8745098114013672,
-              "g": 0.9333333373069763,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/invert",
+            "name": "bg/invert",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -469,7 +393,7 @@
             }
           },
           {
-            "name": "bg/base/disabled",
+            "name": "bg/disabled",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -483,7 +407,7 @@
             }
           },
           {
-            "name": "text/base/900",
+            "name": "text/900",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
@@ -496,7 +420,7 @@
             }
           },
           {
-            "name": "text/base/500",
+            "name": "text/500",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
@@ -509,137 +433,20 @@
             }
           },
           {
-            "name": "text/primary/900",
+            "name": "text/500-hover",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
             ],
             "value": {
               "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
+              "g": 0,
+              "b": 0,
               "a": 1
             }
           },
           {
-            "name": "text/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.43529412150382996,
-              "b": 0.9333333373069763,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.7372549176216125,
-              "b": 0.9725490212440491,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.6274510025978088,
-              "g": 0.7882353067398071,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.1568627506494522,
-              "b": 0.7843137383460999,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.40392157435417175,
-              "g": 0.13333334028720856,
-              "b": 0.6745098233222961,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.7960784435272217,
-              "g": 0.6549019813537598,
-              "b": 0.929411768913269,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.6980392336845398,
-              "g": 0.4941176474094391,
-              "b": 0.8980392217636108,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/300",
+            "name": "text/300",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
@@ -652,7 +459,7 @@
             }
           },
           {
-            "name": "text/base/invert",
+            "name": "text/invert",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
@@ -665,20 +472,7 @@
             }
           },
           {
-            "name": "text/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.8627451062202454,
-              "g": 0.8627451062202454,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/base/900",
+            "name": "icon/900",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -692,7 +486,7 @@
             }
           },
           {
-            "name": "icon/base/500",
+            "name": "icon/500",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -706,7 +500,21 @@
             }
           },
           {
-            "name": "icon/base/300",
+            "name": "icon/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/300",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -720,7 +528,7 @@
             }
           },
           {
-            "name": "icon/base/invert",
+            "name": "icon/invert",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -734,147 +542,7 @@
             }
           },
           {
-            "name": "icon/primary/900",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.43529412150382996,
-              "b": 0.9333333373069763,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.7372549176216125,
-              "b": 0.9725490212440491,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6274510025978088,
-              "g": 0.7882353067398071,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.1568627506494522,
-              "b": 0.7843137383460999,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.7960784435272217,
-              "g": 0.6549019813537598,
-              "b": 0.929411768913269,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6980392336845398,
-              "g": 0.4941176474094391,
-              "b": 0.8980392217636108,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/900",
+            "name": "border/900",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
@@ -888,684 +556,7 @@
             }
           },
           {
-            "name": "stroke/base/500",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.501960813999176,
-              "g": 0.501960813999176,
-              "b": 0.501960813999176,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/300",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6961822509765625,
-              "g": 0.6961822509765625,
-              "b": 0.6961822509765625,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/100",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.8784313797950745,
-              "g": 0.8784313797950745,
-              "b": 0.8784313797950745,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/900",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.8627451062202454,
-              "g": 0.8627451062202454,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/white",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.43529412150382996,
-              "b": 0.9333333373069763,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/900",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.05098039284348488,
-              "g": 0.45098039507865906,
-              "b": 0.2235294133424759,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3490196168422699,
-              "b": 0.7450980544090271,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.7372549176216125,
-              "b": 0.9725490212440491,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6274510025978088,
-              "g": 0.7882353067398071,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.1568627506494522,
-              "b": 0.7843137383460999,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.7960784435272217,
-              "g": 0.6549019813537598,
-              "b": 0.929411768913269,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6980392336845398,
-              "g": 0.4941176474094391,
-              "b": 0.8980392217636108,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/500",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.09019608050584793,
-              "g": 0.7882353067398071,
-              "b": 0.3921568691730499,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/900",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.8352941274642944,
-              "g": 0.05882352963089943,
-              "b": 0.3294117748737335,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/500",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9529411792755127,
-              "g": 0.07058823853731155,
-              "b": 0.3764705955982208,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9607843160629272,
-              "g": 0.22745098173618317,
-              "b": 0.48235294222831726,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/100",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9960784316062927,
-              "g": 0.9058823585510254,
-              "b": 0.9372549057006836,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9921568632125854,
-              "g": 0.8156862854957581,
-              "b": 0.8745098114013672,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/warning/900",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6941176652908325,
-              "g": 0.43921568989753723,
-              "b": 0.03529411926865578,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/warning/500",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9607843160629272,
-              "g": 0.6470588445663452,
-              "b": 0.1411764770746231,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/warning/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9686274528503418,
-              "g": 0.7019608020782471,
-              "b": 0.27843138575553894,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/warning/100",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9921568632125854,
-              "g": 0.9215686321258545,
-              "b": 0.8117647171020508,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/warning/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9843137264251709,
-              "g": 0.8392156958580017,
-              "b": 0.6117647290229797,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.07450980693101883,
-              "g": 0.6549019813537598,
-              "b": 0.32549020648002625,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/100",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.686274528503418,
-              "g": 0.9647058844566345,
-              "b": 0.8078431487083435,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.47058823704719543,
-              "g": 0.9411764740943909,
-              "b": 0.6745098233222961,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/white",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.8627451062202454,
-              "g": 0.8627451062202454,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/base/white",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          }
-        ]
-      },
-      {
-        "name": "dark",
-        "modeId": "3919:22",
-        "variables": [
-          {
-            "name": "bg/base/800",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.9019607901573181,
-              "g": 0.9019607901573181,
-              "b": 0.9019607901573181,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/800-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/300",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.2666666805744171,
-              "g": 0.2666666805744171,
-              "b": 0.2666666805744171,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/300-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.21960784494876862,
-              "g": 0.21960784494876862,
-              "b": 0.21960784494876862,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.1725490242242813,
-              "g": 0.1725490242242813,
-              "b": 0.1725490242242813,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.11764705926179886,
-              "g": 0.11764705926179886,
-              "b": 0.11764705926179886,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.21960784494876862,
-              "g": 0.21960784494876862,
-              "b": 0.21960784494876862,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.07450980693101883,
-              "g": 0.5058823823928833,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.22745098173618317,
-              "b": 0.8470588326454163,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/overlays/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.05000000074505806
-            }
-          },
-          {
-            "name": "bg/overlays/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "bg/overlays/200-invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.10000000149011612
-            }
-          },
-          {
-            "name": "bg/overlays/300",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0,
-              "b": 0,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "bg/overlays/300-invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 0.20000000298023224
-            }
-          },
-          {
-            "name": "bg/overlays/400",
+            "name": "overlays/400",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -1579,454 +570,21 @@
             }
           },
           {
-            "name": "bg/secondary/500-hover",
+            "name": "overlays/300",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6117647290229797,
-              "g": 0.3529411852359772,
-              "b": 0.8705882430076599,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/500-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5372549295425415,
-              "g": 0.22745098173618317,
-              "b": 0.8470588326454163,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.40392157435417175,
-              "g": 0.13333334028720856,
-              "b": 0.6745098233222961,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/200-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.2235294133424759,
-              "g": 0.07450980693101883,
-              "b": 0.3686274588108063,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/secondary/100-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.2235294133424759,
-              "g": 0.07450980693101883,
-              "b": 0.3686274588108063,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.23529411852359772,
-              "g": 0.5921568870544434,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/500-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.07450980693101883,
-              "g": 0.5058823823928833,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.2666666805744171,
-              "b": 0.572549045085907,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.3137255012989044,
-              "b": 0.6745098233222961,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/200-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.2666666805744171,
-              "b": 0.572549045085907,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.1921568661928177,
-              "b": 0.4117647111415863,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.22745098173618317,
-              "b": 0.48627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/primary/100-pressed",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0,
-              "g": 0.1921568661928177,
-              "b": 0.4117647111415863,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "bg/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.16621093451976776,
-              "g": 0.16621093451976776,
-              "b": 0.16621093451976776,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/900",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 1,
-              "g": 1,
-              "b": 1,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/500",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.7019608020782471,
-              "g": 0.7019608020782471,
-              "b": 0.7019608020782471,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/900",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.3607843220233917,
-              "g": 0.6470588445663452,
-              "b": 0.9764705896377563,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.08627451211214066,
-              "g": 0.2823529541492462,
-              "b": 0.5058823823928833,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.12156862765550613,
-              "g": 0.37254902720451355,
-              "b": 0.6627451181411743,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.6117647290229797,
-              "g": 0.3529411852359772,
-              "b": 0.8705882430076599,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/300",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.4588235318660736,
-              "g": 0.4588235318660736,
-              "b": 0.4588235318660736,
-              "a": 1
-            }
-          },
-          {
-            "name": "text/base/invert",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
             ],
             "value": {
               "r": 0,
               "g": 0,
               "b": 0,
-              "a": 1
+              "a": 0.20000000298023224
             }
           },
           {
-            "name": "text/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "value": {
-              "r": 0.25874024629592896,
-              "g": 0.25874024629592896,
-              "b": 0.25874024629592896,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/base/900",
+            "name": "overlays/300-invert",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -2036,207 +594,53 @@
               "r": 1,
               "g": 1,
               "b": 1,
-              "a": 1
+              "a": 0.20000000298023224
             }
           },
           {
-            "name": "icon/base/500",
+            "name": "overlays/200",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
             ],
             "value": {
-              "r": 0.7019608020782471,
-              "g": 0.7019608020782471,
-              "b": 0.7019608020782471,
-              "a": 1
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.10000000149011612
             }
           },
           {
-            "name": "icon/base/300",
+            "name": "overlays/200-invert",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
               "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.4588235318660736,
-              "g": 0.4588235318660736,
-              "b": 0.4588235318660736,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/base/invert",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.11764705926179886,
-              "g": 0.11764705926179886,
-              "b": 0.11764705926179886,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/900",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3607843220233917,
-              "g": 0.6470588445663452,
-              "b": 0.9764705896377563,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.08627451211214066,
-              "g": 0.2823529541492462,
-              "b": 0.5058823823928833,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.12156862765550613,
-              "g": 0.37254902720451355,
-              "b": 0.6627451181411743,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6117647290229797,
-              "g": 0.3529411852359772,
-              "b": 0.8705882430076599,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "icon/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/900",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
             ],
             "value": {
               "r": 1,
               "g": 1,
               "b": 1,
-              "a": 1
+              "a": 0.10000000149011612
             }
           },
           {
-            "name": "stroke/base/500",
+            "name": "overlays/100",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05000000074505806
+            }
+          },
+          {
+            "name": "border/500",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
@@ -2250,63 +654,49 @@
             }
           },
           {
-            "name": "stroke/base/300",
+            "name": "border/300",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.3019607961177826,
-              "g": 0.3019607961177826,
-              "b": 0.3019607961177826,
+              "r": 0.6961822509765625,
+              "g": 0.6961822509765625,
+              "b": 0.6961822509765625,
               "a": 1
             }
           },
           {
-            "name": "stroke/base/100",
+            "name": "border/100",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.12156862765550613,
-              "g": 0.12156862765550613,
-              "b": 0.12156862765550613,
+              "r": 0.8784313797950745,
+              "g": 0.8784313797950745,
+              "b": 0.8784313797950745,
               "a": 1
             }
           },
           {
-            "name": "stroke/primary/900",
+            "name": "danger/900",
             "type": "COLOR",
             "scopes": [
-              "SHAPE_FILL",
+              "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
+              "r": 0.8352941274642944,
+              "g": 0.05882352963089943,
+              "b": 0.3294117748737335,
               "a": 1
             }
           },
           {
-            "name": "stroke/base/disabled",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.25874024629592896,
-              "g": 0.25874024629592896,
-              "b": 0.25874024629592896,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/base/white",
+            "name": "border/white",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
@@ -2320,175 +710,35 @@
             }
           },
           {
-            "name": "stroke/primary/500",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.3607843220233917,
-              "g": 0.6470588445663452,
-              "b": 0.9764705896377563,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/900",
+            "name": "danger/500",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.2862745225429535,
-              "g": 0.9215686321258545,
-              "b": 0.5607843399047852,
+              "r": 0.9529411792755127,
+              "g": 0.07058823853731155,
+              "b": 0.3764705955982208,
               "a": 1
             }
           },
           {
-            "name": "stroke/primary/500-hover",
+            "name": "border/disabled",
             "type": "COLOR",
             "scopes": [
               "SHAPE_FILL",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.5215686559677124,
-              "g": 0.7333333492279053,
-              "b": 0.9803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/200",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.08627451211214066,
-              "g": 0.2823529541492462,
-              "b": 0.5058823823928833,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/primary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.12156862765550613,
-              "g": 0.37254902720451355,
-              "b": 0.6627451181411743,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/900",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
+              "r": 0.8627451062202454,
+              "g": 0.8627451062202454,
               "b": 0.8627451062202454,
               "a": 1
             }
           },
           {
-            "name": "stroke/secondary/500",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.5764706134796143,
-              "g": 0.32549020648002625,
-              "b": 0.8274509906768799,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/500-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.6627451181411743,
-              "g": 0.4627451002597809,
-              "b": 0.8627451062202454,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/200",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.3019607961177826,
-              "g": 0.09803921729326248,
-              "b": 0.49803921580314636,
-              "a": 1
-            }
-          },
-          {
-            "name": "stroke/secondary/200-hover",
-            "type": "COLOR",
-            "scopes": [
-              "SHAPE_FILL",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.3490196168422699,
-              "g": 0.11372549086809158,
-              "b": 0.5803921818733215,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/success/500",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.09019608050584793,
-              "g": 0.7882353067398071,
-              "b": 0.3921568691730499,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/900",
-            "type": "COLOR",
-            "scopes": [
-              "ALL_FILLS",
-              "STROKE_COLOR"
-            ],
-            "value": {
-              "r": 0.9686274528503418,
-              "g": 0.40784314274787903,
-              "b": 0.6039215922355652,
-              "a": 1
-            }
-          },
-          {
-            "name": "feedback/danger/500",
+            "name": "danger/500-hover",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2502,63 +752,77 @@
             }
           },
           {
-            "name": "feedback/danger/500-hover",
+            "name": "danger/300",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.9686274528503418,
-              "g": 0.40784314274787903,
-              "b": 0.6039215922355652,
+              "r": 0.9725490212440491,
+              "g": 0.4431372582912445,
+              "b": 0.6274510025978088,
               "a": 1
             }
           },
           {
-            "name": "feedback/danger/100",
+            "name": "danger/100",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.40784314274787903,
-              "g": 0.0235294122248888,
-              "b": 0.15294118225574493,
+              "r": 0.9960784316062927,
+              "g": 0.9058823585510254,
+              "b": 0.9372549057006836,
               "a": 1
             }
           },
           {
-            "name": "feedback/danger/100-hover",
+            "name": "danger/100-hover",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.48627451062202454,
-              "g": 0.027450980618596077,
-              "b": 0.18039216101169586,
+              "r": 0.9921568632125854,
+              "g": 0.8156862854957581,
+              "b": 0.8745098114013672,
               "a": 1
             }
           },
           {
-            "name": "feedback/warning/900",
+            "name": "warning/900",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
               "STROKE_COLOR"
             ],
             "value": {
-              "r": 0.9764705896377563,
-              "g": 0.7647058963775635,
-              "b": 0.43529412150382996,
+              "r": 0.6941176652908325,
+              "g": 0.43921568989753723,
+              "b": 0.03529411926865578,
               "a": 1
             }
           },
           {
-            "name": "feedback/warning/500",
+            "name": "warning/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9607843160629272,
+              "g": 0.6470588445663452,
+              "b": 0.1411764770746231,
+              "a": 1
+            }
+          },
+          {
+            "name": "warning/500-hover",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2572,7 +836,966 @@
             }
           },
           {
-            "name": "feedback/warning/500-hover",
+            "name": "warning/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9921568632125854,
+              "g": 0.9215686321258545,
+              "b": 0.8117647171020508,
+              "a": 1
+            }
+          },
+          {
+            "name": "warning/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9843137264251709,
+              "g": 0.8392156958580017,
+              "b": 0.6117647290229797,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.05098039284348488,
+              "g": 0.45098039507865906,
+              "b": 0.2235294133424759,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/600",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.07450980693101883,
+              "g": 0.6549019813537598,
+              "b": 0.32549020648002625,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.09019608050584793,
+              "g": 0.7882353067398071,
+              "b": 0.3921568691730499,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.07450980693101883,
+              "g": 0.6549019813537598,
+              "b": 0.32549020648002625,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.686274528503418,
+              "g": 0.9647058844566345,
+              "b": 0.8078431487083435,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.47058823704719543,
+              "g": 0.9411764740943909,
+              "b": 0.6745098233222961,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/white",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/disabled",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 0.8627451062202454,
+              "g": 0.8627451062202454,
+              "b": 0.8627451062202454,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/white",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/disabled",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.8627451062202454,
+              "g": 0.8627451062202454,
+              "b": 0.8627451062202454,
+              "a": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "dark",
+        "modeId": "3919:22",
+        "variables": [
+          {
+            "name": "primary/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5215686559677124,
+              "g": 0.7333333492279053,
+              "b": 0.9803921580314636,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.07450980693101883,
+              "g": 0.5058823823928833,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.6627451181411743,
+              "g": 0.4627451002597809,
+              "b": 0.8627451062202454,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5372549295425415,
+              "g": 0.22745098173618317,
+              "b": 0.8470588326454163,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.6117647290229797,
+              "g": 0.3529411852359772,
+              "b": 0.8705882430076599,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/500-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.5372549295425415,
+              "g": 0.22745098173618317,
+              "b": 0.8470588326454163,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.3019607961177826,
+              "g": 0.09803921729326248,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.40392157435417175,
+              "g": 0.13333334028720856,
+              "b": 0.6745098233222961,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/200-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.3019607961177826,
+              "g": 0.09803921729326248,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.2235294133424759,
+              "g": 0.07450980693101883,
+              "b": 0.3686274588108063,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.3019607961177826,
+              "g": 0.09803921729326248,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          },
+          {
+            "name": "secondary/100-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.2235294133424759,
+              "g": 0.07450980693101883,
+              "b": 0.3686274588108063,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.23529411852359772,
+              "g": 0.5921568870544434,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/500-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0.07450980693101883,
+              "g": 0.5058823823928833,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.2666666805744171,
+              "b": 0.572549045085907,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.3137255012989044,
+              "b": 0.6745098233222961,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/200-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.2666666805744171,
+              "b": 0.572549045085907,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.1921568661928177,
+              "b": 0.4117647111415863,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.22745098173618317,
+              "b": 0.48627451062202454,
+              "a": 1
+            }
+          },
+          {
+            "name": "primary/100-pressed",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0.1921568661928177,
+              "b": 0.4117647111415863,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/800",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.9019607901573181,
+              "g": 0.9019607901573181,
+              "b": 0.9019607901573181,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/800-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/300",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.2666666805744171,
+              "g": 0.2666666805744171,
+              "b": 0.2666666805744171,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/300-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.21960784494876862,
+              "g": 0.21960784494876862,
+              "b": 0.21960784494876862,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/200",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.1725490242242813,
+              "g": 0.1725490242242813,
+              "b": 0.1725490242242813,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/200-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.11764705926179886,
+              "g": 0.11764705926179886,
+              "b": 0.11764705926179886,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/100",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.21960784494876862,
+              "g": 0.21960784494876862,
+              "b": 0.21960784494876862,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/invert",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "bg/disabled",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.16621093451976776,
+              "g": 0.16621093451976776,
+              "b": 0.16621093451976776,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/900",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/500",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 0.7019608020782471,
+              "g": 0.7019608020782471,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/300",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 0.4588235318660736,
+              "g": 0.4588235318660736,
+              "b": 0.4588235318660736,
+              "a": 1
+            }
+          },
+          {
+            "name": "text/invert",
+            "type": "COLOR",
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/900",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/500",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.7019608020782471,
+              "g": 0.7019608020782471,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/300",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.4588235318660736,
+              "g": 0.4588235318660736,
+              "b": 0.4588235318660736,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/invert",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.11764705926179886,
+              "g": 0.11764705926179886,
+              "b": 0.11764705926179886,
+              "a": 1
+            }
+          },
+          {
+            "name": "border/900",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "overlays/400",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.800000011920929
+            }
+          },
+          {
+            "name": "overlays/300",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.5
+            }
+          },
+          {
+            "name": "overlays/300-invert",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "overlays/200",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.20000000298023224
+            }
+          },
+          {
+            "name": "overlays/200-invert",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 0.10000000149011612
+            }
+          },
+          {
+            "name": "overlays/100",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 0.05000000074505806
+            }
+          },
+          {
+            "name": "border/500",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.501960813999176,
+              "g": 0.501960813999176,
+              "b": 0.501960813999176,
+              "a": 1
+            }
+          },
+          {
+            "name": "border/300",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          },
+          {
+            "name": "border/100",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.12156862765550613,
+              "g": 0.12156862765550613,
+              "b": 0.12156862765550613,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/900",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9686274528503418,
+              "g": 0.40784314274787903,
+              "b": 0.6039215922355652,
+              "a": 1
+            }
+          },
+          {
+            "name": "border/white",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9607843160629272,
+              "g": 0.22745098173618317,
+              "b": 0.48235294222831726,
+              "a": 1
+            }
+          },
+          {
+            "name": "border/disabled",
+            "type": "COLOR",
+            "scopes": [
+              "SHAPE_FILL",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.25874024629592896,
+              "g": 0.25874024629592896,
+              "b": 0.25874024629592896,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9686274528503418,
+              "g": 0.40784314274787903,
+              "b": 0.6039215922355652,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/300",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.572549045085907,
+              "g": 0.04313725605607033,
+              "b": 0.22745098173618317,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/100",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.40784314274787903,
+              "g": 0.0235294122248888,
+              "b": 0.15294118225574493,
+              "a": 1
+            }
+          },
+          {
+            "name": "danger/100-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.48627451062202454,
+              "g": 0.027450980618596077,
+              "b": 0.18039216101169586,
+              "a": 1
+            }
+          },
+          {
+            "name": "warning/900",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2586,7 +1809,35 @@
             }
           },
           {
-            "name": "feedback/warning/100",
+            "name": "warning/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9686274528503418,
+              "g": 0.7019608020782471,
+              "b": 0.27843138575553894,
+              "a": 1
+            }
+          },
+          {
+            "name": "warning/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.9764705896377563,
+              "g": 0.7647058963775635,
+              "b": 0.43529412150382996,
+              "a": 1
+            }
+          },
+          {
+            "name": "warning/100",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2600,7 +1851,7 @@
             }
           },
           {
-            "name": "feedback/warning/100-hover",
+            "name": "warning/100-hover",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2614,7 +1865,7 @@
             }
           },
           {
-            "name": "feedback/success/500-hover",
+            "name": "success/900",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2628,7 +1879,49 @@
             }
           },
           {
-            "name": "feedback/success/100",
+            "name": "success/600",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.2862745225429535,
+              "g": 0.9215686321258545,
+              "b": 0.5607843399047852,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/500",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.09019608050584793,
+              "g": 0.7882353067398071,
+              "b": 0.3921568691730499,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/500-hover",
+            "type": "COLOR",
+            "scopes": [
+              "ALL_FILLS",
+              "STROKE_COLOR"
+            ],
+            "value": {
+              "r": 0.2862745225429535,
+              "g": 0.9215686321258545,
+              "b": 0.5607843399047852,
+              "a": 1
+            }
+          },
+          {
+            "name": "success/100",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2642,7 +1935,7 @@
             }
           },
           {
-            "name": "feedback/success/100-hover",
+            "name": "success/100-hover",
             "type": "COLOR",
             "scopes": [
               "ALL_FILLS",
@@ -2656,7 +1949,7 @@
             }
           },
           {
-            "name": "text/base/white",
+            "name": "text/white",
             "type": "COLOR",
             "scopes": [
               "TEXT_FILL"
@@ -2669,11 +1962,10 @@
             }
           },
           {
-            "name": "icon/base/disabled",
+            "name": "text/disabled",
             "type": "COLOR",
             "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
+              "TEXT_FILL"
             ],
             "value": {
               "r": 0.25874024629592896,
@@ -2683,7 +1975,7 @@
             }
           },
           {
-            "name": "icon/base/white",
+            "name": "icon/white",
             "type": "COLOR",
             "scopes": [
               "FRAME_FILL",
@@ -2693,6 +1985,20 @@
               "r": 1,
               "g": 1,
               "b": 1,
+              "a": 1
+            }
+          },
+          {
+            "name": "icon/disabled",
+            "type": "COLOR",
+            "scopes": [
+              "FRAME_FILL",
+              "SHAPE_FILL"
+            ],
+            "value": {
+              "r": 0.25874024629592896,
+              "g": 0.25874024629592896,
+              "b": 0.25874024629592896,
               "a": 1
             }
           }
@@ -2897,7 +2203,7 @@
             "scopes": [
               "GAP"
             ],
-            "value": 16
+            "value": 24
           },
           {
             "name": "section/padding/py-100",
@@ -2905,7 +2211,15 @@
             "scopes": [
               "GAP"
             ],
-            "value": 0
+            "value": 24
+          },
+          {
+            "name": "section/padding/py-700",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 80
           },
           {
             "name": "section/gap/100",
@@ -3012,14 +2326,6 @@
             "value": 0
           },
           {
-            "name": "container/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 679
-          },
-          {
             "name": "container/gap/100-negative",
             "type": "FLOAT",
             "scopes": [
@@ -3028,12 +2334,28 @@
             "value": -40
           },
           {
+            "name": "container/max-width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 679
+          },
+          {
             "name": "container/min-width/100",
             "type": "FLOAT",
             "scopes": [
               "WIDTH_HEIGHT"
             ],
             "value": 320
+          },
+          {
+            "name": "section/min-height/100vh",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 0
           }
         ]
       },
@@ -3239,7 +2561,15 @@
             "scopes": [
               "GAP"
             ],
-            "value": 0
+            "value": 32
+          },
+          {
+            "name": "section/padding/py-700",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 80
           },
           {
             "name": "section/gap/100",
@@ -3346,14 +2676,6 @@
             "value": 0
           },
           {
-            "name": "container/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 1023
-          },
-          {
             "name": "container/gap/100-negative",
             "type": "FLOAT",
             "scopes": [
@@ -3362,12 +2684,28 @@
             "value": -40
           },
           {
+            "name": "container/max-width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 1023
+          },
+          {
             "name": "container/min-width/100",
             "type": "FLOAT",
             "scopes": [
               "WIDTH_HEIGHT"
             ],
             "value": 680
+          },
+          {
+            "name": "section/min-height/100vh",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 0
           }
         ]
       },
@@ -3565,7 +2903,7 @@
             "scopes": [
               "GAP"
             ],
-            "value": 64
+            "value": 32
           },
           {
             "name": "section/padding/py-100",
@@ -3573,7 +2911,15 @@
             "scopes": [
               "GAP"
             ],
-            "value": 0
+            "value": 32
+          },
+          {
+            "name": "section/padding/py-700",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 120
           },
           {
             "name": "section/gap/100",
@@ -3680,14 +3026,6 @@
             "value": 0
           },
           {
-            "name": "container/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 1439
-          },
-          {
             "name": "container/gap/100-negative",
             "type": "FLOAT",
             "scopes": [
@@ -3696,12 +3034,28 @@
             "value": -40
           },
           {
+            "name": "container/max-width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 1439
+          },
+          {
             "name": "container/min-width/100",
             "type": "FLOAT",
             "scopes": [
               "WIDTH_HEIGHT"
             ],
             "value": 1024
+          },
+          {
+            "name": "section/min-height/100vh",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 0
           }
         ]
       },
@@ -3899,7 +3253,7 @@
             "scopes": [
               "GAP"
             ],
-            "value": 80
+            "value": 32
           },
           {
             "name": "section/padding/py-100",
@@ -3907,7 +3261,15 @@
             "scopes": [
               "GAP"
             ],
-            "value": 0
+            "value": 32
+          },
+          {
+            "name": "section/padding/py-700",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 120
           },
           {
             "name": "section/gap/100",
@@ -4014,14 +3376,6 @@
             "value": 0
           },
           {
-            "name": "container/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 1920
-          },
-          {
             "name": "container/gap/100-negative",
             "type": "FLOAT",
             "scopes": [
@@ -4030,12 +3384,28 @@
             "value": -40
           },
           {
+            "name": "container/max-width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 1920
+          },
+          {
             "name": "container/min-width/100",
             "type": "FLOAT",
             "scopes": [
               "WIDTH_HEIGHT"
             ],
             "value": 1440
+          },
+          {
+            "name": "section/min-height/100vh",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 0
           }
         ]
       }
@@ -4438,7 +3808,7 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 400
+            "value": 500
           },
           {
             "name": "btn/400/spacing",
@@ -4638,10 +4008,50 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 450
+            "value": 500
           },
           {
             "name": "btn/200/spacing",
+            "type": "FLOAT",
+            "scopes": [
+              "LETTER_SPACING"
+            ],
+            "value": 0
+          },
+          {
+            "name": "input/650/font",
+            "type": "STRING",
+            "scopes": [
+              "FONT_FAMILY"
+            ],
+            "value": "Inter"
+          },
+          {
+            "name": "input/650/size",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_SIZE"
+            ],
+            "value": 16
+          },
+          {
+            "name": "input/650/line",
+            "type": "FLOAT",
+            "scopes": [
+              "LINE_HEIGHT"
+            ],
+            "value": 24
+          },
+          {
+            "name": "input/650/weight",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_WEIGHT"
+            ],
+            "value": 500
+          },
+          {
+            "name": "input/650/spacing",
             "type": "FLOAT",
             "scopes": [
               "LETTER_SPACING"
@@ -5044,7 +4454,7 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 400
+            "value": 500
           },
           {
             "name": "btn/400/spacing",
@@ -5244,10 +4654,50 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 450
+            "value": 500
           },
           {
             "name": "btn/200/spacing",
+            "type": "FLOAT",
+            "scopes": [
+              "LETTER_SPACING"
+            ],
+            "value": 0
+          },
+          {
+            "name": "input/650/font",
+            "type": "STRING",
+            "scopes": [
+              "FONT_FAMILY"
+            ],
+            "value": "Inter"
+          },
+          {
+            "name": "input/650/size",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_SIZE"
+            ],
+            "value": 16
+          },
+          {
+            "name": "input/650/line",
+            "type": "FLOAT",
+            "scopes": [
+              "LINE_HEIGHT"
+            ],
+            "value": 24
+          },
+          {
+            "name": "input/650/weight",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_WEIGHT"
+            ],
+            "value": 500
+          },
+          {
+            "name": "input/650/spacing",
             "type": "FLOAT",
             "scopes": [
               "LETTER_SPACING"
@@ -5650,7 +5100,7 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 400
+            "value": 500
           },
           {
             "name": "btn/400/spacing",
@@ -5714,7 +5164,7 @@
             "scopes": [
               "FONT_SIZE"
             ],
-            "value": 18
+            "value": 16
           },
           {
             "name": "input/600/line",
@@ -5850,10 +5300,50 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 450
+            "value": 500
           },
           {
             "name": "btn/200/spacing",
+            "type": "FLOAT",
+            "scopes": [
+              "LETTER_SPACING"
+            ],
+            "value": 0
+          },
+          {
+            "name": "input/650/font",
+            "type": "STRING",
+            "scopes": [
+              "FONT_FAMILY"
+            ],
+            "value": "Inter"
+          },
+          {
+            "name": "input/650/size",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_SIZE"
+            ],
+            "value": 16
+          },
+          {
+            "name": "input/650/line",
+            "type": "FLOAT",
+            "scopes": [
+              "LINE_HEIGHT"
+            ],
+            "value": 24
+          },
+          {
+            "name": "input/650/weight",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_WEIGHT"
+            ],
+            "value": 500
+          },
+          {
+            "name": "input/650/spacing",
             "type": "FLOAT",
             "scopes": [
               "LETTER_SPACING"
@@ -6256,7 +5746,7 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 400
+            "value": 500
           },
           {
             "name": "btn/400/spacing",
@@ -6320,7 +5810,7 @@
             "scopes": [
               "FONT_SIZE"
             ],
-            "value": 18
+            "value": 16
           },
           {
             "name": "input/600/line",
@@ -6456,10 +5946,50 @@
             "scopes": [
               "FONT_WEIGHT"
             ],
-            "value": 450
+            "value": 500
           },
           {
             "name": "btn/200/spacing",
+            "type": "FLOAT",
+            "scopes": [
+              "LETTER_SPACING"
+            ],
+            "value": 0
+          },
+          {
+            "name": "input/650/font",
+            "type": "STRING",
+            "scopes": [
+              "FONT_FAMILY"
+            ],
+            "value": "Inter"
+          },
+          {
+            "name": "input/650/size",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_SIZE"
+            ],
+            "value": 16
+          },
+          {
+            "name": "input/650/line",
+            "type": "FLOAT",
+            "scopes": [
+              "LINE_HEIGHT"
+            ],
+            "value": 24
+          },
+          {
+            "name": "input/650/weight",
+            "type": "FLOAT",
+            "scopes": [
+              "FONT_WEIGHT"
+            ],
+            "value": 500
+          },
+          {
+            "name": "input/650/spacing",
             "type": "FLOAT",
             "scopes": [
               "LETTER_SPACING"
@@ -6899,15 +6429,7 @@
             "value": 9999
           },
           {
-            "name": "stroke/0",
-            "type": "FLOAT",
-            "scopes": [
-              "STROKE_FLOAT"
-            ],
-            "value": 0
-          },
-          {
-            "name": "stroke/px",
+            "name": "border/border-1",
             "type": "FLOAT",
             "scopes": [
               "STROKE_FLOAT"
@@ -6915,7 +6437,7 @@
             "value": 1
           },
           {
-            "name": "stroke/0,5",
+            "name": "border/border-2",
             "type": "FLOAT",
             "scopes": [
               "STROKE_FLOAT"
@@ -6923,7 +6445,7 @@
             "value": 2
           },
           {
-            "name": "stroke/1",
+            "name": "border/border-4",
             "type": "FLOAT",
             "scopes": [
               "STROKE_FLOAT"
@@ -6971,7 +6493,7 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": 16
+            "value": 40
           },
           {
             "name": "shadow/600/blur",
@@ -6979,7 +6501,7 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": 32
+            "value": 104
           },
           {
             "name": "shadow/600/spread",
@@ -6999,7 +6521,7 @@
               "r": 0,
               "g": 0,
               "b": 0,
-              "a": 0.4000000059604645
+              "a": 0.10000000149011612
             }
           },
           {
@@ -7040,7 +6562,7 @@
             "scopes": [
               "EFFECT_FLOAT"
             ],
-            "value": -4
+            "value": 0
           },
           {
             "name": "shadow/400/color",
@@ -7052,7 +6574,7 @@
               "r": 0,
               "g": 0,
               "b": 0,
-              "a": 0.20000000298023224
+              "a": 0.05000000074505806
             }
           },
           {
@@ -8831,10 +8353,7 @@
           {
             "name": "bg/base/300",
             "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 1,
@@ -8845,10 +8364,7 @@
           {
             "name": "bg/base/300-hover",
             "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 1,
@@ -8859,9 +8375,7 @@
           {
             "name": "text/base/300",
             "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 0.2371593415737152,
               "g": 0.2371593415737152,
@@ -8872,9 +8386,7 @@
           {
             "name": "text/base/300-hover",
             "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 0.3592422604560852,
               "g": 0.3592422604560852,
@@ -8891,10 +8403,7 @@
           {
             "name": "bg/base/300",
             "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 0.5232248902320862,
@@ -8905,10 +8414,7 @@
           {
             "name": "bg/base/300-hover",
             "type": "COLOR",
-            "scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 0.5232248902320862,
@@ -8919,9 +8425,7 @@
           {
             "name": "text/base/300",
             "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 0.5232248902320862,
@@ -8932,9 +8436,7 @@
           {
             "name": "text/base/300-hover",
             "type": "COLOR",
-            "scopes": [
-              "TEXT_FILL"
-            ],
+            "scopes": [],
             "value": {
               "r": 1,
               "g": 0.5232248902320862,
