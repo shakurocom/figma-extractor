@@ -1,0 +1,17 @@
+# Development
+
+There are 2 ways to develop:
+
+1. Change and run tests on local machine:
+
+   - add a new functionality or change any existing
+   - change `variables.json` file in the root folder
+   - change related tests of changed functionality
+
+2. Link this repository with your real project as its dependence:
+   - In `figma-extractor` repository, it's necessary to run `yarn link`. It creates a link inside the cache folder of yarn with name: `@shakuroinc/figma-extractor`
+   - Inside your project, you need to run `yarn link @shakuroinc/figma-extractor`. It should replace your real package `@shakuroinc/figma-extractor` in node_module to earlier created link as symbol link folder.
+   - Inside `figma-extractor` folder, you need to launch `yarn build` every time after any changes. It's necessary to create compiled JS files into `dist` folder for proper work.
+   - Inside project folder, you can run `yarn extract` to launch your linked `figma-extractor`.
+
+> Remember! You need to launch `yarn build` after any changes in `figma-extractor` repository
