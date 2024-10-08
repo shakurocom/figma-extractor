@@ -22,6 +22,16 @@ export type EffectStyle = {
   [x: string]: GroupedEffectProperty;
 };
 
+const getComplexValue = <T>({
+  value,
+  postfix = '',
+  fallback = '',
+}: {
+  value: T;
+  postfix?: string;
+  fallback?: string;
+}) => (value !== undefined ? value + postfix : fallback);
+
 function groupEffectProperties(properties: Variable[]) {
   const grouped: { [key: string]: GroupedEffectProperty } = {};
 
@@ -77,9 +87,10 @@ export const getEffectStyles = (modes: Mode[], config: Config) => {
         if (value.type === 'shadow') {
           return {
             ...acc,
-            [keyName?.(`${item.name}/${key}`)]: `${value.x}px ${value.y}px ${
-              value.spread
-            }px ${formattedColor(value.color)}`,
+            [keyName?.(`${item.name}/${key}`)]: `${value.x}px ${value.y}px ${getComplexValue({
+              value: value.blur,
+              postfix: 'px',
+            })} ${value.spread}px ${formattedColor(value.color)}`,
           };
         }
         if (value.type === 'backdrop-blur' || value.type === 'blur') {
