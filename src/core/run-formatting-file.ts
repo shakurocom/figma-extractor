@@ -6,7 +6,7 @@ import shell from 'shelljs';
 // which is confusing a bit, because it is impossible to handle promise fulfillment.
 export const runFormattingFile = (filePath: string) => {
   // NOTE: this code should still be invoked according to the original implementation.
-  shell.exec(`yarn eslint ${filePath} --fix`);
+  shell.exec(`npx eslint ${filePath} --fix`);
 
   console.log(`${filePath} is processed by formatting tool`);
 };
