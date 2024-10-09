@@ -16,7 +16,7 @@ export const writeFile = (content: string, filePath: string) => {
 
   try {
     fs.writeFileSync(filePath, content);
-    shell.exec(`yarn eslint ${path.join(filePath)} --fix`);
+    shell.exec(`npx eslint ${path.join(filePath)} --fix`);
     console.log(`Generate ${filePath} is completed`);
   } catch {
     console.log(`Formatting ${filePath} file...`);
