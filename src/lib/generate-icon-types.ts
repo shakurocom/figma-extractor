@@ -13,7 +13,6 @@ const typeIconsTemplate = (names: string[]) =>
 export const generateIconTypes = (iconNames: string[], path: string) => {
   fs.writeFile(`${path}/types.ts`, typeIconsTemplate(iconNames), err => {
     if (err) console.log(err);
-    shell.exec(`npx eslint ${path}/types.ts --fix`);
     console.log('Wrote icons type ');
   });
 };

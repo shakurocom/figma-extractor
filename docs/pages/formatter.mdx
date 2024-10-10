@@ -1,0 +1,21 @@
+# Add Prettier formatter into your project
+
+If you want to format code after fetching data from Figma you should add an extra line into `package.json` inside `packages/ui`.
+
+Inside that `package.json` in `scripts` block you should add:
+
+```json copy
+"postextract": "prettier --write $(git ls-files --modified ./theme) \"./atoms/icon/types.ts\""
+```
+
+Finally, it should looks like:
+
+```json filename="package.json" {5}
+  ...
+  "scripts": {
+    ...
+    "extract": "figma-extract",
+    "postextract": "prettier --write $(git ls-files --modified ./theme) \"./atoms/icon/types.ts\""
+  },
+  ...
+```
