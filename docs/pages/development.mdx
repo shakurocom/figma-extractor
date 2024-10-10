@@ -1,6 +1,6 @@
 # Development
 
-There are 2 ways to develop:
+There are 3 ways to develop:
 
 1. Change and run tests on local machine:
 
@@ -9,9 +9,20 @@ There are 2 ways to develop:
    - change related tests of changed functionality
 
 2. Link this repository with your real project as its dependence:
-   - In `figma-extractor` repository, it's necessary to run `yarn link`. It creates a link inside the cache folder of yarn with name: `@shakuroinc/figma-extractor`
-   - Inside your project, you need to run `yarn link @shakuroinc/figma-extractor`. It should replace your real package `@shakuroinc/figma-extractor` in node_module to earlier created link as symbol link folder.
+   - In `figma-extractor` repository, it's necessary to run `pnpm link --global`. It creates a link inside the cache folder of pnpm with name: `@shakuroinc/figma-extractor`
+   - Inside your project, you need to run `pnpm link --global @shakuroinc/figma-extractor`. It should replace your real package `@shakuroinc/figma-extractor` in node_module to earlier created link as symbol link folder.
    - Inside `figma-extractor` folder, you need to launch `yarn build` every time after any changes. It's necessary to create compiled JS files into `dist` folder for proper work.
-   - Inside project folder, you can run `yarn extract` to launch your linked `figma-extractor`.
+   - Inside project folder, you can run `pnpm extract` to launch your linked `figma-extractor`.
 
 > Remember! You need to launch `yarn build` after any changes in `figma-extractor` repository
+
+> Note: In this case, you create a just a link between extractor and your project without installing `peerDependecies` of `figma-extractor`
+> If you want to install `peerDependecies` you should use 3 way which is described below
+
+3. Link this repository with your real project through file protocol:
+   - Inside your project, you need replace the line `"@shakuroinc/figma-extractor": "{number of your current version}"` inside `package.json` to `"@shakuroinc/figma-extractor": "file:{here the absolute path of figma-extractor folder}"`.
+   - This way creates link between your project and figma-extractor and installs all `peerDependecies` of figma-extractor.
+   - Launch `pnpm install` in the root of your project to create a link
+   - Use `pnpm extract` as usually
+
+> Remember! You need to launch `yarn build` as well when there are any changes in `figma-extractor` repository
