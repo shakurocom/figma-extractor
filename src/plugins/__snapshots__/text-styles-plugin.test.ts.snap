@@ -5,7 +5,10 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     
-      const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
+      const fontFamily = {
+        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+
+      };
 
       const textVariants = {'body-500/bs__extra': {
       
@@ -594,7 +597,10 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     
-      const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
+      const fontFamily = {
+        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+
+      };
 
       const textVariants = {'body-500-bs': {
       
@@ -1183,7 +1189,10 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     
-      const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
+      const fontFamily = {
+        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+
+      };
 
       const textVariants = {'body-500-bs': {
       
@@ -1772,7 +1781,10 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     
-      const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
+      const fontFamily = {
+        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+
+      };
 
       const textVariants = {'body-500-bs': {
       
@@ -2361,7 +2373,10 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
     
-      const fontFamily = {"font1":"'Inter', Arial, sans-serif"};
+      const fontFamily = {
+        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+
+      };
 
       const textVariants = {'body-500-bs': {
       

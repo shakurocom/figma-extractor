@@ -29,7 +29,7 @@ export const textStylesPlugin: Plugin = (
 
     if (result.fontFamily) {
       for (const [fontTitle, fontValue] of Object.entries(result.fontFamily)) {
-        log('[info:text-styles/fonts] >>> ', `'${fontTitle}' => '${fontValue}'`);
+        log('[info:text-styles/fonts] >>> ', `'${fontTitle}' => '${fontValue.title}'`);
       }
     }
 
@@ -43,12 +43,13 @@ export const textStylesPlugin: Plugin = (
 
     const textStyles = sortTextStyles(rawTextStyle);
 
-    const fontFamilyTemplate = JSON.stringify(result.fontFamily);
     const textStylesTemplate = `{${textStyles.join()}};`;
     writeFile(
       addEslintDisableRules(
         `
-      const fontFamily = ${fontFamilyTemplate};
+      const fontFamily = {
+        ${Object.entries(result.fontFamily).map(([key, { title, comment }]) => `${key}: "${title}", ${!!comment ? '// ' + comment : ''}\n`)}
+      };
 
       const textVariants = ${textStylesTemplate};
 
