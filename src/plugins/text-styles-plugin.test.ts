@@ -31,7 +31,7 @@ describe('textStylesPlugin', () => {
     textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/text-styles.js');
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/text-styles.ts');
   });
 
   it('should write generated date for default config', () => {

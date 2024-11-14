@@ -29,7 +29,7 @@ describe('responsivePlugin', () => {
     responsivePlugin(core, { variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
-    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/responsive.js');
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/responsive.ts');
   });
 
   it('should write screens js file and run formatting tool', () => {
@@ -49,6 +49,6 @@ describe('responsivePlugin', () => {
 
     responsivePlugin(core, { variables } as any);
     expect(core.writeFile).toHaveBeenCalled();
-    expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe('/export-path/screens.js');
+    expect((core.writeFile as jest.Mock).mock.calls[1][1]).toBe('/export-path/screens.ts');
   });
 });

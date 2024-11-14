@@ -228,32 +228,32 @@ describe('effectsThemePlugin', () => {
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
-      '/export-path/effects/light/index.js',
+      '/export-path/effects/light/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
-      '/export-path/effects/light/index.js',
+      '/export-path/effects/light/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
-      '/export-path/effects/dark/index.js',
+      '/export-path/effects/dark/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
-      '/export-path/effects/dark/index.js',
+      '/export-path/effects/dark/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
-      '/export-path/effects/monochrome/index.js',
+      '/export-path/effects/monochrome/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-      '/export-path/effects/monochrome/index.js',
+      '/export-path/effects/monochrome/index.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe(
-      '/export-path/effects/with-vars.js',
+      '/export-path/effects/with-vars.ts',
     );
     expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
-      '/export-path/effects/with-vars.js',
+      '/export-path/effects/with-vars.ts',
     );
-    expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.js');
+    expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.ts');
     expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
-      '/export-path/effects/index.js',
+      '/export-path/effects/index.ts',
     );
   });
 
@@ -353,32 +353,32 @@ describe('effectsThemePlugin', () => {
 
       expect(core.writeFile).toHaveBeenCalled();
       expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe(
-        '/export-path/effects/light/index.js',
+        '/export-path/effects/light/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot(
-        '/export-path/effects/light/index.js',
+        '/export-path/effects/light/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[2][1]).toBe(
-        '/export-path/effects/dark-blue/index.js',
+        '/export-path/effects/dark-blue/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[2][0]).toMatchSnapshot(
-        '/export-path/effects/dark-blue/index.js',
+        '/export-path/effects/dark-blue/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[4][1]).toBe(
-        '/export-path/effects/monochrome/index.js',
+        '/export-path/effects/monochrome/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[4][0]).toMatchSnapshot(
-        '/export-path/effects/monochrome/index.js',
+        '/export-path/effects/monochrome/index.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[6][1]).toBe(
-        '/export-path/effects/with-vars.js',
+        '/export-path/effects/with-vars.ts',
       );
       expect((core.writeFile as jest.Mock).mock.calls[6][0]).toMatchSnapshot(
-        '/export-path/effects/with-vars.js',
+        '/export-path/effects/with-vars.ts',
       );
-      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.js');
+      expect((core.writeFile as jest.Mock).mock.calls[7][1]).toBe('/export-path/effects/index.ts');
       expect((core.writeFile as jest.Mock).mock.calls[7][0]).toMatchSnapshot(
-        '/export-path/effects/index.js',
+        '/export-path/effects/index.ts',
       );
     });
 

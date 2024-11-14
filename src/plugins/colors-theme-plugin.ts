@@ -93,13 +93,13 @@ export const colorsThemePlugin: Plugin = (
 
       const fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
 
-      const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
+      const jsTemplate = `export const colors = ${stringifyRecordsWithSort(jsData)};`;
       writeFile(
         addEslintDisableRules(jsTemplate, [
           'disable-max-lines',
           'disable-typescript-naming-convention',
         ]),
-        path.join(fullPath, 'index.js'),
+        path.join(fullPath, 'index.ts'),
       );
 
       writeFile(cssData, path.join(fullPath, 'vars.css'));
@@ -112,24 +112,24 @@ export const colorsThemePlugin: Plugin = (
           defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
         );
 
-        const jsTemplate = `module.exports = ${stringifyRecordsWithSort(jsData)};`;
+        const jsTemplate = `export const colors = ${stringifyRecordsWithSort(jsData)};`;
         writeFile(
           addEslintDisableRules(jsTemplate, [
             'disable-max-lines',
             'disable-typescript-naming-convention',
           ]),
-          path.join(fullPath, 'with-vars.js'),
+          path.join(fullPath, 'with-vars.ts'),
         );
 
         const jsLegacyData = generateJsColors(variables);
 
-        const jsLegacyTemplate = `module.exports = ${stringifyRecordsWithSort(jsLegacyData)};`;
+        const jsLegacyTemplate = `export const colors = ${stringifyRecordsWithSort(jsLegacyData)};`;
         writeFile(
           addEslintDisableRules(jsLegacyTemplate, [
             'disable-max-lines',
             'disable-typescript-naming-convention',
           ]),
-          path.join(fullPath, 'index.js'),
+          path.join(fullPath, 'index.ts'),
         );
 
         const cssData = generateCSSVariables(variables);

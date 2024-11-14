@@ -68,11 +68,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
 }"
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.js 1`] = `
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/dark-blue/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     
     
     
@@ -81,11 +81,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     "
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.js 1`] = `
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     
     
     
@@ -94,11 +94,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     "
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/light/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     boxShadow: {"100":"0px 1px 4px 0px rgba(0, 0, 0, 0.05)","200":"0px 1px 4px 0px rgba(0, 0, 0, 0.15)","300":"0px 4px 4px -1px rgba(0, 0, 0, 0.15)","400":"0px 16px 32px 0px rgba(0, 0, 0, 0.05)","500":"0px 16px 16px -8px rgba(0, 0, 0, 0.10)","600":"0px 40px 104px -8px rgba(0, 0, 0, 0.10)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
@@ -107,11 +107,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     "
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/monochrome/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     
     
     
@@ -120,11 +120,11 @@ exports[`effectsThemePlugin create theme data with one theme which doesn't exist
     "
 `;
 
-exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
+exports[`effectsThemePlugin create theme data with one theme which doesn't exist in figma should create js files with css variables: /export-path/effects/with-vars.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     boxShadow: {"100":"var(--sh-shadow-100,'')","200":"var(--sh-shadow-200,'')","300":"var(--sh-shadow-300,'')","400":"var(--sh-shadow-400,'')","500":"var(--sh-shadow-500,'')","600":"var(--sh-shadow-600,'')"},
     backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
     blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
@@ -217,11 +217,11 @@ exports[`effectsThemePlugin should create css files with css variables: /export-
 }"
 `;
 
-exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/dark/index.js 1`] = `
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/dark/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     boxShadow: {"100":"0px 0px 0px 1px rgba(255, 255, 255, 0.10)","200":"0px 0px 0px 1px rgba(255, 255, 255, 0.10)","300":"0px 0px 0px 1px rgba(255, 255, 255, 0.10)","400":"0px 0px 0px 1px rgba(255, 255, 255, 0.20)","500":"0px 0px 0px 1px rgba(255, 255, 255, 0.20)","600":"0px 0px 0px 1px rgba(255, 255, 255, 0.20)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
@@ -230,11 +230,11 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     "
 `;
 
-exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/index.js 1`] = `
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     
     
     
@@ -243,11 +243,11 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     "
 `;
 
-exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/light/index.js 1`] = `
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/light/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     boxShadow: {"100":"0px 1px 4px 0px rgba(0, 0, 0, 0.05)","200":"0px 1px 4px 0px rgba(0, 0, 0, 0.15)","300":"0px 4px 4px -1px rgba(0, 0, 0, 0.15)","400":"0px 16px 32px 0px rgba(0, 0, 0, 0.05)","500":"0px 16px 16px -8px rgba(0, 0, 0, 0.10)","600":"0px 40px 104px -8px rgba(0, 0, 0, 0.10)"},
     backdropBlur: {"100":"8px","200":"20px"},
     blur: {"100":"8px","200":"20px","300":"32px"},
@@ -256,11 +256,11 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     "
 `;
 
-exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/monochrome/index.js 1`] = `
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/monochrome/index.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     
     
     
@@ -269,11 +269,11 @@ exports[`effectsThemePlugin should create js files with css variables: /export-p
     "
 `;
 
-exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/with-vars.js 1`] = `
+exports[`effectsThemePlugin should create js files with css variables: /export-path/effects/with-vars.ts 1`] = `
 "
     /* eslint-disable max-lines */
     /* eslint-disable @typescript-eslint/naming-convention */
-    module.exports = {
+    export const effects = {
     boxShadow: {"100":"var(--sh-shadow-100,'')","200":"var(--sh-shadow-200,'')","300":"var(--sh-shadow-300,'')","400":"var(--sh-shadow-400,'')","500":"var(--sh-shadow-500,'')","600":"var(--sh-shadow-600,'')"},
     backdropBlur: {"100":"var(--sh-backdrop-blur-100,'')","200":"var(--sh-backdrop-blur-200,'')"},
     blur: {"100":"var(--sh-blur-100,'')","200":"var(--sh-blur-200,'')","300":"var(--sh-blur-300,'')"},
