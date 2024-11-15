@@ -162,15 +162,13 @@ module.exports = {
 };
 ```
 
-```js filename="/theme/screens.js" copy
-const screens = {
+```js filename="/theme/screens.ts" copy
+export const screens = {
   sm: '600px',
   md: '979px',
   lg: '1200px',
   xl: '1600px',
 };
-
-module.exports = { screens };
 ```
   </Tab>
   <Tab>
@@ -275,15 +273,13 @@ module.exports = {
 };
 ```
 
-```js filename="/theme/screens.js" copy
-const screens = {
+```js filename="/theme/screens.ts" copy
+export const screens = {
   sm: '600px',
   md: '979px',
   lg: '1200px',
   xl: '1600px',
 };
-
-module.exports = { screens };
 ```
   </Tab>
   <Tab>
@@ -409,15 +405,13 @@ module.exports = {
 };
 ```
 
-```js filename="/theme/screens.js" copy
-const screens = {
+```js filename="/theme/screens.ts" copy
+export const screens = {
   sm: '600px',
   md: '979px',
   lg: '1200px',
   xl: '1600px',
 };
-
-module.exports = { screens };
 ```
   </Tab>
 </Tabs>
@@ -453,7 +447,7 @@ Styles like:
 ```
 
 will be transformed:
-```js filename="text-styles.js"
+```js filename="text-styles.ts"
 "heading/h500": {
   fontSize: '12px',
   '@media (min-width: 600): {
@@ -502,8 +496,8 @@ export const THEMES = ['light', 'dark', 'blue'];
 export type Theme = typeof THEMES[number];
 ```
 
-```jsx filename="/ui/theme/colors/dark/index.js"
-module.exports = {
+```jsx filename="/ui/theme/colors/dark/index.ts"
+export const colors = {
     "text-txt600":"#000000",
     "text-txt700":"#000000",
     "text-txt800":"#000000",
@@ -511,8 +505,8 @@ module.exports = {
 };
 ```
 
-```jsx filename="/ui/theme/colors/light/index.js"
-module.exports = {
+```jsx filename="/ui/theme/colors/light/index.ts"
+export const colors = {
     "text-txt600":"#ffffff",
     "text-txt700":"#ffffff",
     "text-txt800":"#ffffff",
@@ -520,14 +514,14 @@ module.exports = {
 };
 ```
 
-```jsx filename="/ui/theme/colors/blue/index.js"
-module.exports = {
+```jsx filename="/ui/theme/colors/blue/index.ts"
+export const colors = {
     "text-txt600":"#0000ff",
 };
 ```
 
-```jsx filename="/ui/theme/colors/index.js"
-module.exports = {
+```jsx filename="/ui/theme/colors/index.ts"
+export const colors = {
     "text-txt600":"#0000ff", // it will be taken from a default theme if it is defined for a specific color
     "text-txt700":"",
     "text-txt800":"",
@@ -535,8 +529,8 @@ module.exports = {
 };
 ```
 
-```jsx filename="/ui/theme/colors/with-vars.js"
-module.exports = {
+```jsx filename="/ui/theme/colors/with-vars.ts"
+export const colors = {
     "text-txt600":"var(--sh-text-txt600,'#0000ff')", // it will be taken from a default theme if it is defined for a specific color
     "text-txt700":"var(--sh-text-txt700,'')",
     "text-txt800":"var(--sh-text-txt800,'')",

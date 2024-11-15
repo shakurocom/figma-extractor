@@ -31,15 +31,14 @@ For more information to follow [there](/configuration#themes-for-colors-and-effe
 
 After successfully launching of the extractor you see created files like that:
 
-
 <FileCollector defaultFileOpened="themes-list.ts">
   <FileTree>
     <FileTree.Folder name="ui" defaultOpen>
       <FileTree.Folder name="theme" defaultOpen>
         <FileTree.Folder name="colors" defaultOpen>
           <FileTree.Folder name="dark" defaultOpen>
-            <FileLinkInjector filename="color-dark-index.js">
-              <FileTree.File name="index.js" />
+            <FileLinkInjector filename="color-dark-index.ts">
+              <FileTree.File name="index.ts" />
             </FileLinkInjector>
             <FileLinkInjector filename="color-dark-vars.css">
               <FileTree.File name="vars.css" />
@@ -47,28 +46,28 @@ After successfully launching of the extractor you see created files like that:
           </FileTree.Folder>
 
           <FileTree.Folder name="light" defaultOpen>
-            <FileLinkInjector filename="color-light-index.js">
-              <FileTree.File name="index.js" />
+            <FileLinkInjector filename="color-light-index.ts">
+              <FileTree.File name="index.ts" />
             </FileLinkInjector>
             <FileLinkInjector filename="color-light-vars.css">
               <FileTree.File name="vars.css" />
             </FileLinkInjector>
           </FileTree.Folder>
 
-          <FileLinkInjector filename="color-index.js">
-            <FileTree.File name="index.js" />
+          <FileLinkInjector filename="color-index.ts">
+            <FileTree.File name="index.ts" />
           </FileLinkInjector>
           <FileLinkInjector filename="color-vars.css">
             <FileTree.File name="vars.css" />
           </FileLinkInjector>
-          <FileLinkInjector filename="color-with-vars.js">
-            <FileTree.File name="with-vars.js" />
+          <FileLinkInjector filename="color-with-vars.ts">
+            <FileTree.File name="with-vars.ts" />
           </FileLinkInjector>
         </FileTree.Folder>
         <FileTree.Folder name="effects" defaultOpen>
           <FileTree.Folder name="dark" defaultOpen>
-            <FileLinkInjector filename="effects-dark-index.js">
-                <FileTree.File name="index.js" />
+            <FileLinkInjector filename="effects-dark-index.ts">
+                <FileTree.File name="index.ts" />
             </FileLinkInjector>
             <FileLinkInjector filename="effects-dark-vars.css">
                 <FileTree.File name="vars.css" />
@@ -76,22 +75,22 @@ After successfully launching of the extractor you see created files like that:
           </FileTree.Folder>
 
           <FileTree.Folder name="light" defaultOpen>
-            <FileLinkInjector filename="effects-light-index.js">
-                <FileTree.File name="index.js" />
+            <FileLinkInjector filename="effects-light-index.ts">
+                <FileTree.File name="index.ts" />
             </FileLinkInjector>
             <FileLinkInjector filename="effects-light-vars.css">
                 <FileTree.File name="vars.css" />
             </FileLinkInjector>
           </FileTree.Folder>
 
-          <FileLinkInjector filename="effects-index.js">
-            <FileTree.File name="index.js" />
+          <FileLinkInjector filename="effects-index.ts">
+            <FileTree.File name="index.ts" />
           </FileLinkInjector>
           <FileLinkInjector filename="effects-vars.css">
             <FileTree.File name="vars.css" />
           </FileLinkInjector>
-          <FileLinkInjector filename="effects-with-vars.js">
-            <FileTree.File name="with-vars.js" />
+          <FileLinkInjector filename="effects-with-vars.ts">
+            <FileTree.File name="with-vars.ts" />
           </FileLinkInjector>
         </FileTree.Folder>
         <FileLinkInjector filename="themes-list.ts">
@@ -99,6 +98,7 @@ After successfully launching of the extractor you see created files like that:
         </FileLinkInjector>
       </FileTree.Folder>
     </FileTree.Folder>
+
   </FileTree>
   <FileContent filename="themes-list.ts">
 ```ts filename="themes-list.ts"
@@ -115,11 +115,11 @@ export type Theme = (typeof THEMES)[number];
 ```
   </FileContent>
 
-  <FileContent filename="color-with-vars.js">
-```js filename="with-vars.js"
+  <FileContent filename="color-with-vars.ts">
+```js filename="with-vars.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const colors = {
   bg100: "var(--sh-bg100,'#ffffff')",
   bg200: "var(--sh-bg200,'#f7f9fc')",
   txt100: "var(--sh-txt100,'#ffffff')",
@@ -139,11 +139,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="color-index.js">
-```js filename="index.js"
+  <FileContent filename="color-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const colors = {
   bg100: '#ffffff',
   bg200: '#f7f9fc',
   txt100: '#ffffff',
@@ -152,11 +152,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="color-dark-index.js">
-```js filename="index.js"
+  <FileContent filename="color-dark-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const colors = {
   bg100: '#121928',
   bg200: '#2d3646',
   txt100: '#121928',
@@ -176,11 +176,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="color-light-index.js">
-```js filename="index.js"
+  <FileContent filename="color-light-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const colors = {
   bg100: '#ffffff',
   bg200: '#f7f9fc',
   txt100: '#ffffff',
@@ -200,11 +200,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="effects-with-vars.js">
-```js filename="with-vars.js"
+  <FileContent filename="effects-with-vars.ts">
+```js filename="with-vars.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const effects = {
   boxShadow: {
     dp100: "var(--sh-dp100,'0px 8px 24px rgba(65, 74, 92, 0.40)')",
     dp1000: "var(--sh-dp1000,'0px 8px 24px rgba(186, 193, 204, 0.70)')",
@@ -226,11 +226,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="effects-index.js">
-```js filename="index.js"
+  <FileContent filename="effects-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const effects = {
   boxShadow: {
     dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
     dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
@@ -241,11 +241,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="effects-dark-index.js">
-```js filename="index.js"
+  <FileContent filename="effects-dark-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const effects = {
   boxShadow: {
     dp100: '0px 8px 24px rgba(13, 15, 19, 0.40)',
     dp1000: '0px 8px 24px rgba(3, 12, 26, 0.70)',
@@ -267,11 +267,11 @@ module.exports = {
 ```
   </FileContent>
 
-  <FileContent filename="effects-light-index.js">
-```js filename="index.js"
+  <FileContent filename="effects-light-index.ts">
+```js filename="index.ts"
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-module.exports = {
+export const effects = {
   boxShadow: {
     dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
     dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
@@ -300,7 +300,6 @@ Generated files can be used with https://github.com/pacocoursey/next-themes.
 
 `next-themes` is a great solution for switching themes.
 
-
 ### Include received themes in `next-themes`
 
 Inside `app.tsx` you should add following code:
@@ -313,14 +312,14 @@ import { THEMES, DEFAULT_THEME } from '@sh/ui/theme/themes-list';
 </ThemeProvider>
 ```
 
-### Include generated js files in `tailwind.config.js`
+### Include generated js files in `tailwind.config.ts`
 
-```js filename="tailwind.config.js" /with-vars/
-const colors = require('./theme/colors/with-vars');
-const effects = require('./theme/effects/with-vars');
+```js filename="tailwind.config.ts" /with-vars/
+import { colors} from './theme/colors/with-vars';
+import { effects } from './theme/effects/with-vars';
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   ...
   theme: {
     ...
@@ -333,13 +332,16 @@ module.exports = {
   },
   ...
 };
+
+export default config;
 ```
+
 <Callout emoji="⚠️">
-  Note: You should import `with-vars.js` file instead of `index.js`.
+  Note: You should import `with-vars.ts` file instead of `index.ts`.
 
-  `index.js` contents real data from Figma and it's been left only for legacy code.
+`index.ts` contents real data from Figma and it's been left only for legacy code.
 
-  `with-vars.js` contents CSS variables for correctly working with themes.
+`with-vars.ts` contents CSS variables for correctly working with themes.
 </Callout>
 
 ### Include generated CSS files in `global-styles`.

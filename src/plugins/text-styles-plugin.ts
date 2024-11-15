@@ -47,16 +47,15 @@ export const textStylesPlugin: Plugin = (
     writeFile(
       addEslintDisableRules(
         `
-      const fontFamily = {
+      export const fontFamily = {
         ${Object.entries(result.fontFamily).map(([key, { title, comment }]) => `${key}: "${title}", ${!!comment ? '// ' + comment : ''}\n`)}
       };
 
-      const textVariants = ${textStylesTemplate};
-
-      module.exports = {fontFamily, textVariants}`,
+      export const textVariants = ${textStylesTemplate};
+      `,
         ['disable-max-lines', 'disable-typescript-naming-convention'],
       ),
-      path.join(config?.styles?.exportPath || '', 'text-styles.js'),
+      path.join(config?.styles?.exportPath || '', 'text-styles.ts'),
     );
   } else {
     log(

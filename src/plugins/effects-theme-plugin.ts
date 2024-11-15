@@ -45,7 +45,7 @@ const template = ({
   boxShadow?: {
     [key: string]: string | number;
   };
-}) => `module.exports = {
+}) => `export const effects = {
     ${boxShadow ? `boxShadow: ${stringifyRecordsWithSort(boxShadow)},` : ''}
     ${backdropBlur ? `backdropBlur: ${stringifyRecordsWithSort(backdropBlur)},` : ''}
     ${blur ? `blur: ${stringifyRecordsWithSort(blur)},` : ''}
@@ -185,7 +185,7 @@ export const effectsThemePlugin: Plugin = (
         'disable-max-lines',
         'disable-typescript-naming-convention',
       ]),
-      path.join(fullPath, 'index.js'),
+      path.join(fullPath, 'index.ts'),
     );
 
     writeFile(cssData, path.join(fullPath, 'vars.css'));
@@ -206,7 +206,7 @@ export const effectsThemePlugin: Plugin = (
           'disable-max-lines',
           'disable-typescript-naming-convention',
         ]),
-        path.join(fullPath, 'with-vars.js'),
+        path.join(fullPath, 'with-vars.ts'),
       );
 
       const jsLegacyData = generateJsColors(variables);
@@ -219,7 +219,7 @@ export const effectsThemePlugin: Plugin = (
           'disable-max-lines',
           'disable-typescript-naming-convention',
         ]),
-        path.join(fullPath, 'index.js'),
+        path.join(fullPath, 'index.ts'),
       );
 
       const cssData = generateCSSVariables(variables);

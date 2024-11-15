@@ -20,24 +20,18 @@ export const responsivePlugin: Plugin = (
   const { screens, ...result } = getResponsive(variables, config);
 
   writeFile(
-    addEslintDisableRules(
-      `
-    const responsiveVariants = ${JSON.stringify(result)};
-
-    module.exports = {responsiveVariants}`,
-      ['disable-max-lines', 'disable-typescript-naming-convention'],
-    ),
-    path.join(config?.styles?.exportPath || '', 'responsive.js'),
+    addEslintDisableRules(`export const responsiveVariants = ${JSON.stringify(result)};`, [
+      'disable-max-lines',
+      'disable-typescript-naming-convention',
+    ]),
+    path.join(config?.styles?.exportPath || '', 'responsive.ts'),
   );
   writeFile(
-    addEslintDisableRules(
-      `
-    const screens = ${JSON.stringify(screens)};
-
-    module.exports = {screens}`,
-      ['disable-max-lines', 'disable-typescript-naming-convention'],
-    ),
-    path.join(config?.styles?.exportPath || '', 'screens.js'),
+    addEslintDisableRules(`export const screens = ${JSON.stringify(screens)};`, [
+      'disable-max-lines',
+      'disable-typescript-naming-convention',
+    ]),
+    path.join(config?.styles?.exportPath || '', 'screens.ts'),
   );
 };
 
