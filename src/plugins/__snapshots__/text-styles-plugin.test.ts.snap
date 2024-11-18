@@ -7,7 +7,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     
       export const fontFamily = {
         font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
-
+font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       };
 
       export const textVariants = {'body-500/bs__extra': {
@@ -336,7 +336,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
     },'caption-200/bs__extra': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -345,7 +345,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
     },'caption-200/lg__extra': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -354,7 +354,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
     },'caption-200/md__extra': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -363,7 +363,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
       
     },'caption-200/sm__extra': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -598,7 +598,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
     
       export const fontFamily = {
         font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
-
+font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       };
 
       export const textVariants = {'body-500-bs': {
@@ -927,7 +927,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -936,7 +936,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -945,7 +945,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -954,7 +954,7 @@ exports[`textStylesPlugin should create data with merged styles 1`] = `
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1189,7 +1189,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     
       export const fontFamily = {
         font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
-
+font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       };
 
       export const textVariants = {'body-500-bs': {
@@ -1518,7 +1518,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1527,7 +1527,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1536,7 +1536,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1545,7 +1545,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1780,7 +1780,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
     
       export const fontFamily = {
         font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
-
+font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       };
 
       export const textVariants = {'body-500-bs': {
@@ -2109,7 +2109,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2118,7 +2118,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2127,7 +2127,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2136,7 +2136,7 @@ exports[`textStylesPlugin should create data with merged styles when the screens
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2371,7 +2371,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
     
       export const fontFamily = {
         font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
-
+font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       };
 
       export const textVariants = {'body-500-bs': {
@@ -2700,7 +2700,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2709,7 +2709,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2718,7 +2718,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2727,7 +2727,7 @@ exports[`textStylesPlugin should write generated date for default config 1`] = `
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: 12,
       fontWeight: 400,
       lineHeight: 1.33,

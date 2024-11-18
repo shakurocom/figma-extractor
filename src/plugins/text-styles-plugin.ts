@@ -48,7 +48,12 @@ export const textStylesPlugin: Plugin = (
       addEslintDisableRules(
         `
       export const fontFamily = {
-        ${Object.entries(result.fontFamily).map(([key, { title, comment }]) => `${key}: "${title}", ${!!comment ? '// ' + comment : ''}\n`)}
+        ${Object.entries(result.fontFamily)
+          .map(
+            ([key, { title, comment }]) =>
+              `${key}: "${title}", ${!!comment ? '// ' + comment : ''}`,
+          )
+          .join('\n')}
       };
 
       export const textVariants = ${textStylesTemplate};
