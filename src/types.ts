@@ -35,12 +35,10 @@ export type Config = {
     responsive?: {
       disabled: boolean;
       collectionNames: string[];
-      groupNames: string[];
     };
     textStyles?: {
       collectionNames: string[];
       disabled: boolean;
-      groupNames: string[];
       keyName?: (nameFromFigma: string) => string;
     };
   };
