@@ -43,8 +43,7 @@ export const generateIcons = async (
   } else if (isSvgCallback(iconConfig.optimizeSvg)) {
     svgConfig = iconConfig.optimizeSvg({ ...defaultSVGConfig });
   }
-
-  const { data } = await client.fileNodes(config.fileId, { ids: iconConfig.nodeIds });
+  const { data } = await client.fileNodes(config.fileId, { ids: iconConfig.nodeIds || [] });
 
   const iconNames: string[] = [];
   const nodes = Object.values(data.nodes);

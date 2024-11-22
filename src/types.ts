@@ -24,19 +24,23 @@ export type Config = {
       disabled: boolean;
       keyName?: (name?: string) => string;
       collectionNames: string[];
+      groupNames: string[];
     };
     effects?: {
       disabled: boolean;
       keyName?: (name?: string, useTheme?: boolean) => string;
       collectionNames: string[];
+      groupNames: string[];
     };
     responsive?: {
       disabled: boolean;
       collectionNames: string[];
+      groupNames: string[];
     };
     textStyles?: {
       collectionNames: string[];
       disabled: boolean;
+      groupNames: string[];
       keyName?: (nameFromFigma: string) => string;
     };
   };

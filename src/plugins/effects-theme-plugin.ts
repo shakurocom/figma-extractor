@@ -117,6 +117,18 @@ export const effectsThemePlugin: Plugin = (
   );
 
   const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
+  const modesWithFilteredVariablesByGroup = modes.map(item => ({
+    ...item,
+    variables: item.variables.filter(variable => {
+      if ((config.styles.colors?.groupNames || []).length > 0) {
+        const [group] = variable.name.split('/');
+
+        return config.styles?.effects?.groupNames?.includes(group);
+      }
+
+      return variable;
+    }),
+  }));
 
   const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
     allowedThemes: config?.styles?.allowedThemes,
@@ -127,7 +139,7 @@ export const effectsThemePlugin: Plugin = (
   log('[info:effects-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
-  const effects = getEffectStyles(modes, config);
+  const effects = getEffectStyles(modesWithFilteredVariablesByGroup, config);
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme, originalName } of separateThemes({

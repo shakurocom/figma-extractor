@@ -33,6 +33,19 @@ export const colorsThemePlugin: Plugin = (
 
     const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
 
+    const modesWithFilteredVariablesByGroup = modes.map(item => ({
+      ...item,
+      variables: item.variables.filter(variable => {
+        if ((config.styles.colors?.groupNames || []).length > 0) {
+          const [group] = variable.name.split('/');
+
+          return config.styles?.colors?.groupNames?.includes(group);
+        }
+
+        return variable;
+      }),
+    }));
+
     const { allowedThemes, defaultTheme } = checkConfigAndThrowCommonError({
       allowedThemes: config?.styles?.allowedThemes,
       defaultTheme: config?.styles?.defaultTheme,
@@ -43,7 +56,7 @@ export const colorsThemePlugin: Plugin = (
 
     const themesCollection = createThemeCollection({ allowedThemes });
     const keyNameCallback = config?.styles?.colors?.keyName ?? getColorName;
-    const colors = getColorStyles(modes, name => keyNameCallback(name));
+    const colors = getColorStyles(modesWithFilteredVariablesByGroup, name => keyNameCallback(name));
 
     let anyThemeIsUsed = false;
     for (const { newName, value, theme, originalName } of separateThemes({
