@@ -103,7 +103,7 @@ export const effectsThemePlugin: Plugin = (
   { config, writeFile, addEslintDisableRules, log },
   { variables },
 ) => {
-  if (config?.styles?.responsive?.disabled) {
+  if (config?.styles?.effects?.disabled) {
     log(
       '[info:effects-theme] >>> ',
       'Effects-theme plugin has been disabled so the plugin had not been launched',
