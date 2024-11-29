@@ -3,8 +3,6 @@ import path from 'path';
 
 import { createCore } from '../core';
 import { ThemeVariablesConfig } from '../types';
-import { fileNodes } from '../utils/generate-styles/fixtures/file-nodes';
-import { styleMetadata } from '../utils/generate-styles/fixtures/style-metadata';
 import { readJsonFile } from '../utils/read-json-file';
 import { textStylesPlugin } from './text-styles-plugin';
 
@@ -99,7 +97,7 @@ describe('textStylesPlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
-  /*it('should add extra styles which have prefix screen', () => {
+  it('should add extra styles which have prefix screen', () => {
     const core = createCore({
       config: {
         styles: {
@@ -122,9 +120,9 @@ describe('textStylesPlugin', () => {
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
-  });*/
+  });
 
-  it.only('should create data with custom keyName function', () => {
+  it('should create data with custom keyName function', () => {
     const core = createCore({
       config: {
         styles: {
@@ -132,6 +130,32 @@ describe('textStylesPlugin', () => {
           textStyles: {
             collectionNames: ['typography', 'typography_xl'],
             keyName: (name?: string) => '__extra_' + name?.replace('/', '-'),
+          },
+          responsive: { collectionNames: ['responsive', 'responsive_extra'] },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+      log: jest.fn(),
+    });
+
+    core.writeFile = jest.fn();
+
+    textStylesPlugin(core, { variables } as any);
+
+    expect(core.writeFile).toHaveBeenCalled();
+    expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
+  it('should create data with custom keyName function and prefix styles', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          textStyles: {
+            collectionNames: ['typography', 'typography_xl'],
+            keyName: (name?: string) => '__extra_' + name?.replace('/', '-'),
+            addStylesWithPrefixScreen: true,
           },
           responsive: { collectionNames: ['responsive', 'responsive_extra'] },
         },
