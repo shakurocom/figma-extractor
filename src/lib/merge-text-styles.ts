@@ -128,9 +128,11 @@ const findMediaTypeFromClassName = (className: string, screens: Screens[]) => {
 export const mergeTextStyle = ({
   screens,
   textStyles,
+  addStylesWithPrefixScreen,
 }: {
   screens: Record<Screens, number | string>;
   textStyles: TextStyle[];
+  addStylesWithPrefixScreen: boolean;
 }): TextStyle[] => {
   const screensKeys = Object.keys(screens) as Screens[];
   const mediaCollection = new MediaCollection(screens);
@@ -146,5 +148,9 @@ export const mergeTextStyle = ({
     });
   });
 
-  return [...textStyles, ...mediaCollection.export()];
+  if (addStylesWithPrefixScreen) {
+    return [...textStyles, ...mediaCollection.export()];
+  }
+
+  return mediaCollection.export();
 };

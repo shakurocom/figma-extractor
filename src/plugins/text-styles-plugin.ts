@@ -20,7 +20,11 @@ export const textStylesPlugin: Plugin = (
     const { screens } = getResponsive(variables, config);
     if (screens) {
       log('[info:text-styles/merge] >>> ', 'Available screens: ', JSON.stringify(screens));
-      rawTextStyle = mergeTextStyle({ textStyles: rawTextStyle, screens });
+      rawTextStyle = mergeTextStyle({
+        textStyles: rawTextStyle,
+        screens,
+        addStylesWithPrefixScreen: !!config?.styles?.textStyles?.addStylesWithPrefixScreen,
+      });
     } else {
       console.warn(
         "Attention! You have merging of text styles is enabled and don't have any screens. Add some screens for correctly working it.",

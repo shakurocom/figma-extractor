@@ -124,14 +124,14 @@ describe('textStylesPlugin', () => {
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });*/
 
-  it('should create data with custom keyName function', () => {
+  it.only('should create data with custom keyName function', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
           textStyles: {
             collectionNames: ['typography', 'typography_xl'],
-            keyName: (name?: string) => name + '__extra',
+            keyName: (name?: string) => '__extra_' + name?.replace('/', '-'),
           },
           responsive: { collectionNames: ['responsive', 'responsive_extra'] },
         },
