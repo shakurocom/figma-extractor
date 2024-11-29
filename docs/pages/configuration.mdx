@@ -72,6 +72,8 @@ type Config = {
       keyName?: (nameFromFigma: string) => string;
       // collections names from figma local variables
       collectionNames: string[];
+      // This field is to add extra styles with prefix screens
+      addStylesWithPrefixScreen?: boolean;
     };
     responsive?: {
       disabled?: boolean;
