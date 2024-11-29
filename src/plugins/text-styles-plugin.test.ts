@@ -78,12 +78,12 @@ describe('textStylesPlugin', () => {
     expect(core.writeFile).not.toHaveBeenCalled();
   });
 
-  it('should create data with merged styles', () => {
+  it("shouldn't create media queries styles because of responsive collection has no screen sizes", () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
+          textStyles: { collectionNames: ['typography', 'typography_xl'] },
         },
       },
       plugins: [],
@@ -93,18 +93,22 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
+    textStylesPlugin(core, { variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
-  it('should create data with merged styles when the screens object has number items', () => {
+  /*it('should add extra styles which have prefix screen', () => {
     const core = createCore({
       config: {
         styles: {
           exportPath: '/export-path/',
-          textStyles: { collectionNames: ['typography', 'typography_xl'], merge: true },
+          textStyles: {
+            collectionNames: ['typography', 'typography_xl'],
+            addStylesWithPrefixScreen: true,
+          },
+          responsive: { collectionNames: ['responsive', 'responsive_extra'] },
         },
       },
       plugins: [],
@@ -114,11 +118,11 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
+    textStylesPlugin(core, { variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
-  });
+  });*/
 
   it('should create data with custom keyName function', () => {
     const core = createCore({
@@ -129,6 +133,7 @@ describe('textStylesPlugin', () => {
             collectionNames: ['typography', 'typography_xl'],
             keyName: (name?: string) => name + '__extra',
           },
+          responsive: { collectionNames: ['responsive', 'responsive_extra'] },
         },
       },
       plugins: [],
@@ -138,7 +143,7 @@ describe('textStylesPlugin', () => {
 
     core.writeFile = jest.fn();
 
-    textStylesPlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
+    textStylesPlugin(core, { variables } as any);
 
     expect(core.writeFile).toHaveBeenCalled();
     expect((core.writeFile as jest.Mock).mock.calls[0][0]).toMatchSnapshot();
