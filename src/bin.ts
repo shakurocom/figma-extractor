@@ -162,6 +162,13 @@ async function run(config: Config) {
     variables,
   }).then(() => {
     log('Finish');
+    console.log(`
++------------------------------------------------+
+|                                                |
+|     Don't forget to update variables.json      |
+|                                                |
++------------------------------------------------+
+`);
   });
 }
 
