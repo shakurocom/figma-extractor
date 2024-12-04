@@ -62,21 +62,22 @@ export type Config = {
       // group names in collection
       groupNames?: string[];
     };
+    textStyles?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (nameFromFigma: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
+      // This field is to add extra styles with prefix screens
+      addStylesWithPrefixScreen?: boolean;
+    };
     responsive?: {
       disabled?: boolean;
       // collections names from figma local variables
       collectionNames: string[];
     };
   };
-  textStyles?: {
-    disabled?: boolean;
-    // custom key name
-    keyName?: (nameFromFigma: string) => string;
-    // collections names from figma local variables
-    collectionNames: string[];
-    // This field is to add extra styles with prefix screens
-    addStylesWithPrefixScreen?: boolean;
-  };
+
   // Configuration of icons can have more one setting
   icons: IconConfig | IconConfig[];
 };
