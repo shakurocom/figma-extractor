@@ -1,9 +1,9 @@
 type SVGCallback = (config?: import('svgo').Config) => import('svgo').Config;
 
 export type IconConfig = {
-  disabled: boolean;
+  disabled?: boolean;
   nodeIds: string[];
-  iconName: (nameFromFigma: string) => string;
+  iconName?: (nameFromFigma: string) => string;
   skipIcon?: (name: string) => boolean;
   exportPath: string;
   generateSprite: boolean;
@@ -21,24 +21,24 @@ export type Config = {
     allowedThemes?: string[];
     defaultTheme?: string;
     colors?: {
-      disabled: boolean;
+      disabled?: boolean;
       keyName?: (name?: string) => string;
       collectionNames: string[];
-      groupNames: string[];
+      groupNames?: string[];
     };
     effects?: {
-      disabled: boolean;
+      disabled?: boolean;
       keyName?: (name?: string, useTheme?: boolean) => string;
       collectionNames: string[];
-      groupNames: string[];
+      groupNames?: string[];
     };
     responsive?: {
-      disabled: boolean;
+      disabled?: boolean;
       collectionNames: string[];
     };
     textStyles?: {
+      disabled?: boolean;
       collectionNames: string[];
-      disabled: boolean;
       keyName?: (nameFromFigma: string) => string;
       addStylesWithPrefixScreen?: boolean;
     };
