@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { cosmiconfig, defaultLoaders } = require('cosmiconfig');
+const { cosmiconfig } = require('cosmiconfig');
 import path from 'path';
 
 import { getClient } from './lib/client';
@@ -172,44 +172,7 @@ async function run(config: Config) {
   });
 }
 
-function generateSearchPlaces(moduleName: string) {
-  const extensions = ['json', 'js', 'config.js'];
-  // gives figma-extractor.json...
-  const regular = extensions.map(ext => `${moduleName}.${ext}`);
-  // gives .figma-extractorrc.json... but no .figma-extractorrc.config.js
-  const dot = extensions.filter(ext => ext !== 'config.js').map(ext => `.${moduleName}rc.${ext}`);
-
-  return [...regular.concat(dot), 'package.json'];
-}
-
-function customLoader(ext: 'json' | 'js') {
-  function loader(filepath: string, content: string) {
-    if (ext === 'json') {
-      return defaultLoaders['.json'](filepath, content);
-    }
-
-    if (ext === 'js') {
-      return defaultLoaders['.js'](filepath, content);
-    }
-  }
-
-  return loader;
-}
-
-const moduleName = 'figma-extractor';
-
-const explorer = cosmiconfig(moduleName, {
-  packageProp: moduleName,
-  searchPlaces: generateSearchPlaces(moduleName),
-  loaders: {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    '.json': customLoader('json'),
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    '.js': customLoader('js'),
-  },
-});
-
-explorer
+cosmiconfig('figma-extractor')
   .search()
   .then((result: { config: Config }) => {
     return run(result.config);
