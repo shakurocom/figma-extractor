@@ -28,7 +28,12 @@ export const generateIcons = async (
   if (!iconConfig.exportPath) {
     throw new Error('config -> icons -> exportPath is required field');
   }
-  const pathIconsFolder = path.join(iconConfig.exportPath ?? '', 'svg');
+  const pathIconsFolder = path.join(
+    iconConfig.exportPath ?? '',
+    iconConfig.exportSubdir ?? '',
+    'svg',
+  );
+
   const pathSpriteFolder = path.join(iconConfig.exportPath ?? '');
 
   if (!fs.existsSync(pathIconsFolder)) {
