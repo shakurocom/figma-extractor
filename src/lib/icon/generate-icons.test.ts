@@ -1,3 +1,5 @@
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { ClientInterface } from 'figma-js';
 import fs from 'fs';
 import { vol } from 'memfs';
@@ -100,7 +102,7 @@ describe('generateIcons', () => {
       },
     };
 
-    return expect(generateIcons({} as any, config.icons, config)).rejects.toThrow(
+    return expect(generateIcons({} as any, config.icons, config, jest.fn())).rejects.toThrow(
       'config -> icons -> exportPath is required field',
     );
   });
@@ -214,6 +216,23 @@ describe('generateIcons', () => {
 
     return generateIcons(createClient(), config.icons, config, jest.fn()).then(() => {
       expect(spy).toHaveBeenCalledWith('/tmp/svg', { recursive: true });
+    });
+  });
+
+  it('should create sub folder for exporting', () => {
+    const config: any = {
+      fileId: 'any',
+      icons: {
+        exportPath: '/tmp',
+        exportSubdir: 'exportSubdir',
+        nodeIds: [],
+      },
+    };
+
+    const spy = jest.spyOn(fs, 'mkdirSync');
+
+    return generateIcons(createClient(), config.icons, config, jest.fn()).then(() => {
+      expect(spy).toHaveBeenCalledWith('/tmp/exportSubdir/svg', { recursive: true });
     });
   });
 

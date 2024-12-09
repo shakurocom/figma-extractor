@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import fs from 'fs';
 import { vol } from 'memfs';
 import path from 'path';
@@ -27,7 +28,7 @@ describe('generateIconSpriteFromLocalFiles', () => {
       },
     };
 
-    expect(() => generateIconSpriteFromLocalFiles(config.icons)).toThrow(
+    expect(() => generateIconSpriteFromLocalFiles(config.icons, jest.fn())).toThrow(
       'Attempt to generate icon sprite from non-existent files',
     );
   });
@@ -43,7 +44,7 @@ describe('generateIconSpriteFromLocalFiles', () => {
 
     fs.mkdirSync('/tmp/svg', { recursive: true });
 
-    generateIconSpriteFromLocalFiles(config.icons);
+    generateIconSpriteFromLocalFiles(config.icons, jest.fn());
 
     expect(generateIconTypes).not.toHaveBeenCalled();
     expect(generateIconsSprite).toHaveBeenCalledWith('/tmp');

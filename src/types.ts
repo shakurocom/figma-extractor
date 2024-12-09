@@ -8,6 +8,14 @@ export type IconConfig = {
   // custom filter icon callback. It allows skipping some unnecessary icons
   skipIcon?: (name: string) => boolean;
   exportPath: string;
+  /**
+   * for example:
+   * exportPath: './test',
+   * exportSubdir: 'sub',
+   *
+   * will download icons to dir ./test/sub/svg
+   */
+  exportSubdir?: string;
   // If the field is true, then the SVG sprite will be generated
   generateSprite: boolean;
   // If the field is true, then the file with icons' names as types will be created
