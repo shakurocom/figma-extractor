@@ -30,8 +30,8 @@ export const generateIcons = async (
   }
   const pathIconsFolder = path.join(
     iconConfig.exportPath ?? '',
-    iconConfig.exportSubdir ?? '',
     'svg',
+    iconConfig.exportSubdir ?? '',
   );
 
   const pathSpriteFolder = path.join(iconConfig.exportPath ?? '');

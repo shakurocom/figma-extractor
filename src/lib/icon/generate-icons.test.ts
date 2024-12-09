@@ -232,7 +232,7 @@ describe('generateIcons', () => {
     const spy = jest.spyOn(fs, 'mkdirSync');
 
     return generateIcons(createClient(), config.icons, config, jest.fn()).then(() => {
-      expect(spy).toHaveBeenCalledWith('/tmp/exportSubdir/svg', { recursive: true });
+      expect(spy).toHaveBeenCalledWith('/tmp/svg/exportSubdir', { recursive: true });
     });
   });
 

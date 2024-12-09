@@ -13,7 +13,7 @@ export type IconConfig = {
    * exportPath: './test',
    * exportSubdir: 'sub',
    *
-   * will download icons to dir ./test/sub/svg
+   * will download icons to dir ./test/svg/sub
    */
   exportSubdir?: string;
   // If the field is true, then the SVG sprite will be generated
