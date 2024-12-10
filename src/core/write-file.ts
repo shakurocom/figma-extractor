@@ -16,8 +16,8 @@ export const writeFile = (content: string, filePath: string) => {
 
   try {
     fs.writeFileSync(filePath, content);
-    console.log(`Generate ${filePath} is completed`);
+    console.log(`Generating '${filePath.split('/').at(-1)}' is completed`);
   } catch {
-    console.log(`Formatting ${filePath} file...`);
+    console.log(`Formatting '${filePath.split('/').at(-1)}' file...`);
   }
 };

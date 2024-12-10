@@ -199,7 +199,18 @@ describe('generateIcons', () => {
     });
 
     return expect(generateIcons(client, config.icons, config, jest.fn())).rejects.toThrow(
-      "Icon with name: 'profile' is duplicate",
+      `
+
++--------------------------------------------------------+
+|                                                        |
+|     You have duplicates in icons!                      |
+|     Followed icons will not be processed properly:     |
+|                                                        |
+      'profile'
+|                                                        |
++--------------------------------------------------------+
+
+`,
     );
   });
 

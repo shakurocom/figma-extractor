@@ -51,6 +51,7 @@ export const generateIcons = async (
   const { data } = await client.fileNodes(config.fileId, { ids: iconConfig.nodeIds || [] });
 
   const iconNames: string[] = [];
+  const iconDuplicates: string[] = [];
   const nodes = Object.values(data.nodes);
   for (const value of nodes) {
     const imagesData: { id: string; name: string }[] = (value as any)?.document?.children
@@ -59,7 +60,9 @@ export const generateIcons = async (
         const formattedName = iconConfig.iconName?.(item.name) || naming(item.name);
 
         if (iconNames.includes(formattedName)) {
-          throw new Error(`Icon with name: '${formattedName}' is duplicate`);
+          iconDuplicates.push(`'${formattedName}'`);
+
+          return;
         }
 
         iconNames.push(formattedName);
@@ -68,7 +71,8 @@ export const generateIcons = async (
           id: item.id,
           name: formattedName,
         };
-      });
+      })
+      .filter((val: any) => !!val?.id);
 
     const imageIds = imagesData.map((item: any) => item.id);
     const {
@@ -88,8 +92,25 @@ export const generateIcons = async (
           await optimizeSvg(filename, svgConfig);
         }
 
-        console.log('Downloaded!', filename);
+        console.log('Icon downloaded: ', `${item.name}.svg`);
       }),
+    );
+  }
+
+  if (iconDuplicates.length > 0) {
+    throw new Error(
+      `
+
++--------------------------------------------------------+
+|                                                        |
+|     You have duplicates in icons!                      |
+|     Followed icons will not be processed properly:     |
+|                                                        |
+      ${iconDuplicates.join(', ')}
+|                                                        |
++--------------------------------------------------------+
+
+`,
     );
   }
 
