@@ -57,6 +57,8 @@ export type Config = {
       It's used like default variables inside generated CSS variables
      */
     defaultTheme?: string;
+    /** by default all css variables prefixed with 'sh' for example: --sh-color-red */
+    cssVariablesNs?: string;
     colors?: {
       disabled?: boolean;
       // custom key name

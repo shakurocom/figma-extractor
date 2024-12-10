@@ -1,3 +1,5 @@
+import { Config } from '@/types';
+
 import { replaceSlashToDash } from './replace-slash-to-dash';
 
 type ThemeName = string;
@@ -102,11 +104,13 @@ export function* separateThemes({
 export const generateJsVariables = (
   variablesCollection: VariablesCollection,
   defaultVariablesCollection: VariablesCollection,
+  config: Config,
 ) => {
+  const ns = config.styles.cssVariablesNs ?? 'sh';
   const data: Record<string, string> = {};
   for (const name of Object.keys(variablesCollection)) {
     const fallbackValue = defaultVariablesCollection[name];
-    data[name] = `var(--sh-${name},${fallbackValue ? fallbackValue : "''"})`;
+    data[name] = `var(--${ns}-${name},${fallbackValue ? fallbackValue : "''"})`;
   }
 
   return data;
@@ -125,14 +129,16 @@ export const generateJsColors = (variablesCollection: VariablesCollection) => {
 
 export const generateCSSVariables = (
   variablesCollection: VariablesCollection,
-  themeName?: ThemeName,
+  themeName: ThemeName,
+  config: Config,
 ) => {
+  const ns = config.styles.cssVariablesNs ?? 'sh';
   const data: string[] = [];
   for (const [name, value] of Object.entries(variablesCollection)) {
     if (value) {
-      data.push(`--sh-${name}: ${value};`);
+      data.push(`--${ns}-${name}: ${value};`);
     } else {
-      data.push(`--sh-${name}: '';`);
+      data.push(`--${ns}-${name}: '';`);
     }
   }
   data.sort((a, b) => {

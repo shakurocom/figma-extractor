@@ -102,7 +102,7 @@ export const colorsThemePlugin: Plugin = (
         log(`[info:color-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
       }
 
-      const cssData = generateCSSVariables(variables, themeName);
+      const cssData = generateCSSVariables(variables, themeName, config);
 
       const fullPath = path.join(config?.styles?.exportPath || '', `colors/${themeName}`);
 
@@ -123,6 +123,7 @@ export const colorsThemePlugin: Plugin = (
         const jsData = generateJsVariables(
           variables,
           defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
+          config,
         );
 
         const jsTemplate = `export const colors = ${stringifyRecordsWithSort(jsData)};`;
@@ -145,7 +146,7 @@ export const colorsThemePlugin: Plugin = (
           path.join(fullPath, 'index.ts'),
         );
 
-        const cssData = generateCSSVariables(variables);
+        const cssData = generateCSSVariables(variables, '', config);
         writeFile(cssData, path.join(fullPath, 'vars.css'));
       }
     }

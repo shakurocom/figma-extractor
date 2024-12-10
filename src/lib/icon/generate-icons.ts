@@ -78,18 +78,6 @@ export const generateIcons = async (
     await Promise.all(
       imagesData.map(async item => {
         const filename = `${pathIconsFolder}/${item.name}.svg`;
-        console.log(
-          'Before downloading of image:',
-          JSON.stringify(
-            {
-              url: images[item.id],
-              filename,
-              optimizeSvg: enableOptimizeSvg ? 'enabled' : 'disabled',
-            },
-            null,
-            2,
-          ),
-        );
 
         await downloadStreamingToFile(`${images[item.id]}`, filename, {
           // eslint-disable-next-line @typescript-eslint/naming-convention

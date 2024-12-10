@@ -186,7 +186,7 @@ export const effectsThemePlugin: Plugin = (
       log(`[info:effects-theme/${themeName}] >>> `, `'${name}' => '${value}'`);
     }
 
-    const cssData = generateCSSVariables(variables, themeName);
+    const cssData = generateCSSVariables(variables, themeName, config);
 
     const fullPath = path.join(config?.styles?.exportPath || '', `effects/${themeName}`);
 
@@ -208,6 +208,7 @@ export const effectsThemePlugin: Plugin = (
       const jsData = generateJsVariables(
         variables,
         defaultTheme && themesCollection[defaultTheme] ? themesCollection[defaultTheme] : {},
+        config,
       );
 
       const effects = formattedEffects(jsData);
@@ -234,7 +235,7 @@ export const effectsThemePlugin: Plugin = (
         path.join(fullPath, 'index.ts'),
       );
 
-      const cssData = generateCSSVariables(variables);
+      const cssData = generateCSSVariables(variables, '', config);
       writeFile(cssData, path.join(fullPath, 'vars.css'));
     }
   }
