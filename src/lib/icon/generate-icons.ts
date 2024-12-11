@@ -92,7 +92,7 @@ export const generateIcons = async (
           await optimizeSvg(filename, svgConfig);
         }
 
-        console.log('Icon downloaded: ', `${item.name}.svg`);
+        console.log('Icon downloaded: ', `${item.name.replace(__dirname, '')}.svg`);
       }),
     );
   }

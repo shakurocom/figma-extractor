@@ -15,53 +15,57 @@ class MediaCollection {
       this.cache[className] = [];
     }
     const style = data as any;
-    if (className.includes('pt')) {
+    // className should has following format: {scope}-{prop}-{key}
+    // for example: box-pb-10
+    if (className.includes('-pt-')) {
       style.data = {
         'padding-top': data.data,
       };
-    }
-    if (className.includes('pb')) {
+    } else if (className.includes('-pb-')) {
       style.data = {
         'padding-bottom': data.data,
       };
-    }
-    if (className.includes('pl')) {
+    } else if (className.includes('-pl-')) {
       style.data = {
         'padding-left': data.data,
       };
-    }
-    if (className.includes('pr')) {
+    } else if (className.includes('-pr-')) {
       style.data = {
         'padding-right': data.data,
       };
-    }
-    if (className.includes('px')) {
+    } else if (className.includes('-px-')) {
       style.data = {
         'padding-left': data.data,
         'padding-right': data.data,
       };
-    }
-    if (className.includes('py')) {
+    } else if (className.includes('-py-')) {
       style.data = {
         'padding-top': data.data,
         'padding-bottom': data.data,
       };
-    }
-    if (className.includes('gap')) {
+    } else if (className.includes('-p-')) {
+      style.data = { padding: data.data };
+    } else if (className.includes('-gap-')) {
       style.data = {
         gap: data.data,
       };
-    }
-    if (className.includes('max-width')) {
+    } else if (className.includes('-max-width-')) {
       style.data = {
         'max-width': data.data,
       };
-    }
-    if (className.includes('min-width')) {
+    } else if (className.includes('-min-width-')) {
       style.data = {
         'min-width': data.data,
       };
+    } else {
+      console.warn(
+        '[warn:merge-responsive] >>> ',
+        `'${className}' are not supported for generating any styles`,
+      );
+
+      style.data = {};
     }
+
     this.cache[className] = [...this.cache[className], style];
   }
 

@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import shell from 'shelljs';
 
 // NOTE: temporarily changed writeFile to writeFileSync to make testing easier:
 // it is unclear how to test callback version without introducing promises.
@@ -8,6 +7,7 @@ import shell from 'shelljs';
 // which is confusing a bit, because it is impossible to handle promise fulfillment.
 export const writeFile = (content: string, filePath: string) => {
   const dir = path.dirname(filePath);
+  const localPath = filePath.split('/theme/')[1] ?? dir;
 
   // Create directory in advance if there is no one
   if (dir && !fs.existsSync(dir)) {
@@ -16,8 +16,8 @@ export const writeFile = (content: string, filePath: string) => {
 
   try {
     fs.writeFileSync(filePath, content);
-    console.log(`Generating '${filePath.split('/').at(-1)}' is completed`);
+    console.log(`Generating '${localPath}' is completed`);
   } catch {
-    console.log(`Formatting '${filePath.split('/').at(-1)}' file...`);
+    console.log(`Formatting '${localPath}' file...`);
   }
 };
