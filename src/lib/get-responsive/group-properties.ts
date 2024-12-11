@@ -26,10 +26,9 @@ export function groupProperties(modes: Mode[]) {
         grouped[category] = {} as NameProperties;
       }
 
-      // Skip values equal to 0
-      if (!item.name.match(/(-|\/)0/)) {
+      // Skip values equal to 0, for example we don't need `py-0` etc
+      if (!item.name.match(/(-|\/)0$/)) {
         grouped[category][item.name.replaceAll('/', '-')] = `${item.value}px`;
-      } else {
       }
     });
 
@@ -47,20 +46,16 @@ export const transformProperties = (input: ThemeResponsive): TransformedConfig =
   const result = {} as TransformedConfig;
 
   for (const section in input) {
-    if (input.hasOwnProperty(section)) {
-      const sectionConfig = input[section as Category];
-      for (const screenSize in sectionConfig) {
-        if (sectionConfig.hasOwnProperty(screenSize)) {
-          const screenConfig = sectionConfig[screenSize];
-          for (const property in screenConfig) {
-            if (screenConfig.hasOwnProperty(property)) {
-              if (!result[property]) {
-                result[property] = {};
-              }
-              result[property][screenSize] = screenConfig[property];
-            }
-          }
+    const sectionConfig = input[section as Category];
+
+    for (const screenSize in sectionConfig) {
+      const screenConfig = sectionConfig[screenSize];
+
+      for (const property in screenConfig) {
+        if (!result[property]) {
+          result[property] = {};
         }
+        result[property][screenSize] = screenConfig[property];
       }
     }
   }
