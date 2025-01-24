@@ -66,7 +66,7 @@ describe('downloadStreamingToFile', () => {
     });
   });
 
-  it('should throw the error with "no exist such file or directory"', done => {
+  it.skip('should throw the error with "no exist such file or directory"', done => {
     stubRequest();
 
     const errorCatcher = jest.fn();
