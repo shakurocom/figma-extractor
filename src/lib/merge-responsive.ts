@@ -49,19 +49,37 @@ class MediaCollection {
       style.data = {
         gap: data.data,
       };
-    } else if (className.includes('-max-width-')) {
-      style.data = {
-        'max-width': data.data,
-      };
-    } else if (className.includes('-min-width-')) {
+    } else if (className.includes('-min-width-') && data?.data !== '0px') {
       style.data = {
         'min-width': data.data,
       };
+    } else if (className.includes('-max-width-') && data?.data !== '0px') {
+      style.data = {
+        'max-width': data.data,
+      };
+    } else if (className.includes('-width-') && data?.data !== '0px') {
+      style.data = {
+        width: data.data,
+      };
+    } else if (className.includes('-max-height-') && data?.data !== '0px') {
+      style.data = {
+        'max-height': data.data,
+      };
+    } else if (className.includes('-min-height-') && data?.data !== '0px') {
+      style.data = {
+        'min-height': data.data,
+      };
+    } else if (className.includes('-height-') && data?.data !== '0px') {
+      style.data = {
+        height: data.data,
+      };
     } else {
-      console.warn(
-        '[warn:merge-responsive] >>> ',
-        `'${className}' are not supported for generating any styles`,
-      );
+      if (data?.data !== '0px') {
+        console.warn(
+          '[warn:merge-responsive] >>> ',
+          `'${className}' are not supported for generating any styles`,
+        );
+      }
 
       style.data = {};
     }
