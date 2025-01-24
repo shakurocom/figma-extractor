@@ -106,6 +106,14 @@ class MediaCollection {
               typeof screen === 'string' && screen.match(/[\d]+px$/i) ? screen : screen + 'px';
 
             const mediaKey = `@media (min-width: ${mediaScreenSize})`;
+            const prevScreenData = Object.keys(collection).at(-1)?.startsWith('@media (min-width')
+              ? Object.values(collection).at(-1)
+              : collection;
+
+            // skip MQ data if previous query data is the same as data in current MQ
+            if (JSON.stringify(prevScreenData, null, 2) === JSON.stringify(current.data, null, 2)) {
+              return collection;
+            }
 
             return {
               ...collection,
