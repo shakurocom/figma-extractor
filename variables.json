@@ -2142,6 +2142,22 @@
             "value": -16
           },
           {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
+          },
+          {
             "name": "box/max-width/100",
             "type": "FLOAT",
             "scopes": [
@@ -2348,6 +2364,30 @@
               "WIDTH_HEIGHT"
             ],
             "value": 320
+          },
+          {
+            "name": "section/height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/min-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/max-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
           },
           {
             "name": "section/min-height/100vh",
@@ -2492,6 +2532,22 @@
             "value": -16
           },
           {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
+          },
+          {
             "name": "box/max-width/100",
             "type": "FLOAT",
             "scopes": [
@@ -2698,6 +2754,30 @@
               "WIDTH_HEIGHT"
             ],
             "value": 680
+          },
+          {
+            "name": "section/height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/min-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/max-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
           },
           {
             "name": "section/min-height/100vh",
@@ -2842,6 +2922,22 @@
             "value": -24
           },
           {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
+          },
+          {
             "name": "box/max-width/100",
             "type": "FLOAT",
             "scopes": [
@@ -3048,6 +3144,30 @@
               "WIDTH_HEIGHT"
             ],
             "value": 1024
+          },
+          {
+            "name": "section/height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/min-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/max-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
           },
           {
             "name": "section/min-height/100vh",
@@ -3192,6 +3312,22 @@
             "value": -24
           },
           {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
+          },
+          {
             "name": "box/max-width/100",
             "type": "FLOAT",
             "scopes": [
@@ -3398,6 +3534,30 @@
               "WIDTH_HEIGHT"
             ],
             "value": 1440
+          },
+          {
+            "name": "section/height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/min-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
+          },
+          {
+            "name": "section/max-height/100",
+            "type": "FLOAT",
+            "scopes": [
+              "ALL_SCOPES"
+            ],
+            "value": 333
           },
           {
             "name": "section/min-height/100vh",
@@ -7229,6 +7389,22 @@
             "value": -24
           },
           {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
+          },
+          {
             "name": "box/max-width/100",
             "type": "FLOAT",
             "scopes": [
@@ -7561,6 +7737,22 @@
               "GAP"
             ],
             "value": -24
+          },
+          {
+            "name": "box/width/0",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "box/width/100",
+            "type": "FLOAT",
+            "scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "value": 333
           },
           {
             "name": "box/max-width/100",
