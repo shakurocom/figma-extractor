@@ -26,22 +26,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
     }
     },'body-500-bs': {
       
@@ -87,23 +71,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -156,23 +124,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -225,23 +177,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.60,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 24,
@@ -294,31 +230,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -363,31 +275,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -432,31 +320,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-400-bs': {
       
       fontFamily: fontFamily.font1,
@@ -501,31 +365,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-450-bs': {
       
       fontFamily: fontFamily.font1,
@@ -571,14 +411,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -647,22 +479,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'caption-200-bs': {
       
@@ -716,22 +532,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'caption-250-bs': {
       
@@ -777,31 +577,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
     },'input-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -846,31 +622,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    }
     },'input-650-bs': {
       
       fontFamily: fontFamily.font1,
@@ -916,14 +668,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -1145,22 +889,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
     }
     },'__extra_body-600': {
       
@@ -1170,23 +898,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -1203,23 +915,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -1236,23 +932,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.60,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 24,
@@ -1269,31 +949,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    }
     },'__extra_btn-250': {
       
       fontFamily: fontFamily.font1,
@@ -1302,31 +958,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'__extra_btn-400': {
       
       fontFamily: fontFamily.font1,
@@ -1335,31 +967,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    }
     },'__extra_btn-450': {
       
       fontFamily: fontFamily.font1,
@@ -1368,31 +976,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'__extra_btn-500': {
       
       fontFamily: fontFamily.font1,
@@ -1402,14 +986,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -1442,22 +1018,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'__extra_caption-250': {
       
@@ -1475,22 +1035,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'__extra_input-600': {
       
@@ -1500,31 +1044,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
     },'__extra_input-650': {
       
       fontFamily: fontFamily.font1,
@@ -1533,31 +1053,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    }
     },'__extra_nav-100': {
       
       fontFamily: fontFamily.font1,
@@ -1567,14 +1063,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -1688,22 +1176,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
     }
     },'__extra_body-500-bs': {
       
@@ -1749,23 +1221,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -1818,23 +1274,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -1887,23 +1327,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.60,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 24,
@@ -1956,31 +1380,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    }
     },'__extra_btn-200-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2025,31 +1425,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'__extra_btn-250-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2094,31 +1470,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    }
     },'__extra_btn-400-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2163,31 +1515,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'__extra_btn-450-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2233,14 +1561,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -2309,22 +1629,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'__extra_caption-200-bs': {
       
@@ -2378,22 +1682,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'__extra_caption-250-bs': {
       
@@ -2439,31 +1727,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
     },'__extra_input-600-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2508,31 +1772,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    }
     },'__extra_input-650-bs': {
       
       fontFamily: fontFamily.font1,
@@ -2578,14 +1818,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -2807,22 +2039,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
     }
     },'body-600': {
       
@@ -2832,23 +2048,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -2865,23 +2065,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 18,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 18,
@@ -2898,23 +2082,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.60,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 400,
-      lineHeight: 1.60,
-      
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 24,
-      fontWeight: 400,
-      lineHeight: 1.67,
-      
-  
-    },'@media (min-width: 1440px)': {
+      '@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 24,
@@ -2931,31 +2099,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 500,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-250': {
       
       fontFamily: fontFamily.font1,
@@ -2964,31 +2108,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.14,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 14,
-      fontWeight: 600,
-      lineHeight: 1.14,
-      
-  
-    }
     },'btn-400': {
       
       fontFamily: fontFamily.font1,
@@ -2997,31 +2117,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-450': {
       
       fontFamily: fontFamily.font1,
@@ -3030,31 +2126,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.00,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    }
     },'btn-500': {
       
       fontFamily: fontFamily.font1,
@@ -3064,14 +2136,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
@@ -3104,22 +2168,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font2,
-      fontSize: 12,
-      fontWeight: 400,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'caption-250': {
       
@@ -3137,22 +2185,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.33,
       letterSpacing: '0.5px',
   
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 12,
-      fontWeight: 600,
-      lineHeight: 1.33,
-      letterSpacing: '0.5px',
-  
     }
     },'input-600': {
       
@@ -3162,31 +2194,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 400,
-      lineHeight: 1.50,
-      
-  
-    }
     },'input-650': {
       
       fontFamily: fontFamily.font1,
@@ -3195,31 +2203,7 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       lineHeight: 1.50,
       
   
-      '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
       
-  
-    },'@media (min-width: 1024px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    },'@media (min-width: 1440px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 16,
-      fontWeight: 500,
-      lineHeight: 1.50,
-      
-  
-    }
     },'nav-100': {
       
       fontFamily: fontFamily.font1,
@@ -3229,14 +2213,6 @@ font2: "'Roboto Mono', Arial, sans-serif", // used weights: 400
       
   
       '@media (min-width: 680px)': {
-        
-      fontFamily: fontFamily.font1,
-      fontSize: 20,
-      fontWeight: 600,
-      lineHeight: 1.00,
-      
-  
-    },'@media (min-width: 1024px)': {
         
       fontFamily: fontFamily.font1,
       fontSize: 20,
