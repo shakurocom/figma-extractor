@@ -6624,6 +6624,51 @@
         "modeId": "4095:4",
         "variables": [
           {
+            "name": "shadow/m-100/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/m-100/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 2
+          },
+          {
+            "name": "shadow/m-100/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/m-100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 6
+          },
+          {
+            "name": "shadow/m-100/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0.03921568766236305,
+              "g": 0.09803921729326248,
+              "b": 0.22745098173618317,
+              "a": 0.05999999865889549
+            }
+          },
+          {
             "name": "shadow/600/x",
             "type": "FLOAT",
             "scopes": [
@@ -6939,6 +6984,51 @@
         "name": "dark",
         "modeId": "4095:5",
         "variables": [
+          {
+            "name": "shadow/m-100/x",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/m-100/y",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 2
+          },
+          {
+            "name": "shadow/m-100/spread",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 0
+          },
+          {
+            "name": "shadow/m-100/blur",
+            "type": "FLOAT",
+            "scopes": [
+              "EFFECT_FLOAT"
+            ],
+            "value": 6
+          },
+          {
+            "name": "shadow/m-100/color",
+            "type": "COLOR",
+            "scopes": [
+              "EFFECT_COLOR"
+            ],
+            "value": {
+              "r": 0.03921568766236305,
+              "g": 0.09803921729326248,
+              "b": 0.22745098173618317,
+              "a": 0.05999999865889549
+            }
+          },
           {
             "name": "shadow/600/x",
             "type": "FLOAT",

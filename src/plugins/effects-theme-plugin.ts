@@ -58,7 +58,7 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
       const backdropBlur = acc.backdropBlur || {};
       // format name from backdrop-blur-100 to 100
       // because className in tailwind backdrop-blur-100 better then backdrop-blur-backdrop-blur-100
-      const backdropBlurName = name.split('-')[2];
+      const backdropBlurName = name.replace(/^backdrop-blur-/, '');
 
       return {
         ...acc,
@@ -71,7 +71,7 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
     if (name.includes('blur')) {
       const blur = acc.blur || {};
       // format name from blur-100 to 100
-      const blurName = name.split('-')[1];
+      const blurName = name.replace(/^blur-/, '');
 
       return {
         ...acc,
@@ -84,7 +84,7 @@ const formattedEffects = (effects: Record<string, string>): FormattedEffects => 
     if (name.includes('shadow')) {
       const shadow = acc.boxShadow || {};
       // format name from boxShadow-100 to 100
-      const shadowName = name.split('-')[1];
+      const shadowName = name.replace(/^shadow-/, '');
 
       return {
         ...acc,

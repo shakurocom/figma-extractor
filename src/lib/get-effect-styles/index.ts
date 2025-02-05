@@ -36,12 +36,20 @@ function groupEffectProperties(properties: Variable[]) {
   const grouped: { [key: string]: GroupedEffectProperty } = {};
 
   properties.forEach(prop => {
-    const groupName = prop.name.split('/').slice(0, 2).join('-');
+    const rawGroupName = prop.name.split('/');
+    const styleName = rawGroupName.at(-1) as keyof Omit<GroupedEffectProperty, 'type'>;
+
+    const effectTypesWithNestedFields: EffectType[] = ['shadow'];
+    const effectType = rawGroupName.at(0) as EffectType;
+    const groupName = rawGroupName
+      .slice(0, effectTypesWithNestedFields.includes(effectType) ? -1 : rawGroupName.length)
+      .join('-');
+
     if (!grouped[groupName]) {
       grouped[groupName] = {} as GroupedEffectProperty;
     }
 
-    switch (prop.name.split('/')[0] as EffectType) {
+    switch (effectType) {
       case 'backdrop-blur':
         grouped[groupName].type = 'backdrop-blur';
         grouped[groupName].blur = prop.value as number;
@@ -52,23 +60,7 @@ function groupEffectProperties(properties: Variable[]) {
         break;
       case 'shadow':
         grouped[groupName].type = 'shadow';
-        switch (prop.name.split('/').at(-1) as keyof GroupedEffectProperty) {
-          case 'x':
-            grouped[groupName].x = prop.value as number;
-            break;
-          case 'y':
-            grouped[groupName].y = prop.value as number;
-            break;
-          case 'blur':
-            grouped[groupName].blur = prop.value as number;
-            break;
-          case 'spread':
-            grouped[groupName].spread = prop.value as number;
-            break;
-          case 'color':
-            grouped[groupName].color = prop.value as Color;
-            break;
-        }
+        grouped[groupName][styleName] = prop.value as any;
         break;
     }
   });
