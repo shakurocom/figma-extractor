@@ -5,7 +5,7 @@ import { getTextStyleName } from './text/get-text-style-name';
 
 export type GroupedFontProperty = {
   fontFamily: string;
-  fontSize: number;
+  fontSize: string;
   fontWeight: number;
   lineHeight: number;
   letterSpacing?: number;
@@ -28,12 +28,8 @@ function groupFontProperties(properties: Variable[]) {
       case 'FONT_FAMILY':
         grouped[groupName].fontFamily = prop.value as string;
         break;
-      // FIXME: temp hack - need to remove. designer should pick correct scope
-      case 'ALL_SCOPES':
-        grouped[groupName].fontFamily = prop.value as string;
-        break;
       case 'FONT_SIZE':
-        grouped[groupName].fontSize = prop.value as number;
+        grouped[groupName].fontSize = `${prop.value}px` as string;
         break;
       case 'FONT_WEIGHT':
         grouped[groupName].fontWeight = prop.value as number;
@@ -65,11 +61,15 @@ export const getTextStyles = (variables: ThemeVariablesConfig[], config: Config)
       const fontVar = Object.entries(fontFamily).find(([, font]) => font === value.fontFamily);
       const keyName = config?.styles?.textStyles?.keyName || getTextStyleName;
 
+      const lineHeight = value.lineHeight || 0;
+      const fontSize = parseFloat(value.fontSize) || 1;
+
       return {
         [keyName?.(`${key}/${item.name}`)]: {
           ...value,
           fontFamily: `fontFamily.${fontVar?.[0]}`,
-          lineHeight: `${((value.lineHeight || 0) / value.fontSize || 1).toFixed(2)}` as any,
+          fontSize: `'${value.fontSize}'`,
+          lineHeight: parseFloat((lineHeight / fontSize).toFixed(2)),
         },
       };
     });
