@@ -13,6 +13,6 @@ Package for extract style system and svg icons from figma.
 
 For more documentation, follow this: https://figma-extractor.vercel.app
 
-Take a look at our <a href="https://shakuro.com/services/web-dev">web development services</a>
+Take a look at our <a href="https://shakuro.com/services/web-dev/?utm_source=github&utm_medium=repository&utm_campaign=figma-extractor">web development services</a>
 
-If you need professional assistance with your mobile or web project, feel free to <a href="https://shakuro.com/get-in-touch">contact our team</a>
+If you need professional assistance with your mobile or web project, feel free to <a href="https://shakuro.com/get-in-touch/?utm_source=github&utm_medium=repository&utm_campaign=figma-extractor">contact our team</a>
