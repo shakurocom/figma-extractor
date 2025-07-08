@@ -29,7 +29,7 @@ export const writeStyleFile = (template: string, fileName: string, config: Confi
 
   // NOTE: this code should still be invoked according to the original implementation.
   shell.exec(
-    `yarn eslint ${path.join(path.join(config?.styles?.exportPath || '', fileName))} --fix`,
+    `npx eslint ${path.join(path.join(config?.styles?.exportPath || '', fileName))} --fix`,
   );
 
   console.log(`Generate ${fileName} is completed`);
