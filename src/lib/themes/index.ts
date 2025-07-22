@@ -132,6 +132,8 @@ export const generateCSSVariables = (
   themeName: ThemeName,
   config: Config,
 ) => {
+  const extraThemeName = config.styles.themesMappingOverrides?.[themeName];
+
   const ns = config.styles.cssVariablesNs ?? 'sh';
   const data: string[] = [];
   for (const [name, value] of Object.entries(variablesCollection)) {
@@ -151,7 +153,7 @@ export const generateCSSVariables = (
 
   if (themeName && themeName !== NOT_FOUND_THEME_NAME) {
     return `
-[data-theme='${themeName}'] {
+[data-theme='${themeName}']${extraThemeName ? `, [data-theme='${extraThemeName}']` : ''} {
   ${data.join('\n')}
 }`;
   } else {

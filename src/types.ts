@@ -49,6 +49,19 @@ export type Config = {
     allowedThemes?: string[];
 
     /**
+     * It's used to map theme names from figma to custom names.
+     * example:
+     themesMappingOverrides: {
+        solarized: 'dark-solarized',
+       'raven-black': 'bbg',
+     }
+
+       *you can only path overridden values.
+       *If you don't want to override any theme, you can just not pass this field.
+    */
+    themesMappingOverrides?: Record<string, string>;
+
+    /**
       It's used like default variables inside generated CSS variables
      */
     defaultTheme?: string;
