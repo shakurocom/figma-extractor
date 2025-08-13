@@ -19,11 +19,11 @@
   ],
   "scripts": {
     "dev": "ts-node ./src/bin.ts",
-    "build": "rm -rf dist && yarn tsc",
+    "build": "rm -rf dist && pnpm tsc",
     "lint": "eslint . --ext .ts,.tsx,.js --ignore-path .gitignore",
     "test": "jest",
     "prepare": "husky install",
-    "release": "yarn build && git push --tags && npm publish --access public --new-version"
+    "release": "pnpm build && git push --tags && npm publish --access public --new-version"
   },
   "dependencies": {
     "@inquirer/select": "^2.3.10",
@@ -71,11 +71,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && lint-staged"
+      "pre-commit": "pnpm test && lint-staged"
     }
   },
+  "packageManager": "pnpm@10.14.0",
   "volta": {
-    "node": "18.12.1",
-    "yarn": "1.22.10"
+    "node": "22.18.0"
   }
 }
