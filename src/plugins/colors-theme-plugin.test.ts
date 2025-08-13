@@ -128,7 +128,7 @@ describe('colorsThemePlugin', () => {
           colors: {
             collectionNames: ['color', 'color_extra'],
             keyName: (name?: string) => {
-              return name === 'light/text/500' ? name + '+prefix' : name;
+              return name === 'light/txt/500' ? name + '+prefix' : name;
             },
           },
         },
@@ -141,7 +141,7 @@ describe('colorsThemePlugin', () => {
     core.writeFile = jest.fn();
 
     expect(() => colorsThemePlugin(core, { variables } as any)).toThrow(
-      'Color name: "light-text-500+prefix" without theme contains not-valid chars.',
+      'Color name: "light-txt-500+prefix" without theme contains not-valid chars.',
     );
   });
 
