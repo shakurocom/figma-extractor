@@ -2068,7 +2068,7 @@
         "modeId": "7431:0",
         "variables": [
           {
-            "name": "box/padding/px-0",
+            "name": "spacing/0",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2076,15 +2076,7 @@
             "value": 0
           },
           {
-            "name": "box/padding/py-0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/padding/px-40",
+            "name": "spacing/40",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2098,14 +2090,6 @@
               "GAP"
             ],
             "value": 0
-          },
-          {
-            "name": "box/padding/py-40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 4
           },
           {
             "name": "container/padding/py-0",
@@ -2132,22 +2116,6 @@
             "value": 0
           },
           {
-            "name": "container/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
             "name": "section/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -2156,7 +2124,7 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-80",
+            "name": "spacing/80",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2164,7 +2132,15 @@
             "value": 8
           },
           {
-            "name": "box/padding/px-120",
+            "name": "container/padding/px-80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "spacing/120",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2172,15 +2148,7 @@
             "value": 12
           },
           {
-            "name": "box/padding/py-120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/padding/px-160",
+            "name": "spacing/160",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2188,15 +2156,7 @@
             "value": 16
           },
           {
-            "name": "box/padding/py-160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/padding/px-240",
+            "name": "spacing/240",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2204,36 +2164,12 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-400",
+            "name": "spacing/400",
             "type": "FLOAT",
             "scopes": [
               "GAP"
             ],
             "value": 40
-          },
-          {
-            "name": "box/padding/py-480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 48
-          },
-          {
-            "name": "box/padding/py-640",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 64
           },
           {
             "name": "section/padding/py-240",
@@ -2268,70 +2204,6 @@
             "value": 16
           },
           {
-            "name": "box/gap/0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/gap/40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 4
-          },
-          {
-            "name": "box/gap/80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/gap/160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/gap/240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 40
-          },
-          {
-            "name": "box/gap/480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 48
-          },
-          {
             "name": "container/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -2346,54 +2218,6 @@
               "GAP"
             ],
             "value": 24
-          },
-          {
-            "name": "box/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/min-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 320
-          },
-          {
-            "name": "box/min-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/max-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 600
-          },
-          {
-            "name": "box/max-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 800
           },
           {
             "name": "container/padding/px-800",
@@ -2682,6 +2506,94 @@
               "WIDTH_HEIGHT"
             ],
             "value": 1440
+          },
+          {
+            "name": "spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 48
+          },
+          {
+            "name": "spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 64
+          },
+          {
+            "name": "container/spacing/0",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 0
+          },
+          {
+            "name": "container/spacing/40",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 4
+          },
+          {
+            "name": "container/spacing/80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/120",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 12
+          },
+          {
+            "name": "container/spacing/160",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 16
+          },
+          {
+            "name": "container/spacing/240",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/400",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 40
+          },
+          {
+            "name": "container/spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 48
+          },
+          {
+            "name": "container/spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 64
           }
         ]
       },
@@ -2690,7 +2602,7 @@
         "modeId": "7431:1",
         "variables": [
           {
-            "name": "box/padding/px-0",
+            "name": "spacing/0",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2698,15 +2610,7 @@
             "value": 0
           },
           {
-            "name": "box/padding/py-0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/padding/px-40",
+            "name": "spacing/40",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2720,14 +2624,6 @@
               "GAP"
             ],
             "value": 0
-          },
-          {
-            "name": "box/padding/py-40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
           },
           {
             "name": "container/padding/py-0",
@@ -2754,22 +2650,6 @@
             "value": 0
           },
           {
-            "name": "container/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
             "name": "section/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -2778,7 +2658,7 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-80",
+            "name": "spacing/80",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2786,7 +2666,15 @@
             "value": 8
           },
           {
-            "name": "box/padding/px-120",
+            "name": "container/padding/px-80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "spacing/120",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2794,15 +2682,7 @@
             "value": 12
           },
           {
-            "name": "box/padding/py-120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/padding/px-160",
+            "name": "spacing/160",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2810,15 +2690,7 @@
             "value": 16
           },
           {
-            "name": "box/padding/py-160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/padding/px-240",
+            "name": "spacing/240",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -2826,36 +2698,12 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-400",
+            "name": "spacing/400",
             "type": "FLOAT",
             "scopes": [
               "GAP"
             ],
             "value": 32
-          },
-          {
-            "name": "box/padding/py-480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 40
-          },
-          {
-            "name": "box/padding/py-640",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 64
           },
           {
             "name": "section/padding/py-240",
@@ -2890,70 +2738,6 @@
             "value": 16
           },
           {
-            "name": "box/gap/0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/gap/40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 4
-          },
-          {
-            "name": "box/gap/80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/gap/160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/gap/240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 32
-          },
-          {
-            "name": "box/gap/480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 40
-          },
-          {
             "name": "container/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -2968,54 +2752,6 @@
               "GAP"
             ],
             "value": 24
-          },
-          {
-            "name": "box/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/min-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/max-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 600
-          },
-          {
-            "name": "box/max-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 800
           },
           {
             "name": "container/padding/px-800",
@@ -3304,6 +3040,94 @@
               "WIDTH_HEIGHT"
             ],
             "value": 1024
+          },
+          {
+            "name": "spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 40
+          },
+          {
+            "name": "spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 64
+          },
+          {
+            "name": "container/spacing/0",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 0
+          },
+          {
+            "name": "container/spacing/40",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/120",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 12
+          },
+          {
+            "name": "container/spacing/160",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 16
+          },
+          {
+            "name": "container/spacing/240",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/400",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 32
+          },
+          {
+            "name": "container/spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 40
+          },
+          {
+            "name": "container/spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 64
           }
         ]
       },
@@ -3312,7 +3136,7 @@
         "modeId": "7431:2",
         "variables": [
           {
-            "name": "box/padding/px-0",
+            "name": "spacing/0",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3320,15 +3144,7 @@
             "value": 0
           },
           {
-            "name": "box/padding/py-0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/padding/px-40",
+            "name": "spacing/40",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3342,14 +3158,6 @@
               "GAP"
             ],
             "value": 0
-          },
-          {
-            "name": "box/padding/py-40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
           },
           {
             "name": "container/padding/py-0",
@@ -3376,22 +3184,6 @@
             "value": 0
           },
           {
-            "name": "container/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
             "name": "section/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -3400,7 +3192,7 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-80",
+            "name": "spacing/80",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3408,7 +3200,15 @@
             "value": 8
           },
           {
-            "name": "box/padding/px-120",
+            "name": "container/padding/px-80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "spacing/120",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3416,15 +3216,7 @@
             "value": 12
           },
           {
-            "name": "box/padding/py-120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/padding/px-160",
+            "name": "spacing/160",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3432,15 +3224,7 @@
             "value": 16
           },
           {
-            "name": "box/padding/py-160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/padding/px-240",
+            "name": "spacing/240",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3448,36 +3232,12 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-240",
+            "name": "spacing/400",
             "type": "FLOAT",
             "scopes": [
               "GAP"
             ],
             "value": 24
-          },
-          {
-            "name": "box/padding/py-400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-640",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 40
           },
           {
             "name": "section/padding/py-240",
@@ -3512,70 +3272,6 @@
             "value": 16
           },
           {
-            "name": "box/gap/0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/gap/40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 4
-          },
-          {
-            "name": "box/gap/80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/gap/160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 32
-          },
-          {
             "name": "container/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -3590,54 +3286,6 @@
               "GAP"
             ],
             "value": 24
-          },
-          {
-            "name": "box/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/min-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/max-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 600
-          },
-          {
-            "name": "box/max-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 800
           },
           {
             "name": "container/padding/px-800",
@@ -3926,6 +3574,94 @@
               "WIDTH_HEIGHT"
             ],
             "value": 680
+          },
+          {
+            "name": "spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 40
+          },
+          {
+            "name": "container/spacing/0",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 0
+          },
+          {
+            "name": "container/spacing/40",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/120",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 12
+          },
+          {
+            "name": "container/spacing/160",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 16
+          },
+          {
+            "name": "container/spacing/240",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/400",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 40
           }
         ]
       },
@@ -3934,7 +3670,7 @@
         "modeId": "7431:3",
         "variables": [
           {
-            "name": "box/padding/px-0",
+            "name": "spacing/0",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3942,15 +3678,7 @@
             "value": 0
           },
           {
-            "name": "box/padding/py-0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/padding/px-40",
+            "name": "spacing/40",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -3964,14 +3692,6 @@
               "GAP"
             ],
             "value": 0
-          },
-          {
-            "name": "box/padding/py-40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
           },
           {
             "name": "container/padding/py-0",
@@ -3998,22 +3718,6 @@
             "value": 0
           },
           {
-            "name": "container/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/padding/px-80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
             "name": "section/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -4022,7 +3726,7 @@
             "value": 16
           },
           {
-            "name": "box/padding/py-80",
+            "name": "spacing/80",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -4030,7 +3734,15 @@
             "value": 8
           },
           {
-            "name": "box/padding/px-120",
+            "name": "container/padding/px-80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "spacing/120",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -4038,15 +3750,7 @@
             "value": 12
           },
           {
-            "name": "box/padding/py-120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/padding/px-160",
+            "name": "spacing/160",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -4054,15 +3758,7 @@
             "value": 16
           },
           {
-            "name": "box/padding/py-160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 16
-          },
-          {
-            "name": "box/padding/px-240",
+            "name": "spacing/240",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -4070,31 +3766,7 @@
             "value": 24
           },
           {
-            "name": "box/padding/py-240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/padding/py-640",
+            "name": "spacing/400",
             "type": "FLOAT",
             "scopes": [
               "GAP"
@@ -4134,70 +3806,6 @@
             "value": 16
           },
           {
-            "name": "box/gap/0",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 0
-          },
-          {
-            "name": "box/gap/40",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 4
-          },
-          {
-            "name": "box/gap/80",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/120",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 12
-          },
-          {
-            "name": "box/gap/160",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 8
-          },
-          {
-            "name": "box/gap/240",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/400",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
-            "name": "box/gap/480",
-            "type": "FLOAT",
-            "scopes": [
-              "GAP"
-            ],
-            "value": 24
-          },
-          {
             "name": "container/padding/px-240",
             "type": "FLOAT",
             "scopes": [
@@ -4212,54 +3820,6 @@
               "GAP"
             ],
             "value": 16
-          },
-          {
-            "name": "box/max-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/min-width/100",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 240
-          },
-          {
-            "name": "box/min-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 400
-          },
-          {
-            "name": "box/max-width/200",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 600
-          },
-          {
-            "name": "box/max-width/300",
-            "type": "FLOAT",
-            "scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "value": 800
           },
           {
             "name": "container/padding/px-800",
@@ -4548,6 +4108,94 @@
               "WIDTH_HEIGHT"
             ],
             "value": 320
+          },
+          {
+            "name": "spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/0",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 0
+          },
+          {
+            "name": "container/spacing/40",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/80",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 8
+          },
+          {
+            "name": "container/spacing/120",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 12
+          },
+          {
+            "name": "container/spacing/160",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 16
+          },
+          {
+            "name": "container/spacing/240",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/400",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/480",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
+          },
+          {
+            "name": "container/spacing/640",
+            "type": "FLOAT",
+            "scopes": [
+              "GAP"
+            ],
+            "value": 24
           }
         ]
       }
