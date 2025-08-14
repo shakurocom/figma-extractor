@@ -5,86 +5,134 @@ type Screens = string;
 
 type MediaCacheItem = { media: Screens; data: Record<string, string> };
 
+type AddMediaCacheItemArg = { media: Screens; value: string };
+
 class MediaCollection {
   private cache: { [className: string]: MediaCacheItem[] } = {};
 
   constructor(private screens: Record<Screens, string | number>) {}
 
-  add(className: string, data: Omit<MediaCacheItem, 'data'> & { data: string }) {
+  add(className: string, { media, value }: AddMediaCacheItemArg) {
     if (!Array.isArray(this.cache[className])) {
       this.cache[className] = [];
     }
-    const style = data as any;
+    let styles = {};
+
     // className should has following format: {scope}-{prop}-{key}
     // for example: box-pb-10
-    if (className.includes('-pt-')) {
-      style.data = {
-        'padding-top': data.data,
+    if (className.includes('-pt-') || className.endsWith('-pt')) {
+      styles = {
+        'padding-top': value,
       };
-    } else if (className.includes('-pb-')) {
-      style.data = {
-        'padding-bottom': data.data,
+    } else if (className.includes('-pb-') || className.endsWith('-pb')) {
+      styles = {
+        'padding-bottom': value,
       };
-    } else if (className.includes('-pl-')) {
-      style.data = {
-        'padding-left': data.data,
+    } else if (className.includes('-pl-') || className.endsWith('-pl')) {
+      styles = {
+        'padding-left': value,
       };
-    } else if (className.includes('-pr-')) {
-      style.data = {
-        'padding-right': data.data,
+    } else if (className.includes('-pr-') || className.endsWith('-pr')) {
+      styles = {
+        'padding-right': value,
       };
-    } else if (className.includes('-px-')) {
-      style.data = {
-        'padding-left': data.data,
-        'padding-right': data.data,
+    } else if (className.includes('-px-') || className.endsWith('-px')) {
+      styles = {
+        'padding-left': value,
+        'padding-right': value,
       };
-    } else if (className.includes('-py-')) {
-      style.data = {
-        'padding-top': data.data,
-        'padding-bottom': data.data,
+    } else if (className.includes('-py-') || className.endsWith('-py')) {
+      styles = {
+        'padding-top': value,
+        'padding-bottom': value,
       };
-    } else if (className.includes('-p-')) {
-      style.data = { padding: data.data };
-    } else if (className.includes('-gap-')) {
-      style.data = {
-        gap: data.data,
+    } else if (className.includes('-p-') || className.endsWith('-p')) {
+      styles = {
+        padding: value,
       };
-    } else if (className.includes('-min-width-') && data?.data !== '0px') {
-      style.data = {
-        'min-width': data.data,
+    } else if (className.includes('-mt-') || className.endsWith('-mt')) {
+      styles = {
+        'margin-top': value,
       };
-    } else if (className.includes('-max-width-') && data?.data !== '0px') {
-      style.data = {
-        'max-width': data.data,
+    } else if (className.includes('-mb-') || className.endsWith('-mb')) {
+      styles = {
+        'margin-bottom': value,
       };
-    } else if (className.includes('-width-') && data?.data !== '0px') {
-      style.data = {
-        width: data.data,
+    } else if (className.includes('-ml-') || className.endsWith('-ml')) {
+      styles = {
+        'margin-left': value,
       };
-    } else if (className.includes('-max-height-') && data?.data !== '0px') {
-      style.data = {
-        'max-height': data.data,
+    } else if (className.includes('-mr-') || className.endsWith('-mr')) {
+      styles = {
+        'margin-right': value,
       };
-    } else if (className.includes('-min-height-') && data?.data !== '0px') {
-      style.data = {
-        'min-height': data.data,
+    } else if (className.includes('-mx-') || className.endsWith('-mx')) {
+      styles = {
+        'margin-left': value,
+        'margin-right': value,
       };
-    } else if (className.includes('-height-') && data?.data !== '0px') {
-      style.data = {
-        height: data.data,
+    } else if (className.includes('-my-') || className.endsWith('-my')) {
+      styles = {
+        'margin-top': value,
+        'margin-bottom': value,
+      };
+    } else if (className.includes('-m-') || className.endsWith('-m')) {
+      styles = {
+        margin: value,
+      };
+    } else if (className.includes('-gap-') || className.endsWith('-gap')) {
+      styles = {
+        gap: value,
+      };
+    } else if (
+      (className.includes('-min-width-') || className.endsWith('-min-width')) &&
+      value !== '0px'
+    ) {
+      styles = {
+        'min-width': value,
+      };
+    } else if (
+      (className.includes('-max-width-') || className.endsWith('-max-width')) &&
+      value !== '0px'
+    ) {
+      styles = {
+        'max-width': value,
+      };
+    } else if ((className.includes('-width-') || className.endsWith('-width')) && value !== '0px') {
+      styles = {
+        width: value,
+      };
+    } else if (
+      (className.includes('-max-height-') || className.endsWith('-max-height')) &&
+      value !== '0px'
+    ) {
+      styles = {
+        'max-height': value,
+      };
+    } else if (
+      (className.includes('-min-height-') || className.endsWith('-min-height')) &&
+      value !== '0px'
+    ) {
+      styles = {
+        'min-height': value,
+      };
+    } else if (
+      (className.includes('-height-') || className.endsWith('-height')) &&
+      value !== '0px'
+    ) {
+      styles = {
+        height: value,
       };
     } else {
-      if (data?.data !== '0px') {
+      if (value !== '0px') {
         console.warn(
           '[warn:merge-responsive] >>> ',
           `'${className}' are not supported for generating any styles`,
         );
       }
-
-      style.data = {};
     }
 
-    this.cache[className] = [...this.cache[className], style];
+    this.cache[className] = [...this.cache[className], { media, data: styles }];
   }
 
   export() {
@@ -200,16 +248,43 @@ export const mergeResponsive = ({
   }[];
 }) => {
   const mediaCollection = new MediaCollection(screens);
-  data.forEach(textStyle => {
-    Object.entries(textStyle).map(([className, textStyleScreens]) => {
-      Object.entries(textStyleScreens).map(([key, value]) => {
-        mediaCollection.add(`.${className}`, {
-          media: key,
-          data: value,
-        });
-      });
+  data.forEach(style => {
+    Object.entries(style).map(([className, screens]) => {
+      Object.entries(screens).map(addToMediaCollectionByClassName(mediaCollection, className));
     });
   });
 
   return mediaCollection.export();
 };
+
+const addToMediaCollectionByClassName =
+  (mediaCollection: MediaCollection, className: string) =>
+  ([media, value]: [string, string]) => {
+    // map spacing to tw like spacing utils
+    if (className.includes('spacing-')) {
+      [
+        'p',
+        'px',
+        'py',
+        'pt',
+        'pb',
+        'pl',
+        'pr',
+        'm',
+        'mx',
+        'my',
+        'mt',
+        'mb',
+        'ml',
+        'mr',
+        'gap',
+        'max-width',
+        'min-width',
+      ].forEach(prop => {
+        const cn = `.${className}-${prop}`;
+        mediaCollection.add(cn, { media, value });
+      });
+    } else {
+      mediaCollection.add(`.${className}`, { media, value });
+    }
+  };
