@@ -32,19 +32,25 @@ class MediaCollection {
       styles = {
         'padding-left': value,
       };
+    } else if (className.includes('-ps-') || className.endsWith('-ps')) {
+      styles = {
+        'padding-inline-start': value,
+      };
     } else if (className.includes('-pr-') || className.endsWith('-pr')) {
       styles = {
         'padding-right': value,
       };
+    } else if (className.includes('-pe-') || className.endsWith('-pe')) {
+      styles = {
+        'padding-inline-end': value,
+      };
     } else if (className.includes('-px-') || className.endsWith('-px')) {
       styles = {
-        'padding-left': value,
-        'padding-right': value,
+        'padding-inline': value,
       };
     } else if (className.includes('-py-') || className.endsWith('-py')) {
       styles = {
-        'padding-top': value,
-        'padding-bottom': value,
+        'padding-block': value,
       };
     } else if (className.includes('-p-') || className.endsWith('-p')) {
       styles = {
@@ -62,19 +68,25 @@ class MediaCollection {
       styles = {
         'margin-left': value,
       };
+    } else if (className.includes('-ms-') || className.endsWith('-ms')) {
+      styles = {
+        'margin-inline-start': value,
+      };
     } else if (className.includes('-mr-') || className.endsWith('-mr')) {
       styles = {
         'margin-right': value,
       };
+    } else if (className.includes('-me-') || className.endsWith('-me')) {
+      styles = {
+        'margin-inline-end': value,
+      };
     } else if (className.includes('-mx-') || className.endsWith('-mx')) {
       styles = {
-        'margin-left': value,
-        'margin-right': value,
+        'margin-inline': value,
       };
     } else if (className.includes('-my-') || className.endsWith('-my')) {
       styles = {
-        'margin-top': value,
-        'margin-bottom': value,
+        'margin-block': value,
       };
     } else if (className.includes('-m-') || className.endsWith('-m')) {
       styles = {
@@ -269,7 +281,9 @@ const addToMediaCollectionByClassName =
         'pt',
         'pb',
         'pl',
+        'ps',
         'pr',
+        'pe',
         'm',
         'mx',
         'my',
