@@ -55,7 +55,7 @@ export const textStylesPlugin: Plugin = (
         ${Object.entries(result.fontFamily)
           .map(
             ([key, { title, comment }]) =>
-              `${key}: "${title}", ${!!comment ? '// ' + comment : ''}`,
+              `${key}: "var(--${config.styles.cssVariablesNs ?? 'sh'}-font-family-${key}), ${title}", ${!!comment ? '// ' + comment : ''}`,
           )
           .join('\n')}
       };

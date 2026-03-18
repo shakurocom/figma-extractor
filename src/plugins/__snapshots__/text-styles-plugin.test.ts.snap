@@ -6,7 +6,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
       };
 
       export const textVariants = {'body-500': {
@@ -1215,7 +1215,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
       };
 
       export const textVariants = {'__extra_body-500': {
@@ -1596,7 +1596,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
       };
 
       export const textVariants = {'__extra_body-500': {
@@ -2805,7 +2805,7 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
       };
 
       export const textVariants = {'body-500': {
@@ -3186,7 +3186,7 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
       };
 
       export const textVariants = {'body-500-bs': {
