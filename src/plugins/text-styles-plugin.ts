@@ -33,7 +33,7 @@ export const textStylesPlugin: Plugin = (
 
     if (result.fontFamily) {
       for (const [fontTitle, fontValue] of Object.entries(result.fontFamily)) {
-        log('[info:text-styles/fonts] >>> ', `'${fontTitle}' => '${fontValue.title}'`);
+        log('[info:text-styles/fonts] >>> ', `'${fontTitle}' => '${fontValue.fontName}'`);
       }
     }
 
