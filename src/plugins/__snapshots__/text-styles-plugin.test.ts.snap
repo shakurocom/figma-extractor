@@ -6,7 +6,8 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500': {
@@ -1068,7 +1069,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
       
     },'title-800': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1076,7 +1077,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1084,7 +1085,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1092,7 +1093,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1101,7 +1102,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
     }
     },'title-800-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1110,7 +1111,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
       
     },'title-800-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1119,7 +1120,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
       
     },'title-800-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1128,7 +1129,7 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
       
     },'title-800-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1215,7 +1216,8 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'__extra_body-500': {
@@ -1521,7 +1523,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     }
     },'__extra_title-800': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1529,7 +1531,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1537,7 +1539,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1545,7 +1547,7 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1596,7 +1598,8 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'__extra_body-500': {
@@ -2658,7 +2661,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
       
     },'__extra_title-800': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -2666,7 +2669,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -2674,7 +2677,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -2682,7 +2685,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2691,7 +2694,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
     }
     },'__extra_title-800-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -2700,7 +2703,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
       
     },'__extra_title-800-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2709,7 +2712,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
       
     },'__extra_title-800-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -2718,7 +2721,7 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
       
     },'__extra_title-800-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -2805,7 +2808,8 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500': {
@@ -3111,7 +3115,7 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
     }
     },'title-800': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -3119,7 +3123,7 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -3127,7 +3131,7 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -3135,7 +3139,7 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -3186,7 +3190,8 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1), 'Inter', Arial, sans-serif", // used weights: 400, 500, 600
+        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500-bs': {
@@ -3947,7 +3952,7 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
       
     },'title-800-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -3956,7 +3961,7 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
       
     },'title-800-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -3965,7 +3970,7 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
       
     },'title-800-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -3974,7 +3979,7 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
       
     },'title-800-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.font2,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,

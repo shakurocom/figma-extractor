@@ -53,14 +53,21 @@ export const getFontFamily = (modes: Mode[]) => {
   );
 
   const formattedFontFamilyWithAdditionalFonts = Object.keys(fontAndWeightList).reduce<
-    Record<string, { title: string; comment: string }>
+    Record<
+      string,
+      { fontName: string; fontFallbackName: string; fontNameWithFallback: string; comment: string }
+    >
   >((acc, fontName, i) => {
     const weights = fontAndWeightList[fontName] || [];
+    const fallbackFontName =
+      FONT_FALLBACKS[fontName as keyof typeof FONT_FALLBACKS] ?? 'Arial, sans-serif';
 
     return {
       ...acc,
       [`font${i + 1}`]: {
-        title: `'${fontName}', Arial, sans-serif`,
+        fontName: fontName,
+        fontFallbackName: fallbackFontName,
+        fontNameWithFallback: `'${fontName}', ${fallbackFontName}`,
         comment: weights.length > 0 ? `used weights: ${weights.sort().join(', ')}` : '',
       },
     };
@@ -76,3 +83,12 @@ export const getFontFamily = (modes: Mode[]) => {
 
   return { formattedFontFamilyWithAdditionalFonts, fontFamily: formattedFontFamily };
 };
+
+/* eslint-disable @typescript-eslint/naming-convention */
+const FONT_FALLBACKS = {
+  'Frank Ruhl Libre': 'Georgia, sans-serif',
+  'PP Cirka': 'Georgia, serif',
+  'TT Demark': '"TT Norms Web", "TT Norms", Arial, sans-serif',
+  Literata: 'Georgia, serif',
+};
+/* eslint-enable @typescript-eslint/naming-convention */
