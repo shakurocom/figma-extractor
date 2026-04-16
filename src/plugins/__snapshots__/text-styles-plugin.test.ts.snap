@@ -6,13 +6,13 @@ exports[`textStylesPlugin should add extra styles which have prefix screen 1`] =
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
-font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
+        primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+test: "var(--sh-font-family-test, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -21,7 +21,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -30,7 +30,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -39,7 +39,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -48,7 +48,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -57,7 +57,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -65,7 +65,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -74,7 +74,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'body-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -83,7 +83,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -92,7 +92,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -101,7 +101,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -110,7 +110,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -118,7 +118,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -127,7 +127,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'body-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -136,7 +136,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -145,7 +145,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -154,7 +154,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -163,7 +163,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -171,7 +171,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -180,7 +180,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'body-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -189,7 +189,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -198,7 +198,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -207,7 +207,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -216,7 +216,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -225,7 +225,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -234,7 +234,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -243,7 +243,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -252,7 +252,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -261,7 +261,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -270,7 +270,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -279,7 +279,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -288,7 +288,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -297,7 +297,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -306,7 +306,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -315,7 +315,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -324,7 +324,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -333,7 +333,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -342,7 +342,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -351,7 +351,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -360,7 +360,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -369,7 +369,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -378,7 +378,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -387,7 +387,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -396,7 +396,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -404,7 +404,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -412,7 +412,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -421,7 +421,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'btn-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -430,7 +430,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -439,7 +439,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -448,7 +448,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -457,7 +457,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -465,7 +465,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -474,7 +474,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'caption-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -483,7 +483,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -492,7 +492,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -501,7 +501,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -510,7 +510,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -518,7 +518,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -527,7 +527,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -536,7 +536,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -545,7 +545,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -554,7 +554,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -563,7 +563,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -572,7 +572,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -581,7 +581,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -590,7 +590,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -599,7 +599,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -608,7 +608,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -617,7 +617,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -626,7 +626,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -635,7 +635,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -644,7 +644,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -653,7 +653,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -662,7 +662,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -671,7 +671,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -680,7 +680,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -689,7 +689,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -698,7 +698,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -707,7 +707,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -716,7 +716,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -725,7 +725,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -734,7 +734,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -743,7 +743,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -752,7 +752,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -761,7 +761,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -770,7 +770,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -779,7 +779,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -788,7 +788,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -797,7 +797,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -806,7 +806,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -815,7 +815,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -824,7 +824,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -833,7 +833,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -842,7 +842,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -851,7 +851,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -860,7 +860,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -869,7 +869,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -878,7 +878,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -886,7 +886,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -894,7 +894,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -903,7 +903,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'nav-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -912,7 +912,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -921,7 +921,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -930,7 +930,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -939,7 +939,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -947,7 +947,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -955,7 +955,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -964,7 +964,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -973,7 +973,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -982,7 +982,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -991,7 +991,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -1000,7 +1000,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1008,7 +1008,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -1016,7 +1016,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1024,7 +1024,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1033,7 +1033,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1042,7 +1042,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1051,7 +1051,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1060,7 +1060,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -1069,7 +1069,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1077,7 +1077,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1085,7 +1085,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1093,7 +1093,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1102,7 +1102,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-800-bs': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1111,7 +1111,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-lg': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1120,7 +1120,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-md': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1129,7 +1129,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-sm': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1138,7 +1138,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -1146,7 +1146,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1154,7 +1154,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1162,7 +1162,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1171,7 +1171,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -1180,7 +1180,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1189,7 +1189,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1198,7 +1198,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1216,13 +1216,13 @@ exports[`textStylesPlugin should create data with custom keyName function 1`] = 
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
-font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
+        primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+test: "var(--sh-font-family-test, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'__extra_body-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1231,7 +1231,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1239,7 +1239,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1248,7 +1248,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_body-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -1256,7 +1256,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -1265,7 +1265,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_body-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -1273,7 +1273,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -1282,7 +1282,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_btn-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1291,7 +1291,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1300,7 +1300,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1309,7 +1309,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1318,7 +1318,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1326,7 +1326,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1334,7 +1334,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1343,7 +1343,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_caption-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -1351,7 +1351,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -1360,7 +1360,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_caption-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1368,7 +1368,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1377,7 +1377,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_caption-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -1386,7 +1386,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1395,7 +1395,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -1404,7 +1404,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -1413,7 +1413,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -1422,7 +1422,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -1431,7 +1431,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -1440,7 +1440,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_nav-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1448,7 +1448,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1456,7 +1456,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -1465,7 +1465,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -1473,7 +1473,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -1481,7 +1481,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -1490,7 +1490,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1498,7 +1498,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -1506,7 +1506,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1514,7 +1514,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1523,7 +1523,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-800': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -1531,7 +1531,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -1539,7 +1539,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -1547,7 +1547,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1556,7 +1556,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -1564,7 +1564,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -1572,7 +1572,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -1580,7 +1580,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -1598,13 +1598,13 @@ exports[`textStylesPlugin should create data with custom keyName function and pr
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
-font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
+        primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+test: "var(--sh-font-family-test, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'__extra_body-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1613,7 +1613,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1622,7 +1622,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1631,7 +1631,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1640,7 +1640,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1649,7 +1649,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1657,7 +1657,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1666,7 +1666,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_body-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1675,7 +1675,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1684,7 +1684,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -1693,7 +1693,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -1702,7 +1702,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -1710,7 +1710,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -1719,7 +1719,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_body-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -1728,7 +1728,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -1737,7 +1737,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -1746,7 +1746,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -1755,7 +1755,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -1763,7 +1763,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -1772,7 +1772,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_body-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -1781,7 +1781,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -1790,7 +1790,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -1799,7 +1799,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_body-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -1808,7 +1808,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1817,7 +1817,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1826,7 +1826,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1835,7 +1835,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1844,7 +1844,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -1853,7 +1853,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1862,7 +1862,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1871,7 +1871,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1880,7 +1880,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1889,7 +1889,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -1898,7 +1898,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1907,7 +1907,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1916,7 +1916,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1925,7 +1925,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1934,7 +1934,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -1943,7 +1943,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1952,7 +1952,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1961,7 +1961,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1970,7 +1970,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1979,7 +1979,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-450-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1988,7 +1988,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -1996,7 +1996,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2004,7 +2004,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2013,7 +2013,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_btn-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2022,7 +2022,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2031,7 +2031,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2040,7 +2040,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_btn-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2049,7 +2049,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2057,7 +2057,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2066,7 +2066,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_caption-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2075,7 +2075,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2084,7 +2084,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2093,7 +2093,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2102,7 +2102,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2110,7 +2110,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2119,7 +2119,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2128,7 +2128,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2137,7 +2137,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2146,7 +2146,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2155,7 +2155,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2164,7 +2164,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2173,7 +2173,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2182,7 +2182,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2191,7 +2191,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_caption-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2200,7 +2200,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2209,7 +2209,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2218,7 +2218,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2227,7 +2227,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2236,7 +2236,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2245,7 +2245,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2254,7 +2254,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2263,7 +2263,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2272,7 +2272,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2281,7 +2281,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_input-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2290,7 +2290,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -2299,7 +2299,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -2308,7 +2308,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -2317,7 +2317,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -2326,7 +2326,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -2335,7 +2335,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -2344,7 +2344,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -2353,7 +2353,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -2362,7 +2362,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -2371,7 +2371,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -2380,7 +2380,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -2389,7 +2389,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -2398,7 +2398,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -2407,7 +2407,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -2416,7 +2416,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-300-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -2425,7 +2425,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -2434,7 +2434,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -2443,7 +2443,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -2452,7 +2452,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -2461,7 +2461,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_label-350-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -2470,7 +2470,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_nav-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2478,7 +2478,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2486,7 +2486,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -2495,7 +2495,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_nav-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2504,7 +2504,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_nav-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -2513,7 +2513,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_nav-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2522,7 +2522,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_nav-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2531,7 +2531,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -2539,7 +2539,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -2547,7 +2547,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -2556,7 +2556,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -2565,7 +2565,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -2574,7 +2574,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -2583,7 +2583,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -2592,7 +2592,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2600,7 +2600,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -2608,7 +2608,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2616,7 +2616,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -2625,7 +2625,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2634,7 +2634,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -2643,7 +2643,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2652,7 +2652,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -2661,7 +2661,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-800': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -2669,7 +2669,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -2677,7 +2677,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -2685,7 +2685,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2694,7 +2694,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-800-bs': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -2703,7 +2703,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-800-lg': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2712,7 +2712,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-800-md': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -2721,7 +2721,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-800-sm': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -2730,7 +2730,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -2738,7 +2738,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2746,7 +2746,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2754,7 +2754,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -2763,7 +2763,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'__extra_title-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -2772,7 +2772,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -2781,7 +2781,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -2790,7 +2790,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'__extra_title-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -2808,13 +2808,13 @@ exports[`textStylesPlugin should write generated date with media queries 1`] = `
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
-font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
+        primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+test: "var(--sh-font-family-test, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2823,7 +2823,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2831,7 +2831,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2840,7 +2840,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'body-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -2848,7 +2848,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -2857,7 +2857,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'body-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -2865,7 +2865,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -2874,7 +2874,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'btn-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -2883,7 +2883,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -2892,7 +2892,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -2901,7 +2901,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2910,7 +2910,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2918,7 +2918,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2926,7 +2926,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -2935,7 +2935,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'caption-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2943,7 +2943,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -2952,7 +2952,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'caption-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2960,7 +2960,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -2969,7 +2969,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'caption-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -2978,7 +2978,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -2987,7 +2987,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -2996,7 +2996,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -3005,7 +3005,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -3014,7 +3014,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -3023,7 +3023,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -3032,7 +3032,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3040,7 +3040,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3048,7 +3048,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -3057,7 +3057,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-100': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -3065,7 +3065,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -3073,7 +3073,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -3082,7 +3082,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-400': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -3090,7 +3090,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -3098,7 +3098,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -3106,7 +3106,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -3115,7 +3115,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-800': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -3123,7 +3123,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -3131,7 +3131,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -3139,7 +3139,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -3148,7 +3148,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
     }
     },'title-900': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -3156,7 +3156,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
       '@media (min-width: 580px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -3164,7 +3164,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1024px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -3172,7 +3172,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
   
     },'@media (min-width: 1440px)': {
         
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -3190,13 +3190,13 @@ exports[`textStylesPlugin shouldn't create media queries styles because of respo
     /* eslint-disable @typescript-eslint/naming-convention */
     
       export const fontFamily = {
-        font1: "var(--sh-font-family-font1, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
-font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
+        primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 600
+test: "var(--sh-font-family-test, 'TT Demark'), "TT Norms Web", "TT Norms", Arial, sans-serif", // used weights: 600
       };
 
       export const textVariants = {'body-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3205,7 +3205,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3214,7 +3214,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3223,7 +3223,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3232,7 +3232,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3241,7 +3241,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3250,7 +3250,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3259,7 +3259,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3268,7 +3268,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -3277,7 +3277,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -3286,7 +3286,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -3295,7 +3295,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1.5,
@@ -3304,7 +3304,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -3313,7 +3313,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -3322,7 +3322,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 400,
       lineHeight: 1.67,
@@ -3331,7 +3331,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'body-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 400,
       lineHeight: 1.6,
@@ -3340,7 +3340,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -3349,7 +3349,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -3358,7 +3358,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -3367,7 +3367,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.14,
@@ -3376,7 +3376,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -3385,7 +3385,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -3394,7 +3394,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -3403,7 +3403,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: 1.14,
@@ -3412,7 +3412,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -3421,7 +3421,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -3430,7 +3430,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -3439,7 +3439,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1,
@@ -3448,7 +3448,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3457,7 +3457,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3466,7 +3466,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3475,7 +3475,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-450-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3484,7 +3484,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3493,7 +3493,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3502,7 +3502,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3511,7 +3511,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'btn-500-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3520,7 +3520,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -3529,7 +3529,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -3538,7 +3538,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -3547,7 +3547,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '10px',
       fontWeight: 500,
       lineHeight: 1.2,
@@ -3556,7 +3556,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3565,7 +3565,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3574,7 +3574,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3583,7 +3583,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 400,
       lineHeight: 1.33,
@@ -3592,7 +3592,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -3601,7 +3601,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -3610,7 +3610,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -3619,7 +3619,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'caption-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '12px',
       fontWeight: 500,
       lineHeight: 1.33,
@@ -3628,7 +3628,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3637,7 +3637,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3646,7 +3646,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3655,7 +3655,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-600-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.5,
@@ -3664,7 +3664,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -3673,7 +3673,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -3682,7 +3682,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -3691,7 +3691,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'input-650-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.5,
@@ -3700,7 +3700,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -3709,7 +3709,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -3718,7 +3718,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -3727,7 +3727,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-200-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 400,
       lineHeight: 1.43,
@@ -3736,7 +3736,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -3745,7 +3745,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -3754,7 +3754,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -3763,7 +3763,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-250-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '14px',
       fontWeight: 500,
       lineHeight: 1.43,
@@ -3772,7 +3772,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -3781,7 +3781,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -3790,7 +3790,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -3799,7 +3799,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-300-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: 1.38,
@@ -3808,7 +3808,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -3817,7 +3817,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -3826,7 +3826,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -3835,7 +3835,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'label-350-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 500,
       lineHeight: 1.38,
@@ -3844,7 +3844,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3853,7 +3853,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '16px',
       fontWeight: 600,
       lineHeight: 2,
@@ -3862,7 +3862,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3871,7 +3871,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'nav-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1,
@@ -3880,7 +3880,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '18px',
       fontWeight: 600,
       lineHeight: 1.22,
@@ -3889,7 +3889,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -3898,7 +3898,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '24px',
       fontWeight: 600,
       lineHeight: 1.33,
@@ -3907,7 +3907,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-100-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '22px',
       fontWeight: 600,
       lineHeight: 1.27,
@@ -3916,7 +3916,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '20px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -3925,7 +3925,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '48px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -3934,7 +3934,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,
@@ -3943,7 +3943,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-400-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '28px',
       fontWeight: 600,
       lineHeight: 1.29,
@@ -3952,7 +3952,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-bs': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '26px',
       fontWeight: 600,
       lineHeight: 1.23,
@@ -3961,7 +3961,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-lg': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -3970,7 +3970,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-md': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '58px',
       fontWeight: 600,
       lineHeight: 1.24,
@@ -3979,7 +3979,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-800-sm': {
       
-      fontFamily: fontFamily.font2,
+      fontFamily: fontFamily.test,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.13,
@@ -3988,7 +3988,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-bs': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '32px',
       fontWeight: 600,
       lineHeight: 1.25,
@@ -3997,7 +3997,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-lg': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '96px',
       fontWeight: 600,
       lineHeight: 1.17,
@@ -4006,7 +4006,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-md': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '72px',
       fontWeight: 600,
       lineHeight: 1.11,
@@ -4015,7 +4015,7 @@ font2: "var(--sh-font-family-font2, 'TT Demark'), "TT Norms Web", "TT Norms", Ar
       
     },'title-900-sm': {
       
-      fontFamily: fontFamily.font1,
+      fontFamily: fontFamily.primary,
       fontSize: '40px',
       fontWeight: 600,
       lineHeight: 1.2,

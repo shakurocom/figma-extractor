@@ -47,12 +47,25 @@ function groupFontProperties(properties: Variable[]) {
 }
 
 export const getTextStyles = (variables: ThemeVariablesConfig[], config: Config) => {
+  const fontNamesMap: Record<string, string> = {};
+
+  const fontCollections = variables.filter(({ name }) => name === 'fonts');
+  fontCollections.forEach(item => {
+    item.modes.forEach(mode => {
+      mode.variables.forEach(variable => {
+        if (typeof variable.value === 'string') {
+          fontNamesMap[variable.value] = variable.name;
+        }
+      });
+    });
+  });
+
   const filteredCollections = variables.filter(({ name }) =>
     config?.styles?.textStyles?.collectionNames?.includes(name),
   );
 
   const modes = filteredCollections.reduce<Mode[]>((acc, item) => [...acc, ...item.modes], []);
-  const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(modes);
+  const { fontFamily, formattedFontFamilyWithAdditionalFonts } = getFontFamily(modes, fontNamesMap);
 
   const textStyles = modes.reduce<{ [x: string]: GroupedFontProperty }[]>((acc, item) => {
     const groupedFontProperties = groupFontProperties(item.variables);
@@ -67,7 +80,7 @@ export const getTextStyles = (variables: ThemeVariablesConfig[], config: Config)
       return {
         [keyName?.(`${key}/${item.name}`)]: {
           ...value,
-          fontFamily: `fontFamily.${fontVar?.[0]}`,
+          fontFamily: `fontFamily.${fontNamesMap[value.fontFamily] ?? fontVar?.[0]}`,
           fontSize: `'${value.fontSize}'`,
           lineHeight: parseFloat((lineHeight / fontSize).toFixed(2)),
         },

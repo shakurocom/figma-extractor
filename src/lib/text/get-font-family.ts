@@ -6,7 +6,7 @@ const variableHasWeight = (variable: Variable): variable is FloatVariable =>
 const variableHasFontFamily = (variable: Variable): variable is StringVariable =>
   variable.scopes.includes('FONT_FAMILY');
 
-export const getFontFamily = (modes: Mode[]) => {
+export const getFontFamily = (modes: Mode[], fontNamesMap: { [fontName: string]: string }) => {
   const variables = modes
     .reduce<Variable[]>((acc, item) => [...acc, ...item.variables], [])
     .reduce<Record<string, { font: string; weight: number }>>((collection, item) => {
@@ -64,7 +64,7 @@ export const getFontFamily = (modes: Mode[]) => {
 
     return {
       ...acc,
-      [`font${i + 1}`]: {
+      [fontNamesMap[fontName] ?? `font${i + 1}`]: {
         fontName: fontName,
         fontFallbackName: fallbackFontName,
         fontNameWithFallback: `'${fontName}', ${fallbackFontName}`,

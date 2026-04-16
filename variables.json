@@ -7932,6 +7932,14 @@
               "FONT_FAMILY"
             ],
             "value": "Roboto Mono"
+          },
+          {
+            "name": "test",
+            "type": "STRING",
+            "scopes": [
+              "FONT_FAMILY"
+            ],
+            "value": "TT Demark"
           }
         ]
       }
