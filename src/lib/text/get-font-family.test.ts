@@ -92,8 +92,18 @@ describe('getFontFamily', () => {
     ).toEqual({
       fontFamily: { font1: 'Inter', font2: 'Roboto' },
       formattedFontFamilyWithAdditionalFonts: {
-        font1: { title: "'Inter', Arial, sans-serif", comment: 'used weights: 500, 600' },
-        font2: { title: "'Roboto', Arial, sans-serif", comment: 'used weights: 400' },
+        font1: {
+          fontName: 'Inter',
+          fontFallbackName: 'Arial, sans-serif',
+          fontNameWithFallback: "'Inter', Arial, sans-serif",
+          comment: 'used weights: 500, 600',
+        },
+        font2: {
+          fontName: 'Roboto',
+          fontFallbackName: 'Arial, sans-serif',
+          fontNameWithFallback: "'Roboto', Arial, sans-serif",
+          comment: 'used weights: 400',
+        },
       },
     });
   });

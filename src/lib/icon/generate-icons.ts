@@ -5,6 +5,7 @@ import { type Config as ConfigSVG } from 'svgo';
 
 import { Core } from '../../core';
 import { Config, IconConfig } from '../../types';
+import { withConcurrency } from '../../utils/with-concurrency';
 import { downloadStreamingToFile } from '../download-streaming-to-file';
 import { generateIconTypes } from '../generate-icon-types';
 import { generateIconsSprite } from '../generate-icons-sprite';
@@ -25,6 +26,8 @@ export const generateIcons = async (
   config: Config,
   log: Core['log'],
 ) => {
+  const iconDownloadConcurrency = Math.max(Number(process.env.FIGMA_DOWNLOAD_CONCURRENCY ?? 3), 1);
+
   if (!iconConfig.exportPath) {
     throw new Error('config -> icons -> exportPath is required field');
   }
@@ -79,8 +82,8 @@ export const generateIcons = async (
       data: { images },
     } = await client.fileImages(config.fileId, { ids: imageIds, format: 'svg' });
 
-    await Promise.all(
-      imagesData.map(async item => {
+    await withConcurrency(
+      imagesData.map(item => async () => {
         const filename = `${pathIconsFolder}/${item.name}.svg`;
 
         await downloadStreamingToFile(`${images[item.id]}`, filename, {
@@ -94,6 +97,7 @@ export const generateIcons = async (
 
         console.log('Icon downloaded: ', `${item.name.replace(__dirname, '')}.svg`);
       }),
+      iconDownloadConcurrency,
     );
   }
 
