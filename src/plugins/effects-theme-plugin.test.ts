@@ -327,6 +327,32 @@ describe('effectsThemePlugin', () => {
     );
   });
 
+  it('should keep only effects whose group is listed in effects.groupNames', () => {
+    const core = createCore({
+      config: {
+        styles: {
+          exportPath: '/export-path/',
+          allowedThemes: ['light', 'dark', 'monochrome'],
+          defaultTheme: 'monochrome',
+          effects: { collectionNames: ['effects'], groupNames: ['shadow'] },
+        },
+      },
+      plugins: [],
+      rootPath: '/root-path',
+      log: jest.fn(),
+    });
+
+    core.writeFile = jest.fn();
+
+    effectsThemePlugin(core, { styleMetadata: styleMetadata.styles, fileNodes, variables } as any);
+
+    const lightIndex = (core.writeFile as jest.Mock).mock.calls[0][0] as string;
+    expect((core.writeFile as jest.Mock).mock.calls[0][1]).toBe('/export-path/effects/light/index.ts');
+    expect(lightIndex).toContain('boxShadow');
+    // groups other than `shadow` must be filtered out by effects.groupNames
+    expect(lightIndex).not.toContain('backdropBlur');
+  });
+
   describe("create theme data with one theme which doesn't exist in figma", () => {
     it('should create js files with css variables', () => {
       const core = createCore({

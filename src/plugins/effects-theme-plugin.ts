@@ -120,7 +120,7 @@ export const effectsThemePlugin: Plugin = (
   const modesWithFilteredVariablesByGroup = modes.map(item => ({
     ...item,
     variables: item.variables.filter(variable => {
-      if ((config.styles.colors?.groupNames || []).length > 0) {
+      if ((config.styles.effects?.groupNames || []).length > 0) {
         const [group] = variable.name.split('/');
 
         return config.styles?.effects?.groupNames?.includes(group);
