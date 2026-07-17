@@ -26,10 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Version comes from the root package.json "packageManager" field (pnpm@10.14.0).
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       - name: Setup Node
         uses: actions/setup-node@v4
