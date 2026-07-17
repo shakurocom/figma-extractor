@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "figma-extractor",
+  "compatibility_date": "2026-07-01",
+  // Static-assets-only Worker: serves the Next.js static export from ./out
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}

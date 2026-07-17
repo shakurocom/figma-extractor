@@ -1,0 +1,52 @@
+---
+title: Get started
+description: Extract style system and SVG icons from Figma
+---
+
+**Figma extractor** is a CLI tool that extracts a style system (colors, effects, text styles, responsive variables) and SVG icons from a Figma file into ready-to-use TypeScript and CSS files.
+
+## Setup
+
+<Steps>
+<Step>
+### Install the package
+
+```bash
+pnpm add -D @shakuroinc/figma-extractor
+```
+
+If you plan to generate an SVG sprite (`generateSprite: true`), also install the peer dependency [`svg-symbol-sprite`](https://www.npmjs.com/package/svg-symbol-sprite):
+
+```bash
+pnpm add -D svg-symbol-sprite
+```
+</Step>
+
+<Step>
+### Add a config file
+
+Create `figma-extractor.config.js` in the root of your project. The config is resolved with [cosmiconfig](https://github.com/cosmiconfig/cosmiconfig), so `figma-extractor.config.cjs`, a `.figma-extractorrc` file, or a `figma-extractor` key in `package.json` work too.
+
+See the full reference on the [Configuration](/docs/configuration) page.
+</Step>
+
+<Step>
+### Add a variables JSON file
+
+Export local variables from your Figma file to a JSON file (for example `variables.json`) using a variables export plugin in Figma, and point `jsonVariablesPath` in the config to it.
+
+<Callout type="info">
+If a variables collection named `fonts` is present in the exported JSON, it is used to map font family keys to readable names in the generated `text-styles.ts`. See [Font family mapping](/docs/configuration#font-family-mapping).
+</Callout>
+</Step>
+
+<Step>
+### Run the extractor
+
+```bash
+pnpm figma-extract
+```
+
+Check the [CLI API](/docs/cli-api) for available flags.
+</Step>
+</Steps>

@@ -1,0 +1,381 @@
+---
+title: How to use themes in your project
+description: Wire generated themes into next-themes and Tailwind
+---
+
+<Steps>
+<Step>
+### Enable usage of themes
+
+Firstly, you should enable usage of themes in the config. You can enable usage of themes for colors and effects.
+
+Set an array of `allowedThemes` and a `defaultTheme` in `Config -> styles`:
+
+```js title="figma-extractor.config.js"
+module.exports = {
+  // ...
+  styles: {
+    exportPath: './theme',
+    allowedThemes: ['light', 'dark'],
+    defaultTheme: 'light',
+    // ...
+  },
+};
+```
+
+For more information follow [Configuration](/docs/configuration#themes-for-colors-and-effects).
+
+</Step>
+
+<Step>
+### Launch the extractor
+
+After a successful launch of the extractor you will see the created files (click a file to preview its content):
+
+<CodeFiles defaultFile="themes-list.ts">
+<CodeFilesTree>
+<Files>
+  <Folder name="ui" defaultOpen>
+    <Folder name="theme" defaultOpen>
+      <Folder name="colors" defaultOpen>
+        <Folder name="dark" defaultOpen>
+          <CodeFilesFile name="index.ts" file="color-dark-index.ts" />
+          <CodeFilesFile name="vars.css" file="color-dark-vars.css" />
+        </Folder>
+        <Folder name="light" defaultOpen>
+          <CodeFilesFile name="index.ts" file="color-light-index.ts" />
+          <CodeFilesFile name="vars.css" file="color-light-vars.css" />
+        </Folder>
+        <CodeFilesFile name="index.ts" file="color-index.ts" />
+        <CodeFilesFile name="vars.css" file="color-vars.css" />
+        <CodeFilesFile name="with-vars.ts" file="color-with-vars.ts" />
+      </Folder>
+      <Folder name="effects" defaultOpen>
+        <Folder name="dark" defaultOpen>
+          <CodeFilesFile name="index.ts" file="effects-dark-index.ts" />
+          <CodeFilesFile name="vars.css" file="effects-dark-vars.css" />
+        </Folder>
+        <Folder name="light" defaultOpen>
+          <CodeFilesFile name="index.ts" file="effects-light-index.ts" />
+          <CodeFilesFile name="vars.css" file="effects-light-vars.css" />
+        </Folder>
+        <CodeFilesFile name="index.ts" file="effects-index.ts" />
+        <CodeFilesFile name="vars.css" file="effects-vars.css" />
+        <CodeFilesFile name="with-vars.ts" file="effects-with-vars.ts" />
+      </Folder>
+      <CodeFilesFile name="themes-list.ts" />
+    </Folder>
+  </Folder>
+</Files>
+</CodeFilesTree>
+<CodeFilesPanel>
+<CodeFilesContent file="themes-list.ts">
+```ts title="themes-list.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+
+// THIS FILE IS GENERATED AUTOMATICALLY. DON'T CHANGE IT.
+
+export const DEFAULT_THEME = 'light';
+
+export const THEMES = ['dark', 'light'] as const;
+
+export type Theme = (typeof THEMES)[number];
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-with-vars.ts">
+```ts title="colors/with-vars.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const colors = {
+  bg100: 'var(--sh-bg100,#ffffff)',
+  bg200: 'var(--sh-bg200,#f7f9fc)',
+  txt100: 'var(--sh-txt100,#ffffff)',
+  txt800: 'var(--sh-txt800,#a4acc0)',
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-vars.css">
+```css title="colors/vars.css"
+:root {
+  --sh-bg100: #ffffff;
+  --sh-bg200: #f7f9fc;
+  --sh-txt100: #ffffff;
+  --sh-txt800: #a4acc0;
+}
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-index.ts">
+```ts title="colors/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const colors = {
+  bg100: '#ffffff',
+  bg200: '#f7f9fc',
+  txt100: '#ffffff',
+  txt800: '#a4acc0',
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-dark-index.ts">
+```ts title="colors/dark/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const colors = {
+  bg100: '#121928',
+  bg200: '#2d3646',
+  txt100: '#121928',
+  txt800: '#a4acc0',
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-dark-vars.css">
+```css title="colors/dark/vars.css"
+[data-theme='dark'] {
+  --sh-bg100: #121928;
+  --sh-bg200: #2d3646;
+  --sh-txt100: #121928;
+  --sh-txt800: #a4acc0;
+}
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-light-index.ts">
+```ts title="colors/light/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const colors = {
+  bg100: '#ffffff',
+  bg200: '#f7f9fc',
+  txt100: '#ffffff',
+  txt800: '#a4acc0',
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="color-light-vars.css">
+```css title="colors/light/vars.css"
+[data-theme='light'] {
+  --sh-bg100: #ffffff;
+  --sh-bg200: #f7f9fc;
+  --sh-txt100: #ffffff;
+  --sh-txt800: #a4acc0;
+}
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-with-vars.ts">
+```ts title="effects/with-vars.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const effects = {
+  boxShadow: {
+    dp100: "var(--sh-dp100,'0px 8px 24px rgba(65, 74, 92, 0.40)')",
+    dp1000: "var(--sh-dp1000,'0px 8px 24px rgba(186, 193, 204, 0.70)')",
+    dp250: "var(--sh-dp250,'0px 0px 16px rgba(255, 10, 10, 0.16)')",
+    dp900: "var(--sh-dp900,'0px 0px 12px rgba(53, 156, 252, 0.56)')",
+  },
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-vars.css">
+```css title="effects/vars.css"
+:root {
+  --sh-dp1000: 0px 8px 24px rgba(186, 193, 204, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(65, 74, 92, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.16);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.56);
+}
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-index.ts">
+```ts title="effects/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const effects = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
+    dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.16)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.56)',
+  },
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-dark-index.ts">
+```ts title="effects/dark/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const effects = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(13, 15, 19, 0.40)',
+    dp1000: '0px 8px 24px rgba(3, 12, 26, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.08)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.24)',
+  },
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-dark-vars.css">
+```css title="effects/dark/vars.css"
+[data-theme='dark'] {
+  --sh-dp1000: 0px 8px 24px rgba(3, 12, 26, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(13, 15, 19, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.08);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.24);
+}
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-light-index.ts">
+```ts title="effects/light/index.ts"
+/* eslint-disable max-lines */
+/* eslint-disable @typescript-eslint/naming-convention */
+export const effects = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(65, 74, 92, 0.40)',
+    dp1000: '0px 8px 24px rgba(186, 193, 204, 0.70)',
+    dp250: '0px 0px 16px rgba(255, 10, 10, 0.16)',
+    dp900: '0px 0px 12px rgba(53, 156, 252, 0.56)',
+  },
+};
+```
+</CodeFilesContent>
+<CodeFilesContent file="effects-light-vars.css">
+```css title="effects/light/vars.css"
+[data-theme='light'] {
+  --sh-dp1000: 0px 8px 24px rgba(186, 193, 204, 0.7);
+  --sh-dp100: 0px 8px 24px rgba(65, 74, 92, 0.4);
+  --sh-dp250: 0px 0px 16px rgba(255, 10, 10, 0.16);
+  --sh-dp900: 0px 0px 12px rgba(53, 156, 252, 0.56);
+}
+```
+</CodeFilesContent>
+</CodeFilesPanel>
+</CodeFiles>
+</Step>
+
+<Step>
+### Install the `next-themes` package in your project
+
+Generated files can be used with [next-themes](https://github.com/pacocoursey/next-themes) — a great solution for switching themes.
+
+</Step>
+
+<Step>
+### Include received themes in `next-themes`
+
+Inside `app.tsx` you should add the following code:
+
+```tsx title="app.tsx"
+import { THEMES, DEFAULT_THEME } from '@sh/ui/theme/themes-list';
+
+<ThemeProvider attribute="data-theme" defaultTheme={DEFAULT_THEME} themes={[...THEMES]}>
+  {children}
+</ThemeProvider>;
+```
+
+</Step>
+
+<Step>
+### Connect the generated theme to Tailwind
+
+These examples target **Tailwind CSS 4**. The **recommended** way is to keep a `tailwind.config.ts` and load it from CSS with the `@config` directive — it stays a single source of truth and picks up the generated tokens automatically. Mapping the variables inline with `@theme inline` also works, but it's extra manual work (you list and maintain every token by hand), so reach for it only if you specifically want a config-less setup.
+
+<Tabs items={['tailwind.config.ts (@config, recommended)', 'Inline mapping (@theme inline)']}>
+  <Tab>
+This is the recommended, more idiomatic setup. Keep a `tailwind.config.ts` that imports the generated `with-vars.ts` files, and load that config from your CSS with the `@config` directive — no need to re-declare tokens by hand.
+
+```ts title="tailwind.config.ts"
+import { colors } from './theme/colors/with-vars';
+import { effects } from './theme/effects/with-vars';
+
+/** @type {import('tailwindcss').Config} */
+const config = {
+  theme: {
+    ...effects,
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      ...colors,
+    },
+  },
+};
+
+export default config;
+```
+
+<Callout type="warn">
+  Import `with-vars.ts`, not `index.ts`. `with-vars.ts` references the CSS variables so themes
+  switch correctly; `index.ts` contains raw data from Figma and is only kept for legacy code.
+</Callout>
+
+Then, in your global stylesheet, import Tailwind, point it at the config with `@config`, and import the generated `vars.css` files (the root theme and every theme):
+
+```css title="ui/organisms/global-styles/index.css"
+@import 'tailwindcss';
+@config './tailwind.config.ts';
+
+/* generated variables — :root + one selector per theme */
+@import '@sh/ui/theme/colors/vars.css';
+@import '@sh/ui/theme/colors/light/vars.css';
+@import '@sh/ui/theme/colors/dark/vars.css';
+
+@import '@sh/ui/theme/effects/vars.css';
+@import '@sh/ui/theme/effects/light/vars.css';
+@import '@sh/ui/theme/effects/dark/vars.css';
+```
+
+<Callout type="info">
+The `@config` path is resolved relative to the CSS file — adjust `./tailwind.config.ts` to wherever your config actually lives (for example `../../tailwind.config.ts`).
+</Callout>
+  </Tab>
+  <Tab>
+Prefer a config-less setup? You can expose the tokens to Tailwind directly in CSS with a `@theme inline` block. The trade-off is extra manual work: you have to list every generated variable by hand and keep that list in sync as the design system grows — which is why the `tailwind.config.ts` approach above is recommended.
+
+```css title="ui/organisms/global-styles/index.css"
+@import 'tailwindcss';
+
+/* generated variables — :root + one selector per theme */
+@import '@sh/ui/theme/colors/vars.css';
+@import '@sh/ui/theme/colors/light/vars.css';
+@import '@sh/ui/theme/colors/dark/vars.css';
+
+@import '@sh/ui/theme/effects/vars.css';
+@import '@sh/ui/theme/effects/light/vars.css';
+@import '@sh/ui/theme/effects/dark/vars.css';
+
+/* map generated variables to Tailwind utilities */
+@theme inline {
+  --color-bg100: var(--sh-bg100);
+  --color-bg200: var(--sh-bg200);
+  --color-txt100: var(--sh-txt100);
+  --color-txt800: var(--sh-txt800);
+
+  --shadow-dp100: var(--sh-dp100);
+  --shadow-dp250: var(--sh-dp250);
+  --shadow-dp900: var(--sh-dp900);
+  --shadow-dp1000: var(--sh-dp1000);
+}
+```
+
+This gives you utilities like `bg-bg100`, `text-txt800` and `shadow-dp100`.
+
+<Callout type="info">
+The `inline` keyword matters. It makes the utilities resolve to `var(--sh-*)` at runtime, so switching `data-theme` (via `next-themes`) re-resolves every color on its own — no `dark:` variants required. Without `inline`, Tailwind would bake in the current value and themes would stop switching.
+</Callout>
+  </Tab>
+</Tabs>
+</Step>
+
+<Step>
+### Finish
+
+Now you can use Tailwind classes as usual.
+
+<Callout type="info">
+  To validate class names against your theme (catch typos and unknown utilities from the generated
+  tokens), add
+  [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss) to
+  your ESLint config. It lints Tailwind class names — including the custom utilities generated from
+  your Figma variables — so invalid classes are caught during development.
+</Callout>
+
+</Step>
+</Steps>

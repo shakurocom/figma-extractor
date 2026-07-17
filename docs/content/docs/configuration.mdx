@@ -1,0 +1,616 @@
+---
+title: Configuration
+description: Full reference of figma-extractor.config.js
+---
+
+The config is resolved with [cosmiconfig](https://github.com/cosmiconfig/cosmiconfig): use `figma-extractor.config.js`, `figma-extractor.config.cjs`, a `.figma-extractorrc` file, or a `figma-extractor` key in `package.json`.
+
+## Config type
+
+```ts title="src/types.ts"
+type SVGCallback = (config?: import('svgo').Config) => import('svgo').Config;
+
+export type IconConfig = {
+  disabled?: boolean;
+  nodeIds: string[];
+  // custom format icon name
+  iconName?: (nameFromFigma: string) => string;
+  // custom filter icon callback. It allows skipping some unnecessary icons
+  skipIcon?: (name: string) => boolean;
+  exportPath: string;
+  /**
+   * for example:
+   * exportPath: './test',
+   * exportSubdir: 'sub',
+   *
+   * will download icons to dir ./test/svg/sub
+   */
+  exportSubdir?: string;
+  // If the field is true, then the SVG sprite will be generated
+  generateSprite: boolean;
+  // If the field is true, then the file with icons' names as types will be created
+  generateTypes: boolean;
+  // If the field is true, then the extractor will only generate SVG sprite from local icons
+  // else all available icons will be downloaded and the sprite will be generated from them
+  localIcons?: boolean;
+  // It allows changing svgo config if you need or disable at all
+  // if this field is a function, then the function will be run before svgo optimization. And changed config from this function will be passed to svgo optimization
+  // if this field is boolean and equals `false` then svgo optimization won't be run at all
+  optimizeSvg?: false | SVGCallback;
+};
+
+export type Config = {
+  // your Figma api access key
+  apiKey: string;
+  // Figma file id
+  fileId: string;
+  // path to json variables extracted from figma extension
+  jsonVariablesPath: string;
+  styles: {
+    // The main path for exporting all requested data
+    exportPath: string;
+
+    /*
+      It will parse returned name of colors or etc. and look for allowed themes at the start of names
+      example: for allowedThemes: ['light','dark'] all returned names will be parsed by looking for 'light' or 'dark' at the start of name
+      And if color name is 'light/text/text-900' then it will be transformed to 'text/text-900' and relate to the 'light' theme
+      All others name which are not found by allowed themes will be overlooked.
+     */
+    allowedThemes?: string[];
+
+    /**
+     * It's used to map theme names from figma to custom names.
+     * example:
+     themesMappingOverrides: {
+        solarized: 'dark-solarized',
+       'raven-black': 'bbg',
+     }
+
+       *you can only path overridden values.
+       *If you don't want to override any theme, you can just not pass this field.
+    */
+    themesMappingOverrides?: Record<string, string>;
+
+    /**
+      It's used like default variables inside generated CSS variables
+     */
+    defaultTheme?: string;
+    /** by default all css variables prefixed with 'sh' for example: --sh-color-red */
+    cssVariablesNs?: string;
+    colors?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (name?: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
+      // group names in collection
+      groupNames?: string[];
+    };
+    effects?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (name?: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
+      // group names in collection
+      groupNames?: string[];
+    };
+    textStyles?: {
+      disabled?: boolean;
+      // custom key name
+      keyName?: (nameFromFigma: string) => string;
+      // collections names from figma local variables
+      collectionNames: string[];
+      // This field is to add extra styles with prefix screens
+      addStylesWithPrefixScreen?: boolean;
+    };
+    responsive?: {
+      disabled?: boolean;
+      // collections names from figma local variables
+      collectionNames: string[];
+    };
+  };
+
+  // Configuration of icons can have more one setting
+  icons: IconConfig | IconConfig[];
+};
+```
+
+<Callout type="warn">
+When `colors` or `effects` are enabled, `allowedThemes` and `defaultTheme` are **required** — the extractor throws an error if they are missing, or if none of the allowed themes is found in the Figma data.
+</Callout>
+
+## Config example
+
+<Tabs items={['Base config', 'Without colors & effects', 'Multiple icon configs']}>
+  <Tab>
+```js title="figma-extractor.config.js"
+// @ts-check
+
+function getKeyName(name) {
+  if (name.toLowerCase().startsWith('ui-kit') || name.toLowerCase().startsWith('ui kit')) {
+    return 'INTERNAL_DO_NOT_USE';
+  }
+
+  /**
+   * format name from like:
+   *  "heading/h800 - md" ->  "h800-md"
+   *  "heading / h800 - md" ->  "h800-md"
+   *  "conventions are ignored/heading/h800 - md bla bla" -> "h800-md"
+   */
+  const resultName = name
+    .split('/')
+    .at(-1)
+    ?.replace(' - ', '-')
+    .split(' ')
+    .find(part => part !== '');
+
+  if (!resultName) {
+    throw `getKeyName for "${name}" returns an empty string, check getKeyName implementation`;
+  }
+
+  return resultName;
+}
+
+const iconNaming = originalName => {
+  const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+  return formattedName.toLowerCase();
+};
+
+/**
+ * @type {import('@shakuroinc/figma-extractor').Config}
+ **/
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  jsonVariablesPath: './variables.json', // path to the json file with variables exported from Figma
+  styles: {
+    exportPath: './theme',
+    allowedThemes: ['light', 'dark'], // allowed themes
+    defaultTheme: 'light', // one of the allowed themes which will be meant as default theme
+    colors: {
+      collectionNames: ['color', 'color_extra'],
+      keyName: getKeyName,
+    },
+    effects: {
+      collectionNames: ['effects'],
+      keyName: getKeyName,
+    },
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
+    },
+    textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
+      keyName: nameFromFigma => `.v-${getKeyName(nameFromFigma)}`,
+    },
+  },
+  icons: {
+    // disabled: true,
+    nodeIds: ['2310:0', '2090:11', '276:18'],
+    iconName: name => iconNaming(name), // custom format icon name
+    skipIcon: name => !name.startsWith('.'),
+    exportPath: './atoms/icon',
+    generateSprite: true,
+    generateTypes: true,
+    localIcons: false,
+  },
+};
+```
+  </Tab>
+  <Tab>
+If you don't need colors and effects (and therefore themes), just omit them — `textStyles`, `responsive` and `icons` work without `allowedThemes`/`defaultTheme`:
+
+```js title="figma-extractor.config.js"
+// @ts-check
+
+/**
+ * @type {import('@shakuroinc/figma-extractor').Config}
+ **/
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  jsonVariablesPath: './variables.json',
+  styles: {
+    exportPath: './theme',
+    responsive: {
+      collectionNames: ['responsive'],
+    },
+    textStyles: {
+      collectionNames: ['typography'],
+    },
+  },
+  icons: {
+    nodeIds: ['2310:0', '2090:11', '276:18'],
+    exportPath: './atoms/icon',
+    generateSprite: true,
+    generateTypes: true,
+  },
+};
+```
+  </Tab>
+  <Tab>
+If you have black&white and color icons in your project, it might be useful to download them in different ways.
+
+In this case, you can use such config:
+
+```js title="figma-extractor.config.js"
+// @ts-check
+
+const iconNaming = originalName => {
+  const formattedName = originalName.replace(/ /g, '').replace('/', '-');
+  return formattedName.toLowerCase();
+};
+
+/**
+ * @type {import('@shakuroinc/figma-extractor').Config}
+ **/
+module.exports = {
+  apiKey: 'xxxxxx', // your Figma api access key
+  fileId: 'xxxxxx', // Figma file id
+  jsonVariablesPath: './variables.json',
+  styles: {
+    exportPath: './theme',
+    allowedThemes: ['light', 'dark'],
+    defaultTheme: 'light',
+    colors: {
+      collectionNames: ['color', 'color_extra'],
+    },
+    effects: {
+      collectionNames: ['effects'],
+    },
+    responsive: {
+      collectionNames: ['responsive', 'responsive_extra'],
+    },
+    textStyles: {
+      collectionNames: ['typography', 'typography_xl'],
+    },
+  },
+  icons: [
+    // Let's assume this block is used to download black&white icons
+    {
+      nodeIds: ['2310:0', '2090:11'],
+      iconName: name => iconNaming(name), // custom format icon name
+      skipIcon: name => !name.startsWith('.'),
+      exportPath: './atoms/icon',
+      generateSprite: false,
+      generateTypes: false,
+      localIcons: false,
+    },
+    // This block is used to download color icons
+    {
+      nodeIds: ['276:18', '276:21'],
+      iconName: name => iconNaming(name), // custom format icon name
+      skipIcon: name => !name.startsWith('.'),
+      exportPath: './atoms/icon',
+      optimizeSvg: false, // For color icons, we must disable svg optimization otherwise downloaded icons will be changed
+      generateSprite: false,
+      generateTypes: false,
+      localIcons: false,
+    },
+    // And the last block is used to generate a sprite and types
+    {
+      nodeIds: [],
+      exportPath: './atoms/icon',
+      generateSprite: true,
+      generateTypes: true,
+      localIcons: true, // This field is required for this block. It allows working only with local icons
+    },
+  ],
+};
+```
+  </Tab>
+</Tabs>
+
+## Disabling parts of the extraction
+
+Every section — `colors`, `effects`, `textStyles`, `responsive` and each `icons` entry — accepts a `disabled: true` flag. Unlike the one-off [`--only`](/docs/cli-api) CLI flag, it permanently turns a section off in the config:
+
+```js
+styles: {
+  // ...
+  effects: {
+    disabled: true, // never generate effects
+    collectionNames: ['effects'],
+  },
+},
+```
+
+## Icons
+
+### Default icon naming
+
+When `iconName` is not provided, the default naming strips spaces and replaces the first `/` with `-`: an icon named `icons/32 arrow right` becomes `icons-32arrowright.svg`. Provide your own `iconName` callback to customize it.
+
+### Duplicate detection
+
+If two icons resolve to the same file name, extraction fails with an error listing the duplicates — rename the icons in Figma or make `iconName` produce unique names.
+
+### SVG optimization
+
+By default all downloaded icons are optimized with [svgo](https://github.com/svg/svgo), and the default config **removes `fill` and `stroke` attributes** (so that icons can be colored via CSS). That is why color icons must be downloaded with `optimizeSvg: false` — otherwise they lose their colors. To tweak the svgo config instead of disabling it, pass a callback:
+
+```js
+optimizeSvg: config => ({
+  ...config,
+  // your changes
+}),
+```
+
+### Sprite generation
+
+`generateSprite: true` builds an SVG sprite via `npx svg-symbol-sprite`, so the [`svg-symbol-sprite`](https://www.npmjs.com/package/svg-symbol-sprite) package must be installed in your project (it is a peer dependency).
+
+<Callout type="warn">
+With `localIcons: true` the sprite is generated from the files in `{exportPath}/svg` only — `exportSubdir` is ignored in local mode. Keep that in mind if you download icons into subdirectories.
+</Callout>
+
+### Generated types
+
+`generateTypes: true` creates a `types.ts` file next to the icons:
+
+```ts title="atoms/icon/types.ts"
+export const ICONS = ['icon-one', 'icon-two'] as const;
+
+export type IconsType = (typeof ICONS)[number];
+```
+
+### Export subdirectory
+
+`exportSubdir` writes the downloaded SVGs into a subfolder of `svg/`. With `exportPath: './atoms/icon'` and `exportSubdir: 'nav'`, icons land in `./atoms/icon/svg/nav`. It's handy when several icon configs share one `exportPath` but you want to keep their SVGs apart. (In `localIcons` mode it is ignored — see [Sprite generation](#sprite-generation).)
+
+## Merging of text styles
+
+The ability to merge text styles by the name's suffix. Each suffix is one of the screen sizes defined in your responsive variables.
+
+### Example
+
+Styles like:
+
+```
+- heading/h500 - bs => {fontSize: 12px}
+- heading/h500 - sm => {fontSize: 14px}
+- heading/h500 - md => {fontSize: 16px}
+- heading/h500 - lg => {fontSize: 20px}
+```
+
+will be transformed to:
+
+```ts title="text-styles.ts"
+'heading/h500': {
+  fontSize: '12px',
+  '@media (min-width: 600px)': {
+    fontSize: '14px',
+  },
+  '@media (min-width: 900px)': {
+    fontSize: '16px',
+  },
+  '@media (min-width: 1200px)': {
+    fontSize: '20px',
+  },
+},
+```
+
+If you also want to keep the original per-screen styles alongside the merged ones, enable `textStyles.addStylesWithPrefixScreen: true`.
+
+## Font family mapping
+
+`text-styles.ts` also exports a `fontFamily` object where each font references a CSS variable with a fallback, and a comment lists the used weights:
+
+```ts title="text-styles.ts"
+export const fontFamily = {
+  primary: "var(--sh-font-family-primary, 'Inter'), Arial, sans-serif", // used weights: 400, 500, 700
+};
+
+export const textVariants = { /* ... */ };
+```
+
+The keys are taken from a Figma variables collection literally named `fonts`: variable **values** are matched against font names, and variable **names** become the keys. If no `fonts` collection exists in the exported JSON, keys default to `font1`, `font2`, and so on.
+
+Known fonts get sensible CSS fallbacks; for unknown fonts the fallback is `Arial, sans-serif`.
+
+## Themes for colors and effects
+
+- `allowedThemes` — list of the allowed themes. Only these themes will produce generated files.
+- `defaultTheme` — one of the allowed themes. Default values for CSS variables are taken from this theme.
+
+Both fields live in `styles` (not at the top level of the config):
+
+```js title="figma-extractor.config.js"
+module.exports = {
+  // ...
+  styles: {
+    exportPath: './theme',
+    allowedThemes: ['light', 'dark', 'blue'],
+    defaultTheme: 'blue',
+    colors: {
+      // ...
+    },
+  },
+};
+```
+
+### Theme name overrides
+
+`themesMappingOverrides` maps theme names coming from Figma to custom names. The generated CSS then contains both selectors:
+
+```js
+themesMappingOverrides: {
+  solarized: 'dark-solarized',
+},
+```
+
+```css
+[data-theme='solarized'],
+[data-theme='dark-solarized'] {
+  /* ... */
+}
+```
+
+### CSS variables namespace
+
+All generated CSS variables are prefixed with `sh` by default (`--sh-bg100`, `--sh-color-red`). Change the prefix with `styles.cssVariablesNs`:
+
+```js
+styles: {
+  cssVariablesNs: 'acme', // -> --acme-bg100, --acme-dp100, ...
+  // ...
+},
+```
+
+The same namespace is used across the generated `with-vars.ts`, the per-theme `vars.css` files and the `fontFamily` variables in `text-styles.ts`.
+
+### Filtering by group
+
+`colors.groupNames` (and `effects.groupNames`) narrows a collection down to specific groups. A group is the first path segment of a variable name (before the first `/`); only variables whose group is listed are kept:
+
+```js
+colors: {
+  collectionNames: ['color'],
+  groupNames: ['primary', 'secondary'], // keep only primary/* and secondary/* variables
+},
+effects: {
+  collectionNames: ['effects'],
+  groupNames: ['shadow'], // keep only shadow/*, drop blur/* and backdrop-blur/*
+},
+```
+
+Omit `groupNames` to keep every variable in the collection.
+
+### Variable naming rules
+
+- Variables with `_` in the name are silently skipped — use them for internal/technical values.
+- After the `keyName` transform, names must match `^[\w-]+$` (letters, digits, `-`); otherwise the extractor throws an error.
+
+### Example
+
+For the config above, the CLI will generate the following files:
+
+```ts title="/theme/themes-list.ts"
+export const DEFAULT_THEME = 'blue';
+
+export const THEMES = ['light', 'dark', 'blue'] as const;
+
+export type Theme = (typeof THEMES)[number];
+```
+
+```ts title="/theme/colors/dark/index.ts"
+export const colors = {
+  'text-txt600': '#000000',
+  'text-txt700': '#000000',
+};
+```
+
+```ts title="/theme/colors/light/index.ts"
+export const colors = {
+  'text-txt600': '#ffffff',
+  'text-txt700': '#ffffff',
+};
+```
+
+```ts title="/theme/colors/blue/index.ts"
+export const colors = {
+  'text-txt600': '#0000ff',
+};
+```
+
+```ts title="/theme/colors/index.ts"
+export const colors = {
+  'text-txt600': '#0000ff', // it will be taken from the default theme if it is defined for a specific color
+  'text-txt700': '',
+};
+```
+
+```ts title="/theme/colors/with-vars.ts"
+export const colors = {
+  'text-txt600': 'var(--sh-text-txt600,#0000ff)', // it will be taken from the default theme if it is defined for a specific color
+  'text-txt700': "var(--sh-text-txt700,'')",
+};
+```
+
+```css title="/theme/colors/dark/vars.css"
+[data-theme='dark'] {
+  --sh-text-txt600: #000000;
+  --sh-text-txt700: #000000;
+}
+```
+
+```css title="/theme/colors/light/vars.css"
+[data-theme='light'] {
+  --sh-text-txt600: #ffffff;
+  --sh-text-txt700: #ffffff;
+}
+```
+
+```css title="/theme/colors/blue/vars.css"
+[data-theme='blue'] {
+  --sh-text-txt600: #0000ff;
+}
+```
+
+```css title="/theme/colors/vars.css"
+/* from the blue theme due to it is the default theme */
+:root {
+  --sh-text-txt600: #0000ff;
+  --sh-text-txt700: '';
+}
+```
+
+## Effects
+
+Three effect types are supported, based on the first segment of the variable name:
+
+- `shadow/...` — grouped into a `boxShadow` object (`x`, `y`, `blur`, `spread`, `color` sub-variables);
+- `blur/...` — produces a `blur` value;
+- `backdrop-blur/...` — produces a `backdropBlur` value.
+
+```ts title="/theme/effects/index.ts"
+export const effects = {
+  boxShadow: {
+    dp100: '0px 8px 24px rgba(65, 74, 92, 0.4)',
+  },
+  backdropBlur: {
+    bb200: '10px',
+  },
+  blur: {
+    b100: '2px',
+  },
+};
+```
+
+<Callout type="info">
+`blur` and `backdrop-blur` values are divided by 2 in the output — Figma does the same when converting a variable value to the CSS `blur()` function.
+</Callout>
+
+## Responsive
+
+The responsive plugin reads the collections listed in `styles.responsive.collectionNames` and writes two files into `styles.exportPath`:
+
+```ts title="/theme/screens.ts"
+export const screens = { sm: '600px', md: '900px', lg: '1200px' };
+```
+
+```ts title="/theme/responsive.ts"
+export const responsiveVariants = {
+  '.container-w': { /* css by media queries */ },
+};
+```
+
+- Screen sizes are taken from variable groups `screens/media/min` and `screens/media/max`.
+- Supported variable categories: `box`, `container`, `section`, `screens`.
+- Variables with a `0` value are skipped.
+
+### Class name format
+
+Regular (non-`spacing-`) responsive variables become classes named `{scope}-{prop}-{key}` — for example `box-pb-10` or `container-max-width`. The `{prop}` part selects the CSS property:
+
+- padding: `p`, `px`, `py`, `pt`, `pb`, `pl`, `pr`, `ps`, `pe`
+- margin: `m`, `mx`, `my`, `mt`, `mb`, `ml`, `mr`, `ms`, `me`
+- other: `gap`, `width`, `min-width`, `max-width`, `height`, `min-height`, `max-height`
+
+`ps`/`pe`/`ms`/`me` use the RTL-friendly `padding-inline-*` / `margin-inline-*` properties. Sizing values equal to `0px` are skipped.
+
+### Spacing utilities
+
+Any variable whose name contains `spacing-` fans out into a set of Tailwind-like utility classes: `p`, `px`, `py`, `pt`, `pb`, `pl`, `ps`, `pr`, `pe`, `m`, `mx`, `my`, `mt`, `mb`, `ml`, `ms`, `mr`, `me`, `gap`, `max-width`, `min-width`.
+
+The `ps`/`pe`/`ms`/`me` variants use RTL-friendly `padding-inline-start` / `padding-inline-end` / `margin-inline-start` / `margin-inline-end` properties.

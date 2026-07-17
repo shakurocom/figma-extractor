@@ -1,0 +1,42 @@
+---
+title: Development
+description: How to develop the extractor locally
+---
+
+Useful commands in the repository:
+
+```bash
+pnpm dev    # run the extractor from sources (ts-node ./src/bin.ts)
+pnpm build  # compile TypeScript to dist/
+pnpm test   # run jest tests
+pnpm lint   # run eslint
+```
+
+There are 3 ways to develop:
+
+1. Change and run tests on the local machine:
+
+   - add new functionality or change any existing
+   - change the `variables.json` file in the root folder
+   - change related tests of the changed functionality
+
+2. Link this repository with your real project as its dependency:
+
+   - In the `figma-extractor` repository, run `pnpm link --global`. It creates a link inside the pnpm cache folder with the name `@shakuroinc/figma-extractor`
+   - Inside your project, run `pnpm link --global @shakuroinc/figma-extractor`. It replaces the real `@shakuroinc/figma-extractor` package in `node_modules` with a symlink to the created link
+   - Inside the `figma-extractor` folder, run `pnpm build` after every change. It's necessary to create compiled JS files in the `dist` folder
+   - Inside the project folder, run `pnpm extract` to launch your linked `figma-extractor`
+
+   > Remember! You need to run `pnpm build` after any changes in the `figma-extractor` repository
+
+   > Note: this way you create just a link between the extractor and your project without installing `peerDependencies` of `figma-extractor`.
+   > If you want to install `peerDependencies`, use the 3rd way described below
+
+3. Link this repository with your real project through the file protocol:
+
+   - Inside your project, replace the version line in `package.json` (e.g. `"@shakuroinc/figma-extractor": "^7.5.1"`) with `"@shakuroinc/figma-extractor": "file:{absolute path to the figma-extractor folder}"`
+   - This way creates a link between your project and figma-extractor and installs all `peerDependencies` of figma-extractor
+   - Run `pnpm install` in the root of your project to create the link
+   - Use `pnpm extract` as usual
+
+   > Remember! You need to run `pnpm build` as well when there are any changes in the `figma-extractor` repository

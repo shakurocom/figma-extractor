@@ -23,5 +23,8 @@
     "eslint.autoFixOnSave": "explicit",
     "source.fixAll.eslint": "explicit"
   },
-  "window.title": "Figma-extractor | ${activeEditorShort}${separator}${rootName}"
+  "window.title": "Figma-extractor | ${activeEditorShort}${separator}${rootName}",
+  "cSpell.words": [
+    "fumadocs"
+  ]
 }

@@ -1,0 +1,34 @@
+---
+title: CLI API
+description: Commands, flags and environment variables
+---
+
+## Commands
+
+- `figma-extract` — extract everything from Figma. Each file type is downloaded to a local dir specified in config. **Note:** if there are files in the _icons_ dir already they won't be removed (files with the same name will be overwritten though). Hence, the contents of the dir need to be removed manually in case there are outdated icons that are not present in Figma.
+
+## Flags
+
+- `figma-extract --only=colors,icons` (alias `-o`) — extract only colors and icons. The available options: `colors`, `effects`, `textStyles`, `responsive`, `icons`. Spaces after commas are allowed (`--only=colors, icons`).
+
+- `figma-extract --local-icons` — bypass downloading icons from Figma, generate sprite from local SVG files instead. Simply add files to the directory where icons from Figma are usually downloaded, the sprite would be generated from them. **Note:** if there are multiple configs in the `icons` field, then all of them will get `localIcons = true` when this flag is passed.
+
+  <Callout type="warn">
+  `--local-icons` does only work with icons: Figma icons won't be downloaded and only local icons will be touched. Other functionality (colors, text styles, etc.) won't be disabled. If you want to run only the icons step, combine the flags: `figma-extract --only=icons --local-icons`
+  </Callout>
+
+- `figma-extract --verbose` — show more information in console.
+
+- `figma-extract -h` (`--help`) — show usage help.
+
+## Environment variables
+
+- `FIGMA_DOWNLOAD_CONCURRENCY` — the number of icons downloaded in parallel (default: `3`, minimum: `1`).
+
+  ```bash
+  FIGMA_DOWNLOAD_CONCURRENCY=5 figma-extract --only=icons
+  ```
+
+<Callout type="info">
+Icon downloads are automatically retried on rate-limit errors (HTTP 429) and network failures: up to 7 attempts with exponential backoff, honoring the `Retry-After` and `X-RateLimit-Reset` headers returned by the Figma API. If you still hit rate limits, lower `FIGMA_DOWNLOAD_CONCURRENCY`.
+</Callout>

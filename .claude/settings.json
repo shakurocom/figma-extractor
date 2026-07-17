@@ -1,0 +1,69 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_design_context",
+      "mcp__figma__get_variable_defs",
+      "mcp__figma__get_screenshot",
+      "mcp__figma__get_metadata",
+      "mcp__figma__create_design_system_rules",
+      "mcp__figma__get_figjam",
+      "mcp__chrome-devtools__browser_tabs",
+      "mcp__chrome-devtools__browser_navigate",
+      "mcp__chrome-devtools__browser_navigate_back",
+      "mcp__chrome-devtools__browser_take_screenshot",
+      "mcp__chrome-devtools__browser_click",
+      "mcp__chrome-devtools__browser_hover",
+      "mcp__chrome-devtools__browser_snapshot",
+      "mcp__chrome-devtools__browser_type",
+      "mcp__chrome-devtools__browser_fill_form",
+      "mcp__chrome-devtools__browser_select_option",
+      "mcp__chrome-devtools__browser_press_key",
+      "mcp__chrome-devtools__browser_drag",
+      "mcp__chrome-devtools__browser_file_upload",
+      "mcp__chrome-devtools__browser_handle_dialog",
+      "mcp__chrome-devtools__browser_resize",
+      "mcp__chrome-devtools__browser_close",
+      "mcp__chrome-devtools__browser_mouse_click_xy",
+      "mcp__chrome-devtools__browser_mouse_move_xy",
+      "mcp__chrome-devtools__browser_mouse_drag_xy",
+      "mcp__chrome-devtools__browser_mouse_down",
+      "mcp__chrome-devtools__browser_mouse_up",
+      "mcp__chrome-devtools__browser_mouse_wheel",
+      "mcp__chrome-devtools__browser_wait_for",
+      "mcp__chrome-devtools__browser_evaluate",
+      "mcp__chrome-devtools__browser_run_code",
+      "mcp__chrome-devtools__browser_network_requests",
+      "mcp__chrome-devtools__browser_console_messages",
+      "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_execute_file",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_fetch_and_index",
+      "mcp__plugin_context-mode_context-mode__ctx_index",
+      "mcp__plugin_context-mode_context-mode__ctx_search",
+      "mcp__plugin_context-mode_context-mode__ctx_stats",
+      "Bash(npx -y react-doctor@latest . --verbose --diff)",
+      "Bash(npx storybook build)",
+      "Bash(pkill -f \"storybook dev\")",
+      "Bash(pkill -f \"node.*storybook\")",
+      "Bash(timeout 90 npx storybook dev --port 6006 --no-open)",
+      "mcp__context7__query-docs",
+      "Bash(pnpm tsc --noEmit)"
+    ],
+    "deny": [
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run:*)"
+    ],
+    "ask": []
+  },
+  "enabledMcpjsonServers": [
+    "context7",
+    "figma",
+    "chrome-devtools"
+  ],
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "context-mode@context-mode": true
+  }
+}

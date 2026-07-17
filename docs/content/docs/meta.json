@@ -1,0 +1,12 @@
+{
+  "title": "Documentation",
+  "pages": [
+    "index",
+    "cli-api",
+    "configuration",
+    "how-to-find-node-id",
+    "how-to-use-themes-in-your-project",
+    "formatter",
+    "development"
+  ]
+}

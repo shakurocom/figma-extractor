@@ -1,0 +1,23 @@
+---
+title: Prettier formatter
+description: Format generated files after extraction
+---
+
+The extractor does not format the generated files itself. If you want to format code after fetching data from Figma, add a `postextract` script next to your `extract` script — it runs automatically after `extract` finishes.
+
+In `package.json`, inside the `scripts` block add:
+
+```json
+"postextract": "prettier --write $(git ls-files --modified ./theme) \"./atoms/icon/types.ts\""
+```
+
+Finally, it should look like:
+
+```json title="package.json"
+{
+  "scripts": {
+    "extract": "figma-extract",
+    "postextract": "prettier --write $(git ls-files --modified ./theme) \"./atoms/icon/types.ts\""
+  }
+}
+```
