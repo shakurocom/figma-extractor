@@ -1,18 +1,34 @@
 {
-  "name": "nextra",
+  "name": "figma-extractor-docs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "dev": "next",
-    "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "dev": "next dev",
+    "preview": "pnpm build && wrangler dev",
+    "deploy": "pnpm build && wrangler deploy",
+    "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "next": "^13.4.6",
-    "nextra": "^2.7.1",
-    "nextra-theme-docs": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "cnfast": "^0.0.8",
+    "fumadocs-core": "16.11.4",
+    "fumadocs-mdx": "15.1.1",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.11.4",
+    "lucide-react": "^1.24.0",
+    "next": "16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "postcss": "^8.5.17",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.28.0"
   }
 }
