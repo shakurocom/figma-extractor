@@ -11,24 +11,24 @@
     "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
-    "cnfast": "^0.0.8",
-    "fumadocs-core": "16.11.4",
-    "fumadocs-mdx": "15.1.1",
-    "fumadocs-ui": "npm:@fumadocs/base-ui@16.11.4",
-    "lucide-react": "^1.24.0",
-    "next": "16.2.10",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "cnfast": "^0.2.0",
+    "fumadocs-core": "16.19.4",
+    "fumadocs-mdx": "15.6.3",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.19.4",
+    "lucide-react": "^1.75.0",
+    "next": "16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/postcss": "^4.3.5",
     "@types/mdx": "^2.0.14",
-    "@types/node": "^26.1.1",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "postcss": "^8.5.17",
-    "tailwindcss": "^4.3.2",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^4.3.5",
     "typescript": "^6.0.3",
-    "wrangler": "^4.28.0"
+    "wrangler": "^4.164.0"
   }
 }
