@@ -1,5 +1,10 @@
 {
   "permissions": {
+    "attribution": {
+      "commit": "",
+      "pr": "",
+      "sessionUrl": false
+    },
     "allow": [
       "mcp__figma__get_design_context",
       "mcp__figma__get_variable_defs",
@@ -65,5 +70,13 @@
     "superpowers@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "context-mode@context-mode": true
+  },
+  "extraKnownMarketplaces": {
+    "context-mode": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/mksglu/context-mode.git"
+      }
+    }
   }
 }
