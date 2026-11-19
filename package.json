@@ -76,8 +76,5 @@
       "pre-commit": "pnpm test && lint-staged"
     }
   },
-  "packageManager": "pnpm@10.14.0",
-  "volta": {
-    "node": "22.18.0"
-  }
+  "packageManager": "pnpm@12.21.0"
 }
