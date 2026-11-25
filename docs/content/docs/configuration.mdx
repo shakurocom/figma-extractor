@@ -94,6 +94,8 @@ export type Config = {
       collectionNames: string[];
       // group names in collection
       groupNames?: string[];
+      // how to export multi-layer shadows: 'merge' | 'split' | 'both' (default 'both')
+      shadowLayers?: 'merge' | 'split' | 'both';
     };
     textStyles?: {
       disabled?: boolean;
@@ -579,6 +581,37 @@ export const effects = {
 
 <Callout type="info">
 `blur` and `backdrop-blur` values are divided by 2 in the output — Figma does the same when converting a variable value to the CSS `blur()` function.
+</Callout>
+
+Missing `x`, `y`, `blur` or `spread` variables default to `0`; a shadow without `color` throws an error.
+
+### Multi-layer shadows
+
+A shadow with several layers (one Figma effect style with several drop shadows) is described by numbered variables. Two naming conventions are supported:
+
+- the layer number as a separate segment — `shadow/m-600/1/x`, `shadow/m-600/2/x`, ...;
+- the layer number as a property suffix — `shadow/dp75/x_1`, `shadow/dp75/x_2`, ...
+
+Layers are sorted by number and joined into one `box-shadow` value: the first layer is drawn on top, as in CSS. A numeric segment counts as a layer number only when a named segment precedes it, so `shadow/600/x` is still a single shadow named `600`.
+
+`effects.shadowLayers` controls what is generated:
+
+| Value | Output |
+| --- | --- |
+| `'both'` (default) | `m-600` with all layers plus `m-600-1`, `m-600-2`, ... |
+| `'merge'` | only `m-600` with all layers |
+| `'split'` | only `m-600-1`, `m-600-2`, ... (the behavior before `shadowLayers` was added) |
+
+```css title="/theme/effects/vars.css"
+:root {
+  --sh-shadow-m-600: -32px -3px 54px 0px rgba(10, 25, 58, 0.03), 1px 2.5px 8px 0px rgba(10, 25, 58, 0.02);
+  --sh-shadow-m-600-1: -32px -3px 54px 0px rgba(10, 25, 58, 0.03);
+  --sh-shadow-m-600-2: 1px 2.5px 8px 0px rgba(10, 25, 58, 0.02);
+}
+```
+
+<Callout type="warn">
+The shadow type (drop or inner) is set on the Figma effect style, not in variables, so inner shadows are exported as regular `box-shadow` without `inset`.
 </Callout>
 
 ## Responsive
