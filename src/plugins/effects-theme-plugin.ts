@@ -139,7 +139,7 @@ export const effectsThemePlugin: Plugin = (
   log('[info:effects-theme] >>> ', 'Default themes: ', defaultTheme);
 
   const themesCollection = createThemeCollection({ allowedThemes });
-  const effects = getEffectStyles(modesWithFilteredVariablesByGroup, config);
+  const effects = getEffectStyles(modesWithFilteredVariablesByGroup, config, log);
 
   let anyThemeIsUsed = false;
   for (const { newName, value, theme, originalName } of separateThemes({

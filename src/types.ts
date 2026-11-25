@@ -84,6 +84,14 @@ export type Config = {
       collectionNames: string[];
       // group names in collection
       groupNames?: string[];
+      /**
+       * How to export multi-layer shadows ("shadow/m-600/1/x" or "shadow/dp75/x_1"):
+       *  'merge' - one variable with all layers: --sh-shadow-m-600: <layer 1>, <layer 2>, ...
+       *  'split' - one variable per layer: --sh-shadow-m-600-1, --sh-shadow-m-600-2, ...
+       *  'both'  - merged variable and per-layer variables
+       * @default 'both'
+       */
+      shadowLayers?: ShadowLayersMode;
     };
     textStyles?: {
       disabled?: boolean;
@@ -104,6 +112,8 @@ export type Config = {
   // Configuration of icons can have more one setting
   icons: IconConfig | IconConfig[];
 };
+
+export type ShadowLayersMode = 'merge' | 'split' | 'both';
 
 export type OnlyArgs = 'colors' | 'effects' | 'textStyles' | 'responsive' | 'icons';
 
